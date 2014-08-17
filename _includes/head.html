@@ -1,0 +1,16 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="{{ site.description }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+    <link rel="stylesheet" href="{{ "/styles/main.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ "/styles/syntax.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ "/styles/paginator.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ "/styles/table.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ "/styles/projects.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ "/styles/books.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ "/styles/iframe.css" | prepend: site.baseurl }}">
+</head>

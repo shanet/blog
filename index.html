@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+<div class="home">
+  <div class="posts">
+    {% for post in paginator.posts %}
+      <div class="post">
+        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+
+        <div class="post-content">
+          {{ post.excerpt }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="pagination post-center">
+  {% if paginator.previous_page %}
+    {% if paginator.previous_page == 1 %}
+      <a href="{{ '/index.html' | prepend: site.baseurl }}" class="previous">&lt; previous</a>
+    {% else %}
+      <a href="/page{{ paginator.previous_page | prepend: site.baseurl }}">&lt; previous</a>
+    {% endif %}
+  {% endif %}
+
+  {% capture start_page %}
+    {{ paginator.page | minus:2}}
+  {% endcapture %}
+
+  {% capture end_page %}
+    {{ paginator.page | plus:2}}
+  {% endcapture %}
+
+  {% for page in (start_page..end_page) %}
+    {% if page == paginator.page %}
+      <span class="pagination-current">{{ page }}</span>
+    {% elsif page == 1 %}
+      <a href="{{ '/index.html' | prepend: site.baseurl }}">{{ page }}</a>
+    {% elsif page > 0 and page <= paginator.total_pages %}
+      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: ':num', page }}">{{ page }}</a>
+    {% endif %}
+  {% endfor %}
+
+  {% if paginator.next_page %}
+    <a href="/page{{ paginator.next_page | prepend: site.baseurl }}">next &gt;</a>
+  {% endif %}
+</div>

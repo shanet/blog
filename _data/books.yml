@@ -1,0 +1,39 @@
+- title: "The Pragmatic Programmer"
+  description: "The Pragmatic Programmer</em> outlines the characteristics of a pragmatic programmer: fast adapter, inquisitive, critical thinker, realistic, and a jack-of-all-trades*."
+  image: "books/pragmatic_programmer_cover.jpg"
+
+- title: "The Cathedral and the Bazaar"
+  description: "An essay on software engineering methods, based on the observations of the Linux kernel development process and the experiences managing an open source project, fetchmail*."
+  image: "books/cathedral_and_the_bazaar_cover.jpg"
+
+- title: "Clean Code"
+  description: "<em>Clean Code</em> describes how to differentiate good code from bad code, how to format code for maximum readability, and how to chose descriptive variable, class, and function names."
+  image: "books/clean_code_cover.jpg"
+
+- title: "Don't Make Me Think"
+  description: "Don't Make Me Think is a book about human-computer interaction and web usability. The book's premise is that a good software program or web site should let users accomplish their intended tasks as easily as possible*."
+  image: "books/dont_make_me_think_cover.jpg"
+
+- title: "Design of Everyday Things"
+  description: "The Design of Everyday Things is about the design of simple objects, and why some objects please their users while others frustrate them."
+  image: "books/design_of_everyday_things_cover.jpg"
+
+- title: "Advanced Linux Programming"
+  description: "<em>Advanced Linux Programming</em> goes into depth on writing software for the GNU/Linux as well topics such as processes, threads, and interprocess communication methods."
+  image: "books/advanced_linux_programming_cover.jpg"
+
+- title: "Make Something People Love"
+  description: "\"So, you want to learn how to make a product people love--that’s great! But stop right there. Before you can make something people love, you have to make something people want.\""
+  image: "books/make_something_people_love_cover.jpg"
+
+- title: "Presentation Zen"
+  description: "<em>Presentation Zen</em> illustrates to readers there is a better way to reach the audience through simplicity and storytelling, and gave them the tools to confidently design and deliver successful presentations."
+  image: "books/presentation_zen_cover.jpg"
+
+- title: "The C Programming Lanuage"
+  description: "Written by the developers of C, this manual shows readers how to take advantage of C's rich set of operators, economy of expression, improved control flow, and data structures**."
+  image: "books/the_c_programming_language_cover.png"
+
+- title: "Understanding the Linux Kernel"
+  description: "<em>Understanding the Linux Kernel</em> takes you on a guided tour of the most significant data structures, algorithms, and programming tricks used in the kernel**."
+  image: "books/understanding_the_linux_kernel_cover.jpg"

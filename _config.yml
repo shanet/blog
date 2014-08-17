@@ -1,0 +1,13 @@
+# Site settings
+title: shane tully
+email: shane@shanetully.com
+description: "Ramblings of a software engineer"
+baseurl: ""
+images_dir: "/assets/images/"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+highlighter: pygments
+excerpt_separator: <!--more-->
+paginate: 5
