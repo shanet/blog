@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /assests/Shane_Tully_Resume.pdf
+
+User-agent: ia_archiver
+Disallow: /
