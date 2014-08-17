@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Penn State ACM Magnetic Card Check-in Script
-date: 2011-10-01 06:16:15 -0700
+date: 2011-10-01 06:16:15
 ---
 
 The other officers and I of the PSU ACM have been talking about implementing a magnetic card based check-in system for our meetings and other events. When you check-in (swipe your card) you would receive a certain number of points. The member with the most points at the end of the semester would win a prize like most likely a half eaten bag of Skittles or something. I found the whole project interesting so I took it up and had the whole thing working in just under a day.

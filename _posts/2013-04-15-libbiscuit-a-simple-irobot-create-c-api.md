@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ! 'libBiscuit: A simple iRobot Create C API'
-date: 2013-04-15 04:38:46 -0700
+date: 2013-04-15 04:38:46
 ---
 
 For my senior design project at my university, my group and I decided to attempt to make a robot out of an iRobot Create, Windows tablet, and Kinect that would find a person and follow him or her around a room and allow the person to control the Create with gestures and speech recognition. We called all this <a href="https://github.com/shanet/asimov">Project Asimov</a>, and at the time of this writing, it's still under development. However, one of the first pieces of code that needed written was an API to more easily interface with the Create. Thus, after some experimentation and a thorough reading of the <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=3&amp;cad=rja&amp;ved=0CEQQFjAC&amp;url=http%3A%2F%2Fwww.irobot.com%2Ffilelibrary%2Fpdfs%2Fhrd%2Fcreate%2FCreate%2520Open%2520Interface_v2.pdf&amp;ei=xWReUb3SCrGl4AOn7YH4BQ&amp;usg=AFQjCNHKJUHtUTtpU5s1N9CGJtZo-oWy-g&amp;sig2=jvx-Pt8xSSLUX5Hk-oMQSQ&amp;bvm=bv.44770516,d.dmg">Create Open Interface</a>, I had a working API written in C called libBiscuit. Why? Because the Create sort of looks like a biscuit and I like biscuits.

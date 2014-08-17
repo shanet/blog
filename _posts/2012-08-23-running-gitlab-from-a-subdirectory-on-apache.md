@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Running GitLab from a subdirectory on Apache
-date: 2012-08-23 15:07:11 -0700
+date: 2012-08-23 15:07:11
 ---
 <h4><strong>Note: As of February 2013, these instructions have been tested with GitLab 4.1. GitLab evolves very rapidly and I do not use it anymore so these instructions will quickly become outdated.</strong></h4>
 

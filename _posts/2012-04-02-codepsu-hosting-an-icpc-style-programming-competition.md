@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ! 'CodePSU: Hosting an ICPC-style Programming Competition'
-date: 2012-04-02 01:05:12 -0700
+date: 2012-04-02 01:05:12
 ---
 
 Just over a month ago the other officers of the Penn State ACM and I were approached by the president of the newly-formed Penn State of Association of Women in Computing to co-host a programming competition which would come to be known as <a title="CodePSU" href="http://acm.psu.edu/codepsu">CodePSU</a>. We set the date of the event and had roughly one month to plan everything. Most of the logistical (location, food, times) and financial (sponsors, prizes) were not handled by me. Rather, I tasked myself with designing and implementing a code submission system that allowed teams to upload solutions to problems to the judges. The catch? It had to be fast. We would have three judges judging 60 people's code multiple times in just three hours. It also had to be secure. We couldn't allow teams to figure out what test cases we where judging the problems with or allow them to get access to other teams code. If that wasn't enough, we also had to support C, C++ and Java.

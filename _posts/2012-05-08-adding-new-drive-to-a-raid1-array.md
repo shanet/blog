@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Adding New Drive to a RAID1 Array
-date: 2012-05-08 15:41:36 -0700
+date: 2012-05-08 15:41:36
 ---
 
 Last week I finally bought a second HDD for my home directory so I could have some redundancy in case a drive fails. Lucky for me, I had the foresight to put the single drive I had been using on a RAID1 array all by its lonesome self way back when. After installing my new HDD, I found myself tasked with adding to the array. Simple, right? Yes, but with one caveat.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Simple Public Key Encryption with RSA and OpenSSL
-date: 2012-04-28 18:09:15 -0700
+date: 2012-04-28 18:09:15
 ---
 
 <h3>Hey you! This post is outdated!</h3>

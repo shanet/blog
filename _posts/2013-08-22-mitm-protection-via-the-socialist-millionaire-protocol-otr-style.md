@@ -1,7 +1,7 @@
 ---
 layout: post
 title: MITM Protection via the Socialist Millionaire Protocol (OTR-style)
-date: 2013-08-22 02:32:41 -0700
+date: 2013-08-22 02:32:41
 ---
 
 <strong>Crypto disclaimer!  I am NOT a crypto expert. Don't take the information here as 100% correct; you should verify it yourself. </strong><a href="http://happybearsoftware.com/you-are-dangerously-bad-at-cryptography.html">You are dangerously bad at crypto.</a>

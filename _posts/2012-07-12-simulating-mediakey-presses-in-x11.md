@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Simulating Mediakey Presses in C & X11
-date: 2012-07-12 00:42:19 -0700
+date: 2012-07-12 00:42:19
 ---
 
 As you're not aware, a few months ago I wrote a simple server/client for changing Alsa volumes from another computer, or an Android phone. I've been extremely slowly working on adding encryption to it, but unfortunately, jobs and school come before hacking away at projects. Regardless, one downfall of the project has always been that I could change the volume, but I couldn't play/pause music. All the programs I've seen to do this have been media player plugins that are, obviously, specific to that media player only. As someone that changes media players somewhat frequently I didn't want to go down the road of writing a plugin for one player. Then it hit me, why not have my server simulate media key presses from the keyboard in X11? This would work for any media player that supported media keys and since I already have the server written, it's only a matter of modifying the protocol to accept more commands and add a function to simulate  key presses. However, first I needed to figure out how to simulate key presses. It turns out it's very easy. Let's jump right into the code.

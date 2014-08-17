@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Working with binary data in C and OpenSSL
-date: 2013-08-29 02:53:25 -0700
+date: 2013-08-29 02:53:25
 ---
 
 <strong>Crypto disclaimer! I am NOT a crypto expert. Don't take the information here as 100% correct; you should verify it yourself. </strong><a href="http://happybearsoftware.com/you-are-dangerously-bad-at-cryptography.html">You are dangerously bad at crypto.</a>

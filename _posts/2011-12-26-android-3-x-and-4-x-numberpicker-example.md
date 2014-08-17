@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Android 3.x and 4.x NumberPicker Example
-date: 2011-12-26 21:45:11 -0800
+date: 2011-12-26 21:45:11
 ---
 
 I was working on a new, yet to be released, Android app that necessitated the need for the new <a title="NumberPicker" href="http://developer.android.com/reference/android/widget/NumberPicker.html">NumberPicker</a> widget introduced in Android 3.0. Unfortunately, there are almost no examples of its use floating around and the documentation in the Android API is extremely lacking. Thus, I spent a few hours of trial and error figuring out how it worked.

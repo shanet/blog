@@ -1,7 +1,7 @@
 ---
 layout: post
 title: OpenSSL, RSA, AES and C++
-date: 2012-06-23 15:00:40 -0700
+date: 2012-06-23 15:00:40
 ---
 
 <strong>Disclaimer: I am NOT a crypto expert. Don't take the information here as 100% correct; you should verify it yourself. </strong><a href="http://happybearsoftware.com/you-are-dangerously-bad-at-cryptography.html">You are dangerously bad at crypto.</a>

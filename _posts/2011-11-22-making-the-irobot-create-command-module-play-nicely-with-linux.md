@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Making the iRobot Create Command Module Play Nicely with Linux
-date: 2011-11-22 00:43:20 -0800
+date: 2011-11-22 00:43:20
 ---
 
 As a club project, the ACM recently bought an <a href="http://store.irobot.com/shop/index.jsp?categoryId=3311368">iRobot Create</a>. It comes with some software for programming in Windows, but, honestly, the GUI application that it comes with is junk. It barely works at all. Add that with the fact that it's a Windows application meant that I was on the hunt for making this guy work under Linux.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ! 'StairLights: An Arduino-based LED stair lighting project'
-date: 2013-04-05 19:48:08 -0700
+date: 2013-04-05 19:48:08
 ---
 
 I'm a big fan of LED lighting; especially interactive LED lighting so over the past two or so months I was working on a little side project that uses an Arduino Uno to read two IR receivers for beam breaks at the top and bottom of my stairs and shows an LED pattern while the person is walking up or down the stairs. All the code is <a href="https://github.com/shanet/StairLights">open source on GitHub</a> under the LGPL.

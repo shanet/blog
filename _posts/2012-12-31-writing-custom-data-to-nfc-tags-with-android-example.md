@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Writing custom data to NFC tags with Android example
-date: 2012-12-31 14:45:34 -0800
+date: 2012-12-31 14:45:34
 ---
 
 I wanted to add NFC functionality to <a title="Controlling a relay via an Arduino from an Android client with NFC" href="http://shanetully.com/2012/12/controlling-a-relay-via-an-arduino-from-an-android-client-with-nfc/">my RelayRemote project</a> but found the amount of examples about writing custom data to an NFC tag on Android very lacking. The Android docs have a bunch of <a href="http://developer.android.com/guide/topics/connectivity/nfc/nfc.html">info on basic NFC and how it works</a>, but for actually writing the data to the tag, they try to push you to some convenience functions that were added in Jelly Bean (4.1). Unless you're targeting Jelly Bean and up (not likely at the time of this writing), it doesn't help to use these functions.

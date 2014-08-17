@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ! 'iCATA: Building a realtime bus locator app'
-date: 2013-12-23 00:56:21 -0800
+date: 2013-12-23 00:56:21
 ---
 
 For my last semester of college, I took a class on iOS development. The last assignment of the class was a five week project of our own choosing. My idea was to build a better bus locator app for the local bus service, CATA. The CATA available on the app store leaves a lot to be desired. Most notably, I want to see multiple bus routes on the map simultaneously. This is very useful for anyone that uses the buses to get around campus since there are four bus routes that go around campus. When you're running for the bus, every second counts so it's quite advantageous to be able to see all four campus routes on the same map at once.

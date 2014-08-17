@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Adding a Syscall to Linux 3.14
-date: 2014-04-09 14:21:37 -0700
+date: 2014-04-09 14:21:37
 ---
 
 I've long had an interest in Linux, and by Linux I mean the actual Linux project, ie. the kernel, not GNU/Linux, but getting into kernel development is an incredibly difficult task to accomplish. Linux has millions of lines and is one of the largest software projects in the world. Not to mention that the Linux kernel mailing list can be an intimating place. In all, it's not something that you just jump into on a whim.

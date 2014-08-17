@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Why did no one tell me about \x08?
-date: 2013-06-20 23:33:38 -0700
+date: 2013-06-20 23:33:38
 ---
 
 For years I would occasionally run across a program that would display a little ASCII art rotating bar to show it was working and each time I wondered how it was writing to what I assumed was standard out, but replacing previously written characters. Not sure what I'm talking about? It's best to just show a video since I'm not sure there's a name for it.

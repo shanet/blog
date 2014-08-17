@@ -1,7 +1,7 @@
 ---
 layout: post
 title: TEDxPSU 2011 Reflections
-date: 2011-11-14 01:51:52 -0800
+date: 2011-11-14 01:51:52
 ---
 
 ![]({{ site.baseurl }}/assets/images/2011/11/IMG_20111113_173812.jpg)
