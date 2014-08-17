@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Controlling a relay via an Arduino from an Android client with NFC
-date: 2012-12-31 00:30:32
+date: 2012-12-31
 ---
 
 Over the past few weeks I've been working on a small project that allows me to control electrical relays from an Arduino over the network from Android and C clients. It's been delayed slightly from finals, holidays and power outages thanks to snow storms, but below is a demo of the first complete version.

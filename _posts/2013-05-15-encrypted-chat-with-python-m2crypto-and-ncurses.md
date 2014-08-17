@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Encrypted chat with Python, M2Crypto, and NCurses
-date: 2013-05-15 20:53:02
+date: 2013-05-15
 ---
 
 A couple of weeks ago I realized that there isn't a simple way to communicate with someone over a strongly encrypted channel without going through an intermediary server when at least one of the parties is not a very technically minded person (there probably is such a such a thing, but I don't know of it). I wanted to be able to perform basic chat with someone that doesn't know anything about cryptography and do it without having both people connect to a server. Rather, I wanted a simple server that I ran and sent a friend a simple binary that would ask the hostname of my server and we could chat securely.

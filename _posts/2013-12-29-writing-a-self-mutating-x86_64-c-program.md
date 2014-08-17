@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Writing a Self-Mutating x86_64 C Program
-date: 2013-12-29 23:32:48
+date: 2013-12-29
 ---
 
 "Why would you ever want to write a program that changes its code while it's running? That's a horrible idea!"

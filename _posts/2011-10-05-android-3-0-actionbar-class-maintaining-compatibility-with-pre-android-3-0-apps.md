@@ -2,7 +2,7 @@
 layout: post
 title: ! 'Android 3.0 ActionBar Class: Maintaining Compatibility with Pre-Android
   3.0 Apps'
-date: 2011-10-05 00:40:44
+date: 2011-10-05
 ---
 
 My goal for version 2 of the <a title="Shamless plug" href="https://market.android.com/details?id=com.S201.Fng&amp;feature=search_result">Fake Name Generator app</a> was to have a single APK that ran on Android 3.0 and Android 1.6-2.3 while being optimized for tablets. While the <a title="Incredibly useful!" href="http://developer.android.com/sdk/compatibility-library.html">Android Compatibility Package</a> allowed me to use the <a href="http://android-developers.blogspot.com/2011/02/android-30-fragments-api.html">Fragments API</a> on pre-3.0 versions of Android, it does not provide support for the ActionBar class. The ActionBar is paramount to having an app properly optimized for tablets! Thus, I had to get creative.

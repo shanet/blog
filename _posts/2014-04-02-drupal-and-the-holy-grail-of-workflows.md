@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Drupal and the Holy Grail of Workflows
-date: 2014-04-02 01:38:39
+date: 2014-04-02
 ---
 
 I've recently given myself the task of creating a mature workflow for a Drupal website. For the past few months, I have been working with a startup and creating their website from the ground up. We are using a traditional LAMP stack with Drupal running on top. Sure, the LAMP stack isn't the "in thing" anymore, but it's working very well for our purpose right now. That is, get up and running quickly and focus on developing the product.

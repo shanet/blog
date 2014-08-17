@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Clean Solutions with Maps in JavaScript
-date: 2011-10-10 03:07:15
+date: 2011-10-10
 ---
 
 Tonight I was faced with writing a function for the chemistry applets I work on that returned the proper cutoff value (the size of an atomic orbital) for a given orbital at a given probability percentage of something with  the electrons in an atomic orbital. Let's be honest here, I don't understand much of the chemistry behind what I'm doing. I just know enough to code everything, but I'm quickly learning and understanding it all more and more!

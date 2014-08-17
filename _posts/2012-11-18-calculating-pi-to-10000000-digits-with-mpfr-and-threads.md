@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Calculating pi to 10,000,000 digits with MPFR and threads
-date: 2012-11-18 01:01:25
+date: 2012-11-18
 ---
 
 A few days ago I wrote a post about [how to not go about writing an arbitrary precision]({% post_url 2012-11-15-how-not-to-write-an-arbitrary-precision-data-type-in-c %}) data type in C to calculate pi. If you read the article, I talked about how a friend and I were trying to accomplish that task in 24 hours. Needless to say, it didn't work and I resorted to using a library that was already available. Namely, <a href="http://www.mpfr.org/">MPFR</a>. After a little research on Wikipedia about the best approximations to pi, and a couple of days of off and on work, I had a pretty good solution up and running.
@@ -302,7 +302,7 @@ Accuracy: 10084503 digits
 10.9 minutes. That's a big difference. Just goes to show how powerful compiler optimization can be. Thanks GCC!
 
 <hr />
-Update: Since I originally wrote this, I've gotten a new Macbook. With Kubuntu 13.04 running on it, I've noticed a huge speed increase in these calculations. Where as before, my old computer took 7.2 minutes to calculate 10 million digits, but now it takes just over 2 minutes. That's a really impressive speed improvement with recent hardware.
+Update: Since I 
 
 {% highlight text linenos=table %}
 ./irrational --hide-pi 10000000

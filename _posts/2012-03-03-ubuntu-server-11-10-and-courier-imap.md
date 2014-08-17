@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ubuntu server 11.10 and Courier-IMAP
-date: 2012-03-03 17:54:05
+date: 2012-03-03
 ---
 
 My weekend project was to set up an SMTP and IMAP server on my home server so I could finally have my own mail server and be free from the prying eyes of the large email hosts.

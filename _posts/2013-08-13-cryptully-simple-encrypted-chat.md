@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ! 'Cryptully: Simple Encrypted Chat'
-date: 2013-08-13 01:12:45
+date: 2013-08-13
 ---
 
 Back in May I started a project with the goal of allowing simple chat (instant messaging if you will) between two people, except that everything was encrypted. The original goal was not to reinvent the chat program, but rather make a chat program with a very specific purpose: quick, encrypted chat between two people. Why? There are more chat clients that anyone can count out there and a similar number of them are encrypted. The problem is that few people use encryption and setting it up is a pain. The user has to install software and configure software. This does nothing but deter the user from using any type of secure communication. I set out to create a simple chat client with the following goals:

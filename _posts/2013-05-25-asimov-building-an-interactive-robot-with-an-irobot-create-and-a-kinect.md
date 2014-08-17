@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ! 'Asimov: Building an interactive robot with an iRobot Create and a Kinect'
-date: 2013-05-25 02:22:47
+date: 2013-05-25
 ---
 
 The CS program at my university requires all students to complete a group project of their choosing during the required software engineering course known as the senior design project to the wider college of engineering. My group consisted of 5 people with the goal of using an iRobot Create (like a Roomba, but without the vacuum) and a Microsoft Kinect to create a robot that would take gesture and voice commands and follow or avoid a person. The finished product looked as such:

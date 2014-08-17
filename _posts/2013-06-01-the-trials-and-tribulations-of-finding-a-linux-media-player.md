@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The trials and tribulations of finding a Linux media player
-date: 2013-06-01 17:06:19
+date: 2013-06-01
 ---
 
 I've been using Linux as my primary desktop OS for roughly five years now and things have come a long way since my first experiences with Fedora 10 to my current Kubuntu 13.04 setup. One of the long term things about Linux that bugged me was the lack of a decent music player. Everything I used was either half-baked and full of bugs, had a confusing interface (I'm looking at you Amarok), or lacked the functionality any media player should have.

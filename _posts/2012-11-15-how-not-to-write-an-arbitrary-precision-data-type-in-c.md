@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How NOT to write an arbitrary precision data type in C
-date: 2012-11-15 05:21:23
+date: 2012-11-15
 ---
 
 This past weekend was <a href="https://www.hackerleague.org/hackathons/hackpsu">HackPSU</a>, a typical 24 hour hackathon at Penn State. Without any better idea, my friend, <a href="http://www.gageames.com/">Gage Ames</a> and I decided to break the mold of the typical hackathon projects of games, websites, and mobile apps, and doing something much more nerdy: creating our own arbitrary precision data type in C so we could calculate pi (or any other irrational number) to as many digits as our computers could handle.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Linux Compile Script
-date: 2011-10-28 19:18:39
+date: 2011-10-28
 ---
 
 A few months ago I started compiling Linux on my own. Not for any particular reason, just to do it myself. By nature, the commands to compile the kernel are repetitive which means it's the perfect thing to write a script to do!

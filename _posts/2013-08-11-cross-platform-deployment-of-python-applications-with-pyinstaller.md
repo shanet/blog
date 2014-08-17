@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Cross-platform deployment of Python applications with PyInstaller
-date: 2013-08-11 19:17:41
+date: 2013-08-11
 ---
 
 A primary goal for <a href="https://github.com/shanet/Cryptully">my Cryptully project</a> (an encrypted chat program) was to make a desktop application accessible to as many users as possible. Nothing annoys me more than wanting to use a service or program and having to install a program that I'll just uninstall later or having to create an account. I'm a big proponent of making the barrier to entry to using a new service as low as possible. Since the nature of my program (cryptography) did not warrant a web application, I was pushed to the desktop. The desktop isn't exactly known for getting something up and running quickly verses just going to a website. This led me to want to accomplish the following for my project:

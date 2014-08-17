@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Floating Point Precision in Bash
-date: 2011-11-07 21:14:29
+date: 2011-11-07
 ---
 
 I wanted to add a timer to my <a href="https://github.com/shanet/Linux-Compile-Script">Linux compile script </a>so I could see how it took to compile the kernel. However, Bash does not support floating point precision. Now seeing as kernel compiles take some time this shouldn't matter. I could use the <code>date</code> command to get the hour, minute, and second before and after the compile and subtract them, adjust for difference in hours, days, etc. This way I wouldn't need any type of precision. But that's a lot of work, and I want to know <em>exactly</em> how long it took; not rounded to the nearest minute.

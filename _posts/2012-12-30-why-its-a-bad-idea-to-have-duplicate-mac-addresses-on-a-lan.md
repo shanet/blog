@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Why it's a bad idea to have duplicate MAC addresses on a LAN
-date: 2012-12-30 22:05:09
+date: 2012-12-30
 ---
 
 I've been using some of my time during winter break to wrap up my <a href="https://github.com/shanet/RelayRemote">RelayRemote</a> project. Without going into much detail, RelayRemote is a small project I started which allows control of an electrical relay though an Arduino server from an Android or C client over a network. I originally started the project with one Arduino and one relay, but after having a rough proof of concept working I decided to add support for multiple servers so I bought another Arduino and another relay. When I was working with only one Arduino, communicating with it over the network from my Android app was nearly instantaneous (less than a second). However, when I added a second Arduino to the mix, things became very slow; less than a second to &gt; 15 seconds. The Arduino's had different IP addresses and did work, just very slowly so what was slowing things down?

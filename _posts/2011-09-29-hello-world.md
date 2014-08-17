@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hello World!
-date: 2011-09-29 03:34:03
+date: 2011-09-29
 ---
 
 I can put it off no longer... time to finally start a blog.

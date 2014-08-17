@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Listserv Auto-Subscribe Form
-date: 2011-11-18 03:45:47
+date: 2011-11-18
 ---
 
 In my never ending quest to make the <a href="http://acm.psu.edu">Penn State ACM's website</a> as automated and as useful as possible, I wanted a page that allowed a user to enter his name and email and automatically be added to our listserv. With a little HTML, PHP, and a touch of the Drupal API (our website runs on Drupal), it was up and running in a little under an hour. Code incoming.

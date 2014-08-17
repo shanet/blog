@@ -1,7 +1,7 @@
 ---
 layout: post
 title: What They Don't Tell You About Kernel Compiling
-date: 2011-11-05 00:41:20
+date: 2011-11-05
 ---
 
 Compiling Linux yourself is one thing. Actually using the kernel you just compiled is another. Here's my latest debacle with the hell I put upon myself by compiling my own kernels.

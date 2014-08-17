@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Reflections on the ICPC Programming Competition
-date: 2011-10-23 00:45:54
+date: 2011-10-23
 ---
 
 This past weekend I got the opportunity to compete in the <a title="&quot;compete&quot;" href="http://cm.baylor.edu/welcome.icpc">ACM's ICPC programming competition</a> on a team with other members from the <a title="Shameless plugs wherever I can put them" href="http://acm.psu.edu">Penn State ACM</a>. Up until a week before the competition I was supposed to compete. However, due to some of club members not being able to go at the last minute, I was forced to compete. At first I thought it would be horrible because everyone else had been practicing for months, and I have not even completed a single practice problem. Regardless, I'm happy that I ended up going.
