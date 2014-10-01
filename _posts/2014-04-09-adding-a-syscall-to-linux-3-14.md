@@ -134,7 +134,7 @@ Then we create a new <code>cred</code> struct with <code>prepare_creds()</code> 
 
 Finally, we commit the changes to the creds with <code>commit_creds()</code>.
 
-How did I figured this out? I knew that the <code>setuid</code> syscall did something very similar. <a href="http://lxr.free-electrons.com/source/kernel/sys.c#L655">By reading its code</a>, I could determine how to change the <code>uid</code> and <code>gid</code>, but without doing any authentication checks.
+How did I figure this out? I knew that the <code>setuid</code> syscall did something very similar. <a href="http://lxr.free-electrons.com/source/kernel/sys.c#L655">By reading its code</a>, I could determine how to change the <code>uid</code> and <code>gid</code>, but without doing any authentication checks.
 
 <hr />
 
