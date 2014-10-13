@@ -7,7 +7,6 @@ images_dir: "/assets/images/"
 
 # Build settings
 markdown: kramdown
-#permalink: pretty
 permalink: /:year/:month/:title
 highlighter: pygments
 excerpt_separator: <!--more-->
