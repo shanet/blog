@@ -124,7 +124,7 @@ Assuming your kernel has <code>CONFIG_STRICT_DEVMEM</code> disabled, we can proc
 unsigned int distance_from_page_boundary = (unsigned long)buffer % getpagesize();
 
 // Determine how far to seek into memory to find the buffer
-off_t offset = (page_frame_number << PAGE_SHIFT) + distance_from_page_boundary;
+uint64_t offset = (page_frame_number << PAGE_SHIFT) + distance_from_page_boundary;
 {% endhighlight %}
 
 Now let's open <code>/dev/mem</code> and seek to the offset we calculated:
@@ -142,6 +142,15 @@ int open_memory(void) {
    return fd;
 }
 
+void seek_memory(int fd, unsigned long offset) {
+   unsigned pos = lseek(fd, offset, SEEK_SET);
+
+   if(pos == -1) {
+      fprintf(stderr, "Failed to seek /dev/mem: %s\n", strerror(errno));
+      exit(1);
+   }
+}
+
 int mem_fd = open_memory();
 seek_memory(mem_fd, offset);
 {% endhighlight %}
@@ -150,7 +159,7 @@ Almost done! We have a file descriptor seeked to the right position inside <code
 
 {% highlight c linenos=table %}
 if(write(mem_fd, NEW_BUFFER, strlen(NEW_BUFFER)) == -1) {
-   printf("write failed: %s\n", strerror(errno));
+   printf("Write failed: %s\n", strerror(errno));
 }
 {% endhighlight %}
 
@@ -208,7 +217,7 @@ int main(void) {
    unsigned int distance_from_page_boundary = (unsigned long)buffer % getpagesize();
 
    // Determine how far to seek into memory to find the buffer
-   off_t offset = (page_frame_number << PAGE_SHIFT) + distance_from_page_boundary;
+   uint64_t offset = (page_frame_number << PAGE_SHIFT) + distance_from_page_boundary;
 
    // Open /dev/mem, seek the calculated offset, and
    // map it into memory so we can manipulate it
@@ -223,7 +232,7 @@ int main(void) {
    // Note that since the strings are the same length, there's no purpose in
    // copying the NUL terminator again
    if(write(mem_fd, NEW_BUFFER, strlen(NEW_BUFFER)) == -1) {
-      printf("write failed: %s\n", strerror(errno));
+      printf("Write failed: %s\n", strerror(errno));
    }
 
    printf("Buffer: %s\n", buffer);
