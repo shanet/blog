@@ -315,6 +315,6 @@ void seek_memory(int fd, unsigned long offset) {
 ### References
 <hr />
 
-[1] https://www.kernel.org/doc/Documentation/vm/pagemap.txt
-[2] https://www.kernel.org/doc/gorman/html/understand/understand005.html
-[3] https://www.blackhat.com/presentations/bh-europe-09/Lineberry/BlackHat-Europe-2009-Lineberry-code-injection-via-dev-mem.pdf
+[1] [https://www.kernel.org/doc/Documentation/vm/pagemap.txt](https://www.kernel.org/doc/Documentation/vm/pagemap.txt)<br />
+[2] [https://www.kernel.org/doc/gorman/html/understand/understand005.html](https://www.kernel.org/doc/gorman/html/understand/understand005.html)<br />
+[3] [https://www.blackhat.com/presentations/bh-europe-09/Lineberry/BlackHat-Europe-2009-Lineberry-code-injection-via-dev-mem.pdf](https://www.blackhat.com/presentations/bh-europe-09/Lineberry/BlackHat-Europe-2009-Lineberry-code-injection-via-dev-mem.pdf)
