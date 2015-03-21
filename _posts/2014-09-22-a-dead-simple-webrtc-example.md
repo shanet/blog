@@ -196,7 +196,7 @@ We handled the client doing the calling, but what about the answering client?
 
 Whenever we get a message from the server, we first check if the `RTCPeerConnection` object has been created yet. If not, call the start function, but not as the caller since we need to answer the incoming offer, not create a new offer.
 
-Next we determine if the message is a description or an ICE candidate. If a description, we set it as the remote description on our `RTCPeerConnection` object and then create an answer. Note that we are not sending the answer back through the signaling server. After all this work, we're ready to let the browser directly connect to the other client.
+Next we determine if the message is a description or an ICE candidate. If a description, we set it as the remote description on our `RTCPeerConnection` object and then create an answer. Note that we are sending the answer back through the signaling server. After all this work, we're ready to let the browser directly connect to the other client.
 
 If the message is an ICE candidate, all we need to do is add the candidate to the `RTCPeerConnection` object. If we have created an answer already, but haven't successfully connected to the caller, the browser will continue trying candidates until a connection is made or it runs out of candidates.
 
