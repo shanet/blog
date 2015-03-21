@@ -48,14 +48,14 @@ wss.broadcast = function(data) {
     }
 };
 {% endhighlight %}
- 
+
 Lastly, whenever we recieve a message from a client, we simply broadcast the message to all other clients (including itself. And that's all there is to it. Like I said, keeping it super simple.
 
 <hr />
 
 Now for the client side (where things get more complicated unforunately). That said, rather than dumping a whole mess of code, let's go through it piece by piece. It's a good idea to reference the WebRTC documentation while reading. I've found that the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/Guide/API/WebRTC) is the most complete.
 
-THe HTML is short and sweet. Take note of the two video element's IDs.
+The HTML is short and sweet. Take note of the two video element's IDs.
 
 {% highlight html linenos=table %}
 <html>
@@ -105,6 +105,8 @@ With those at the top of the file, we don't have to worry about those prefixes a
 
 Finally time for something fun! Next, we need to get our local video and audio stream. This is accomplished with the `getUserMedia` function. When the page is ready, we'll call a function aptly named `pageReady` which will connect to our signaling server and request a stream from the user's webcam and microphone.
 
+**Note:** If you plan to open a local file in Chrome you'll need to start Chrome with the `--allow-file-access-from-files` flag in order to use the `getUserMedia()` call.
+
 {% highlight javascript linenos=table %}
 function pageReady() {
     localVideo = document.getElementById('localVideo');
@@ -115,7 +117,7 @@ function pageReady() {
 
     var constraints = {
         video: true,
-        audio: true, 
+        audio: true,
     };
 
     if(navigator.getUserMedia) {
