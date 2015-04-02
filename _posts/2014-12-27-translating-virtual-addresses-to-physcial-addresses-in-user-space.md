@@ -10,7 +10,7 @@ As I was working my way through the chapter on memory management in *Understandi
 
 There are a few problems with trying to accomplish this task in user space:
 
-* The idea behind virtual memory is to provide an address space of contiguous memory. The memory for a process is most likely stored in non-contigous blocks.
+* The idea behind virtual memory is to provide an address space of contiguous memory. The memory for a process is most likely stored in non-contiguous blocks.
 * There's no guarentee that a page is even in the physical memory of the system. It could be in the swap or in a cache somewhere. There could be no physical address to get!
 * For obvious security reasons, a process does not have access to the raw memory of the system, even if the process's UID is 0.
 
