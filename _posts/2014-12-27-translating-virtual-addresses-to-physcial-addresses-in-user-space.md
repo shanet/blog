@@ -43,7 +43,7 @@ void* create_buffer(void) {
 
    // Lock the page in memory
    // Do this before writing data to the buffer so that any copy-on-write
-   // mechanisms while give us our own page locked in memory
+   // mechanisms will give us our own page locked in memory
    if(mlock(buffer, buf_size) == -1) {
       fprintf(stderr, "Failed to lock page in memory: %s\n", strerror(errno));
       exit(1);
@@ -159,7 +159,7 @@ Almost done! We have a file descriptor seeked to the right position inside <code
 
 {% highlight c linenos=table %}
 if(write(mem_fd, NEW_BUFFER, strlen(NEW_BUFFER)) == -1) {
-   printf("Write failed: %s\n", strerror(errno));
+   fprintf(stderr, "Write failed: %s\n", strerror(errno));
 }
 {% endhighlight %}
 
@@ -224,7 +224,7 @@ int main(void) {
    // CONFIG_STRICT_DEVMEM must be disabled for this
    int mem_fd = open_memory();
    seek_memory(mem_fd, offset);
-    
+
    printf("Buffer: %s\n", buffer);
    puts("Changing buffer through /dev/mem...");
 
@@ -232,7 +232,7 @@ int main(void) {
    // Note that since the strings are the same length, there's no purpose in
    // copying the NUL terminator again
    if(write(mem_fd, NEW_BUFFER, strlen(NEW_BUFFER)) == -1) {
-      printf("Write failed: %s\n", strerror(errno));
+      fprintf(stderr, "Write failed: %s\n", strerror(errno));
    }
 
    printf("Buffer: %s\n", buffer);
@@ -256,7 +256,7 @@ void* create_buffer(void) {
 
    // Lock the page in memory
    // Do this before writing data to the buffer so that any copy-on-write
-   // mechanisms while give us our own page locked in memory
+   // mechanisms will give us our own page locked in memory
    if(mlock(buffer, buf_size) == -1) {
       fprintf(stderr, "Failed to lock page in memory: %s\n", strerror(errno));
       exit(1);
