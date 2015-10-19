@@ -5,7 +5,7 @@ title: Aviation
 
 <div class="post-center">
     "Science, freedom, beauty, adventure: what more could you ask of life? Aviation combined all the elements I loved."
-    
+
     <div class="post-right">
         - Charles Lindbergh
     </div>
