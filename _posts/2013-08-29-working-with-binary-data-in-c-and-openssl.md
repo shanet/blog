@@ -4,10 +4,6 @@ title: Working with binary data in C and OpenSSL
 date: 2013-08-29
 ---
 
-<strong>Crypto disclaimer! I am NOT a crypto expert. Don't take the information here as 100% correct; you should verify it yourself. </strong><a href="http://happybearsoftware.com/you-are-dangerously-bad-at-cryptography.html">You are dangerously bad at crypto.</a>
-
-<hr />
-
 <a title="OpenSSL, RSA, AES and C++" href="http://shanetully.com/2012/06/openssl-rsa-aes-and-c/">My post on how to do basic AES and RSA encryption</a> has, for a while now, been one of the most popular posts on my blog, but I continually get questions about why people can't print out the encrypted messages like a normal string or write them to a file using <code>fprintf()</code>. The short answer is that encrypted messages are binary data, not ASCII strings with a NUL terminator and thus, they can't be treated as if they're ASCII data with a NUL terminator. You might be saying, "but I want to send an encrypted message to my friend as ASCII!".
 
 <strong>Well, time for base64.</strong>

@@ -14,7 +14,7 @@ Man-in-the-middle attacks are a serious problem when designing any cryptographic
 
 <strong>The solution</strong>
 
-There's no good protection from MITM, but there is a way to exchange secrets without worrying about a MITM without using a PKI and without checking fingerprints. <a href="https://en.wikipedia.org/wiki/Off-the-Record_Messaging">OTR (off-the-record) messaging</a> utilizes the <a href="https://en.wikipedia.org/wiki/Socialist_millionaire">Socialist Millionaires Protocol</a>. In a (very small) nutshell, SMP allows two parties to check if a secret they both hold are equal to one another without revealing the actual secret to one another (or anyone else). If the secrets are not equal, no other information is revealed except that the secrets are not equal. Because of this, a would-be MITM attacker cannot interfere with the SMP, except to make it fail, because the secret value is never exchanged by the two parties.
+There's no good protection from MITM, but there is a way to exchange secrets without worrying about a MITM without using a PKI and without checking fingerprints. <a href="https://en.wikipedia.org/wiki/Off-the-Record_Messaging">OTR (off-the-record) messaging</a> utilizes the <a href="https://en.wikipedia.org/wiki/Socialist_millionaire">Socialist Millionaire Protocol</a>. In a (very small) nutshell, SMP allows two parties to check if a secret they both hold are equal to one another without revealing the actual secret to one another (or anyone else). If the secrets are not equal, no other information is revealed except that the secrets are not equal. Because of this, a would-be MITM attacker cannot interfere with the SMP, except to make it fail, because the secret value is never exchanged by the two parties.
 
 <strong>How does it work?</strong>
 
@@ -81,13 +81,7 @@ import struct
 
 class SMP(object):
     def __init__(self, secret=None):
-        # Note: This constant is split up onto multiple lines to preserve the formatting on my blog.
-        # It's necessary to put it all on a single line or you'll get a syntax error.
-        self.mod = 24103124269210325885520760221975660748569505485024599426541169419581088316826122
-288900938582613416146732271414779040121965036489570505826319427307068050092230627347453410734066962
-460145893616597740410271692494532003787294341703258437786591981437631937768598695240889401955773461
-198435453015470437472077499697637500843089263392955599688824578724129938101291302945929999479263652
-64059284647209730384947211681434464714438488520940127459844288859336526896320919633919
+        self.mod = 2410312426921032588552076022197566074856950548502459942654116941958108831682612228890093858261341614673227141477904012196503648957050582631942730706805009223062734745341073406696246014589361659774041027169249453200378729434170325843778659198143763193776859869524088940195577346119843545301547043747207749969763750084308926339295559968882457872412993810129130294592999947926365264059284647209730384947211681434464714438488520940127459844288859336526896320919633919
         self.modOrder = (self.mod-1) / 2
         self.gen = 2
         self.match = False
