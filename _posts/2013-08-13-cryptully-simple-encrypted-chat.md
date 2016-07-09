@@ -47,4 +47,4 @@ The easiest way is to download the pre-built binaries from the <a href="https://
 
 More of a "give me the source code!" kind of person? Everything is available on <a href="https://github.com/shanet/Cryptully/">GitHub</a> licensed under the LGPL. If you would like to contribute, there are some open issues for feature enhancements on GitHub as well.
 
-Documentation on usage info, building info and more of the nitty-gritty of the protocol is available at <a href="https://cryptully.readthedocs.org/en/latest/index.html">https://cryptully.readthedocs.org/en/latest/index.html</a>.
+Documentation on usage info, building info and more of the nitty-gritty of the protocol is available at <a href="https://cryptully.readthedocs.io/en/latest/index.html">https://cryptully.readthedocs.io/en/latest/index.html</a>.

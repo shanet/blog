@@ -63,10 +63,10 @@ The version I have has 315 syscalls. To add our new one, I'm going to make a sys
 {% endhighlight %}
 
 <ul>
-<li><code>316</code>: The table already had 315 syscalls so the next number to use is 316.</li>
-<li><code>common</code>: Use <code>common</code> as the ABI.</li>
-<li><code>set_root</code>: The name I arbitrarily chose for my syscall.</li>
-<li><code>sys_set_root</code>: The entry point of my syscall following the naming scheme of prefixing the name of the syscall with <code>sys_</code>.</li>
+  <li><code>316</code>: The table already had 315 syscalls so the next number to use is 316.</li>
+  <li><code>common</code>: Use <code>common</code> as the ABI.</li>
+  <li><code>set_root</code>: The name I arbitrarily chose for my syscall.</li>
+  <li><code>sys_set_root</code>: The entry point of my syscall following the naming scheme of prefixing the name of the syscall with <code>sys_</code>.</li>
 </ul>
 
 <hr />
@@ -146,16 +146,15 @@ In my case, it looks like this:
 
 
 {% highlight makefile linenos %}
-obj-y     = fork.o exec_domain.o panic.o \
-	    cpu.o exit.o itimer.o time.o softirq.o resource.o \
-	    sysctl.o sysctl_binary.o capability.o ptrace.o timer.o user.o \
-	    signal.o sys.o kmod.o workqueue.o pid.o task_work.o \
-	    extable.o params.o posix-timers.o \
-	    kthread.o sys_ni.o posix-cpu-timers.o \
-	    hrtimer.o nsproxy.o \
-	    notifier.o ksysfs.o cred.o reboot.o \
-	    async.o range.o groups.o smpboot.o set_root.o
-
+obj-y = fork.o exec_domain.o panic.o \
+    cpu.o exit.o itimer.o time.o softirq.o resource.o \
+    sysctl.o sysctl_binary.o capability.o ptrace.o timer.o user.o \
+    signal.o sys.o kmod.o workqueue.o pid.o task_work.o \
+    extable.o params.o posix-timers.o \
+    kthread.o sys_ni.o posix-cpu-timers.o \
+    hrtimer.o nsproxy.o \
+    notifier.o ksysfs.o cred.o reboot.o \
+    async.o range.o groups.o smpboot.o set_root.o
 {% endhighlight %}
 
 

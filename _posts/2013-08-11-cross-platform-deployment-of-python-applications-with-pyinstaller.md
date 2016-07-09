@@ -175,4 +175,4 @@ What does it look like put all together on each platform?
 
 &nbsp;
 
-There's obviously a few visual discrepancies, but they are acceptable for me.  Users just need to download and run on Linux, Windows, or OS X. No installations necessary. For those that like to see a full, working example, the instructions for building Cryptully are at <a href="https://cryptully.readthedocs.org/en/latest/building.html">https://cryptully.readthedocs.org/en/latest/building.html</a>.
+There's obviously a few visual discrepancies, but they are acceptable for me.  Users just need to download and run on Linux, Windows, or OS X. No installations necessary. For those that like to see a full, working example, the instructions for building Cryptully are at <a href="https://cryptully.readthedocs.io/en/latest/building.html">https://cryptully.readthedocs.io/en/latest/building.html</a>.
