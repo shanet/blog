@@ -16,7 +16,7 @@ Well, was I wrong. I always assumed that the kernel headers should be in <code>/
 
 As it turns out, there are two symlinks, <code>build</code> and <code>source</code>, in <code>/lib/modules/$(uname -r)</code> that points to the directory the kernel was built in as can be seen in the directory listing below.
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 lrwxrwxrwx  1 root root      24 2011-11-05 00:06 build -> /usr/src/linux/linux-3.1
 drwxr-xr-x 10 root root    4096 2011-11-05 00:06 kernel
 drwxr-xr-x  2 root root    4096 2011-11-05 00:08 misc

@@ -11,7 +11,7 @@ The <a href="https://wiki.mozilla.org/WebAPI/ContactsAPI#Out_of_scope">Mozilla w
 <!--more-->
 A quick example of how to create a contact:
 
-{% highlight javascript linenos=table %}
+{% highlight javascript linenos %}
 var contact = new mozContact();
 contact.init({name: "John Doe", givenName: "John", familyName: "Doe"});
 

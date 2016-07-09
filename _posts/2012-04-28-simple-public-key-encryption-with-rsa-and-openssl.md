@@ -16,7 +16,7 @@ Last month I wrapped up my <a href="https://github.com/shanet/Alsa-Channel-Contr
 
 First up, to do anything with RSA we need a public/private key pair. I assume the reader knows the basic theory behind RSA so I won't go into the math inside a key pair. If you're interested, <a href="http://www.muppetlabs.com/~breadbox/txt/rsa.html">here's a good write-up</a> on the math behind RSA.
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 RSA *keypair = RSA_generate_key(2048, 3, NULL, NULL);
 {% endhighlight %}
 
@@ -28,7 +28,7 @@ So we have our key pair. Cool. So how do we encrypt something with it?
 <!--more-->
 
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 char *msg[2048/8]
 printf("Message to encrypt: ");
 fgets(msg, 2048/8, stdin);
@@ -55,7 +55,7 @@ So we have the message. Let's encrypt it! We allocate memory for a buffer to sto
 
 Now let's decrypt the message! Good news is that if you understood the encryption, decryption is very similar.
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 char *decrypt = malloc(RSA_size(keypair));
 if(RSA_private_decrypt(encrypt_len, (unsigned char*)encrypt, (unsigned char*)decrypt,
                        keypair, RSA_PKCS1_OAEP_PADDING) == -1) {
@@ -75,7 +75,7 @@ And that's it! You can now encrypt and decrypt messages with RSA!
 But let's get a little closer to having something that's actually useful. Let's see if we can write our encrypted message to a file, read it back, and then decrypt it.
 
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 FILE *out = fopen("out.bin", "w");
 fwrite(encrypt, sizeof(*encrypt),  RSA_size(keypair), out);
 fclose(out);
@@ -89,7 +89,7 @@ Writing to a file is actually pretty  easy. The one caveat to remember is that 
 
 Reading it back is also just as trivial.
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 printf("Reading back encrypted message and attempting decryption...\n");
 encrypt = malloc(RSA_size(keypair));
 out = fopen("out.bin", "r");
@@ -104,7 +104,7 @@ We free'd our encrypted message buffer after writing it to the file above as a p
 Let's also make sure that the data we wrote the file is really there by firing up a terminal and looking at an od dump of the file we wrote.
 
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 $ od -c out.bin
 0000000 P # 6 271 315 236 _ 344 267 % \v U 306 237 l 230
 0000020 240 311 210 / ? 221 355 313 c 356 O * F 264 355 316
@@ -128,7 +128,7 @@ $ od -c out.bin
 
 Here we can see why the file can't be read as a regular text file. Some of the values are outside of the range of regular characters! Compare this to the plain text of the message that's encrypted above (hint: it's "hello"):
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 $od -c out.txt
 0000000 h e l l o
 0000006
@@ -137,7 +137,7 @@ $od -c out.txt
 
 Another thing we can do is separate the key pair into a public key and a private key, because what good does sending both the private and public key to decrypt a message to someone do? Let's revisit the original code we used to generate the key pair.
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 RSA *keypair = RSA_generate_key(KEY_LENGTH, PUB_EXP, NULL, NULL);
 
 BIO *pri = BIO_new(BIO_s_mem());
@@ -165,7 +165,7 @@ printf("\n%s\n%s\n", pri_key, pub_key);
 We generate the key pair as before (this time with a generalized key length and public exponent), but now we used <code>BIO structs</code> to separate the public and private key. <a href="http://www.openssl.org/docs/crypto/bio.html">BIO's</a> are just an OpenSSL abstraction to make our lives easier. We use the <a href="http://www.openssl.org/docs/crypto/pem.html">PEM_write_bio_RSAPrivateKey</a> function and it's public key counterpart to copy the private and public keys into the newly created <code>BIO structs</code>. We then use the <code>BIO_pending</code> function to get how long our plain text character strings need to be to store the keys and allocate that amount of memory. From there, <code>BIO_read</code> copies the keys from the <code>BIO structs</code> into the character strings. Finally, let's print them out for fun. Here's an example of a key pair I generated via this method:
 
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 -----BEGIN RSA PRIVATE KEY-----
 MIIEowIBAAKCAQEAx5WRSyfFVe/JbPYnswghuMj5Nzo9YG82Z7ehyI/dbjkcdCIz
 TlKdQcMvSUZafAnM9p3xnBrgbKaNltaVNrZNyN6A2ou0PQgms7ykJ67G9Hbbs/uo
@@ -197,7 +197,7 @@ LKCldG8eOeGqaBnCG6GKXpzJ0kk4xey6Kj7+bdVlaBvVz0KGofVE
 {% endhighlight %}
 
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 -----BEGIN RSA PUBLIC KEY-----
 MIIBCAKCAQEAx5WRSyfFVe/JbPYnswghuMj5Nzo9YG82Z7ehyI/dbjkcdCIzTlKd
 QcMvSUZafAnM9p3xnBrgbKaNltaVNrZNyN6A2ou0PQgms7ykJ67G9Hbbs/uo0rPS
@@ -212,7 +212,7 @@ Ve6p8t8JIwpWSn7njBYH2XPNJj1NccpvD+kT1kGn6kWZfmFBzR7Bw2+rW+rpt02F
 
 So that's a lot of code! Let's put it all together into one complete example:
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 #include <openssl/rsa.h>
 #include <openssl/pem.h>
 #include <openssl/err.h>
@@ -325,7 +325,7 @@ int main(void) {
 
 To compile it (with debug symbols in case you want to debug it), make sure you have the OpenSSL library installed (libcrypto), and then run:
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 gcc -ggdb -Wall -Wextra -o rsa_test rsa_test.c -lcrypto
 
 {% endhighlight %}

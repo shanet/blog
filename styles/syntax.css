@@ -1,27 +1,24 @@
-.highlighttable {
-    width: 100%;
-    background-color: #272822;
-    font-size: 11px;
-    color: #f8f8f2;
-    padding: 5px 0;
-    table-layout: fixed;
-}
-
-.highlighttable .linenos {
-    width: 4%;
-    text-align: center;
-    color: #ffffff;
-    padding-left: 5px;
-    border-right: 3px solid #525252;
-    vertical-align: top;
-}
-
-.highlighttable .code {
-    padding-left: 5px;
-}
-
 .highlight {
+    background-color: #272822;
+    color: #f8f8f2;
+    font-size: 11px;
     overflow-x: auto;
+    padding: 5px 5px;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.highlight .gutter {
+    border-right: 3px solid #525252;
+    color: #ffffff;
+    padding: 0 10px;
+    text-align: center;
+    vertical-align: top;
+    width: 4%;
+}
+
+.highlight .code {
+    padding-left: 5px;
 }
 
 .highlight .c { color: #75715e } /* Comment */

@@ -10,7 +10,7 @@ My goal: Use a NumberPicker to allow a user to select a multiple of 5 in the ran
 
 First up: The XML.
 
-{% highlight xml linenos=table %}
+{% highlight xml linenos %}
 <NumberPicker android:id="@+id/np"
    android:layout_width="wrap_content"
    android:layout_height="wrap_content"
@@ -25,7 +25,7 @@ Because of the lack of XML properties for the NumberPicker, we must do all of th
 
 <!--more-->
 
-{% highlight java linenos=table %}
+{% highlight java linenos %}
 NumberPicker np = (NumberPicker) findViewById(R.id.np);
 np.setMaxValue(100);
 np.setMinValue(0);
@@ -36,7 +36,7 @@ This will set up our NumberPicker to display all the numbers between 0-100, but 
 
 But first, we need a an array containing the multiples of 5 from 0-100. Sure, hard coding these numbers would be fine, but that's no fun. Let's use a quick loop.
 
-{% highlight java linenos=table %}
+{% highlight java linenos %}
 String[] nums = new String[21];
 
 for(int i=0; i<nums.length; i++)
@@ -48,7 +48,7 @@ This quickly gives us the multiples of 5 between 0-100 without wasting loop iter
 
 Onto the NumberPicker. We need to make a few changes.
 
-{% highlight java linenos=table %}
+{% highlight java linenos %}
 NumberPicker np = (NumberPicker) findViewById(R.id.np);
 np.setMaxValue(nums.length-1);
 np.setMinValue(0);

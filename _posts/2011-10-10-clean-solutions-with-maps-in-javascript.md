@@ -10,7 +10,7 @@ So basically, I had 45 numbers to match to a given input. At first, I threw all 
 
 <!--more-->
 
-{% highlight javascript linenos=table %}
+{% highlight javascript linenos %}
 function getGhostCutoff(percent) {
     // In the map below, the first number is the N value, the second is L and the third is the percent with 5
     // corresponding to 50%, 0 90%, and 9 95%.

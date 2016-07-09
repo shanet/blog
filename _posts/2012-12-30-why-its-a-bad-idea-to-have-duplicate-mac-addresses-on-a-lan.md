@@ -10,7 +10,7 @@ The answer is in the title of this post, but let's pretend otherwise for a momen
 
 <!--more-->
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 $ time ./c_client --check 10.10.10.30; time ./c_client --check 10.10.10.30
 Pin 9: ON
 
@@ -28,7 +28,7 @@ sys     0m0.000s
 
 .003 seconds. That's the same speed I was experiencing with only one Arduino. So let's try the second Arduino.
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 $ time ./c_client --check 10.10.10.31; time ./c_client --check 10.10.10.31
 Pin 9: OFF
 
@@ -46,7 +46,7 @@ sys     0m0.000s
 
 There it is. 15 seconds and then back down to .003 seconds. If I checked this Arduino again, it was consistently near .003 seconds each time. But if I checked the first Arduino again...
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 $ time ./c_client --check 10.10.10.30; time ./c_client --check 10.10.10.31
 Pin 9: ON
 
@@ -66,7 +66,7 @@ sys     0m0.004s
 
 Upon firing up Wireshark and watching exactly what data was being sent down the wire I saw that when switching servers, the data I wanted sent to the server was being sent 5 times before the server would respond, whereas with consecutive connections to the same server, it responded immediately to the request from my computer. But then I saw the Ethernet frame info of the packets in Wireshark and the MAC address source and destination fields and it dawned on me that the MAC addresses were the same for the Arduinos so the switch was confused which Arduino to send the data to. The problem was that when I got the second Arduino, I didn't pay enough attention and only changed the IP address in the sketch uploaded to it and not the MAC. So now both Arduinos were reporting the same MAC address, which is a big problem. The offending code:
 
-{% highlight c++ linenos=table %}
+{% highlight c++ linenos %}
 // IMPORTANT: The IP AND MAC MUST BE CHANGED to something unique for each Arduino.
 // The gateway will probably need changed as well.
 byte ip[]      = {10, 10, 10, 31};

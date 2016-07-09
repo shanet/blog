@@ -8,6 +8,6 @@ images_dir: "/assets/images/"
 # Build settings
 markdown: kramdown
 permalink: /:year/:month/:title
-highlighter: pygments
 excerpt_separator: <!--more-->
 paginate: 5
+gems: [jekyll-paginate]

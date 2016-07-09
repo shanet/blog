@@ -31,14 +31,14 @@ PyInstaller will package all the dependencies of my program into a single binary
 
 PyInstaller relies on a spec file to tell it how to package your program. By default, you just give it the directory of your source files and it will look at your imports to determine what the dependencies are and generate a spec file for you. This does a surprisingly good job too, but things get a little tricky when adding extra files like images and, in the case of Windows, the C++ runtime libraries. Basic usage of PyInstaller is:
 
-{% highlight bash linenos=table %}
+{% highlight bash linenos %}
 $ ./pyinstaller.py [path to project]/[path to spec file]
 
 {% endhighlight %}
 
 Let's take a look at the spec file I'm using for Cryptully.
 
-{% highlight python linenos=table %}
+{% highlight python linenos %}
 # -*- mode: python -*-
 import sys
 
@@ -95,7 +95,7 @@ if sys.platform == 'darwin':
 
 There's a few interesting parts to this spec file that aren't present in the default generated spec file. One of those being the images. PyInstaller will only put Python code in your binary by default so you need to tell it what other files to include. In my case, this meant adding all the images used in the program like so:
 
-{% highlight python linenos=table %}
+{% highlight python linenos %}
 a.datas + [('images/light/delete.png', 'cryptully/images/light/delete.png', 'DATA'),
 
 {% endhighlight %}
@@ -104,7 +104,7 @@ The first argument is the location the resource will be available at in the pack
 
 Loading the resource when running from the binary is not exactly straightforward. In my case, I also wanted Cryptully to run as a Python script and as an egg. This meant a lot of different paths for loading resources, but a relatively short function translates a relative resource path, to an absolute one.
 
-{% highlight python linenos=table %}
+{% highlight python linenos %}
 def getAbsoluteResourcePath(relativePath):
     try:
         # PyInstaller stores data files in a tmp folder refered to as _MEIPASS
@@ -137,7 +137,7 @@ def getAbsoluteResourcePath(relativePath):
 
 A special consideration must be made for Windows where is it necessary to static link the C++ runtimes from the Visual C++ Redistributable package, otherwise a user will need to install that. This boils down to:
 
-{% highlight python linenos=table %}
+{% highlight python linenos %}
 a.binaries + [('msvcp100.dll', 'C:\\Windows\\System32\\msvcp100.dll', 'BINARY'),
               ('msvcr100.dll', 'C:\\Windows\\System32\\msvcr100.dll', 'BINARY')]
 if sys.platform == 'win32' else a.binaries,
@@ -151,7 +151,7 @@ It is completely beyond me why Microsoft feels it is necessary to make developer
 
 Finally, PyInstaller will, by default,  create a UNIX-style binary on OS X rather than the .app that OS X users are familiar with. A few lines in the spec file tells PyInstaller to create a .app as well:
 
-{% highlight python linenos=table %}
+{% highlight python linenos %}
 if sys.platform == 'darwin':
    app = BUNDLE(exe,
                 name='cryptully.app',

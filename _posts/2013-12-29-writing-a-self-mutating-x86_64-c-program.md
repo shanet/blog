@@ -20,7 +20,7 @@ In this case, we're only concerned with the text segment. This is where the inst
 
 Changing the permissions of a page can be done with the <code>mprotect()</code> function. The only tricky part of <code>mprotect()</code> is that the pointer you give it must be aligned to a page boundary. Here is a function that given a pointer, moves the pointer to the page boundary and then changes that page to read, write, and execute permissions.
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 int change_page_permissions_of_address(void *addr) {
     int page_size = getpagesize();
     addr -= (unsigned long)addr % page_size;
@@ -43,7 +43,7 @@ Now that we can write to the text segment, the next question is: what do we writ
 
 Let's start with something simple. Say I have the following function:
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 void foo(void) {
     int i=0;
     i++;
@@ -55,7 +55,7 @@ void foo(void) {
 
 To accomplish this goal, we'll need to see not just the instructions that <code>foo()</code> compiles to, but the actual machine code that <code>foo()</code> is assembled to. Let's put <code>foo()</code> is a full program so it's easier to do this.
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 #include <stdio.h>
 
 void foo(void);
@@ -73,15 +73,15 @@ void foo(void) {
 
 Now that we have <code>foo()</code> in a full C program, we can go ahead and compile it. Let's go ahead and compile it with:
 
-{% highlight bash linenos=table %}$ gcc -o foo foo.c{% endhighlight %}
+{% highlight bash linenos %}$ gcc -o foo foo.c{% endhighlight %}
 
 This is where things start to get interesting. We need to disassemble the binary gcc created for us to see the instructions that comprise <code>foo()</code>. We can do this with the objdump utility like so:
 
-{% highlight bash linenos=table %}$ objdump -d foo > foo.dis{% endhighlight %}
+{% highlight bash linenos %}$ objdump -d foo > foo.dis{% endhighlight %}
 
 If you open the foo.dis file in a text editor, around line 128 (depending on the version of gcc used, <code>foo</code> may have slightly different instructions) you should see the disassembled <code>foo()</code> function. It looks like the following:
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 0000000000400538 <foo>
   400538:	55                   	push   %rbp
   400539:	48 89 e5             	mov    %rsp,%rbp
@@ -105,7 +105,7 @@ If you have never worked with x86_64 code before, this might look a little forei
 
 That said, if we want to change the value that i is incremented by, we need to change the following instruction:
 
-{% highlight text linenos=table %}400547:	83 45 fc 01          	addl   $0x1,-0x4(%rbp){% endhighlight %}
+{% highlight text linenos %}400547:	83 45 fc 01          	addl   $0x1,-0x4(%rbp){% endhighlight %}
 
 Before going any further though, let's break this instruction down.
 
@@ -189,7 +189,7 @@ Why not do both?
 
 Let's look at the objdump method first. The disassembly of <code>foo()</code> up to the <code>addl</code> instruction we're interested in is:
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 0000000000400538 <foo>:
   400538:	55                   	push   %rbp
   400539:	48 89 e5             	mov    %rsp,%rbp
@@ -202,7 +202,7 @@ The function starts at <code>400538</code> and the byte we're interested in is a
 
 We can confirm this by writing a short function to print the instructions of a given function. Here's the modified program from above:
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 #include <stdio.h>
 
 void foo(void);
@@ -238,7 +238,7 @@ Note that to determine the length of <code>foo()</code>, we added an empty funct
 
 The output of running this:
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 $  ./foo
 0x40056c ( 0): 55
 0x40056d ( 1): 48
@@ -287,7 +287,7 @@ At address <code>0x40057e</code> is our <code>0x1</code> byte. As you can see, t
 
 We're finally read to change some code! Given a pointer to <code>foo()</code>, we can create an unsigned char pointer to the exact byte we want to change as such:
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 unsigned char *instruction = (unsigned char*)foo_addr + 18;
 
 *instruction = 0x2A;
@@ -297,7 +297,7 @@ Assuming we did everything write, this will change the immediate value in the <c
 
 And putting it all together:
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 #include <stdio.h>
 #include <unistd.h>
 #include <errno.h>
@@ -353,11 +353,11 @@ int change_page_permissions_of_address(void *addr) {
 
 Compile it with:
 
-{% highlight bash linenos=table %}$ gcc -std=c99 -D_BSD_SOURCE -o foo foo.c{% endhighlight %}
+{% highlight bash linenos %}$ gcc -std=c99 -D_BSD_SOURCE -o foo foo.c{% endhighlight %}
 
 Running it gives the output:
 
-{% highlight bash linenos=table %}
+{% highlight bash linenos %}
 $ ./foo
 Calling foo...
 i: 1
@@ -375,7 +375,7 @@ How would we go about starting a shell when we call <code>foo()</code> though? T
 
 If we're going to change <code>foo()</code> to exec a shell, we're going to need the instructions for doing as such. Fortunately for us, the security community loves using machine code for exec'ing shells so this is easy to get our hands on. A quick search for "x86_64 shellcode" and we have the instructions for exec'ing a shell. These are as follows:
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 char shellcode[] =
     "\x48\x31\xd2"                              // xor    %rdx, %rdx
     "\x48\x31\xc0"                              // xor    %rax, %rax
@@ -425,7 +425,7 @@ A full list of syscalls can be found at <a href="http://blog.rchapman.org/post/3
 
 If you're familiar with the C prototype for the <code>execve()</code> function (below for reference), you'll see that how similar the syscall setup is to calling the function from a C program.
 
-{% highlight c linenos=table %}int execve(const char *filename, char *const argv[], char *const envp[]);{% endhighlight %}
+{% highlight c linenos %}int execve(const char *filename, char *const argv[], char *const envp[]);{% endhighlight %}
 
 For those familiar with x86, it's important to note that the syscall procedure is quite different between x86 and x86_64. The syscall instruction does not exist in the x86 instruction set. In x86 syscalls are made by triggering an interrupt. Furthermore, in Linux, the syscall number for <code>execve</code> is different between x86 and x86_64. (11 on x86; 59 on x86_64).
 
@@ -499,7 +499,7 @@ Wow! That's a lot of info. Thankfully, we're ready to change <code>foo()</code> 
 
 Instead of changing a single byte in <code>foo()</code> like before, we now want to replace <code>foo()</code> entirely. This looks like a job for <code>memcpy()</code>. Given a pointer to the start of <code>foo()</code> and a pointer to our shellcode, we can copy the shellcode to the location of <code>foo()</code> as such:
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
     void *foo_addr = (void*)foo;
 
     // http://www.exploit-db.com/exploits/13691/
@@ -524,7 +524,7 @@ The only thing we have to be careful of writing past the end of <code>foo()</cod
 Awesome! Let's put it all together into a final program now.
 
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 #include <stdio.h>
 #include <unistd.h>
 #include <errno.h>
@@ -590,11 +590,11 @@ int change_page_permissions_of_address(void *addr) {
 
 Compile it with:
 
-{% highlight bash linenos=table %}$ gcc -o mutate mutate.c{% endhighlight %}
+{% highlight bash linenos %}$ gcc -o mutate mutate.c{% endhighlight %}
 
 Time to rub your lucky rabbit foot and execute this thing.
 
-{% highlight bash linenos=table %}
+{% highlight bash linenos %}
 $ ./mutate
 Calling foo
 i: 1

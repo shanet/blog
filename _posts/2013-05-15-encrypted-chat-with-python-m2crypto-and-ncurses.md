@@ -10,7 +10,7 @@ Enter my new project, <a title="The code!" href="https://github.com/shanet/Crypt
 
 The project is pretty straightforward right now, but let's look at the a few components. First, the crypto functions that encrypt and decrypt data between the server and client with AES.
 
-{% highlight python linenos=table %}
+{% highlight python linenos %}
 def generateKeys(self, bits=2048):
     # Generate the keypair (65537 as the public exponent)
     self.localKeypair = M2Crypto.RSA.gen_key(bits, 65537, self.__callback)
@@ -28,7 +28,7 @@ The generate keys function is generates an RSA keypair using the M2Crypto RSA ke
 
 The RSA encryption and decryption functions are very simple. Since this is intended to encrypt data between a client and server, I only needed to implement a function to encrypt data with a public key and decrypt it with a private key.
 
-{% highlight python linenos=table %}
+{% highlight python linenos %}
 def rsaEncrypt(self, message):
     self.__checkRemoteKeypair()
     try:
@@ -49,7 +49,7 @@ Essentially, these function just call M2Crypto's <code>public_encrypt</code> and
 
 The AES functions are slightly different than the RSA functions.
 
-{% highlight python linenos=table %}
+{% highlight python linenos %}
 def aesEncrypt(self, message):
     try:
         cipher = self.__aesGetCipher(self.ENCRYPT)
@@ -77,7 +77,7 @@ For convenience, I wrote a wrapper class around Python's socket class called en
 
 The handshake between the client and server involves exchanging public keys and then the server encrypting the AES key, IV, and salt with the server's public key and then sending them to the client. After the handshake, all communication is done over AES.
 
-{% highlight python linenos=table %}
+{% highlight python linenos %}
 def doServerHandshake(sock):
     # Send the server's public key
     localPubKey = sock.crypto.getLocalPubKeyAsString()
@@ -125,7 +125,7 @@ def doClientHandshake(sock):
 
 Of course, any chat program should be asynchronous when sending and receiving messages. This means that I needed a send thread and a receive thread. This is simple enough with Python, but the problem is that once the send and receive threads are started, the main thread has nothing left to do. By default, a thread in Python will continue running after the main thread has exited. This was a problem for me because it meant that stopping the program was problematic since I couldn't just kill the threads when the main thread caught a <code>SIGINT</code>. The solution to this is to make the threads into daemon threads. In Python, a daemon thread is one that will stop when the main thread has exited. However, this brings up another problem that once the send and receive threads are started, the main thread would exit and thus, kill the daemon threads. The solution is to put the main thread into an infinite sleep loop that will keep it alive so it can terminate on signals and when it dies, it takes the send and receive threads along with it. All said and done, it looks like this:
 
-{% highlight python linenos=table %}
+{% highlight python linenos %}
 # Start the sending and receiving threads
 threads.CursesSendThread(sock, screen, chatWindow, textboxWindow, textbox).start()
 threads.CursesRecvThread(sock, screen, chatWindow, textboxWindow).start()
@@ -138,7 +138,7 @@ while True:
 
 <code>CursesSendThread</code> and <code>CursesRecvThread</code> are subclasses of Python's <code>threading.Thread</code> class. In their <code>__init__</code> functions, they make themselves daemon threads with:
 
-{% highlight python linenos=table %}
+{% highlight python linenos %}
 Thread.__init__(self)
 self.daemon = True
 
@@ -146,7 +146,7 @@ self.daemon = True
 
 The threads also caused some concurrency issues with the Curses UI. However, this was easily solved by making all the Curses calls in the threads into a critical section and wrapping them inside a shared mutex. The blocking calls (waiting for the user to enter input into the textbox in the send thread and waiting for data from the client in the receive thread) are the only calls outside of the critical section. The <code>run()</code> function of the threads looks a little something like this:
 
-{% highlight python linenos=table %}
+{% highlight python linenos %}
 def run(self):
     while True:
         chatInput = self.textbox.edit(self.inputValidator)

@@ -16,7 +16,7 @@ First, and most importantly, I needed a card reader! After looking into cards re
 
 With a card reader acquired it was time to turn my attention to the database. This part was easy, I set up a new database on our web server with the following structure:
 
-{% highlight sql linenos=table %}
+{% highlight sql linenos %}
 cardID varchar primary key
 accessID varchar
 points int
@@ -36,7 +36,7 @@ So, let's take a look at some of the more interesting parts of the code.
 
 First up, the card swipe code.
 
-{% highlight python linenos=table %}
+{% highlight python linenos %}
 def getCardSwipe():
    # Compile the regex for pulling the card ID from all the data on a card
    regex = re.compile(";(.+)=")
@@ -64,7 +64,7 @@ The whole function is pretty simple. We read in the card and sanitize the input 
 
 What about adding a new card to the database? Easy!
 
-{% highlight python linenos=table %}
+{% highlight python linenos %}
 # Get the access ID associated with this card ID
 accessID = sanitizeInput(raw_input("Access ID: "))
 
@@ -81,7 +81,7 @@ This is an exert from the <code>insertCard</code> function. When adding a new ca
 
 How about actually awarding points to a user when checking in? Ironically, this is the most complicated processes of the whole program. First, we go ahead and get the card swipe, and then we get the last check-in time. The whole purpose of the last check-in timestamp is to prevent someone from swiping their card five times really fast and racking up illegitimate points (yes, it's a little over the top for a bag of Skittles, but we hope to give away more valuable prizes in the future). Thus, a user is only allowed to check-in once per hour. Unfortunately, this is made more difficult considering the database server is on mountain time and our local system is on eastern time. We need to do some timezone adjusting here. Let's take a look:
 
-{% highlight python linenos=table %}
+{% highlight python linenos %}
 # Verify the check-in times
 curDate = datetime.now()
 lastCheckin = result[0];
@@ -116,7 +116,7 @@ Holy if conditions Batman! Well, rather than dealing with all the timezone funct
 
 As for actually awarding points, it's just a simple SQL query. Consider the following:
 
-{% highlight python linenos=table %}
+{% highlight python linenos %}
 # Update the database with the new points
 cursor.execute("UPDATE points SET points=points+" + pointValue + " WHERE cardID='" + cardID + "';")
 # Grab the access ID that just checked-in to print confirmation
@@ -129,7 +129,7 @@ print result[0] + " +" + pointValue + " points"
 
 And for the last major feature of the program. Let's display a leaderboard of everyone in the database. This, too, is a simple SQL query, just with some pretty formatting done to the results.
 
-{% highlight python linenos=table %}
+{% highlight python linenos %}
 # Either get all access ID's and points from DB or just one access ID
 if accessID.lower() == "all":
    cursor.execute("SELECT accessID, points FROM points ORDER BY points DESC;")
@@ -158,7 +158,7 @@ This chunk of code either shows a leaderboard of all users or a single user's po
 
 Now, let's talk security. No one likes SQL injections. Well, except for the injectors. I doubt anyone would want to try and damage our database, but it never hurts to always be thinking about security. Hence, here's a little function to sanitize any input that will be included in a query:
 
-{% highlight python linenos=table %}
+{% highlight python linenos %}
 def sanitizeInput(input):
    # Keep a copy of the possibly mixed-case input
    origInput = input

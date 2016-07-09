@@ -12,14 +12,14 @@ Note that at the end of this process, if you want to try it out, you'll need to 
 
 That said, let's dive in and see what files need modified. If you haven't already, you'll want to get a copy of the source with:
 
-{% highlight bash linenos=table %}
+{% highlight bash linenos %}
 $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
 {% endhighlight %}
 
 
 Specifically, I'm working off of commit <code>a64f0f8c23740dc78c5f9aaee3904d0d3df4bfb5</code> so it may be helpful to run:
 
-{% highlight bash linenos=table %}
+{% highlight bash linenos %}
 $ git checkout a64f0f8c23740dc78c5f9aaee3904d0d3df4bfb5
 {% endhighlight %}
 
@@ -31,7 +31,7 @@ Linux is massive and I'm no magician so I needed a little help on where to start
 <hr />
 
 First up is the syscall table. This is located at <code>arch/x86/syscalls/syscall_64.tbl</code>. Per the comment at the top of the file, the format of this file is as follows:
-{% highlight bash linenos=table %}
+{% highlight bash linenos %}
 <number> <abi> <name> <entry point>
 {% endhighlight %}
 
@@ -58,7 +58,7 @@ Let's explain what each of these fields mean.
 
 The version I have has 315 syscalls. To add our new one, I'm going to make a syscall 316 that looks as such:
 
-{% highlight bash linenos=table %}
+{% highlight bash linenos %}
 316	common	set_root		sys_set_root
 {% endhighlight %}
 
@@ -76,7 +76,7 @@ Moving on, now that we have our syscall in the syscall table, we have to provide
 The function prototype for our entry function will look like the following:
 
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 asmlinkage long sys_set_root(void);
 {% endhighlight %}
 
@@ -89,7 +89,7 @@ The curious part of this line is the <code>asmlinkage</code>. This is a macro th
 
 At this point, we're ready to actually write our syscall. To do this, I created a new file, <code>kernel/set_root.c</code>. The contents of that file are:
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 #include <linux/kernel.h>
 #include <linux/init.h>
 #include <linux/sched.h>
@@ -145,7 +145,7 @@ This is very simple; at the top of the file, just add <code>sys_root.o</code> to
 In my case, it looks like this:
 
 
-{% highlight makefile linenos=table %}
+{% highlight makefile linenos %}
 obj-y     = fork.o exec_domain.o panic.o \
 	    cpu.o exit.o itimer.o time.o softirq.o resource.o \
 	    sysctl.o sysctl_binary.o capability.o ptrace.o timer.o user.o \
@@ -168,7 +168,7 @@ So how to do we use this thing? More precisely, our syscall doesn't have a nice 
 Here's a short test program:
 
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/types.h>
@@ -217,7 +217,7 @@ That was my first adventure into writing kernel code. And you know what, it wasn
 Finally, to wrap everything up, here's a patch of all my changes to the kernel.
 
 
-{% highlight diff linenos=table %}
+{% highlight diff linenos %}
 From a64f0f8c23740dc78c5f9aaee3904d0d3df4bfb5 Mon Sep 17 00:00:00 2001
 From: shane tully <shane@shanetully.com>
 Date: Sun, 30 Mar 2014 00:26:22 -0400

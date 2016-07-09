@@ -8,7 +8,7 @@ As you're not aware, a few months ago I wrote a simple server/client for changin
 
 <!--more-->
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 unsigned int key;
 unsigned int keycode;
 
@@ -38,7 +38,7 @@ Short and to the point; I love it. I'll leave it to you to look up the documenta
 The easiest way to determine a key symbol is the <code>xev</code> program (on Ubuntu: <code>sudo apt-get install x11-utils</code>).  Upon running xev and pressing the media key we want we get output such as:
 
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 KeyPress event, serial 35, synthetic NO, window 0x3a00001,
     root 0xed, subw 0x0, time 2453567526, (1306,520), root:(4908,543),
     state 0x0, keycode 172 (keysym 0x1008ff14, XF86AudioPlay), same_screen YES,
@@ -53,7 +53,7 @@ Look at that, there's the key symbol we need: "0x1008ff14". This also gives us t
 Using the same method, I also determined the previous, next, and stop key symbols. Now we can just <code>#define</code> in our code as such:
 
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 #define XF86AudioPlay 0x1008ff14
 #define XF86AudioNext 0x1008ff17
 #define XF86AudioPrev 0x1008ff16
@@ -64,7 +64,7 @@ Using the same method, I also determined the previous, next, and stop key symbol
 So we have everything we need to simulate a key press. Let's write a quick and dirty program to test it out for us. Putting everything together and adding some simple command line parsing:
 
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 #include <stdio.h>
 #include <string.h>
 
@@ -122,7 +122,7 @@ int main(int argc, char **argv) {
 
 And to compile it (note the two X libraries being linked):
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 gcc -Wall -Wextra -o mm mm.c -lX11 -lXtst
 
 {% endhighlight %}

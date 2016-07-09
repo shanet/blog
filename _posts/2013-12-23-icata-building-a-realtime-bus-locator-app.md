@@ -19,7 +19,7 @@ The annoying part of parsing the data from the server was the KML file. KML, or 
 
 Downloading and parsing the file:
 
-{% highlight objective-c linenos=table %}
+{% highlight objective-c linenos %}
 - (void) downloadAndParseRouteKmlForFile:(NSString*)filename {
    self.routeKml = [KMLParser parseKMLAtURL:[NSURL URLWithString:[NSString stringWithFormat:
                    @"%s/InfoPoint/Resources/Traces/%@", kServerHostname, filename]]];
@@ -29,7 +29,7 @@ Downloading and parsing the file:
 
 Converting the parsed KML data to GMSPolyLines:
 
-{% highlight objective-c linenos=table %}
+{% highlight objective-c linenos %}
 - (void) addRoutesPathOverlay {
     for(SPTRoute *route in self.routes) {
         for(KMLPlacemark *placemark in [route.routeKml placemarks]) {
@@ -88,7 +88,7 @@ That said, the finished product looked as such:
 
 I especially like how the route images are colored dynamically when the app is first started. This made it very quick to change the route image if necessary. It's also pretty simple to change the color of an image. See below.
 
-{% highlight objective-c linenos=table %}
+{% highlight objective-c linenos %}
 // http://stackoverflow.com/questions/3514066/how-to-tint-a-transparent-png-image-in-iphone
 + (UIImage *) tintImage:(UIImage*)image withColor:(UIColor *)tintColor {
     UIGraphicsBeginImageContextWithOptions (image.size, NO, [[UIScreen mainScreen] scale]);

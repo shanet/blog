@@ -34,7 +34,7 @@ I couldn't find a symbol for an LED strand so that's what the LED at the bottom 
 
 The hardware is only half the story. The code is even more confusing that the circuit above. First, in order to make the IR transmitter modulate at 38kHz, the Arduino's timers must be utilized. Thankfully, Ken Shirriff has an excellent IR library for Arduino. With <a href="http://www.righto.com/2010/03/detecting-ir-beam-break-with-arduino-ir.html">some help from his blog</a>, I was able to create a single function that enabled the IR transmitters to modulate at 38kHz.
 
-{% highlight c++ linenos=table %}
+{% highlight c++ linenos %}
 #define TIMER_PWM_PIN        3
 #define TIMER_ENABLE_PWM     (TCCR2A |= _BV(COM2B1))
 #define TIMER_DISABLE_INTR   (TIMSK2 = 0)
@@ -42,7 +42,7 @@ The hardware is only half the story. The code is even more confusing that the ci
 {% endhighlight %}
 
 
-{% highlight c++ linenos=table %}
+{% highlight c++ linenos %}
 void enableIrTransmitters(int khz) {
    // Disable the timer 2 Interrupt (which is used for receiving IR)
    TIMER_DISABLE_INTR;
@@ -68,7 +68,7 @@ void enableIrTransmitters(int khz) {
 
 Lastly, the <code>setup()</code> function which sets the pin mode for the receivers, calls the <code>enableIrTransmitters()</code> function, and unrelated to the IR, seeds the random number generator, and starts the LED object.
 
-{% highlight c++ linenos=table %}
+{% highlight c++ linenos %}
 void setup() {
    pinMode(IR_DETECT_UPSTAIRS_PIN, INPUT);
    pinMode(IR_DETECT_DOWNSTAIRS_PIN, INPUT);
@@ -87,7 +87,7 @@ void setup() {
 
 To control the LEDs, <a href="https://github.com/adafruit/Adafruit-WS2801-Library">Adafruit has a wonderful Arduino library</a> for controlling WS2801 LEDs. This allows my code to only worry about generating the proper RGB values and letting the library handle sending them to the LEDs. A simple example of using the library is the function below which fades from one color to another. The `lights` object is an instance of the Adafruit_WS2801 class.
 
-{% highlight c++ linenos=table %}
+{% highlight c++ linenos %}
 void fade_color(unsigned char old_red, unsigned char new_red, unsigned char old_green, unsigned char new_green,
                 unsigned char old_blue, unsigned char new_blue, int steps, int delay_time) {
 
@@ -118,7 +118,7 @@ void fade_color(unsigned char old_red, unsigned char new_red, unsigned char old_
 
 There are a few more light patterns in the code and a random one is selected each time a beam break is detected, but they get lengthy and complicated so I won't go into them here. The <code>loop()</code> is what triggers these by simply checking for a signal from the IR receivers.
 
-{% highlight c++ linenos=table %}
+{% highlight c++ linenos %}
 void loop() {
    if(!digitalRead(IR_DETECT_UPSTAIRS_PIN)) {
       show_stair_lights(DOWN);

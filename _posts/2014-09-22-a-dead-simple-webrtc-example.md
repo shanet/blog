@@ -17,7 +17,7 @@ Before getting into the actual WebRTC APIs, it's best to understand a simple sig
 
 Let's take a look at the server. It uses the `ws` module which can installed with: `npm install ws`.
 
-{% highlight javascript linenos=table %}
+{% highlight javascript linenos %}
 var WebSocketServer = require('ws').Server;
 
 var wss = new WebSocketServer({port: 3434});
@@ -41,7 +41,7 @@ And that's the whole server. For the finer details of the syntax it's best to re
 
 First we create a `WebSocketServer` on port 3434 (chosen completely arbitrarily) and then create a function that given a message will broadcast said message to all connected clients as such:
 
-{% highlight javascript linenos=table %}
+{% highlight javascript linenos %}
 wss.broadcast = function(data) {
     for(var i in this.clients) {
         this.clients[i].send(data);
@@ -57,7 +57,7 @@ Now for the client side (where things get more complicated unforunately). That s
 
 The HTML is short and sweet. Take note of the two video element's IDs.
 
-{% highlight html linenos=table %}
+{% highlight html linenos %}
 <html>
     <head>
         <script src="webrtc.js"></script>
@@ -80,7 +80,7 @@ The HTML is short and sweet. Take note of the two video element's IDs.
 
 Now for the Javascript. First up, we create a few globals.
 
-{% highlight javascript linenos=table %}
+{% highlight javascript linenos %}
 var localVideo;
 var remoteVideo;
 var peerConnection;
@@ -94,7 +94,7 @@ var peerConnectionConfig = {'iceServers': [{'url': 'stun:stun.services.mozilla.c
 
 Because WebRTC is still new, many of the class names are prefixed. Many examples will use `adapter.js` which accounts for these prefixes. Given that there's only one function and three classes we need for this example, I opted to not use `adapter.js` as it eliminates a dependency. That said:
 
-{% highlight javascript linenos=table %}
+{% highlight javascript linenos %}
 navigator.getUserMedia = navigator.getUserMedia || navigator.mozGetUserMedia || navigator.webkitGetUserMedia;
 window.RTCPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
 window.RTCIceCandidate = window.RTCIceCandidate || window.mozRTCIceCandidate || window.webkitRTCIceCandidate;
@@ -107,7 +107,7 @@ Finally time for something fun! Next, we need to get our local video and audio s
 
 **Note:** If you plan to open a local file in Chrome you'll need to start Chrome with the `--allow-file-access-from-files` flag in order to use the `getUserMedia()` call.
 
-{% highlight javascript linenos=table %}
+{% highlight javascript linenos %}
 function pageReady() {
     localVideo = document.getElementById('localVideo');
     remoteVideo = document.getElementById('remoteVideo');
@@ -130,7 +130,7 @@ function pageReady() {
 
 Let's talk about the `getUserMedia` callbacks first. On success, we assign the given video stream to the global `localStream` variable we created. Then we attach that stream to the `localVideo` video element. This will display the video stream from the webcam in the video element. Note that the local video element has the muted attribute set in the HTML. For local video we don't want to output our local audio stream, otherwise this will cause echos and feedback. On error just log it to the console.
 
-{% highlight javascript linenos=table %}
+{% highlight javascript linenos %}
 function getUserMediaSuccess(stream) {
     localStream = stream;
     localVideo.src = window.URL.createObjectURL(stream);
@@ -155,7 +155,7 @@ Next, we're going to assign some callback functions. So what's an ICE candidate?
 
 Lastly, if we're the caller (we clicked the start button), we create an offer which tells the other client how to interact with us once the network connection is established. This includes info about ourselves such as video and audio formats. The formal name for this called Session Description Protocol or SDP; hence the callback `gotDescription`. Once we have an offer (`gotDescription` was called), we set the local description to it and then send it to the signaling server to be sent to the other client.
 
-{% highlight javascript linenos=table %}
+{% highlight javascript linenos %}
 function start(isCaller) {
     peerConnection = new RTCPeerConnection(peerConnectionConfig);
     peerConnection.onicecandidate = gotIceCandidate;
@@ -200,7 +200,7 @@ Next we determine if the message is a description or an ICE candidate. If a desc
 
 If the message is an ICE candidate, all we need to do is add the candidate to the `RTCPeerConnection` object. If we have created an answer already, but haven't successfully connected to the caller, the browser will continue trying candidates until a connection is made or it runs out of candidates.
 
-{% highlight javascript linenos=table %}
+{% highlight javascript linenos %}
 function gotMessageFromServer(message) {
     if(!peerConnection) start(false);
 

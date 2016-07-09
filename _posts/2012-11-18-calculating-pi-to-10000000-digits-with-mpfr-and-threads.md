@@ -28,7 +28,7 @@ Finally, after some more research, I came across the<a href="http://en.wikipedia
 
 Looks good to me! Best of all, it's the summation of 7 different terms. This means I could do the work in 7 separate threads. Now to just code it up. We make extensive use of the MPFR functions. If you aren't familiar with the library, <a title="Read the docs!" href="http://www.mpfr.org/mpfr-current/mpfr.html">all these functions are very well documented</a>, although most of them should be obvious just by the name if you're only reading the code.
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 void* calc_term(void* term_num) {
     char x_str[22];
     int op;
@@ -119,7 +119,7 @@ That's really all there is to it. There first half of the function is selecting 
 
 The magic happens with these two lines:
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 mpfr_atan2(*term, one, x, MPFR_RNDN);
 mpfr_mul_ui(*term, *term, coeff, MPFR_RNDN);
 
@@ -127,7 +127,7 @@ mpfr_mul_ui(*term, *term, coeff, MPFR_RNDN);
 
 As per the formula above, they calculate the given term which is then added to the sum with:
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 pthread_mutex_lock(&sum_mutex);
 if(op == ADD) {
     mpfr_add(pi, pi, *term, MPFR_RNDN);
@@ -142,7 +142,7 @@ This is a good time to look at one of the concerns accounted for when using thre
 A pitfall that I fell into was setting the precision of the <code>mpfr_t</code> variables. In the main function I specify how precise I want the number to be with:
 
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 mpfr_set_default_prec(precision);
 
 {% endhighlight %}
@@ -154,7 +154,7 @@ Another tricky part was determining the level of precision I needed mpfr to use 
 Finally, speaking of precision, how am I supposed to check our precise my approximation is? Well, some nice guys at MIT have a text file with the first 1 billion digits of pi. <a href="http://stuff.mit.edu/afs/sipb/contrib/pi/">http://stuff.mit.edu/afs/sipb/contrib/pi/</a> After all the calculations are finished, the final approximation is converted into  a (really long) string and is then compared against a given file.
 
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 unsigned long check_digits(char *pi) {
     // If pi.txt exists, compare the digits
     FILE *digits = fopen("pi.txt", "r");
@@ -201,7 +201,7 @@ Relatively simple. <code>fread()</code> is used here since the input file is all
 The logic behind the recurrence method is very similar, just the math is different and it is not multithreaded. I'll skip most of the details because it's a slower method and not as interesting. The relevant part with the core of the recurrence relation is:
 
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 // a0 = 1/3
 mpfr_set_ui(a1, 1, MPFR_RNDN);
 mpfr_div_ui(a1, a1, 3, MPFR_RNDN);
@@ -249,7 +249,7 @@ So... let's run this thing. Keep in mind that I'm running these tests on a 2.475
 First off, let's use the recurrence version to calculate the first 1 million digits of pi (the "test" target in the Makefile does this).
 
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 $ make test
 ./irrational --hide-pi 1000000
 Time: 54 seconds
@@ -260,7 +260,7 @@ Accuracy: 1008443 digits
 Just under a minute; not bad. Now let's use the multi-threaded version.
 
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 $ make test
 ./irrational --hide-pi 1000000
 Time: 21 seconds
@@ -272,7 +272,7 @@ Accuracy: 1008449 digits
 
 First with the recurrence method:
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 $ ./irrational --hide-pi 10000000
 Time: 818 seconds
 Accuracy: 10084495 digits
@@ -282,7 +282,7 @@ Accuracy: 10084495 digits
 Just under 14 minutes. Not too shabby, but what about when multi-threading it?
 
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 ./irrational --hide-pi 10000000
 Time: 432 seconds
 Accuracy: 10084503 digits
@@ -292,7 +292,7 @@ Accuracy: 10084503 digits
 7.2 minutes. That's much, much faster. Just for fun I decided to see how long the same calculation would take with compiler optimization turned off.
 
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 $ ./irrational --hide-pi 10000000
 Time: 655 seconds
 Accuracy: 10084503 digits
@@ -304,7 +304,7 @@ Accuracy: 10084503 digits
 <hr />
 Update: Since I 
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 ./irrational --hide-pi 10000000
 Time: 136 seconds
 Accuracy: 10084503 digits

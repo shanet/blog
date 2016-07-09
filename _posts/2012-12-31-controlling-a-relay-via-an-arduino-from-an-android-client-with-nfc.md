@@ -23,7 +23,7 @@ The protocol for communicating with the server is extremely short. In fact, it c
 
 The code for the GET operation is simply:
 
-{% highlight c++ linenos=table %}
+{% highlight c++ linenos %}
 int op_get(EthernetClient client) {
    // Create a string with the status of each pin
    char status[34];
@@ -51,7 +51,7 @@ Just loop through the pins, check the state using <code>digitalRead()</code>, ap
 
 The SET operation is just as simple.
 
-{% highlight c++ linenos=table %}
+{% highlight c++ linenos %}
 // Convert pin to an int
 pin -= 48;
 
@@ -86,7 +86,7 @@ After this it's just a switch to determine what command to perform using the <co
 
 Full code for the Arduino server is below, but the most recent version will be on GitHub at the link at the top of this post.
 
-{% highlight c++ linenos=table %}
+{% highlight c++ linenos %}
 // RelayRemote
 // Shane Tully (shane@shanetully.com)
 // shanetully.com

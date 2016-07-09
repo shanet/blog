@@ -30,7 +30,7 @@ Full code listing is at the bottom.
 
 Creating a buffer to find the address of takes one additional step beyond the usual <code>malloc()</code> call. The kernel does not gaurentee that an address in the virtual address space actually maps to a physical address in memory. It may be stored in the swap space, in a cache somewhere, or somewhere else entirely. To get around this possibility, we can use <code>mlock()</code> to force a page to be kept in the physcial memory of the system. Fortunately, this is very straightward; just pass <code>mlock()</code> the pointer to the buffer and the size of the buffer and it will handle the rest. Here's what that looks like:
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 void* create_buffer(void) {
    size_t buf_size = strlen(ORIG_BUFFER) + 1;
 
@@ -67,7 +67,7 @@ The pagemap provides user space access to how the kernel is managing the pages f
 
 How do we get the page frame number for a given page from the pagemap? First we need to determine the offset into the pagemap to seek to. This can be done as such:
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 #define PAGEMAP_LENGTH 8
 offset = (unsigned long)addr / getpagesize() * PAGEMAP_LENGTH
 {% endhighlight %}
@@ -76,7 +76,7 @@ Given an address, we divide it by the page size and then multiply by 8. Why 8? T
 
 Then we seek to that position in the file and read the first 7 bytes. Why 7? We're interested in bites 0-54. That's a total of 55 bits. So we read the first 7 bytes (56 bits) and clear bit 55. Bit 55 is the soft-dirty flag which we don't care about.
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 unsigned long get_page_frame_number_of_address(void *addr) {
    // Open the pagemap file for the current process
    FILE *pagemap = fopen("/proc/self/pagemap", "rb");
@@ -119,7 +119,7 @@ Kernel compiling and installation will vary based on distro so I won't go into t
 
 Assuming your kernel has <code>CONFIG_STRICT_DEVMEM</code> disabled, we can proceed. First up is knowing where to look in <code>/dev/mem</code> for the string we put in our buffer. It's pretty simple actually. The offset we need to seek to is equal to the physical address we calculated above.
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 // Find the difference from the buffer to the page boundary
 unsigned int distance_from_page_boundary = (unsigned long)buffer % getpagesize();
 
@@ -129,7 +129,7 @@ uint64_t offset = (page_frame_number << PAGE_SHIFT) + distance_from_page_boundar
 
 Now let's open <code>/dev/mem</code> and seek to the offset we calculated:
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 int open_memory(void) {
    // Open the memory (must be root for this)
    int fd = open("/dev/mem", O_RDWR);
@@ -157,7 +157,7 @@ seek_memory(mem_fd, offset);
 
 Almost done! We have a file descriptor seeked to the right position inside <code>/dev/mem</code> so now we just need to write to it<sup>3</sup>.
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 if(write(mem_fd, NEW_BUFFER, strlen(NEW_BUFFER)) == -1) {
    fprintf(stderr, "Write failed: %s\n", strerror(errno));
 }
@@ -167,7 +167,7 @@ Note that <code>NEW_BUFFER</code> must be the same length or shorter than <code>
 
 Finally, we can read from the original buffer and if everything worked, we'll see that we have changed the contents of the buffer by writing to <code>/dev/mem</code>.
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 printf("Buffer: %s\n", buffer);
 {% endhighlight %}
 
@@ -178,7 +178,7 @@ It's worth noting that this was just an experiment. It's is not intended to be b
 
 Full code listing:
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>

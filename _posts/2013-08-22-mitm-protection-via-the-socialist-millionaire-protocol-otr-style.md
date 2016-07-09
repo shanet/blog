@@ -73,7 +73,7 @@ Below is a Python implementation of SMP as defined by the OTR spec (somewhat, it
 
 smp.py:
 
-{% highlight python linenos=table %}
+{% highlight python linenos %}
 import hashlib
 import os
 import random
@@ -345,7 +345,7 @@ def sha256(message):
 
 smpTest.py:
 
-{% highlight python linenos=table %}
+{% highlight python linenos %}
 import smp
 import socket
 import sys
@@ -411,7 +411,7 @@ else:
 
 To use it, run one instance as a server and another as a client. Such as:
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 $ python smpTest.py listen
 $ python smpTest.py localhost # In another terminal
 
@@ -419,7 +419,7 @@ $ python smpTest.py localhost # In another terminal
 
 If everything went well, you should see output similar to:
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 $ python smpTest.py listen
 Listening for client
 Enter shared secret: biscuits
@@ -429,7 +429,7 @@ Secrets match
 
 
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 $ python smpTest.py localhost
 Enter shared secret: biscuits
 Secrets match

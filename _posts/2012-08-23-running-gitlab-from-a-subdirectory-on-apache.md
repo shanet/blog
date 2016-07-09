@@ -17,7 +17,7 @@ I assume you already have Apache installed and up and running, if not, there are
 
 GitLab is a Ruby on Rails application and to run it on Apache we need to install the Passenger module.
 
-{% highlight bash linenos=table %}
+{% highlight bash linenos %}
 $ sudo gem install passenger
 $ sudo passenger-install-apache2-module
 
@@ -28,7 +28,7 @@ $ sudo passenger-install-apache2-module
 After installing the Passenger Apache module, it will output a few lines that need put in your Apache config. They should look something like the following, <strong>but do not copy and paste these! Use the ones that are output by the installation script!</strong>
 
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 LoadModule passenger_module /usr/local/lib/ruby/gems/1.9.1/gems/passenger-3.0.19/ext/apache2/mod_passenger.so
 PassengerRoot /usr/local/lib/ruby/gems/1.9.1/gems/passenger-3.0.19
 PassengerRuby /usr/local/bin/ruby
@@ -39,7 +39,7 @@ PassengerRuby /usr/local/bin/ruby
 Go ahead and open <code>/etc/apache2/httpd.conf</code>, or whatever Apache config you're using and drop them in there.
 Last step is to tell Apache where to look for GitLab. Open the Apache site config file you're using, usually <code>/etc/apache2/sites-available/default</code> and add the following inside the <code>VirtualHost</code> tags:
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 DocumentRoot /home/gitlab/gitlab
 <Directory /home/gitlab/gitlab>
     Options -MultiViews
@@ -58,7 +58,7 @@ Like I mentioned above, maybe you have another site on your server and want GitL
 
 <a href="http://www.modrails.com/documentation/Users%20guide%20Apache.html#deploying_rails_to_sub_uri">The Passenger documentation has info</a> on how to deploy a Rails application to a subdirectory, but it's a little confusing. First thing we need to do is make a symlink from the current root of the web server to the public directory in our Rails application. I'm using the standard <code>/var/www</code> for my server; change it if you're using something different.
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 $ cd /var/www
 $ ln -s /home/gitlab/gitlab/public gitlab
 $ chown www-data.www-data gitlab
@@ -67,7 +67,7 @@ $ chown www-data.www-data gitlab
 
 Now we need to tell GitLab about the subdirectory. Open <code>/home/gitlab/gitlab/config/gitlab.yml</code> and uncomment:
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 relative_url_root: /gitlab
 
 {% endhighlight %}
@@ -75,7 +75,7 @@ relative_url_root: /gitlab
 One more thing to change, we need to change the directory in the Apache site config we added above. Open <code>/etc/apache2/sites-available/default</code> and make the following changes:
 
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 # Change:
 DocumentRoot /home/gitlab/gitlab
 <Directory /home/gitlab/gitlab>
@@ -94,7 +94,7 @@ RailsBaseURI /gitlab
 The magic line here is the <code>RailsBaseURI</code> directive. This instructs Passenger to expect a subdirectory, instead of the root of the server. Restart Apache and you should be up and running!
 <p class="brush:plain">One small snag I ran into was that since I was running Wordpress at the server root and Wordpress makes use of mod_rewrite to change the URL's around, it was interfering with GitLab. Fortunately, this is a very simple fix. In the public directory of GitLab, create an .htaccess file with the contents:
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 RewriteEngine off
 
 {% endhighlight %}

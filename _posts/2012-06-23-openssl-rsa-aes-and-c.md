@@ -22,7 +22,7 @@ Why use the EVP (envelope) functions for RSA encryption rather than the actual R
 
 Moving on. First up, since all the code presented is in various functions from a class (full listing is at the end), let's look at the class members, and constructors first to understand where some of these variables are coming from. Below are all the class members. I know, not exactly intuitive, but bear with me.
 
-{% highlight c++ linenos=table %}
+{% highlight c++ linenos %}
 static EVP_PKEY *localKeypair;
 EVP_PKEY *remotePubKey;
 
@@ -43,7 +43,7 @@ unsigned char *aesIV;
 
 So now we need to initialize all these guys. In the class there are two constructors, each with different arguments so let's look at the default constructor for simplicity's sake.
 
-{% highlight c++ linenos=table %}
+{% highlight c++ linenos %}
 Crypto::Crypto() {
     serverKeypair = NULL;
     clientPubKey  = NULL;
@@ -60,7 +60,7 @@ Crypto::Crypto() {
 The RSA keys are just set to NULL because their values will be initialized later when the RSA/AES functions are called. The <code>#ifdef</code> line certainly peaks some interest. Since this class is eventually going to be dropped in a server, it will be using the client's public key to encrypt data, but we don't have a client yet, so we define a fake client and generate another RSA key pair to simulate a client. The process of generating this key pair is identical to how we're about to generate the key pair for the server so let's look at this. This is all contained in the <code>init()</code> function.
 
 
-{% highlight c++ linenos=table %}
+{% highlight c++ linenos %}
 int Crypto::init() {
     // Initalize contexts
     rsaEncryptCtx = (EVP_CIPHER_CTX*)malloc(sizeof(EVP_CIPHER_CTX));
@@ -152,7 +152,7 @@ I mentioned above that we generate a separate client key pair for testing. I won
 On to the fun part, the actual encryption. Let's start with AES since it's a little easier to understand. The AES encryption function:
 
 
-{% highlight c++ linenos=table %}
+{% highlight c++ linenos %}
 int Crypto::aesEncrypt(const unsigned char *msg, size_t msgLen, unsigned char **encMsg) {
     size_t blockLen  = 0;
     size_t encMsgLen = 0;
@@ -195,7 +195,7 @@ Lastly, clean up the context to avoid memory leaks.
 On to decryption!
 
 
-{% highlight c++ linenos=table %}
+{% highlight c++ linenos %}
 int Crypto::aesDecrypt(unsigned char *encMsg, size_t encMsgLen, unsigned char **decMsg) {
     size_t decLen   = 0;
     size_t blockLen = 0;
@@ -232,7 +232,7 @@ The AES decryption function looks very similar to the encryption function. The a
 Next up, RSA.
 
 
-{% highlight c++ linenos=table %}
+{% highlight c++ linenos %}
 int Crypto::rsaEncrypt(const unsigned char *msg, size_t msgLen, unsigned char **encMsg, unsigned char **ek,
                        size_t *ekl, unsigned char **iv, size_t *ivl) {
     size_t encMsgLen = 0;
@@ -279,7 +279,7 @@ From here we init the  context again, call the update function (only once since
 Decryption time.
 
 
-{% highlight c++ linenos=table %}
+{% highlight c++ linenos %}
 int Crypto::rsaDecrypt(unsigned char *encMsg, size_t encMsgLen, unsigned char *ek, size_t ekl,
                        unsigned char *iv, size_t ivl, unsigned char **decMsg) {
     size_t decLen   = 0;
@@ -323,7 +323,7 @@ Other than that, the typical init, update, finalize process is in effect again. 
 
 Okay, so we have all these functions now. How about seeing them in action? First, let's look at how to compile this guy.
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 g++ -Wall -Wextra -ggdb -o crypto-example crypto-example.cpp Crypto.cpp -lcrypto
 
 {% endhighlight %}
@@ -334,7 +334,7 @@ So here we have debugging and warnings turned on. <code>class_test.cpp</code> is
 Finally, let's run this guy with a test program (available on GitHub at the link below):
 
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 $ ./crypto-example
 Message to RSA encrypt: there's always money in the banana stand
 Encrypted message: SUdnZP7Yy5aOjnfYAgiLob0irTdU0r3stMIDW5KeOH6KWGX8n1dba4WrGMgi4qK1

@@ -14,7 +14,7 @@ Here's a little C program to do just that put into the form of a nice function t
 
 <!--more-->
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 #include <stdio.h>
 #include <unistd.h>
 
@@ -66,7 +66,7 @@ We can also display a progress bar.
 
 Compile the following with <code>-std=c99</code>.
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 #include <stdio.h>
 #include <unistd.h>
 

@@ -33,13 +33,13 @@ There is one problem with this approach, however: SMP compares integers, not str
 
 After crawling through OTR's source for a bit, I found the <code>otrl_sm_step1</code> function which is where the SMP secret is taken from a string and mapped to an integer. Specifically, [line 642 of sm.c](https://github.com/off-the-record/libotr/blob/master/src/sm.c) (commit 9a90e5e) is:
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 gcry_mpi_scan(&secret_mpi, GCRYMPI_FMT_USG, secret, secretlen, NULL);
 {% endhighlight %}
 
 We can see that <code>secret</code> is being passed to Libgcrypt's <code>gcry_mpi_scan</code> function. Reading through the Libgcrypt source led me to the <code>_gcry_mpi_set_buffer</code> function which is where the buffer passed to <code>gcry_mpi_scan</code> (in this case, a char array) is translated into an integer. Turns out that essentially all it is doing is what I anticipated, using the ASCII value of each character to construct an integer. Which is great because this is trivial to implement. To ensure my Python implementation was correct, I extracted the logic of the <code>_gcry_mpi_set_buffer</code> function to a short C program so I could check if the integer calculated from a given string matched.
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 #include <stdio.h>
 #include <string.h>
 
@@ -102,7 +102,7 @@ unsigned long _gcry_mpi_set_buffer(const void *buffer_arg, unsigned int nbytes) 
 }
 {% endhighlight %}
 
-{% highlight python linenos=table %}
+{% highlight python linenos %}
 string = 'Hello'
 num = 0
 
@@ -122,7 +122,7 @@ Cryptully uses a Diffie-Hellman key exchange to establish a key to use for AES e
 
 Cryptully is no different in this regard; I remember looking for a prime that was widely used when I was writing the crypto portion of Cryptully years ago. Hence, I figured it would be a good idea to compute my own prime for use in Cryptully. Fortunately, OpenSSL makes this a relatively easy process.
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 $ openssl dhparam -out dh4096.pem 4096
 {% endhighlight %}
 
@@ -130,13 +130,13 @@ The above command will search for a 4096-bit safe prime. This will take a signif
 
 The problem now becomes that OpenSSL generated this prime in a PEM file, which I could parse each time the program starts, but it seems a bit silly to read a file each time just to get what is essentially a hardcoded constant. Running the following will read PEM file and print the actual prime that was found:
 
-{% highlight bash linenos=table %}
+{% highlight bash linenos %}
 $ openssl dh -in dh4096.pem -text
 {% endhighlight %}
 
 In my case, this is the prime that Cryptully now uses:
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
     DH Parameters: (4096 bit)
         prime:
             00:a5:3d:56:c3:0f:e7:9d:43:e3:c9:a0:b6:78:e8:
@@ -181,7 +181,7 @@ And there's a nice, long hex number that can be dumped into a constant in the cr
 
 Still though, I wanted to do due diligence on this prime number. Was it actually prime? Surely, we could write a quick program to do a primality test on it. My first attempt was an extremely simple Python script:
 
-{% highlight python linenos=table %}
+{% highlight python linenos %}
 def isprime(x):
     for i in range(2, x-1):
         if x % i == 0:
@@ -194,7 +194,7 @@ print(isprime(0x00a53d56c30fe79d43e3c9a0b678e87c0fcd2e78b15c676838d2a2bd6c299b1e
 
 After waiting about five minutes for this function to return, I realized that a 4096-bit prime was too large to test with such a naive method. But this is exactly the type of task OpenSSL is built for. Surely it could do a primality test on this number.
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 #include <stdio.h>
 #include <openssl/bn.h>
 
@@ -222,7 +222,7 @@ My new goal was to write a very basic test that started a server and two clients
 
 My first attempt was to stay within Python's testing framework, start a mock server thread and then connect a mock client to it. This quickly proved problematic because the client relied on a series of callbacks to handle events from the server. Some quick searching lead me to [the Mock library](https://docs.python.org/3/library/unittest.mock.html). The problem was that its assertions expected the callback to have been called when the assertion was called rather than waiting for it to be called. Seeing as I was trying to test server-client communication, I didn't have the luxury of being able to rely on any specific timing. However, it was easy enough to wrap the <code>Mock</code> object with one that waited for callback to be called within a certain timeout period.
 
-{% highlight python linenos=table %}
+{% highlight python linenos %}
 class WaitingMock(Mock):
     TIMEOUT = 3
 
@@ -263,7 +263,7 @@ The mock server was relatively minimal and acted much like the real server, list
 
 I did miss having the nice test output showing which tests passed and which failed, however. This was easy enough to implement myself by simply wrapping everything in the mock client thread's <code>run()</code> method with a try & catch block which caught assertion failures and any other type of exception.
 
-{% highlight python linenos=table %}
+{% highlight python linenos %}
 try:
   assertions...
 except AssertionError as err:

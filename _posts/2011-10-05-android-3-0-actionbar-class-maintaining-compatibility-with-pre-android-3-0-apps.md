@@ -21,7 +21,7 @@ Let's take a look at aptly-named <code>ActionBarWrapper</code> class to start.
 
 Remember, we can't instantiate anything, so we need to use a static initializer to check if the <code>ActionBar</code> class is available. Thus, we need a static method to force the static initializer to be called. If you're unfamiliar with static initializers, <a title="Hooray for documentation!" href="http://download.oracle.com/javase/tutorial/java/javaOO/initial.html">read up</a>. Essentially, all this needs to be is an empty static method. As long as it is called, the static initializer will be called and that's the target. So:
 
-{% highlight java linenos=table %}
+{% highlight java linenos %}
 public static void isAvailable() {}
 
 {% endhighlight %}
@@ -30,7 +30,7 @@ And that's all!
 
 Now, for the meat of the class, the static initializer.
 
-{% highlight java linenos=table %}
+{% highlight java linenos %}
 static {
    try {
       Class.forName("android.app.ActionBar");
@@ -45,7 +45,7 @@ It is relatively simple. Use the <code>Class.forName()</code> function to chec
 
 Speaking of the calling class, let's jump over there. The calling class in best practice should be your main class or the launching activity of your app so that a boolean denoting if the <code>ActionBar</code> class is available right from the get go. We're going to take advantage of another static initializer here.
 
-{% highlight java linenos=table %}
+{% highlight java linenos %}
 static {
    try {
       ActionBarWrapper.isAvailable();
@@ -61,7 +61,7 @@ This part is relatively straightforward since all the hard work is in the <code>
 
 The hard part is done! From here, we know whether or not the <code>ActionBar</code> class is available. BUT! We still can't just try to initialize an <code>ActionBar</code> object directly. That will still result in a <code>VerifyError</code> being thrown. We can, however, initialize an instance of the <code>ActionBarWrapper</code> class though. The constructor for the <code>ActionBarWrapper</code> class is simple enough:
 
-{% highlight java linenos=table %}
+{% highlight java linenos %}
 public ActionBarWrapper(Context context) {
    actionBar = ((Activity)context).getActionBar();
 }
@@ -72,7 +72,7 @@ Here's where we create an instance of the <code>ActionBar</code> class. Why can 
 
 With an <code>ActionBarWrapper</code> object created, a reference to an <code>ActionBar</code> object is now a member variable of our <code>ActionBarWrapper</code> object. So, all calls to the <code>ActionBar</code> object must go through the <code>ActionBarWrapper</code> object. Thus, any <code>ActionBar</code> method we wish to call, must be implemented in the <code>ActionBarWrapper</code> class. For my purposes, I only needed three methods, but you could add all of them if you wish.
 
-{% highlight java linenos=table %}
+{% highlight java linenos %}
 public void setBackgroundDrawable(Drawable background) {
    actionBar.setBackgroundDrawable(background);
 }
@@ -88,7 +88,7 @@ public void setDisplayUseLogoEnabled(boolean useLogo) {
 
 Let's look at how this is implemented in the calling class.
 
-{% highlight java linenos=table %}
+{% highlight java linenos %}
 if(isActionBarAvailable) {
    ActionBarWrapper actionBarWrapper = new ActionBarWrapper(this);
    actionBarWrapper.setBackgroundDrawable(getResources().getDrawable(R.drawable.logo_bg_repeat));
@@ -106,7 +106,7 @@ Lastly, let's take a quick look at why this solution works. The <code>ActionBarW
 
 The complete listing of <code>ActionBarWrapper</code> is below.
 
-{% highlight java linenos=table %}
+{% highlight java linenos %}
 public class ActionBarWrapper {
 	private ActionBar actionBar;
 

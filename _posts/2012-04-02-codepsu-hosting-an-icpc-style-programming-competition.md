@@ -23,7 +23,7 @@ To make feedback a little easier, our website is powered by Drupal. This allowed
 
 Most of the Javascript that sets up this form is pretty boring, but lets look at the Add More Files button handler.
 
-{% highlight javascript linenos=table %}
+{% highlight javascript linenos %}
 function addFileInput() {
     var fileInputs = document.getElementById("fileInputs");
     var newBR = document.createElement("br");
@@ -49,7 +49,7 @@ Basically, when the button is clicked, it grabs the div the file inputs are in a
 The rules of competition only allowed one computer per team so my first security concern was how to ensure that each team was only allowed to upload from one computer. Along the same lines, we had to make sure that a team couldn't have more people working on the problems at a remote location and uploading solutions also. Since our server was inside Penn State's network and all the competitors were too, my solution was to record the IP address of the computer of a team and then check their IP each time a problem was submitted. Since the competition was three hours long, there should be no reason for a team to have their IP change during the competition. Additionally, before the competition we ran through a sample problem to show teams how to submit their code. This not only got them familiar with the system, but also got each team's IP on our server. Here's the quick PHP file that performed this check:
 
 
-{% highlight php linenos=table %}
+{% highlight php linenos %}
 <?php
 function isValidIP($remoteIP, $uploadDir, $teamName) {
     // Check if the team dir and make it if not
@@ -77,14 +77,14 @@ function isValidIP($remoteIP, $uploadDir, $teamName) {
 <strong>Creating Unique Solution Directories</strong>
 The next task was to create a directory structure as such:
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 team_number/problem_number/revision_number
 
 {% endhighlight %}
 
 This allowed us to keep every version of a solution that a team uploaded. However, this directory structure would have to be created on the fly so I needed two functions that would create it for me.
 
-{% highlight php linenos=table %}
+{% highlight php linenos %}
 <?php
 function createProblemDir($uploadDir, $teamName, $problemNo) {
     // Check if the problem dir exists and make it if not
@@ -96,7 +96,7 @@ function createProblemDir($uploadDir, $teamName, $problemNo) {
 {% endhighlight %}
 
 
-{% highlight php linenos=table %}
+{% highlight php linenos %}
 <?php
 function createRevDir($uploadDir, $teamName, $problemNo) {
     // Find the highest revision dir
@@ -127,7 +127,7 @@ The team and problem directories are straightforward. As noted before, the IP ad
 We allowed teams to submit solutions in either C, C++ or Java, but, of course, we couldn't mix languages. So submissions had to be checked to ensure they only contained one type of source code files. Mime-types are an obvious solution to this, except I found in my testing that Windows would like to put a few bytes of junk at the beginning of text files that caused PHP's mime-type determination to break down so I had to fallback on relying on file extensions to do this check.
 
 
-{% highlight php linenos=table %}
+{% highlight php linenos %}
 <?php
 // Create a new array so we don't have to deal with mime-types
 for($i=0; $i<count($_FILES["files"]["name"]); $i++) {
@@ -193,7 +193,7 @@ Commented out is the remnants from the mime-type switch in case I ever wanted to
 In one of the more challenging problems I was faced with was auto-compiling solutions. My solution to write a PHP function in the upload script that created a Makefile for submissions and put it in the proper revision directory. This worked great for C and C++ solutions, but Java is not meant to be compiled with Makefiles; you use Ant for that. However, given the relatively simple nature of solutions, it was easier to make a hack-ish Makefile to compile Java programs.
 
 
-{% highlight php linenos=table %}
+{% highlight php linenos %}
 <?php
 function createMakefile($uploadDir, $teamName, $problemNo, $revNo, $testsDir, $lang) {
     switch($lang) {
@@ -263,7 +263,7 @@ function createMakefile($uploadDir, $teamName, $problemNo, $revNo, $testsDir, $l
 
 This created Makefiles such as:
 
-{% highlight makefile linenos=table %}
+{% highlight makefile linenos %}
 SHELL := /bin/bash
 CC=g++ -std=c++98
 EXECUTABLE=output
@@ -284,7 +284,7 @@ clean:
 
 This is, of course, a C++ submission. After this was created, the upload script would enter the revision directory and run the all rule to compile the solution.
 
-{% highlight php linenos=table %}
+{% highlight php linenos %}
 <?php
 function compileUpload($uploadDir, $teamName, $problemNo, $revNo) {
     // Save the current directory
@@ -309,7 +309,7 @@ This would check the return value of make and provide immediate feedback to the 
 The first  problem I had with judging was how to know when a new solution was submitted. To solve this I created a master submission log that would be updated by the upload script every time a new submission was received.
 
 
-{% highlight php linenos=table %}
+{% highlight php linenos %}
 <?php
 function updateSubmissionLog($uploadDir, $teamName, $problemNo, $revNo, $remoteIP, $compile) {
     $subLog = fopen($uploadDir . "submission_log.txt", "a");
@@ -325,7 +325,7 @@ function updateSubmissionLog($uploadDir, $teamName, $problemNo, $revNo, $remoteI
 The log would contain the team number, problem number, revision number, time of submission, IP address, and a warning if the solution failed to compile. Even though a solution with an invalid IP would not be uploaded, I wanted to create a comprehensive log of as much info as possible in case we needed to resolve a tie or any type of cheating. The created log looked something like this:
 
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 team_11 (XXX.XXX.XXX.XXX) submitted problem p_0 (revision 0) at 14:43:29
 team_18 (XXX.XXX.XXX.XXX) submitted problem p_0 (revision 0) at 14:43:36
 team_14 (XXX.XXX.XXX.XXX) submitted problem p_0 (revision 0) at 14:43:40
@@ -336,7 +336,7 @@ team_2 (XXX.XXX.XXX.XXX) submitted problem p_0 (revision 0) at 14:44:04 WARNING:
 With the IP's removed, of course. Each of our judges would have a terminal open running the command <code>watch tail submission_log.txt</code> which would show in real-time submissions made. From here, a judge would enter the proper directory of a submissions and run the make test rule. This rule would call a shell script that would run the program with the proper input redirected into it, capture the output, show a diff of the correct output and the output produced and time the execution of the program. There were two scripts, one for C and C++ and one for Java. First, the C/C++ script.
 
 
-{% highlight bash linenos=table %}
+{% highlight bash linenos %}
 #!/bin/bash
 
 EXECUTABLE_PATH=$1
@@ -364,7 +364,7 @@ The script is relatively simple. It uses the Bash command <code>time</code> to t
 
 The Java test script is much more messy.
 
-{% highlight bash linenos=table %}
+{% highlight bash linenos %}
 #!/bin/bash
 
 TEST_PATH=$1

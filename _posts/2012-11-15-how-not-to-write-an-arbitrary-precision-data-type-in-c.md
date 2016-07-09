@@ -12,7 +12,7 @@ About one year earlier I attempted the same project, but with even less success 
 
 We decided to represent each number as a struct with pointers to head of two lists, the mantissa (<a href="http://en.wikipedia.org/wiki/Significand">technically not the correct usage</a> of this term, but close enough for our purposes), or the digits left of the decimal and the decimal part, or the digits right of the decimal. We called this data type "p_num" for "precise number". We then defined a digit struct which contained the char for the actual digit, and a pointer to the next digit in the list.
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 struct _digit {
     unsigned char num;
     struct _digit *next;
@@ -31,7 +31,7 @@ typedef struct _p_num p_num;
 
 Simple. Next would be the process of initializing one of these guys, but due to our decision to represent our numbers in little endian, the init function is unnecessarily complicated, but still interesting. In short, to init a p_num, you call the <code>init()</code> function with the mantissa and decimal parts as strings which are then parsed and converted to lists appropriately.
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 int init(p_num **num, char *man, char *dec) {
     if(*num == NULL) *num = malloc(sizeof(p_num));
 
@@ -76,7 +76,7 @@ int init(p_num **num, char *man, char *dec) {
 
 More interesting is the add function. Or should I say functions since we ended up with three functions to add two p_num's together. Our algorithm is very naive, in that it adds numbers in base 10 just like you learned in elementary school. From a high level, the <code>add()</code> function is called with the two p_num's to be added. This function calls the <code>add_digits()</code> function which adds a given digit list together. Inside <code>add_digits()</code>, <code>add_with_carry()</code> is called which actually adds two given digits and returns a possible carry from the addition.  A major memory compromise we made here (and with all other arithmetic functions we wrote) was that we assumed that the first argument to be added would be modified with the result of the addition. The reason for this being that we did not want to create a copy of a potentially huge number. For our purposes, this was fine, but would not bode well for a more generic task. The full source is below, but these two functions are the more interesting parts of the functions needed for the complete addition algorithm.
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 int add_digits(p_num *left, p_num *right, int part, int carry) {
     fix_length(left, right, part);
 
@@ -133,7 +133,7 @@ Creative? Sure. Messy? Absolutely.
 Granted, because we're working with linked lists, this process isn't too time consuming since it's just some iterating and moving pointers around. The full source of the shift functions are below. I'll skip them here. Below is the multiply function. Due to the nature of multiplying, we were forced to make a copy of one of the passed in p_num's which involves a confusing copy function which I'll also skip the finer details of since this isn't a post on manipulating pointers and list operations.
 
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 int mult(p_num *left, p_num *right) {
     p_num *shift_num = shift_full_right(right);
     p_num *i = NULL;
@@ -164,7 +164,7 @@ Here's where things basically fell off a cliff: the exponentiation function.
 
 Similar to multiplication, we took the shortcut of representing exponentiation as repeated multiplications. However, this time we had a problem that we couldn't perform exponentiation with non-integer powers. After looking at the formula for approximating pi we were shooting for, we realized that we wouldn't need to have non-integer powers, so we didn't account for it. This is still a huge limitation in the exponentiation function though. The real problem with the exponentiation function, though, is that is it <em>slow</em><em>. </em>I mean really, really slow. All the shortcuts were bound to catch up with us eventually, right? A little further down is the actual execution times for all these functions. I'll save the surprise (and laughter) for then.
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 int power(p_num *base, p_num *pow) {
     p_num *i = NULL;
     p_num *one = NULL;
@@ -194,7 +194,7 @@ The full source of all these functions are below, but first, let's take a look a
 Here's a simple main file that just adds two files. Timing is done with the built-in bash time command. To compile we used the <code>O3</code> flag in GCC, which does actually speed it up considerably compared to no optimization at all. The executable is appropriately called "irrational".
 
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 #include <stdio.h>
 #include "p_num.h"
 
@@ -216,7 +216,7 @@ int main() {
 The add function executes in a pretty reasonable amount of time for some simple numbers.
 
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 $ time ./irrational
 12357.65
 
@@ -228,7 +228,7 @@ sys     0m0.000s
 
 It even works well when we use some very large, and very precise numbers, such as:
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 init(&left, "12345123451234512345123451234512345123451", "12345123451234512345123451234512345123451234512");
 init(&right, "123451234512345123451234512345123451234512345", "1234512345123451234512345123451232345");
 
@@ -236,7 +236,7 @@ init(&right, "123451234512345123451234512345123451234512345", "12345123451234512
 
 
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 $ time ./irrational
 123463579635796357963579635796357963579635796.24690246902469024690246902469024668573451234512
 
@@ -251,7 +251,7 @@ For the skeptics,<a href="http://www.wolframalpha.com/input/?i=12345123451234512
 Multiplication also isn't too terrible, but does choke on large numbers. I'll stick with a simple case here.
 
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 #include <stdio.h>
 #include "p_num.h"
 
@@ -271,7 +271,7 @@ int main() {
 {% endhighlight %}
 
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 $ time ./irrational
 70083.6977904
 
@@ -286,7 +286,7 @@ As you can see, this is starting to push it. 2.5 seconds is not an acceptable ca
 Finally, exponentiation. Let's keep it very simple so the program finishes before next month.
 
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 #include <stdio.h>
 #include "p_num.h"
 
@@ -306,7 +306,7 @@ int main() {
 {% endhighlight %}
 
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 $ time ./irrational
 256.00000000000000000000000000000
 
@@ -330,7 +330,7 @@ As promised, the full source.
 
 p_num.h:
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -389,7 +389,7 @@ digit* reverse_list(digit *head);
 
 p_num.c:
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 #include "p_num.h"
 
 int init(p_num **num, char *man, char *dec) {
@@ -786,7 +786,7 @@ digit* reverse_list(digit *head) {
 
 Last but not least, a super small Makefile:
 
-{% highlight makefile linenos=table %}
+{% highlight makefile linenos %}
 all:
 	gcc -std=c99 -Wall -Wextra -O3 -o irrational main.c p_num.c
 

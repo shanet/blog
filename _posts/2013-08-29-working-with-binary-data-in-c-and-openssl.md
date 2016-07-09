@@ -10,7 +10,7 @@ date: 2013-08-29
 
 <strong></strong>We can use base64 to encode our encrypted messages into ASCII strings and then back again to binary data for decryption. OpenSSL has a way of doing this for us:
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 char* base64Encode(const unsigned char *message, const size_t length) {
     BIO *bio;
     BIO *b64;
@@ -41,7 +41,7 @@ char* base64Encode(const unsigned char *message, const size_t length) {
 
 <!--more-->
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 int base64Decode(const char *b64message, const size_t length, unsigned char **buffer) {
     BIO *bio;
     BIO *b64;
@@ -83,7 +83,7 @@ int calcDecodeLength(const char *b64input, const size_t length) {
 
 Let's say we have some encrypted data in a buffer called "encryptedFile". We can encode it with base64 as such:
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 char *base64Buffer;
 base64Buffer = base64Encode(encryptedFile, encryptedFileLength);
 
@@ -95,7 +95,7 @@ And now we can use base64Buffer as a normal C-string with <code>printf()</code>,
 
 This basically comes down to using <code>fwrite()</code> instead of the <code>fprintf()</code> you might use to write ASCII strings to a file.
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 void writeFile(char *filename, unsigned char *file, size_t fileLength) {
     FILE *fd = fopen(filename, "wb");
     if(fd == NULL) {
@@ -117,7 +117,7 @@ void writeFile(char *filename, unsigned char *file, size_t fileLength) {
 
 Reading back the file with <code>fread()</code> involves knowing the size of the file first so we know how many bytes to read. That's simple enough to do with the <code>fseek()</code> function once the file is opened, however.
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 int readFile(char *filename, unsigned char **file) {
     FILE *fd = fopen(filename, "rb");
     if(fd == NULL) {

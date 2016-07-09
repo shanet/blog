@@ -14,7 +14,7 @@ Well, a quick Google session later and I come across <a href="http://www.instruc
 
 Install the following packages:
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 Ubuntu: sudo apt-get install avrdude avr-libc gcc-avr
 Fedora: sudo yum install avrdude avr-gcc avr-gcc-c++
 
@@ -22,7 +22,7 @@ Fedora: sudo yum install avrdude avr-gcc avr-gcc-c++
 
 Remove this package or if it isn't installed, happily move on:
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 Ubuntu: sudo apt-get remove brltty
 Fedora: sudo yum remove brltty
 
@@ -34,7 +34,7 @@ Fedora: sudo yum remove brltty
 
 Line 86:
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 DEBUG = dwarf-2
 DEBUG = stabs
 
@@ -42,7 +42,7 @@ DEBUG = stabs
 
 Line 201: This is the change the Instrucable above does not contain. I was getting timeout errors without it.
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 AVRDUDE_PROGRAMMER = stk500
 AVRDUDE_PROGRAMMER = stk500v1
 
@@ -50,7 +50,7 @@ AVRDUDE_PROGRAMMER = stk500v1
 
 Line 204:
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 AVRDUDE_PORT = com9
 AVRDUDE_PORT = /dev/ttyUSB0
 
@@ -58,14 +58,14 @@ AVRDUDE_PORT = /dev/ttyUSB0
 
 4.) Assuming you have make installed (you really should if you're reading this), simply run
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 make all
 
 {% endhighlight %}
 
 to build the project and
 
-{% highlight text linenos=table %}
+{% highlight text linenos %}
 Ubuntu: make program
 Fedora: sudo make program
 

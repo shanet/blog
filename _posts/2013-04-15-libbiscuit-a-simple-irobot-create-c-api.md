@@ -10,7 +10,7 @@ Anyway, first up, all the code is <a href="https://github.com/shanet/libbiscuit#
 
 <!--more-->
 
-{% highlight c linenos=table %}
+{% highlight c linenos %}
 #include <stdio.h>
 #include <stdlib.h>
 

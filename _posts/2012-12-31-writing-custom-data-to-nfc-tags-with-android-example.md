@@ -10,7 +10,7 @@ In my case, I wanted to write the ID of a relay to turn on/off to the tag, which
 
 The intent setup looks something like:
 
-{% highlight java linenos=table %}
+{% highlight java linenos %}
 // Construct the data to write to the tag
 // Should be of the form [relay/group]-[rid/gid]-[cmd]
 String nfcMessage = relay_type + "-" + id + "-" + cmd;
@@ -33,7 +33,7 @@ First I put the data I want written to the tag in <code>nfcMessage</code>, then 
 
 This callback happens in <code>onNewIntent(Intent intent)</code> which should be overridden in the activity that was used to create the pending intent above.
 
-{% highlight java linenos=table %}
+{% highlight java linenos %}
 public void onNewIntent(Intent intent) {
     // When an NFC tag is being written, call the write tag function when an intent is
     // received that says the tag is within range of the device and ready to be written to
@@ -49,7 +49,7 @@ public void onNewIntent(Intent intent) {
 
 Since this function can be called with other intents that just the one we defined, it's a good idea to check if the <code>nfcMessage</code> we made is attached to the intent before moving on. The NFC class and <code>writeTag()</code> functions are functions I wrote to make writing tags easier. Now to actually write the data to the tag:
 
-{% highlight java linenos=table %}
+{% highlight java linenos %}
 public static boolean writeTag(Context context, Tag tag, String data) {
     // Record to launch Play Store if app is not installed
     NdefRecord appRecord = NdefRecord.createApplicationRecord(context.getPackageName());
@@ -146,7 +146,7 @@ So we have our data written to the tag. How about reading it back?
 
 When a tag comes into range of the device, Android will read it and determine what app it should go to. This is done, just like everything else of this nature, with intent filters. So in our manifest file, we declare an activity to handle NFC tags. In my case, I created an activity that only handles NFC tags and does nothing else (no UI or anything). In the manifest:
 
-{% highlight xml linenos=table %}
+{% highlight xml linenos %}
 <activity
     android:name=".NFC"
     android:label="@string/appName">
@@ -163,7 +163,7 @@ The MIME type should match the MIME type we wrote to the tag. In this case, <cod
 
 Then, my NFC activity looks something like:
 
-{% highlight java linenos=table %}
+{% highlight java linenos %}
 @Override
 public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);

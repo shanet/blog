@@ -16,7 +16,7 @@ Without further ado...
 
 <!--more-->
 
-{% highlight bash linenos=table %}
+{% highlight bash linenos %}
 #! /bin/bash
 # Modified from https://wiki.ubuntu.com/KernelTeam/GitKernelBuild
 

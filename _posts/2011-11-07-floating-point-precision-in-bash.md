@@ -10,7 +10,7 @@ Rather, why not just get the seconds from 1970 before and after the compile, sub
 
 <!--more-->
 
-{% highlight bash linenos=table %}
+{% highlight bash linenos %}
 START=$(date +%s)
 
 # Do something
