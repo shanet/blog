@@ -1,3 +1,8 @@
+- name: "Osprey"
+  link: "https://github.com/shanet/Osprey"
+  description: "Free and open source amatuer rocketry telemetry and tracking."
+  image: "projects/osprey.png"
+
 - name: "Cryptully"
   link: "http://cryptully.com"
   description: "An encrypted chat program for those that don't know crypto. No software to install or accounts to register."
