@@ -7,7 +7,7 @@ images_dir: "/assets/images/"
 
 # Build settings
 markdown: kramdown
-permalink: /:year/:month/:title
+permalink: /:year/:month/:title/
 excerpt_separator: <!--more-->
 paginate: 5
 gems: [jekyll-paginate]
