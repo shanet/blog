@@ -12,6 +12,8 @@ As of August 2014, WebRTC is still a new and untamed beast. As such, I found tha
 
 Before getting into the actual WebRTC APIs, it's best to understand a simple signaling server. For those unaware, WebRTC requires that peers exchange information on how to connect to one another before the actual connection can be begin. However, this exact method is left up to the developer. It could be anything from a very complicated server to peers emailing one another. For my purpose, I chose to write a short and sweet Node.js server that communicates with clients via websockets.
 
+**Note:** The full example is [available on GitHub](https://github.com/shanet/WebRTC-Example). As WebRTC evolves the content on this page may become out of date. See the GitHub repo for the most up to date example.
+
 <!--more-->
 <hr />
 
@@ -181,7 +183,7 @@ function gotIceCandidate(event) {
 }
 
 function gotRemoteStream(event) {
-    console.log("got remote stream");
+    console.log('got remote stream');
     remoteVideo.src = window.URL.createObjectURL(event.stream);
 }
 
@@ -207,7 +209,9 @@ function gotMessageFromServer(message) {
     var signal = JSON.parse(message.data);
     if(signal.sdp) {
         peerConnection.setRemoteDescription(new RTCSessionDescription(signal.sdp), function() {
-            peerConnection.createAnswer(gotDescription, createAnswerError);
+            if(signal.sdp.type == 'offer') {
+                peerConnection.createAnswer(gotDescription, createAnswerError);
+            }
         });
     } else if(signal.ice) {
         peerConnection.addIceCandidate(new RTCIceCandidate(signal.ice));
