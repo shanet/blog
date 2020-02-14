@@ -12,9 +12,9 @@ One of the most common questions I get asked at the end of an interview for an i
 
 > The interview is not a test.
 
-<!--more-->
-
 It's natural for interns and new grads to assume this, of course. If you're an intern or new grad. up until this point in your life you've likely had most of your successes and failures be academic where assessments have a rigid score and a grade assigned. You take the exam and get a score. That score translates into a grade. That grade determines if you've passed or failed the course. It's natural to assume that the interview is another exam so surely you must pass or fail it, right?
+
+<!--more-->
 
 > In reality, the interview is more of a first date than a school exam.
 
