@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Inside the construction of an amateur rocketry flight computer"
+title: Inside the construction of an amateur rocketry flight computer
 date: 2016-07-09
 ---
 
