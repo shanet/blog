@@ -2,9 +2,10 @@
 layout: post
 title: The Interview Rejection Mindset
 date: 2020-02-13
+hidden: true
 ---
 
-This is the first part of a series on my experiences and learnings after conducting 750 interviews and reviewing 10,000 more over the course of five years. From both the candidate and interviewer sides of the table.
+[This is part of a series]({% post_url 2020-04-02-hiring-and-being-hired-for-software-engineers %}) on my experiences and learnings after conducting 750 interviews and reviewing 10,000 more over the course of five years. From both the candidate and interviewer sides of the table.
 
 ---
 
