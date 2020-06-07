@@ -8,7 +8,7 @@ Over the past few weeks I've been working on a small project that allows me to c
 
 <a href="https://github.com/shanet/RelayRemote"><strong>Looking for the source code or instructions on how to set up your own?</strong></a>
 
-<div class="post-center">
+<div class="page-center">
   <iframe src="https://www.youtube-nocookie.com/embed/Dhp8Tu2QPAA?rel=0" height="315" width="560" allowfullscreen="" frameborder="0"></iframe>
 </div>
 

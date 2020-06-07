@@ -21,14 +21,13 @@ NfcAdapter nfcAdapter = NfcAdapter.getDefaultAdapter(context);
 Intent nfcIntent = new Intent(context, Main.class).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
 nfcIntent.putExtra("nfcMessage", nfcMessage);
 PendingIntent pi = PendingIntent.getActivity(context, 0, nfcIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-IntentFilter tagDetected = new IntentFilter(NfcAdapter.ACTION_TAG_DISCOVERED);  
+IntentFilter tagDetected = new IntentFilter(NfcAdapter.ACTION_TAG_DISCOVERED);
 
 nfcAdapter.enableForegroundDispatch((Activity)context, pi, new IntentFilter[] {tagDetected}, null);
-
 {% endhighlight %}
 
-
 <!--more-->
+
 First I put the data I want written to the tag in <code>nfcMessage</code>, then get a handle to the <code>nfcAdapter</code> (this could fail if the device doesn't support NFC; you should check for this, I did it elsewhere). The rest is pretty much copy and paste code.  Once this executes, Android will execute our intent when the user puts a tag in range of the device.
 
 This callback happens in <code>onNewIntent(Intent intent)</code> which should be overridden in the activity that was used to create the pending intent above.
@@ -44,7 +43,6 @@ public void onNewIntent(Intent intent) {
         NFC.writeTag(this, tag, nfcMessage);
     }
 }
-
 {% endhighlight %}
 
 Since this function can be called with other intents that just the one we defined, it's a good idea to check if the <code>nfcMessage</code> we made is attached to the intent before moving on. The NFC class and <code>writeTag()</code> functions are functions I wrote to make writing tags easier. Now to actually write the data to the tag:
@@ -129,7 +127,6 @@ public static boolean writeTag(Context context, Tag tag, String data) {
 
     return false;
 }
-
 {% endhighlight %}
 
 The first thing we do is create the Ndef records by using the <code>createApplicationRecord()</code> function and creating a new NdefRecord object (if you don't know what an Ndef record is, read the NFC basics article in the Android docs linked above). One record with the application package name. This one will launch the Play Store if our app isn't installed. And another record with the data we care about--our message. To do this we specify that the record is a custom MIME type of the form <code>applcation/[our package name]</code>. This enables Android to direct the data to the proper application with the tag is read. Lastly, our message is put into the Ndef record as the payload.
@@ -184,7 +181,6 @@ public void onCreate(Bundle savedInstanceState) {
         finish();
     }
 }
-
 {% endhighlight %}
 
 The intent the activity was started with will contain the NFC data. We just need to do a few things to get at it. First, we do another check to make sure the MIME type is correct. Then, pull the Ndef messages from the intent. At this point they are in the form of a parcelable array. We then extract the Ndef records from the Ndef message and get the payload of the record which has our custom data in it. In this short example, we just show it to the user via a toast and exit the activity. This can, of course, be expanded on as you wish.

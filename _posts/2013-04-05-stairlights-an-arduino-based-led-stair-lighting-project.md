@@ -8,7 +8,7 @@ I'm a big fan of LED lighting; especially interactive LED lighting so over the p
 
 First, here's the finished product in action:
 
-<div class="post-center">
+<div class="page-center">
    <iframe src="https://www.youtube-nocookie.com/embed/21KKr8hQo5A" height="450" width="620" allowfullscreen="" frameborder="0"></iframe>
 </div>
 
@@ -38,7 +38,6 @@ The hardware is only half the story. The code is even more confusing that the ci
 #define TIMER_PWM_PIN        3
 #define TIMER_ENABLE_PWM     (TCCR2A |= _BV(COM2B1))
 #define TIMER_DISABLE_INTR   (TIMSK2 = 0)
-
 {% endhighlight %}
 
 

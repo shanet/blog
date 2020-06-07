@@ -1,0 +1,33 @@
+@import "colors";
+
+$header-height: 56px;
+
+.site-header {
+  border-bottom: 1px solid #e8e8e8;
+  line-height: $header-height;
+  min-height: $header-height;
+
+  .title {
+    float: left;
+    font-size: 26px;
+    letter-spacing: -1px;
+  }
+
+  nav {
+    float: right;
+
+    li {
+      display: inline-block;
+    }
+
+    a {
+      color: #727272;
+      display: block;
+      margin-right: 5px;
+
+      &:hover {
+        color: $text-color;
+      }
+    }
+  }
+}

@@ -234,7 +234,7 @@ void print_function_instructions(void *func_ptr, size_t func_len) {
 }
 {% endhighlight %}
 
-Note that to determine the length of <code>foo()</code>, we added an empty function, <code>bar()</code>, that immediate follows <code>foo()</code>. By subtracting the address of <code>bar()</code> from <code>foo()</code> we can determine the length in bytes of <code>foo()</code>. This, of course, assumes that <code>bar()</code> immediately follows <code>foo()</code>.
+Note that to determine the length of <code>foo()</code>, we added an empty function, <code>bar()</code>, that immediately follows <code>foo()</code>. By subtracting the address of <code>bar()</code> from <code>foo()</code> we can determine the length in bytes of <code>foo()</code>. This, of course, assumes that <code>bar()</code> immediately follows <code>foo()</code>.
 
 The output of running this:
 

@@ -1,0 +1,56 @@
+@import "colors";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: $background-color;
+  color: $text-color;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: 300;
+}
+
+hr {
+  color: $text-color;
+}
+
+a {
+  color: $highlight-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $text-color;
+  }
+}
+
+.wrap {
+  margin: 0 auto;
+  max-width: 850px;
+  padding: 0 30px;
+
+  &:before, &:after {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}

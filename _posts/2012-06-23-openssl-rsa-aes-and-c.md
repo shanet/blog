@@ -355,4 +355,4 @@ Decrypted message: Steve Holt!
 
 Arrested Development references aside, you can see that it, at the very least, does encrypt and decrypt our messages. You'll notice that the output has been converted to base64 so it can be printed out as a regular ASCII string.
 
-<h3 class="post-center"><a href="https://github.com/shanet/Crypto-Example">Full code listing (and more!) is available on GitHub</a>.</h3>
+<h3 class="page-center"><a href="https://github.com/shanet/Crypto-Example">Full code listing (and more!) is available on GitHub</a>.</h3>

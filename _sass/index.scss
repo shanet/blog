@@ -1,0 +1,26 @@
+@import "colors";
+
+.home {
+  padding: 10px 0;
+
+  .post:not(:last-child) {
+    border-bottom: 1px solid $text-color;
+    margin-bottom: 10px;
+  }
+}
+
+.posts {
+  .post-link {
+    font-size: 24px;
+  }
+
+  .post-date {
+    font-size: 15px;
+    color: #818181;
+  }
+
+  .read-more {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,23 @@
+@import "colors";
+
+.pagination {
+  min-height: 45px;
+}
+
+.pagination a,
+.pagination span {
+  color: $highlight-color;
+  font-size: 16px;
+  padding: .75em 1em;
+}
+
+.pagination a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.pagination-current {
+  background: $text-color;
+  border-radius: 50%;
+  color: #fff !important;
+}
