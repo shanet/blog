@@ -534,7 +534,7 @@ The code itself isn't especially interesting unless you're working with Cesium's
 
 ## Future Additions & Conclusion
 
-Given that my original vision for this project was a simple tracking system which then snowballed into much than that and ended up taking eight months, I'm ready to switch gears to something else for a while. Nonetheless, I do have some future expansion ideas:
+Given that my original vision for this project was a simple tracking system which then snowballed into much more than that and ended up taking eight months, I'm ready to switch gears to something else for a while. Nonetheless, I do have some future expansion ideas:
 
 * "Micro version" with only a processor, IMU, and battery for data logging purposes only.
 * The 3D flight path playback in the launch report could be made more rich with the addition of altitude and flight phase data.
