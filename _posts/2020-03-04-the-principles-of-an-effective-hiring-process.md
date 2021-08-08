@@ -5,7 +5,7 @@ date: 2020-03-04
 hidden: true
 ---
 
-[This is part of a series]({% post_url 2020-04-02-hiring-and-being-hired-for-software-engineers %}) on my experiences and learnings after conducting 750+ interviews and reviewing 10,000+ more over the course of five years. From both the candidate and interviewer sides of the table.
+[This is part of a series]({% post_url 2020-04-02-hiring-and-being-hired-for-software-engineers %}) on my experiences and learnings after conducting 750+ interviews and reviewing 10,000+ more over the course of five years and from both the candidate and interviewer sides of the table.
 
 ---
 
