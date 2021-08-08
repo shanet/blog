@@ -244,7 +244,7 @@ while(i < MAX_ITERS) {
 {% endhighlight %}
 
 
-So... let's run this thing. Keep in mind that I'm running these tests on a 2.475 (slightly overclocked) Core 2 Quad processor. This is a generation behind the current i3/5/7 processors and limits me to 4 cores to run threads on. I'm sure that a newer system would run these tests noticeably faster.
+So... let's run this thing. Keep in mind that I'm running these tests on a 2.475GHz (slightly overclocked) Core 2 Quad processor. This is a generation behind the current i3/5/7 processors and limits me to 4 cores to run threads on. I'm sure that a newer system would run these tests noticeably faster.
 
 First off, let's use the recurrence version to calculate the first 1 million digits of pi (the "test" target in the Makefile does this).
 
@@ -283,7 +283,7 @@ Just under 14 minutes. Not too shabby, but what about when multi-threading it?
 
 
 {% highlight text linenos %}
-./irrational --hide-pi 10000000
+$ ./irrational --hide-pi 10000000
 Time: 432 seconds
 Accuracy: 10084503 digits
 
@@ -302,14 +302,25 @@ Accuracy: 10084503 digits
 10.9 minutes. That's a big difference. Just goes to show how powerful compiler optimization can be. Thanks GCC!
 
 <hr />
-Update: Since I 
+2013 Update: Since I first wrote this I upgraded my CPU to an i7-4770K which was considerably faster given the ability to run all seven threads simultaneously.
 
 {% highlight text linenos %}
-./irrational --hide-pi 10000000
+$ ./irrational --hide-pi 10000000
 Time: 136 seconds
 Accuracy: 10084503 digits
 
 {% endhighlight %}
+
+<hr />
+2021 Update: I upgraded my 2013 hardware this year to a Ryzen 5900X CPU and wanted to see how this program behaved with the new hardware. It has become an interesting benchmark to check after each new generation of hardware over close to 10 years now. Not that it's unexpected, but it's satisfying to see a program that took 7 minutes in 2012 now take under 1 minute to run.
+
+{% highlight text linenos %}
+$ ./irrational --hide-pi 10000000
+Time: 42 seconds
+Accuracy: 10084503 digits
+
+{% endhighlight %}
+
 <hr />
 
 Lastly, as a little experiment to see how the threads were behaving, I took a few screenshots of my Conky system monitor while the program was running. With a single thread on a quad core system, as you would expect, exactly one core was running at 100%.
