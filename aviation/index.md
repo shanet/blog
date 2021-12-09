@@ -8,5 +8,11 @@ title: Aviation
 &ndash; Charles Lindbergh
 
 {% for video in site.data.aviation %}
-  <iframe width="853" height="480" src="https://www.youtube-nocookie.com/embed/{{ video.id }}?rel=0" frameborder="0" allowfullscreen></iframe>
+  <div class="aviation-video">
+    <video width="853" height="480" controls {% if video.poster %} poster="/assets/images/video_posters/{{ video.poster }}" {% endif %}>
+      <source src="/assets/videos/{{ video.filename }}" type="video/webm">
+    </video>
+
+    <span>{{ video.description }}{% if video.date %}, {{ video.date }}{% endif %}</span>
+  </div>
 {% endfor %}

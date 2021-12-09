@@ -1,0 +1,11 @@
+@import "colors";
+
+.aviation-video {
+  text-align: right;
+
+  &:not(:last-child) {
+    border-bottom: 3px solid $text-color;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+  }
+}
