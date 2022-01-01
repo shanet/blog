@@ -7,7 +7,7 @@ title: Talks
 
 <div align="center">
   <!-- Avalanches -->
-  <p><iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTKhNdAojxAuTz-GpwLj-_xJXH3DQiHQL7nEgA4tfqesXVlwk8ESSGgT6_1d-PPVZa6xJwDstzHZvev/pub?start=false&loop=false&delayms=3000" frameborder="0" width="875" height="510" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></p>
+  <p><iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTKhNdAojxAuTz-GpwLj-_xJXH3DQiHQL7nEgA4tfqesXVlwk8ESSGgT6_1d-PPVZa6xJwDstzHZvev/embed?start=false&loop=false&delayms=3000" frameborder="0" width="875" height="510" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></p>
 
   <!-- Hiking -->
   <p><iframe src="https://docs.google.com/presentation/d/1V7QDW3g46nXQ35ty7WFChJ495_GRwv8hg3wunMHd764/embed?start=false&loop=false&delayms=3000" frameborder="0" width="875" height="510" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></p>
