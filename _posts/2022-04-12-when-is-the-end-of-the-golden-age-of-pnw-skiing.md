@@ -1,6 +1,6 @@
 ---
 layout: post
-title: When is the End of the Golden Age of PNW Skiing?
+title: When is the end of the golden age of PNW skiing?
 date: 2022-04-12
 ---
 
