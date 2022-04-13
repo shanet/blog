@@ -62,7 +62,7 @@ The below graphs show the yearly peak snowdepth for these locations (peak snowde
 
 The trendlines on these graphs are a simple linear fit but some trends immediately jump out. The snowdepth at Paradise has remained essentially steady over the period of record. There is an almost imperceptible negative slope but it is essentially constant at 200in. However, Longmire and Ohanapecosh show significant downward trends. This isn't exactly unexpected given their relatively low elevations. Low elevations will be the first & most affected with decreased snowpack as global temperatures increase. At Longmire it's roughly a 20% decline.
 
-What is surprising to me, however, is the lack of noticeable decline at Paradise. Most of our ski areas in Washington are in that 4,000ft - 6,000ft elevation band which Paradise sits in. For skiing purposes, our snowpack has not historically not changed all that much. That's just one data point, but this is backed up by similar data at Stevens Pass (\~4,000ft), Mt. Baker (Heather Meadows, \~4,200ft), and Snoqualmie Pass (\~3,000ft):
+What is surprising to me, however, is the lack of noticeable decline at Paradise. Most of our ski areas in Washington are in that 4,000ft - 6,000ft elevation band which Paradise sits in. For skiing purposes, our snowpack has historically not changed all that much. That's just one data point, but this is backed up by similar data at Stevens Pass (\~4,000ft), Mt. Baker (Heather Meadows, \~4,200ft), and Snoqualmie Pass (\~3,000ft):
 
 <div id="stevens-snowdepth-yearly" class="chart yearly">
   <canvas></canvas>
