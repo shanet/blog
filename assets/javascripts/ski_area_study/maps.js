@@ -1,12 +1,24 @@
-const LAYER_CONFIG = [
-  {name: 'hillshade', default: true},
-  {name: 'lakes', default: true},
-  {name: 'national_forests', default: false},
-  {name: 'wilderness_areas', default: false},
-  {name: 'roadless_areas', default: false},
-  {name: 'highways', default: true},
-  {name: 'forest_roads', default: false},
-];
+const LAYER_CONFIG = {
+  land_status: [
+    {name: 'hillshade', default: true},
+    {name: 'lakes', default: true},
+    {name: 'national_forests', default: false},
+    {name: 'wilderness_areas', default: false},
+    {name: 'roadless_areas', default: false},
+    {name: 'highways', default: true},
+    {name: 'forest_roads', default: false},
+  ],
+  candidates: [
+    {name: 'hillshade', default: true},
+    {name: 'lakes', default: true},
+    {name: 'national_forests', default: true},
+    {name: 'wilderness_areas', default: true},
+    {name: 'roadless_areas', default: true},
+    {name: 'highways', default: true},
+    {name: 'forest_roads', default: true},
+    {name: 'slope', default: false},
+  ],
+};
 
 const LAYERS = {};
 const MIN_ZOOM = 7;
@@ -21,6 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initLandStatusMap() {
+  if(!document.getElementById('land-status-map')) return;
+
   map = L.map('land-status-map', {
     center: [48.291621, -121.239511],
     fullscreenControl: {pseudoFullscreen: true},
@@ -30,19 +44,23 @@ function initLandStatusMap() {
 
   getOpenStreetMapLayer().addTo(map);
 
-  for(let i=0; i<LAYER_CONFIG.length; i++) {
-    let layer_config = LAYER_CONFIG[i];
-    let layer = getCustomTileMapLayer(layer_config['name'], i + 1);
+  let layerConfigs = LAYER_CONFIG[document.getElementById('land-status-map').dataset.config];
 
-    if(layer_config['default']) {
+  for(let i=0; i<layerConfigs.length; i++) {
+    let layerConfig = layerConfigs[i];
+    let layer = getCustomTileMapLayer(layerConfig['name'], i + 1);
+
+    if(layerConfig['default']) {
       layer.addTo(map);
     }
 
-    LAYERS[layer_config['name']] = layer;
+    LAYERS[layerConfig['name']] = layer;
   }
 }
 
 function initStudyMap() {
+  if(!document.getElementById('study-map')) return;
+
   let map = L.map('study-map', {
     center: [48.291621, -121.239511],
     fullscreenControl: {pseudoFullscreen: true},
@@ -170,4 +188,45 @@ function getStudyLocations() {
       'coordinates': [48.714719, -120.668765],
     },
   ];
+}
+
+function getCandidateLocations() {
+  return [
+    {
+      'name': 'Mt. Baker NRA',
+      'coordinates': [],
+    },
+    {
+      'name': 'Snowking',
+      'coordinates': [],
+    },
+    {
+      'name': 'White Chuck',
+      'coordinates': [],
+    },
+    {
+      'name': 'Cutthroat Pass',
+      'coordinates': [],
+    },
+    {
+      'name': 'Glacier Peak Arm',
+      'coordinates': [],
+    },
+    {
+      'name': 'Hidden Lake',
+      'coordinates': [],
+    },
+    {
+      'name': 'Rock Mountain',
+      'coordinates': [],
+    },
+    {
+      'name': 'Skyline Divide',
+      'coordinates': [],
+    },
+    {
+      'name': 'Sloan Peak',
+      'coordinates': [],
+    },
+  ]
 }
