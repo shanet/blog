@@ -19,13 +19,26 @@ However, there are some **BIG** caveats to that statement. Unfortunately, the fu
 
 <!--more-->
 
+<div class="post-navigation" markdown="1">
+  Navigation
+
+  * [Data &amp; Methods](#methods)
+  * [Peak Snowdepth](#peak_snowdepth)
+  * [Ski Season Length](#ski_season_length)
+  * [Max Snowfall &amp; Average Temperature](#max_snowfall)
+  * [Why is this happening?](#why)
+  * [What do the studies say?](#studies)
+  * [Is a rapid snowpack decline in the future?](#rapid_decline)
+  * [Conclusions](#conclusions)
+</div>
+
 ## Disclaimer &amp; Scope of Research
 
 Before getting into any numbers though, a note: I am not a climatologist or have really any background or credibility on these subjects aside from spending a borderline unhealthy amount of time pouring over historical snowpack data and contemporary studies on the subject. Sources will be provided where needed but none of the material here should be considered an authoritative source. Any random person can put some nice looking graphs on a blog; doing your own verification is critical. Please email me (see header) with any corrections or oversights you may find.
 
 Furthermore, the topic of snowpack decline in the western US is massively complex with more variables than I could possibly account for. To that end, everything here is presented through an extremely narrow lens: snow and ski conditions at specific locations in the Cascades. Snowpack amounts for critical applications such as agriculture is a topic best left to the professionals. Snowpack loss in other locations/elevations than are used for skiing is an incredibly large problem with far reaching ramifications but is outside the scope of this writing.
 
-## Data & Methods
+## <a name="methods"></a>Data &amp; Methods
 
 With that said, our journey starts with finding a source of historical snowpack data. The USDA's SNOTEL monitoring system provides all the data we could ever ask for starting from the mid 1960s but really in earnest around Washington from the 1980s. Additionally, here in Washington we have NWAC's monitoring stations at ski areas themselves but only for the past decade or so. For reasons I'll get into later, what I really wanted was to get snowpack data reaching back into the early 1900s, or at least prior to the 1950s. Data going back this far and with a consistent period of record is difficult to find.
 
@@ -35,7 +48,7 @@ By gathering data from all of these sources and graphing it we're able to see ho
 
 See [sources](#sources) for links to each station used here.
 
-## Peak Snowdepth
+## <a name="peak_snowdepth"></a>Peak Snowdepth
 
 Starting without any context, let's take a look at historical peak snowdepth. Locations around Rainier have the most complete data given the park's long history. There are periods of record stretching all the way back to 1915. Namely, we have three excellent sources of data at different elevations:
 
@@ -83,7 +96,7 @@ Here we can see that there are again some small negative trends, Snoqualmie bein
 
 But wait, Snoqualmie is at 3,000ft and Longmire is at 2,700ft. Why does Longmire should such a large decline but Snoqualmie only shows a modest decline? Is 300ft really that much of a difference? It's worth taking a moment to throw another variable in the mix. Mountains are complex environments. Taking the data from one location, such as Longmire, and applying to everywhere at the same elevation band in a mountain range is a bad comparison. Local effects exist that can cause considerably different climates within close geographical locations. In the case of Snoqualmie, it is, of course, a mountain pass. Its low elevation actually works to its benefit for the purposes of snowfall. In the winter, the air in eastern Washington is much colder than the air in western Washington. It is not easy for the cold air east of the Cascades to make its way to the west slopes of the Cascades. The low elevation of Snoqualmie Pass's connection to that cold air in eastern Washington allows it to stay colder than other parts of the Cascades at similar elevations which do not have that reservoir of cold air to tap into.<sup>[2]</sup> With that in mind, we can understand how Longmire at 2,700ft, which has no connection to the east, shows more snowpack decline than Snoqualmie does at just 300ft higher.
 
-## Ski Season Length
+## <a name="ski_season_length"></a>Ski Season Length
 
 Okay, so our snowpack isn't seemingly declining in any significant way, at least in the locations we care most about for skiing. But what about the length of ski season? It's shorter, right? Again, the answer is: not really, no.
 
@@ -166,7 +179,7 @@ Meanwhile, I have read [contradictory takes](https://www.nytimes.com/2019/02/02/
 
 So, for the most part, our snowpack for skiing isn't declining and our ski seasons are as long as they used to be. We're good then, right? Unfortunately, no.
 
-## Max Snowfall &amp; Average Temperature
+## <a name="max_snowfall"></a>Max Snowfall &amp; Average Temperature
 
 This is where we need to look at a few more graphs and bring snowfall and temperature into the picture.
 
@@ -282,7 +295,7 @@ At both Paradise and Longmire we can see that the average daily temperature rema
 
 Therefore, the data here appears to conclude that while the overall snowpack at high elevation locations (>4,000ft) is seemingly stable and while there is actually increasing snowfall in some cases, the average temperatures are warming. Eventually when those average temperatures get to freezing we will begin to see the snowpack decline at our ski areas as well.
 
-## Why is this happening?
+## <a name="why"></a>Why is this happening?
 
 The answer to these trends may be so obvious that it would go without saying: climate change caused by human carbon emissions. That is certainly a factor, and a large one at that, but it is not the only factor.
 
@@ -316,7 +329,7 @@ Interestingly, the northern Pacific is one of the slowest warming regions of oce
 
 Surface temperature map generated from [https://data.giss.nasa.gov/gistemp/maps](https://data.giss.nasa.gov/gistemp/maps)
 
-## What do the studies say?
+## <a name="studies"></a>What do the studies say?
 
 It's here that I feel it worth to digress for a bit and reference actual peer reviewed studies that have been published on the topic of snowpack declines in the Cascades. In my research for this blog post one study above all others keep coming up as references for other studies and publications. That is the 2008 Mote study, [*Has spring snowpack decline in the Washington Cascades?*](https://cig.uw.edu/publications/has-spring-snowpack-declined-in-the-washington-cascades/)<sup>[3]</sup>. Consider a few points from this paper:
 
@@ -343,7 +356,7 @@ Given that the Stoelinga study looked at up to 2007 we can use those predictions
 
 But wait, up above the graphs of Paradise and other ski area locations showed a mostly flat trend. That's not a 20% decrease so what gives? Well, we have to keep in mind that the studies above were estimating the total amount of snowpack in the Cascades. According to Mote (2008), approximately half of the snowpack in the Cascades on April 1st lies at elevations below 4,000ft. This makes sense since there's simply less land at high elevations to hold snow. Of the locations below that elevation, for example Longmire, that calculated \~20% decline since 1930 is shockingly accurate when compared to the observations in the graphs above of the COOP data. For locations above 4,000ft the decline is much less pronounced due to the temperatures remaining below freezing primarily.
 
-## Is a rapid snowpack decline in the future?
+## <a name="rapid_decline"></a>Is a rapid snowpack decline in the future?
 
 After all that though, one thing still bothered me. If we're currently in a negative PDO cycle close in magnitude to the 1950s-1960s negative cycle why are we not seeing the same level of snowfall? The snowpack at these higher elevations appears to be holding constant. Does that mean that the negative PDO cycle and other natural variability is masking the amount of snowpack decline that we would otherwise be experiencing? When the these natural cycles flip the opposite direction are we in for a period of rapid snowpack decline?
 
