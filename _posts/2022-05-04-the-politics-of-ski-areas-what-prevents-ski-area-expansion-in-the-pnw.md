@@ -168,6 +168,8 @@ In 1970 the then named *North Cascades Winter Sports Study* was completed. I fou
 
 ![](/assets/images/ski_area_study/north_cascades_winter_sports_study.png)
 
+If you're interested, I took the time to [scan it into a PDF](https://drive.google.com/file/d/13Ew06HQTFKXw5MukJIk0gYpbAxpJhgTb/view) since it's a good read and I could not find any other digital copies anywhere. The numbered dots on the map pages are stickers, not printed, which leads me to guess that there were not many copies made. If that's true, I'm not sure how many copies still exist. Unless there's a copy sitting in a forest service archive somewhere, the UW one might be the only copy left in existance hence I thought its digital preservation was time well spent.
+
 Having the actual study in hand allowed me to understand the criteria used to assess ski area viability and its overall recommendations. The authors concluded the following three major points:
 
 1. The first priority must be expansion of existing ski areas. It hypothesized that over the following 10 years the vast majority of ski demand could be met with expansions of existing sites. The limiting factor to this being sufficient land for parking (hm, sound familiar?).
