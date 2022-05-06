@@ -166,6 +166,8 @@ As mentioned above, the 1968 North Cascades National Park Act required a study o
 
 In 1970 the then named *North Cascades Winter Sports Study* was completed. I found a few scattered references to this study as well as its conclusions around the internet but was unable to find a copy of the actual study. This was until I was tipped off by [Lowell Skoog's Alpenglow Ski Mountaineering History Project bibliography](http://www.alpenglow.org/ski-history/ref/books.html) that a copy of the study was in UW's library. With the help of a UW student, I got my hands on the actual study to reference in its entirety.
 
+![](/assets/images/ski_area_study/north_cascades_winter_sports_study.png)
+
 Having the actual study in hand allowed me to understand the criteria used to assess ski area viability and its overall recommendations. The authors concluded the following three major points:
 
 1. The first priority must be expansion of existing ski areas. It hypothesized that over the following 10 years the vast majority of ski demand could be met with expansions of existing sites. The limiting factor to this being sufficient land for parking (hm, sound familiar?).
