@@ -2,7 +2,7 @@
 layout: post
 title: A vision for the future of skiing in the PNW
 date: 2022-07-06
-published: false
+hidden: true
 ---
 
 Scattered across various online skiing forums, overheard in lift lines, and discussed on the skin track are conversations about the problems facing skiing in the PNW and potential solutions for the future. I have been participant to my fair share of these but they have always felt to me as being light on specific details and lacking a unified vision. As such, the desire was created to assess the depth of the problems and feasibility of the solutions to the problems we face around access to our mountains. The end goal being the establishment of my vision for the future of skiing in the PNW.
@@ -16,7 +16,7 @@ Previously in this series I wrote about [how the Cascades snowpack is responding
 
 The conclusion of all this being that in order to meet demand while keeping our mountains and winter recreation accessible Washington needs to consider the possibility of an entirely new ski area. Specifically, there are four areas of focus that would go a long way to providing sufficient access not just for mechanized skiers, but backcountry skiers, snowshoers, and general snow play (sledding for children and families):
 
-* Expansions of existing ski areas (See [my previous post]({% post_url 2022-06-28-where-can-pnw-ski-areas-expand %}) for details on this point)
+* Expansions of existing ski areas (see [my previous post]({% post_url 2022-06-28-where-can-pnw-ski-areas-expand %}) for details on this point)
 * Creation of a new ski area to provide competition to the large ski corporations
 * Winter maintenance to high elevation trailheads for ski touring, snowshoeing, and sledding
 * Increased focus on winter recreation community groups for ongoing advocacy
@@ -43,7 +43,7 @@ This final post attempts to answer the feasibility of doing so. Mainly, why is a
   * [Conclusions](#conclusions)
 </div>
 
-After publishing my previous post on land use restrictions and access issues in the Cascades I had a few people reach out to me whom shared the same concerns for other sports and summertime activities as well. While I focus on skiing and winter recreation here, keep in mind that these issues of overcrowding and access certainly apply to our summer trailheads as well. 
+After publishing my previous post on land use restrictions and access issues in the Cascades I had some conversations with other folks whom share the same concerns. What I've learned from these conversations is that many of the same access issues discussed here extend to other sports and summertime activities as well. Even if you're not a skier, if you use our mountains for any type of recreation these access issues affect you too. While I focus on skiing and winter recreation here to avoid blowing up the scope of this writing, keep in mind that these issues of overcrowding and access certainly apply to our summer trailheads as well. 
 
 ## Disclaimer &amp; Scope of Research
 
@@ -51,9 +51,15 @@ First, I always start these with a disclaimer: I am not a civil engineer, survey
 
 Second, and to be clear, **all of this is primarily a thought exercise.** As much as I would love to see any of the proposals below come to fruition, I am not naive enough to think that we'll have a new ski area in the Cascades any time soon, or ever really. It is disappointing that this is the default mentality we operate with. We know there are recreational access problems in our mountains but instead of the response to those being "how can we expand access to fix it?" it is instead "that won't happen" and is dismissed. My writing here is therefore done from a place of optimism where I explore solutions to these problems that could be brought to fruition given sufficient motivation and political will.
 
-Keep in mind when reading everything below that these are simply ideas. Some are fairly feasible while others are are pie-in-the-sky ideas which are effectively only exploring the idea. We would not need all of this, at least not all at once. In reality, expanding our existing ski areas is the far more realistic scenario. However, there are good reasons for why a new ski area in the Cascades would be justified hence the purpose of this post. Plus, it's fun to explore what might be possible, so let's do it.
+Keep in mind when reading everything below that these are simply ideas. Some are fairly feasible while others are are pie-in-the-sky ideas which are effectively only exploring the idea. We would not need all of this, at least not all at once. In reality, expanding our existing ski areas is the far more realistic scenario. But it's fun to explore what could be, so let's do it.
 
 ## <a name="why"></a>Why do we need a new ski area?
+
+In the early 1930s a local skier, Veida Morrow, spent a few days skiing the mountains around Snoqualmie Pass with her brother and friends. Afterwards she wrote describing one part of the trip traveling down to a cabin at Goldmyer Hot Springs:
+
+> Then for four miles downhill running, carefree and as happy as the winds that flew with us. Gone and far behind&mdash;the noise and clamor of the city. Not even the beasts of the forests trespassed upon this ground we were skimming. Forgotten all the petty sordid things that ever surround one in this greedy rush to exist among the smokestacks of the city, for here, in the covert of the towering, unchanging mountains, for a few brief days, we *lived*.[^1]
+
+Putting aside everything else for a moment, it is worth noting the value of winter recreation in our mountains. As Veida put it, the opportunity to get away from the city and live among the humbling mountains for even a few days gives one a new perspective on life. This is an opportunity we should all have. While factors are putting this at risk, the overarching theme is we need ski areas to grant the opportunities for those who choose to partake in winter recreation to have the same experience as Veida and feel that they truly lived even for brief periods of time.
 
 All of my previous posts on the topic of the future of skiing in the PNW have been around exploring what challenges we face are and how they may manifest themselves in the future. To reiterate from above, these are:
 
@@ -126,7 +132,7 @@ Moreover, the length of our ski seasons show no statistically significant declin
 
 There is a big caveat to this, however. Year to year natural variability as well as decades long variability have a significant affect on our climate. This variability combined with ever increasing global temperatures means our lower elevation ski areas are more and more at risk each year. As such, any future ski areas should prioritize higher elevations above all else for them to remain economically viable as the world (hopefully) transitions to carbon free/neutral forms of energy. But even with +2&deg;C of warming the high elevation locations in the Cascades will still have sufficient snowfall for skiing. Beyond +2&deg;C however and, well, we're going to have bigger problems to worry about than where to find some fresh snow.
 
-The other looming issue is Snoqualmie Pass. It is the lowest elevation ski area in Western Washington at \~3,000ft. As I explored in [my snowpack analysis post](({% post_url 2022-04-12-when-is-the-end-of-the-golden-age-of-pnw-skiing %})), Snoqualmie is already seeing snowpack declines unlike other ski areas in the Cascades. Given how much of the Seattle population it serves we should be thinking about if/where its capacity will be moved to. By 2050 it's likely there will be insufficient snowpack for skiing there.[^1] The economic viability of the ski area will likely founder well before then, potentially as soon as the 2030s. As this happens it will create even more stress on the higher elevation ski areas as displaced skiers migrate to new mountains. Given how long it takes ski area expansions to come to fruition (decades) we need to start planning for this now.
+The other looming issue is Snoqualmie Pass. It is the lowest elevation ski area in Western Washington at \~3,000ft. As I explored in [my snowpack analysis post](({% post_url 2022-04-12-when-is-the-end-of-the-golden-age-of-pnw-skiing %})), Snoqualmie is already seeing snowpack declines unlike other ski areas in the Cascades. Given how much of the Seattle population it serves we should be thinking about if/where its capacity will be moved to. By 2050 it's likely there will be insufficient snowpack for skiing there.[^2] The economic viability of the ski area will likely founder well before then, potentially as soon as the 2030s. As this happens it will create even more stress on the higher elevation ski areas as displaced skiers migrate to new mountains. Given how long it takes ski area expansions to come to fruition (decades) we need to start planning for this now.
 
 ### <a name="corporate_consolidation"></a>Corporate Consolidation
 
@@ -142,9 +148,9 @@ There is much to be said on the ethics around [treatment of employees](https://w
 
 Aside from short term [operational issues](https://www.instagram.com/p/CaN3E_Nv6Oh/), the longer term danger I believe these ski corporations represent is that they do not have the sport's best long term interests in mind. After all, their only real goals are to provide returns for their shareholders. Let's focus on Vail here for example. Vail's business model operates around a few key points:
 
-* Market towards the top 3% of household income.[^2] Anyone in the middle class does not matter to them.
+* Market towards the top 3% of household income.[^3] Anyone in the middle class does not matter to them.
   ![](/assets/images/ski_area_vision/vail_target_customers.png)
-* Sell as many Epic passes as possible to create a stable and predictable revenue stream to hedge against poor snow conditions in a given year.[^3]
+* Sell as many Epic passes as possible to create a stable and predictable revenue stream to hedge against poor snow conditions in a given year.[^4]
   * Part of the reason why day tickets are so expensive is because Vail does not want that revenue. They want all of their customers to be on what they call a "subscription tier" similar to a video streaming service. The day ticket prices are so expensive specifically to turn away anyone that has not bought into the Epic Pass ecosystem. Vail tells their investors they want 75% of revenue to come from advance sales specifically.
   ![](/assets/images/ski_area_vision/vail_revenue_channels.png)
 * Leverage network effects to keep skiers within their network all season long.
@@ -152,7 +158,7 @@ Aside from short term [operational issues](https://www.instagram.com/p/CaN3E_Nv6
 
 The creation of these network passes combined with the lock-in effects of the networks and the near impossibility for new competing ski areas to open has removed any incentive for Vail and crowd to provide a quality mountain experience. Their revenue is driven directly by how many passes they sell and how many people they can get on-site at their premiere, destination mountains. Your local mountain that was bought by Vail only serves as part of a pipeline to upsell you to their other more expensive properties. There is no incentive to upgrade or improve these local ski areas beyond the bare minimum required to keep them operating since they already have your money before the season starts.
 
-In fact, the inability for new ski areas to open is viewed as a positive by Vail.[^3] They tell their investors the lack of new ski areas forces the market into their existing properties. The more of these that they acquire the stronger that lock-in effect becomes with no way to reduce it since it's effectively impossible for new players to enter the market. By not allowing new ski areas to open we are playing right into the corporate hands of the ski corporations. We are giving them an oligopoly allowing them to extract ever higher profits. 
+In fact, the inability for new ski areas to open is viewed as a positive by Vail.[^5] They tell their investors the lack of new ski areas forces the market into their existing properties. The more of these that they acquire the stronger that lock-in effect becomes with no way to reduce it since it's effectively impossible for new players to enter the market. By not allowing new ski areas to open we are playing right into the corporate hands of the ski corporations. We are giving them an oligopoly allowing them to extract ever higher profits. 
 
 ![](/assets/images/ski_area_vision/vail_market_forces.png)
 
@@ -162,7 +168,7 @@ Ask yourself, what is the future of this sport when a day ticket, gear rental, a
 
 ### <a name="overcrowding"></a>Overcrowding &amp; Population Growth
 
-As I discussed in [my previous post]({% post_url 2022-06-28-where-can-pnw-ski-areas-expand %}), Washington's population has grown by 50% since 1990 with another 30% expected by 2050.[^4] This growth tracks nearly identically with ski visits to our ski areas. That is, from 3M to 4.5M visits from 1996 to 2021.[^5] Extrapolating that trend, are we prepared to handle another 30% increase in demand on our ski areas over the next 30 years?
+As I discussed in [my previous post]({% post_url 2022-06-28-where-can-pnw-ski-areas-expand %}), Washington's population has grown by 50% since 1990 with another 30% expected by 2050.[^5] This growth tracks nearly identically with ski visits to our ski areas. That is, from 3M to 4.5M visits from 1996 to 2021.[^6] Extrapolating that trend, are we prepared to handle another 30% increase in demand on our ski areas over the next 30 years?
 
 The lack of expansions over the previous 30 years has resulted in our existing ski areas being vastly overcapacity to the point of turning away customers and raising ticket/pass prices to help control crowds. In order to simply keep track with population growth our ski capacity needs to expand or we run the risk of pricing out large swaths of the population from winter sports. This is not just an issue with skiing either; given Washington's lack of winter mountain access it extends to all types of winter recreation. Western Washington has effectively only seven reliable snow access points. Even if you are not a skier, you have to contend with the crowds to enjoy any type of winter recreation. This includes snowshoers or families that want go sledding with their children (Paradise being the only not overcrowded option for these activities but one that still requires the purchase of a pass for entry to the park).
 
@@ -186,7 +192,7 @@ This is not a new concern either. As early as 1966 some in the industry were rai
 
 While I contend here that locations for additional ski terrain that don't require wilderness area changes should be prioritized and preferred, it is nigh inevitable that some ski area expansion would realistically need to take place on wilderness area land. I know how difficult of a statement that is to make and it's something that I only write after having poured over maps for months and finding no other viable option. It truly is the option of last resort.
 
-It is worth, however, keeping the scale of this type of proposal in mind. Washington has 4,351,872 total acres of wilderness areas[^6]. Let's say we were to double the size of the six ski areas in the Washington Cascades, at roughly 800 acres for each that would be 0.1% of wilderness land. Put another way, let's assume that our new ski area was to be even as large as the largest ski area in Washington, Crystal Mountain, at 2,600 acres. **That would mean reclassifying 0.06% of Washington's wilderness land.** Put another way, 99.94% of our wilderness land in Washington would continue to exist exactly as it does now. Meanwhile we greatly expand recreational opportunities for Washington and allow more of us to use and appreciate our mountains.
+It is worth, however, keeping the scale of this type of proposal in mind. Washington has 4,351,872 total acres of wilderness areas[^7]. Let's say we were to double the size of the six ski areas in the Washington Cascades, at roughly 800 acres for each that would be 0.1% of wilderness land. Put another way, let's assume that our new ski area was to be even as large as the largest ski area in Washington, Crystal Mountain, at 2,600 acres. **That would mean reclassifying 0.06% of Washington's wilderness land.** Put another way, 99.94% of our wilderness land in Washington would continue to exist exactly as it does now. Meanwhile we greatly expand recreational opportunities for Washington and allow more of us to use and appreciate our mountains.
 
 Even with such a small area developed, I would propose some additional considerations to limit the impact of that development:
 
@@ -200,7 +206,7 @@ Even with such a small area developed, I would propose some additional considera
 
 Furthermore, there is actually precedent for reclassifying wilderness for ski area development. In 1984 as part of the Washington State Wilderness Act some 800 acres of the Goat Rocks wilderness area were removed specifically to allow for White Pass to expand. This land became the Hogback/Paradise Basin expansion and effectively doubled the size of White Pass allowing for a much needed capacity increase. Representative Sid Morrison at the time wrote in regards to this provision in the bill:
 
-> An expanded White Pass area was truly the highest and best public use for that portion of the Goat Rocks [wilderness].[^7]
+> An expanded White Pass area was truly the highest and best public use for that portion of the Goat Rocks [wilderness].[^8]
 
 This is indeed the metric we should be judging the use of these lands with, the highest and best public use. Plus, it helped that while the bill removed 800 acres from the Goat Rocks wilderness it added another 23,000 acres.
 
@@ -334,7 +340,7 @@ Thus, my primary area of focus is the area north of Stevens Pass and into the No
 
 In order to make it quicker to identify and assess location candidates I created a map that shades the Cascades by our elevations of interest. It also has layers for National Forests, wilderness areas, and roadless areas. There is also a forest roads layer to assess if a location has a (semi-)developed road leading it already. Moreover, to get a sense of the run difficulty of skiing at the location a slope angle layer was created.
 
-This map was created from USGS DEM data[^8] for the Cascades, imported into [QGIS](https://qgis.org/), converted to hillshade &amp; slope angle perspectives, colored by elevation band, and then exported to raster tiles for display as a web map. Note that the lighting here is coming from the north which is unnatural, especially in the winter, but provides the most "normal" looking map. I also created a layer with the light coming from the south to get a sense of which aspects would be shaded in the winter but I found it made little difference when looking for locations so it has been omitted here to save on bandwidth.
+This map was created from USGS DEM data[^9] for the Cascades, imported into [QGIS](https://qgis.org/), converted to hillshade &amp; slope angle perspectives, colored by elevation band, and then exported to raster tiles for display as a web map. Note that the lighting here is coming from the north which is unnatural, especially in the winter, but provides the most "normal" looking map. I also created a layer with the light coming from the south to get a sense of which aspects would be shaded in the winter but I found it made little difference when looking for locations so it has been omitted here to save on bandwidth.
 
 The elevation colors correspond to the following:
 
@@ -420,15 +426,15 @@ The downsides to it being that it's fairly far from Seattle at over three hours.
 
 The biggest issue, though, is that the North Cascades Highway is closed during the winter due to avalanche danger. The question for this location and any others along Rt. 20 becomes is it possible to keep the North Cascades Highway open during the winter? Possibly! At least to Rainy Pass, where our base area would sit. We need a small history lesson to understand why this may be though.
 
-When the road was being built in the 1960s the state did not plan to initially maintain winter access but rather wait until usage and traffic deemed it necessary to undergo the expensive process of maintaining winter access, ideally without the need for any snowsheds.[^9] In the early 1970s WSDOT hired Ed LaChapelle, one of the pioneers of the field of avalanche forecasting, to conduct a study of avalanche activity along the North Cascades Highway. The state found it so useful that they hired LaChapelle to conduct similar studies elsewhere in Washington. In the years that followed, his team went on to conduct these studies and install remote weather stations in the passes and ski areas and develop a systemic method for avalanche hazard forecasting. In 1979 three members of the team, Mark Moore, Rich Mariott, and Roland Emetaz became the founding members of [NWAC](https://nwac.us).[^10]
+When the road was being built in the 1960s the state did not plan to initially maintain winter access but rather wait until usage and traffic deemed it necessary to undergo the expensive process of maintaining winter access, ideally without the need for any snowsheds.[^10] In the early 1970s WSDOT hired Ed LaChapelle, one of the pioneers of the field of avalanche forecasting, to conduct a study of avalanche activity along the North Cascades Highway. The state found it so useful that they hired LaChapelle to conduct similar studies elsewhere in Washington. In the years that followed, his team went on to conduct these studies and install remote weather stations in the passes and ski areas and develop a systemic method for avalanche hazard forecasting. In 1979 three members of the team, Mark Moore, Rich Mariott, and Roland Emetaz became the founding members of [NWAC](https://nwac.us).[^11]
 
-The study that LaChapelle completed resulted in two publications: [*Avalanches on the North Cascades Highway*](/assets/images/ski_area_vision/north_cascades_highway_avalanche_report.pdf) and [*North Cascades Highway SR-20 Avalanche Atlas*](/assets/images/ski_area_vision/north_cascades_highway_avalanche_atlas.pdf). The former outlines his findings and recommendations. In the study, LaChapelle noted that the most dangerous sections of the road are the Washington Pass and Cutthroat Ridge (as opposed to Cutthroat Pass) areas. He noted it may be possible to keep the road open during the winter but with regular closures anywhere from 10-40% of the time depending on risk tolerance, avalanche danger, and amount of artillery-based avalanche control conducted. Another option would be to maintain the lower elevation sections only such that less time would be needed to clear the high elevation sections in the spring. He also considered the possibility of snowsheds or other defensive structures. It was noted that these could certainly help with keeping the road open more often but their cost and effect on the scenery of the area made them unlikely options to move forward with. Ultimately, the state used LaChapelle's findings to argue for the road to be closed entirely during the winter.[^11]
+The study that LaChapelle completed resulted in two publications: [*Avalanches on the North Cascades Highway*](/assets/images/ski_area_vision/north_cascades_highway_avalanche_report.pdf) and [*North Cascades Highway SR-20 Avalanche Atlas*](/assets/images/ski_area_vision/north_cascades_highway_avalanche_atlas.pdf). The former outlines his findings and recommendations. In the study, LaChapelle noted that the most dangerous sections of the road are the Washington Pass and Cutthroat Ridge (as opposed to Cutthroat Pass) areas. He noted it may be possible to keep the road open during the winter but with regular closures anywhere from 10-40% of the time depending on risk tolerance, avalanche danger, and amount of artillery-based avalanche control conducted. Another option would be to maintain the lower elevation sections only such that less time would be needed to clear the high elevation sections in the spring. He also considered the possibility of snowsheds or other defensive structures. It was noted that these could certainly help with keeping the road open more often but their cost and effect on the scenery of the area made them unlikely options to move forward with. Ultimately, the state used LaChapelle's findings to argue for the road to be closed entirely during the winter.[^12]
 
 ![](/assets/images/ski_area_vision/north_cascades_highway_avalanche_diagram.jpg)
 
 <sub>Credit: [WSDOT](https://www.flickr.com/photos/wsdot/5242152043)</sub>
 
-What does this mean for a location like Cutthroat Pass? Well, the good news is that it's west of the primary areas of concern: Washington Pass &amp; Cutthroat Ridge and it would seemingly be reasonable to keep the road open to this location given a similar avalanche control program on the order of magnitude as Stevens Pass. However, this would be extremely expensive. The *North Cascades Winter Sports Study* estimated it would cost $650k/yr to keep the whole road open.[^9] Adjusted for inflation that's $4.9M/yr. Compare that to the $200-250k/yr spent to clear the road each spring.[^12] That's a tough sell for a road that would only access a small ski area. Only Rt. 542 to Mt. Baker is kept open in the winter for purely recreational purposes. All other passes in Washington are for connecting the east and west of the state throughout the winter. Basically, it's an issue of funding to keep the road open. As of now, there is no demand for a partial clearing of the road hence it is not done. It would seem that given the funding and demand to do so, which a ski area may create, it could reasonably be kept open through the areas of interest.
+What does this mean for a location like Cutthroat Pass? Well, the good news is that it's west of the primary areas of concern: Washington Pass &amp; Cutthroat Ridge and it would seemingly be reasonable to keep the road open to this location given a similar avalanche control program on the order of magnitude as Stevens Pass. However, this would be extremely expensive. The *North Cascades Winter Sports Study* estimated it would cost $650k/yr to keep the whole road open.[^10] Adjusted for inflation that's $4.9M/yr. Compare that to the $200-250k/yr spent to clear the road each spring.[^13] That's a tough sell for a road that would only access a small ski area. Only Rt. 542 to Mt. Baker is kept open in the winter for purely recreational purposes. All other passes in Washington are for connecting the east and west of the state throughout the winter. Basically, it's an issue of funding to keep the road open. As of now, there is no demand for a partial clearing of the road hence it is not done. It would seem that given the funding and demand to do so, which a ski area may create, it could reasonably be kept open through the areas of interest.
 
 Ultimately, the Rainy Pass area of the North Cascades likely has some of the most ideal terrain for a ski area in Washington: abundant high elevation terrain with excellent road access that is not in a wilderness area. However, its remote location puts it borderline too far from the western Washington population and uneconomical for maintaining winter access to.
 
@@ -490,9 +496,9 @@ Plus, being another 15 minutes down the road from Stevens would add another 30 m
 
 Assessing Yodelin requires a bit of background information first.
 
-The Yodelin ski area sat a mere 1.5mi down the road from Stevens Pass and operated from 1969 - 1974. Unlike most ski areas in Washington, it was planned with residential housing in mind. Plans called for four chairlifts in addition to a cable car to Lichtenburg mountain on the north side of the highway.[^13]
+The Yodelin ski area sat a mere 1.5mi down the road from Stevens Pass and operated from 1969 - 1974. Unlike most ski areas in Washington, it was planned with residential housing in mind. Plans called for four chairlifts in addition to a cable car to Lichtenburg mountain on the north side of the highway.[^14]
 
-Unfortunately, a negligent developer of these residential sites ignored avalanche warnings and in 1971 an avalanche killed four people in two cabins.[^14] The ski area, on the other side of the highway, continued to operate, even adding a second chairlift the following year. However, by 1974 economic issues forced its closure taking with it the possibility of expanded skiing along US-2.[^13]
+Unfortunately, a negligent developer of these residential sites ignored avalanche warnings and in 1971 an avalanche killed four people in two cabins.[^15] The ski area, on the other side of the highway, continued to operate, even adding a second chairlift the following year. However, by 1974 economic issues forced its closure taking with it the possibility of expanded skiing along US-2.[^14]
 
 Today Yodelin is a popular beginner ski touring location. Its ski runs are still well defined and visible if you know where to look from the chairlifts at Stevens. In addition, its parking lot continues to be used as an overflow lot for Stevens on busy days. The residential cabins on the north side of the highway remain as well.
 
@@ -513,9 +519,9 @@ On the other hand, having a ski area right beside one of Vail's properties would
 
 Assuming that a suitable location was found for our ski area, there is the all important issue of funding initial development and how such a ski area would operate. It may seem like an exceptionally daunting task to start a ski area, and it should be as it's no small undertaking. However, consider that many, if not most, ski areas have humble beginnings. They were usually no more than a small group of people that started with a single chairlift and grew from there as the sport grew. Let's consider a few examples from Washington in particular:
 
-The history of Crystal Mountain is deep and rich but to summarize it here, shortly after World War II and with the demise of the tow rope at Paradise, interest grew for a ski area outside of Mt. Rainier National Park. A small group of local skiers and businessmen spent a few years searching for the right location before landing on the Silver Creek area. In 1958, the then formed Crystal Mountain, Inc. issued a stock offering to raise the funds needed for the initial development of the site. Investors were given an annual dividend of one lift ticket per share having bought at least 20 shares at $50/share; roughly equal to $10,000 in total today. 800 investors took up the offer. In 1962 Crystal Mountain opened with two chairlifts and a third, Green Valley, built the following year.[^15] When Crystal Mountain, Inc. was sold to Boyne Resorts in 1997 the shareholders converted their holdings into membership units in the [Crystal Mountain Founders Club](https://crystalfoundersclub.com/index.html) which continues to operate today.
+The history of Crystal Mountain is deep and rich but to summarize it here, shortly after World War II and with the demise of the tow rope at Paradise, interest grew for a ski area outside of Mt. Rainier National Park. A small group of local skiers and businessmen spent a few years searching for the right location before landing on the Silver Creek area. In 1958, the then formed Crystal Mountain, Inc. issued a stock offering to raise the funds needed for the initial development of the site. Investors were given an annual dividend of one lift ticket per share having bought at least 20 shares at $50/share; roughly equal to $10,000 in total today. 800 investors took up the offer. In 1962 Crystal Mountain opened with two chairlifts and a third, Green Valley, built the following year.[^16] When Crystal Mountain, Inc. was sold to Boyne Resorts in 1997 the shareholders converted their holdings into membership units in the [Crystal Mountain Founders Club](https://crystalfoundersclub.com/index.html) which continues to operate today.
 
-A similar story played out for the founding of Mission Ridge. In 1959 Wilmer Hampton, Walt Hampton, Magnus Bakke, and others raised $1 million through selling stock in the to-be Mission Ridge. In 1966 it opened with two chairlifts.[^16]
+A similar story played out for the founding of Mission Ridge. In 1959 Wilmer Hampton, Walt Hampton, Magnus Bakke, and others raised $1 million through selling stock in the to-be Mission Ridge. In 1966 it opened with two chairlifts.[^17]
 
 What we can learn from this is that there is a history of successfully selling stock in the corporation behind the ski area in order to raise money to fund its initial development. Assuming the 800 investors of Crystal bought the minimum $10,000 that would be $8M in startup money. These days I can only imagine that interest would be far greater. Plus, when considering these shares came with lift tickets, a $10,000 investment could be seen as a bargain considering what season passes cost at most ski areas these days.
 
@@ -523,11 +529,11 @@ This is not to say that a new ski area should adopt all of the practices of the 
 
 #### Bridger Bowl, Montana
 
-Bridger Bowl in Montana operates as a non-profit. It is governed by the Bridger Bowl Association which has an elected board of nine volunteer directors. The association in turn has biannual association meetings, monthly board meetings, and separate committees all in the interest of addressing concerns about the ski area and to promote the sport of skiing in Montana. Membership is open to any Montana resident 18+ years old with $10/year annual dues.[^17] Compare this to the ski corporations that run our mountains in Washington who operate behind closed doors with little to no community engagement and serving only their shareholder's interests of increased profits year over year.
+Bridger Bowl in Montana operates as a non-profit. It is governed by the Bridger Bowl Association which has an elected board of nine volunteer directors. The association in turn has biannual association meetings, monthly board meetings, and separate committees all in the interest of addressing concerns about the ski area and to promote the sport of skiing in Montana. Membership is open to any Montana resident 18+ years old with $10/year annual dues.[^18] Compare this to the ski corporations that run our mountains in Washington who operate behind closed doors with little to no community engagement and serving only their shareholder's interests of increased profits year over year.
 
 #### Skeetawk, Alaska
 
-Skeetawk is of particular interest having just opened in 2020 and being a volunteer and community driven project to raise the money needed to form the non-profit ski area. Skeetawk currently operates as an ultra-minimalist ski area with just a small yurt, parking lot, and one chairlift. Even more impressive is that the organization was formed in 2015 and was able to open a new ski area in only five years![^18] They have plans to continue to expand the area by opening a second, high speed quad to the tune of $10M which will greatly expand their vertical drop and terrain.[^19]
+Skeetawk is of particular interest having just opened in 2020 and being a volunteer and community driven project to raise the money needed to form the non-profit ski area. Skeetawk currently operates as an ultra-minimalist ski area with just a small yurt, parking lot, and one chairlift. Even more impressive is that the organization was formed in 2015 and was able to open a new ski area in only five years![^19] They have plans to continue to expand the area by opening a second, high speed quad to the tune of $10M which will greatly expand their vertical drop and terrain.[^20]
 
 How was this done? Through community engagement, effective fund raising, and many volunteers working together to build a non-profit ski area that worked for them. In addition to the usual revenue streams of selling day tickets and season passes, Skeetawk raised money through sponsorships of chairlift chairs and trails. For example, for $100,000 a local company's logo would be placed on a tower on the chairlift. Or for $25,000 you could choose the name of a ski trail.
 
@@ -546,7 +552,7 @@ When Blackcomb initially opened it was starting from a position far behind the w
 * Improved signage compared to Whistler
 * Targeted marketing to attract ski film crews and create the idea that Blackcomb was the future of skiing resulting in effectively free advertising
 * Allowing snowboarding while it was still banned at Whistler
-* Even coordinating parking from helicopters on busy days to improve guest experience[^20]
+* Even coordinating parking from helicopters on busy days to improve guest experience[^21]
 
 All of this competition resulted in the buildout of one of the most advanced chairlift networks in the world (outside of Europe, at least). In fact, one could argue that the combined Whistler-Blackcomb would not be what it is today had it not been for this period of heavy competition with the newcomer, Blackcomb. In 1997, Blackcomb "won" the battle when its then owner, Intrawest, bought out the Whistler Mountain Ski Corporation to create the now unified Whistler-Blackcomb that we all know.
 
@@ -561,7 +567,7 @@ First though, backcountry access is more than just for ski touring. It is also a
 What backcountry access therefore boils down to plowing roads. And plowing roads means funding as well as avalanche mitigation where necessary. There are a few possible models for this.
 
 1. Washington's Sno-Park program currently maintains winter access to trailheads all over the state for those who purchase a sno-park pass at $50/yr. By expanding this program into select high elevation trailheads suitable for ski touring it would greatly expand the options for backcountry skiing in winter.
-2. Some sort of volunteer model could likely work as well. Consider the [Friends of Hyalite](https://www.hyalite.org/winter-road-plowing) organization in Montana which helps keep winter road access to Hyalite Canyon open. This is done through donations which reimburse the county 60% of their plowing costs.[^21] Doing so provides access for ice climbing, ice fishing, ski touring, snow camping, etc. Almost all of which would be impossible there if the road was gated during the winter.
+2. Some sort of volunteer model could likely work as well. Consider the [Friends of Hyalite](https://www.hyalite.org/winter-road-plowing) organization in Montana which helps keep winter road access to Hyalite Canyon open. This is done through donations which reimburse the county 60% of their plowing costs.[^22] Doing so provides access for ice climbing, ice fishing, ski touring, snow camping, etc. Almost all of which would be impossible there if the road was gated during the winter.
   * Given sufficient training, this could in theory be taken one step further by making some roads directly volunteer maintained, at least at lower elevations where snow removal is more manageable with standard pickup truck mounted snowplows.
 
 An interesting model to consider as well is something similar to [Colorado's Bluebird Backcountry](https://bluebirdbackcountry.com/bear-mountain/). That is, a ski area with patrol, avalanche controlled terrain, and marked trails, but no chairlifts. This model in Washington could provide a safe location for beginner ski tourers to learn the sport and take avalanche classes. It could also provide a safe location for experienced backcountry users to enjoy on high avalanche danger days. In fact, such a type of ski area was proposed by the North Cascades Winter Sports Study in locations as Washington Pass and Schriebers Meadow.
@@ -576,7 +582,7 @@ Okay, so what are some potential locations to expand winter backcountry access t
   * Earlier in this post I discussed the possibility of keeping the North Cascades Highway open to Cutthroat Pass. Backcountry access would not necessarily need to go that far to the east, but keeping more of it open could open significant ski touring terrain.
 * Mountain Loop Highway is somewhat low elevation but it has a good number of ski touring routes that are inaccessible in the winter due to the road closure. Keeping it open at least to Barlow Pass would open these up.
 * Lastly, reestablishing winter maintenance to Cayuse Pass would relive backcountry use at Crystal.
-  * Up until 1974 Cayuse Pass to White Pass was maintained during the winter by the state so this is definitely in the realm of possibility.[^22]
+  * Up until 1974 Cayuse Pass to White Pass was maintained during the winter by the state so this is definitely in the realm of possibility.[^23]
 
 #### Mt. Pilchuck
 
@@ -607,7 +613,7 @@ Despite these difficulties and uncertainties, there are some high level proposal
 3. The formation of a community group focused on lobbying for access issues that transcends all mountain recreational activities. This would involve winter and potentially summer access issues as well as lobbying for potential changes to laws to ensure we are able to maintain a sufficient amount of access to keep our mountains available for those who use to recreate in them.
   * Reviving the seemingly defunct [Cascade Backcountry Alliance](https://web.archive.org/web/20210518192107/https://www.cascadebackcountryalliance.org/) in cooperation with existing sport-specific community groups would be an excellent first step here.
 
-I've had a few people contact me in response to my previous posts on these topics. While I don't have anything planned beyond this writing, it would be interesting to talk further about these topics with folks of a similar mindset. My email address is <a href="#">sh&#97;&#x6e;&#x65;&#64;s&#104;&#x61;&#x6e;&#x65;tu&#108;&#x6c;&#x79;.c&#111;&#x6d;</a> if you are interested. Or even if you have suggestions for where a new ski area could go that I may have overlooked. I'd love to hear about it.
+I've had a few people contact me in response to my previous posts on these topics. We have discussed taking action on first starting a conversation with the existing interest groups on what the problems we face are and how we could collectively go about addressing them. If you share a similar mindset and are interested in participating in that conversation please contact me. My email address is <a href="#">sh&#97;&#x6e;&#x65;&#64;s&#104;&#x61;&#x6e;&#x65;tu&#108;&#x6c;&#x79;.c&#111;&#x6d;</a>. Or even if you simply have suggestions for where a new ski area could go that I may have overlooked, I'd love to hear about any and all of it.
 
 Any real progress on these access issues is challenging, but far from impossible. The examples mentioned earlier of Skeetawk in Alaska demonstrates that a new ski area can be opened without corporate money and in a reasonable timeframe. Similarly, a community group recently re-opened the defunct Panadero ski area in Colorado as [Cuchara Mountain Park](https://thecucharamountainpark.org/) focused specifically on the goal of increasing access to skiing and making it affordable again. I don't see why something similar in Washington could not be accomplished given the amount of passionate and talented skiers we have here.
 
@@ -617,28 +623,31 @@ See you next winter.
 
 ## Sources
 
-[^1]: [What Will Northwest Weather and Climate Be Like in 2050?](https://cliffmass.blogspot.com/2020/10/what-will-northwest-weather-and-climate.html)
-[^2]: [Kirsten Lynch, Vail Resorts: Using Data to Understand and Reach Customers](https://www.youtube.com/watch?v=FQMxj5yEvVo)
-[^3]: [Vail Resorts Investors' Conference 2022](https://investors.vailresorts.com/static-files/c58d48cd-7f36-4945-8ea1-cf5e8cb3d51f)
-[^4]: [State of Washington Forecast of the State Population](/assets/images/ski_area_vision/washington_population_forecast.pdf)
-[^5]: [NSAA - Historical Skier Visits 1979-2021](/assets/images/ski_area_vision/historical_skier_days_1979_2021.pdf)
-[^6]: [List of wilderness areas of the United States](https://en.wikipedia.org/wiki/List_of_wilderness_areas_of_the_United_States)
-[^7]: [Final Environmental Impact Statement, White Pass Ski Area Proposed Expansion](/assets/images/ski_area_study/white_pass_expansion_eis.pdf)
-[^8]: [USGS - The National Map - Data Delivery](https://www.usgs.gov/the-national-map-data-delivery)
-[^9]: [*North Cascades Winter Sports Study*](https://drive.google.com/file/d/13Ew06HQTFKXw5MukJIk0gYpbAxpJhgTb/view), p33
-[^10]: *Written in the Snows*, Lowell Skoog, p247 &amp; 248
-[^11]: [*Avalanches on the North Cascades Highway*](/assets/images/ski_area_vision/north_cascades_highway_avalanche_report.pdf), Ed LaChapelle
-[^12]: [Clearing the North Cascades Highway](http://blog.alpineinstitute.com/2009/04/clearing-north-cascades-highway.html)
-[^13]: *Written in the Snows*, Lowell Skoog, p191-192
-[^14]: *Written in the Snows*, Lowell Skoog, p246-247
-[^15]: *Written in the Snows*, Lowell Skoog, p187-189
-[^16]: *Written in the Snows*, Lowell Skoog, p189
-[^17]: [Bridger Bowl Association](https://bridgerbowl.com/association)
-[^18]: [The History of Skeetawk](https://skeetawk.com/history)
-[^19]: [Alaska's Newest Ski Area Details Their Next Lift](https://unofficialnetworks.com/2022/02/08/alaskas-newest-ski-area-details-their-next-lift/)
-[^20]: [Whistler: 50 Years of Going Beyond](https://www.youtube.com/watch?v=OJTh-dDA4yY&t=740s)
-[^21]: [Friends of Hyalite - Winter Road Plowing](https://www.hyalite.org/winter-road-plowing)
-[^22]: [Cayuse Pass to Paradise](http://www.alpenglow.org/skiing/cayuse-2001/index.html)
+A special thank you is in order for Lowell Skoog. His book, *Written in the Snows*, is an incredible summary of the history of skiing in the PNW and is heavily cited here. It is well worth your time to read it if you are interested in these topics. Moreover, his [Alpenglow Ski Mountaineering History Project](http://www.alpenglow.org/ski-history/index.html) is a wealth of information which my blog posts would not have been possible to write without.
+
+[^1]: *Written in the Snows*, Lowell Skoog, p80
+[^2]: [What Will Northwest Weather and Climate Be Like in 2050?](https://cliffmass.blogspot.com/2020/10/what-will-northwest-weather-and-climate.html)
+[^3]: [Kirsten Lynch, Vail Resorts: Using Data to Understand and Reach Customers](https://www.youtube.com/watch?v=FQMxj5yEvVo)
+[^4]: [Vail Resorts Investors' Conference 2022](https://investors.vailresorts.com/static-files/c58d48cd-7f36-4945-8ea1-cf5e8cb3d51f)
+[^5]: [State of Washington Forecast of the State Population](/assets/images/ski_area_vision/washington_population_forecast.pdf)
+[^6]: [NSAA - Historical Skier Visits 1979-2021](/assets/images/ski_area_vision/historical_skier_days_1979_2021.pdf)
+[^7]: [List of wilderness areas of the United States](https://en.wikipedia.org/wiki/List_of_wilderness_areas_of_the_United_States)
+[^8]: [Final Environmental Impact Statement, White Pass Ski Area Proposed Expansion](/assets/images/ski_area_study/white_pass_expansion_eis.pdf)
+[^9]: [USGS - The National Map - Data Delivery](https://www.usgs.gov/the-national-map-data-delivery)
+[^10]: [*North Cascades Winter Sports Study*](https://drive.google.com/file/d/13Ew06HQTFKXw5MukJIk0gYpbAxpJhgTb/view), p33
+[^11]: *Written in the Snows*, Lowell Skoog, p247 &amp; 248
+[^12]: [*Avalanches on the North Cascades Highway*](/assets/images/ski_area_vision/north_cascades_highway_avalanche_report.pdf), Ed LaChapelle
+[^13]: [Clearing the North Cascades Highway](http://blog.alpineinstitute.com/2009/04/clearing-north-cascades-highway.html)
+[^14]: *Written in the Snows*, Lowell Skoog, p191-192
+[^15]: *Written in the Snows*, Lowell Skoog, p246-247
+[^16]: *Written in the Snows*, Lowell Skoog, p187-189
+[^17]: *Written in the Snows*, Lowell Skoog, p189
+[^18]: [Bridger Bowl Association](https://bridgerbowl.com/association)
+[^19]: [The History of Skeetawk](https://skeetawk.com/history)
+[^20]: [Alaska's Newest Ski Area Details Their Next Lift](https://unofficialnetworks.com/2022/02/08/alaskas-newest-ski-area-details-their-next-lift/)
+[^21]: [Whistler: 50 Years of Going Beyond](https://www.youtube.com/watch?v=OJTh-dDA4yY&t=740s)
+[^22]: [Friends of Hyalite - Winter Road Plowing](https://www.hyalite.org/winter-road-plowing)
+[^23]: [Cayuse Pass to Paradise](http://www.alpenglow.org/skiing/cayuse-2001/index.html)
 
 <script src="/assets/javascripts/snowpack_analysis/chart.min.js"></script>
 <script src="/assets/javascripts/snowpack_analysis/chartjs-plugin-annotation.min.js"></script>
