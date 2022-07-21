@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A vision for the future of skiing in the PNW
-date: 2022-07-06
+date: 2022-07-20
 ---
 
 Scattered across various online skiing forums, overheard in lift lines, and discussed on the skin track are conversations about the problems facing skiing in the PNW and potential solutions for the future. I have been participant to my fair share of these but they have always felt to me as being light on specific details and lacking a unified vision. As such, the desire was created to assess the depth of the problems and feasibility of the solutions to the problems we face around access to our mountains. The end goal being the establishment of my vision for the future of skiing in the PNW.
