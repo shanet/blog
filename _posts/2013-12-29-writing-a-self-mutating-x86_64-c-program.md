@@ -6,9 +6,9 @@ date: 2013-12-29
 
 "Why would you ever want to write a program that changes its code while it's running? That's a horrible idea!"
 
-Yes, yes it is. So why do it? Because it's a good learning experience, but most importantly, because I can.
+Yes, yes it is. It's a good learning experience though. This is not something you would ever do outside of exploring a curiosity.
 
-Self-mutating programs aren't useful for a whole lot. It makes for very difficult debugging, the program becomes hardware dependent, and the code is extremely tedious and confusing to read unless you are an expert assembly programmer. The only good use for self-mutating programs in the wild I know of is as a cloaking mechanism for malware. My goal is purely academic so I venture into nothing of the sort here.
+Self-mutating/self-modifying programs aren't useful for a whole lot. They make for difficult debugging, the program becomes hardware dependent, and the code is extremely tedious and confusing to read unless you are an expert assembly programmer. The only good use for self-mutating programs in the wild I know of is as a cloaking mechanism for malware. My goal is purely academic so I venture into nothing of the sort here.
 
 <strong>Warning: This post is heavy on x86_64 assembly of which I am no expert. A fair amount of research went into writing this and it's possible (almost expected) that mistakes were made. If you find one, please leave a comment or send an email so that it can be corrected.</strong>
 
@@ -293,7 +293,7 @@ unsigned char *instruction = (unsigned char*)foo_addr + 18;
 *instruction = 0x2A;
 {% endhighlight %}
 
-Assuming we did everything write, this will change the immediate value in the <code>addl</code> instruction to <code>0x2A</code> or 42. Now when we call <code>foo()</code>, it will print 42 instead of 1.
+Assuming we did everything right, this will change the immediate value in the <code>addl</code> instruction to <code>0x2A</code> or 42. Now when we call <code>foo()</code>, it will print 42 instead of 1.
 
 And putting it all together:
 
@@ -365,11 +365,11 @@ Calling foo...
 i: 42
 {% endhighlight %}
 
-Success! The first time we call <code>foo()</code> it prints 1 just as its source code says it should. Then, after we modify it, it prints 42.
+Success! The first time we call <code>foo()</code> it prints 1 just as its source code says it should. Then after we modify it it prints 42.
 
 <hr />
 
-And there you have it, a self-mutating C program. However, this is pretty boring, huh? All it does is change a number. Wouldn't it be cool if we could change <code>foo()</code> to do something else entirely? How about <code>exec()</code> a shell? That would be cool!
+And there you have it, a self-mutating C program. However, this is pretty boring; all it does is change a number. Wouldn't it be more far more interesting if we could change <code>foo()</code> to do something else entirely? How about <code>exec()</code> a shell?
 
 How would we go about starting a shell when we call <code>foo()</code> though? The natural choice is to use the <code>execve</code> syscall, but that's a lot more involved than just changing a single byte.
 
@@ -495,9 +495,7 @@ Now that we know how to set up a syscall, let's explain each step of the shellco
 
 <hr />
 
-Wow! That's a lot of info. Thankfully, we're ready to change <code>foo()</code> to execute this shellcode.
-
-Instead of changing a single byte in <code>foo()</code> like before, we now want to replace <code>foo()</code> entirely. This looks like a job for <code>memcpy()</code>. Given a pointer to the start of <code>foo()</code> and a pointer to our shellcode, we can copy the shellcode to the location of <code>foo()</code> as such:
+Now we're ready to change <code>foo()</code> to execute this shellcode. Instead of changing a single byte in <code>foo()</code> like before, we now want to replace <code>foo()</code> entirely. This looks like a job for <code>memcpy()</code>. Given a pointer to the start of <code>foo()</code> and a pointer to our shellcode, we can copy the shellcode to the location of <code>foo()</code> as such:
 
 {% highlight c linenos %}
     void *foo_addr = (void*)foo;
@@ -592,7 +590,7 @@ Compile it with:
 
 {% highlight bash linenos %}$ gcc -o mutate mutate.c{% endhighlight %}
 
-Time to rub your lucky rabbit foot and execute this thing.
+Time to rub your lucky rabbit foot and execute this thing:
 
 {% highlight bash linenos %}
 $ ./mutate
@@ -603,4 +601,4 @@ $ echo "it works! we exec'd a shell!"
 it works! we exec'd a shell!
 {% endhighlight %}
 
-There you have it, a self-mutating C program.
+And there you have it, a self-mutating C program.
