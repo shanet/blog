@@ -172,7 +172,7 @@ So, what could Baker do? Well, if wilderness areas are not adjusted, not much un
 As I touched on in my previous post, it's not clear how the 2001 roadless rule affects existing ski area expansions into roadless areas. Assuming that were allowed, Baker does have some limited options for expansions while staying outside of the wilderness areas:
 
 * A chairlift up the eastern side of Mt. Herman
-  * Anything in the Bagley Lakes area would need to be combined with a way to get back up to the base area as well. This could be a rope toe or T-bar.
+  * Anything in the Bagley Lakes area would need to be combined with a way to get back up to the base area as well. This could be a rope tow or T-bar.
   * This area could be problematic for construction though since as the name implies, there's a handful of lakes here.
 * A chairlift towards Artist Point or the eastern side of Table Mountain
   * Anecdotally, I've had conversations with people who claimed these were in the plans for Baker at some point in the past but I've never found any documents supporting that.
