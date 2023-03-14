@@ -4,7 +4,7 @@ title: Contacts WebAPI for Android Example
 date: 2013-07-11
 ---
 
-The first project I was given at my internship at Mozilla this summer was to implement the <a href="https://wiki.mozilla.org/WebAPI/ContactsAPI">Contacts WebAPI</a> for Android. This means it's possible to create, update, view, and delete the contacts on an Android device through the web on Firefox for Android.  Of course, a user has to explicitly allow a webpage access to his/her contacts before Firefox goes anywhere near the contacts.
+The first project I was given at my internship at Mozilla this summer was to implement the <a href="https://wiki.mozilla.org/WebAPI/ContactsAPI">Contacts WebAPI</a> for Android. This means it's possible to create, update, view, and delete the contacts on an Android device through the web on Firefox for Android. Of course, a user has to explicitly allow a webpage access to his/her contacts before Firefox goes anywhere near the contacts.
 
 The <a href="https://wiki.mozilla.org/WebAPI/ContactsAPI#Out_of_scope">Mozilla wiki has some simple examples</a> of how to use the WebAPI, but I quickly threw together a more complete example. The tarball linked below is a collection of basic HTML files that demonstrate the functions of the contacts API in a hopefully straightforward way. Not all of the possible contact fields are present for the sake of page size (and my time), but the others, as documented on the Mozilla wiki, are trivial to implement.
 

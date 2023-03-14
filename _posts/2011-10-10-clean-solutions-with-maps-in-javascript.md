@@ -4,9 +4,9 @@ title: Clean Solutions with Maps in JavaScript
 date: 2011-10-10
 ---
 
-Tonight I was faced with writing a function for the chemistry applets I work on that returned the proper cutoff value (the size of an atomic orbital) for a given orbital at a given probability percentage of something with  the electrons in an atomic orbital. Let's be honest here, I don't understand much of the chemistry behind what I'm doing. I just know enough to code everything, but I'm quickly learning and understanding it all more and more!
+Tonight I was faced with writing a function for the chemistry applets I work on that returned the proper cutoff value (the size of an atomic orbital) for a given orbital at a given probability percentage of something with  the electrons in an atomic orbital. Let's be honest here, I don't understand much of the chemistry behind what I'm doing. I just know enough to code everything, but I'm quickly learning and understanding it all more and more!
 
-So basically, I had 45 numbers to match to a given input. At first, I threw all the cutoff values in an array and started writing a complex series of nested if and switch statements to return the correct value. But quickly I realized that there was a much better way to do this. Why not use a map?  I never get to use maps and I want to use one! The code is pretty straightforward so let's jump right in and then explain it.
+So basically, I had 45 numbers to match to a given input. At first, I threw all the cutoff values in an array and started writing a complex series of nested if and switch statements to return the correct value. But quickly I realized that there was a much better way to do this. Why not use a map?  I never get to use maps and I want to use one! The code is pretty straightforward so let's jump right in and then explain it.
 
 <!--more-->
 
@@ -50,8 +50,8 @@ function getGhostCutoff(percent) {
 
 {% endhighlight %}
 
-It's easy to see right off the bat that this is a much cleaner solution that using an array, or even a linked list for that matter. First off, let's understand a little about atomic orbitals. Each comprises of 3 numbers: N, L, and M. In this case, the cutoff only depends on the N and L value and the percent. The percent is selected by the user on the UI and the numbers 7, 8, and 9 correspond to 50%, 90%, and 95% respectively. Why 7-9, I'm not entirely sure. The function that these come from was written by someone else on my team so I'm above that level of abstraction on that one.
+It's easy to see right off the bat that this is a much cleaner solution that using an array, or even a linked list for that matter. First off, let's understand a little about atomic orbitals. Each comprises of 3 numbers: N, L, and M. In this case, the cutoff only depends on the N and L value and the percent. The percent is selected by the user on the UI and the numbers 7, 8, and 9 correspond to 50%, 90%, and 95% respectively. Why 7-9, I'm not entirely sure. The function that these come from was written by someone else on my team so I'm above that level of abstraction on that one.
 
-Regardless, we use these three numbers to generate a unique key for the map. The key is very simple (going along with the <a title="Keep it simple, stupid!" href="http://en.wikipedia.org/wiki/KISS_principle">KISS principle</a>). The first number is the N value, the second, the L value, and the third is the percentage with 5 corresponding to 50%, 0 to 90%, and 9, 95%.
+Regardless, we use these three numbers to generate a unique key for the map. The key is very simple (going along with the <a title="Keep it simple, stupid!" href="http://en.wikipedia.org/wiki/KISS_principle">KISS principle</a>). The first number is the N value, the second, the L value, and the third is the percentage with 5 corresponding to 50%, 0 to 90%, and 9, 95%.
 
 With the key generated and the map ready to go, all we have to do is take advantage of the data structure choice here and return the value the map maps the key to and that's all! Another perfect example of how choosing smart data structures and dumb code is far superior than choosing dumb data structures and smart (read: complex and and error prone) code.

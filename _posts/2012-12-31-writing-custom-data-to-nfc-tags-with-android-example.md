@@ -4,7 +4,7 @@ title: Writing custom data to NFC tags with Android example
 date: 2012-12-31
 ---
 
-I wanted to add NFC functionality to <a title="Controlling a relay via an Arduino from an Android client with NFC" href="http://shanetully.com/2012/12/controlling-a-relay-via-an-arduino-from-an-android-client-with-nfc/">my RelayRemote project</a> but found the amount of examples about writing custom data to an NFC tag on Android very lacking. The Android docs have a bunch of <a href="http://developer.android.com/guide/topics/connectivity/nfc/nfc.html">info on basic NFC and how it works</a>, but for actually writing the data to the tag, they try to push you to some convenience functions that were added in Jelly Bean (4.1). Unless you're targeting Jelly Bean and up (not likely at the time of this writing), it doesn't help to use these functions.
+I wanted to add NFC functionality to <a title="Controlling a relay via an Arduino from an Android client with NFC" href="http://shanetully.com/2012/12/controlling-a-relay-via-an-arduino-from-an-android-client-with-nfc/">my RelayRemote project</a> but found the amount of examples about writing custom data to an NFC tag on Android very lacking. The Android docs have a bunch of <a href="http://developer.android.com/guide/topics/connectivity/nfc/nfc.html">info on basic NFC and how it works</a>, but for actually writing the data to the tag, they try to push you to some convenience functions that were added in Jelly Bean (4.1). Unless you're targeting Jelly Bean and up (not likely at the time of this writing), it doesn't help to use these functions.
 
 In my case, I wanted to write the ID of a relay to turn on/off to the tag, which would then be read, have the ID looked up in the database, and let the network thread class send the data to the server. The first step in this process was writing the NFC tag. To do this, we set up a pending intent with an intent that has the data to write to the tag in it. Android will execute this pending intent the next time a tag comes into range. Basically, what we're doing is putting the device into a sort of write mode where when a tag comes into contact, Android will get our app a callback and we'll try to write our data to the tag.
 
@@ -28,7 +28,7 @@ nfcAdapter.enableForegroundDispatch((Activity)context, pi, new IntentFilter[] {t
 
 <!--more-->
 
-First I put the data I want written to the tag in <code>nfcMessage</code>, then get a handle to the <code>nfcAdapter</code> (this could fail if the device doesn't support NFC; you should check for this, I did it elsewhere). The rest is pretty much copy and paste code.  Once this executes, Android will execute our intent when the user puts a tag in range of the device.
+First I put the data I want written to the tag in <code>nfcMessage</code>, then get a handle to the <code>nfcAdapter</code> (this could fail if the device doesn't support NFC; you should check for this, I did it elsewhere). The rest is pretty much copy and paste code.  Once this executes, Android will execute our intent when the user puts a tag in range of the device.
 
 This callback happens in <code>onNewIntent(Intent intent)</code> which should be overridden in the activity that was used to create the pending intent above.
 
@@ -185,4 +185,4 @@ public void onCreate(Bundle savedInstanceState) {
 
 The intent the activity was started with will contain the NFC data. We just need to do a few things to get at it. First, we do another check to make sure the MIME type is correct. Then, pull the Ndef messages from the intent. At this point they are in the form of a parcelable array. We then extract the Ndef records from the Ndef message and get the payload of the record which has our custom data in it. In this short example, we just show it to the user via a toast and exit the activity. This can, of course, be expanded on as you wish.
 
-A full, working example can be seen in <a href="https://github.com/shanet/RelayRemote/blob/master/android/src/com/shanet/relayremote/NFC.java">my RelayRemote project</a> on GitHub.
+A full, working example can be seen in <a href="https://github.com/shanet/RelayRemote/blob/master/android/src/com/shanet/relayremote/NFC.java">my RelayRemote project</a> on GitHub.

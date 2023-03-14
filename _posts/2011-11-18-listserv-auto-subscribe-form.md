@@ -39,4 +39,4 @@ echo '
 
 As you can see all it is an HTML form that calls the PHP mail function which sends an email to Penn State's listserv server on behalf of the user requesting that he be added to our listserv. From there, the ListServ server sends a confirmation email to the user and all that need be done is to click a confirmation link. That's it! Simple, no?
 
-One note however. I would have preferred to have put the PHP in a separate file in order to keep the HTML and PHP away from one another, but I needed to use the <code>drupal_set_message</code> function meaning it had to be called from within a Drupal node. I'm sure there are ways to call it from outside a Drupal node, but given the scope of this project, this solution works just fine.
+One note however. I would have preferred to have put the PHP in a separate file in order to keep the HTML and PHP away from one another, but I needed to use the <code>drupal_set_message</code> function meaning it had to be called from within a Drupal node. I'm sure there are ways to call it from outside a Drupal node, but given the scope of this project, this solution works just fine.

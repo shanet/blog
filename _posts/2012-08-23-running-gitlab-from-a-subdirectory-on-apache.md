@@ -25,7 +25,7 @@ $ sudo passenger-install-apache2-module
 
 
 <!--more-->
-After installing the Passenger Apache module, it will output a few lines that need put in your Apache config. They should look something like the following, <strong>but do not copy and paste these! Use the ones that are output by the installation script!</strong>
+After installing the Passenger Apache module, it will output a few lines that need put in your Apache config. They should look something like the following, <strong>but do not copy and paste these! Use the ones that are output by the installation script!</strong>
 
 
 {% highlight text linenos %}
@@ -47,7 +47,7 @@ DocumentRoot /home/gitlab/gitlab
 
 {% endhighlight %}
 
-As per the GitLab install guide, it should be sitting at "/home/gitlab/gitlab", or similar.  Change this if this is not your case.
+As per the GitLab install guide, it should be sitting at "/home/gitlab/gitlab", or similar. Change this if this is not your case.
 <p class="brush:plain">Now <strong>restart Apache</strong> and GitLab should fire up! Note that when first starting GitLab, the page might take a minute or so to load while the server starts GitLab. Keep reading if you want to install GitLab to a subdirectory.
 
 <hr />

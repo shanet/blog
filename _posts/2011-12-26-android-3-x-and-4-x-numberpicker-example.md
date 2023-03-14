@@ -4,7 +4,7 @@ title: Android 3.x and 4.x NumberPicker Example
 date: 2011-12-26
 ---
 
-I was working on a new, yet to be released, Android app that necessitated the need for the new <a title="NumberPicker" href="http://developer.android.com/reference/android/widget/NumberPicker.html">NumberPicker</a> widget introduced in Android 3.0. Unfortunately, there are almost no examples of its use floating around and the documentation in the Android API is extremely lacking. Thus, I spent a few hours of trial and error figuring out how it worked.
+I was working on a new, yet to be released, Android app that necessitated the need for the new <a title="NumberPicker" href="http://developer.android.com/reference/android/widget/NumberPicker.html">NumberPicker</a> widget introduced in Android 3.0. Unfortunately, there are almost no examples of its use floating around and the documentation in the Android API is extremely lacking. Thus, I spent a few hours of trial and error figuring out how it worked.
 
 My goal: Use a NumberPicker to allow a user to select a multiple of 5 in the range 0-100.
 
@@ -32,7 +32,7 @@ np.setMinValue(0);
 
 {% endhighlight %}
 
-This will set up our NumberPicker to display all the numbers between 0-100, but I want the multiples of 5 between 0-100. We need to make use of the <code>setDisplayedValues()</code> function. Unfortunately, the documentation for this function is virtually non-existent, but here's what I figured out: Think of the max and min values we just set in the NumberPicker as indices in an array. By default, the NumberPicker displays the index number, but <code>setDisplayedValues()</code> displays the value in the index of the corresponding array passed in <code>setDisplayedValues()</code> rather than the actual index number.
+This will set up our NumberPicker to display all the numbers between 0-100, but I want the multiples of 5 between 0-100. We need to make use of the <code>setDisplayedValues()</code> function. Unfortunately, the documentation for this function is virtually non-existent, but here's what I figured out: Think of the max and min values we just set in the NumberPicker as indices in an array. By default, the NumberPicker displays the index number, but <code>setDisplayedValues()</code> displays the value in the index of the corresponding array passed in <code>setDisplayedValues()</code> rather than the actual index number.
 
 But first, we need a an array containing the multiples of 5 from 0-100. Sure, hard coding these numbers would be fine, but that's no fun. Let's use a quick loop.
 

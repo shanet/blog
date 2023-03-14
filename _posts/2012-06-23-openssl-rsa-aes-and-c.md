@@ -20,7 +20,7 @@ Why use the EVP (envelope) functions for RSA encryption rather than the actual R
 
 <!--more-->
 
-Moving on. First up, since all the code presented is in various functions from a class (full listing is at the end), let's look at the class members, and constructors first to understand where some of these variables are coming from. Below are all the class members. I know, not exactly intuitive, but bear with me.
+Moving on. First up, since all the code presented is in various functions from a class (full listing is at the end), let's look at the class members, and constructors first to understand where some of these variables are coming from. Below are all the class members. I know, not exactly intuitive, but bear with me.
 
 {% highlight c++ linenos %}
 static EVP_PKEY *localKeypair;
@@ -41,7 +41,7 @@ unsigned char *aesIV;
 * The <code>EVP_CIPHER_CTX</code> variables keep track of the RSA and AES encryption/decryption processes and do all the hard, behind the scenes work.
 * <code>aesKey</code> and <code>aesIV</code> are the symmetric key and IV used for the AES functions.
 
-So now we need to initialize all these guys. In the class there are two constructors, each with different arguments so let's look at the default constructor for simplicity's sake.
+So now we need to initialize all these guys. In the class there are two constructors, each with different arguments so let's look at the default constructor for simplicity's sake.
 
 {% highlight c++ linenos %}
 Crypto::Crypto() {
@@ -57,7 +57,7 @@ Crypto::Crypto() {
 
 {% endhighlight %}
 
-The RSA keys are just set to NULL because their values will be initialized later when the RSA/AES functions are called. The <code>#ifdef</code> line certainly peaks some interest. Since this class is eventually going to be dropped in a server, it will be using the client's public key to encrypt data, but we don't have a client yet, so we define a fake client and generate another RSA key pair to simulate a client. The process of generating this key pair is identical to how we're about to generate the key pair for the server so let's look at this. This is all contained in the <code>init()</code> function.
+The RSA keys are just set to NULL because their values will be initialized later when the RSA/AES functions are called. The <code>#ifdef</code> line certainly peaks some interest. Since this class is eventually going to be dropped in a server, it will be using the client's public key to encrypt data, but we don't have a client yet, so we define a fake client and generate another RSA key pair to simulate a client. The process of generating this key pair is identical to how we're about to generate the key pair for the server so let's look at this. This is all contained in the <code>init()</code> function.
 
 
 {% highlight c++ linenos %}
@@ -143,7 +143,7 @@ int Crypto::init() {
 
 {% endhighlight %}
 
-There's a lot of strange function calls in here. Most of this function deals with the OpenSSL API and how to generate keys and initialize EVP contexts. I'll give a high level overview here, but the best way to understand this process is to read up <a href="http://linux.die.net/man/3/evp_cipher_ctx_init">on documentation</a>. The first thing we do is allocate the proper amount of memory for the EVP contexts and then called the <code>EVP_CIPHER_CTX_init()</code> function which does some magic to initialize them. Then we use a few RSA functions to generate the RSA keys for the server. Again, the documentation for these functions will help you understand better than my explanation can, but you'll see a pattern emerge, initialize the context, pass it along with some options and an output argument to a function and you'll get what you want. It's the same way for RSA. We initialize the key context with <code>EVP_PKEY_CTX_new_id()</code> and <code>EVP_PKEY_keygen_init()</code>, set the key length to use with <code>EVP_PKEY_CTX_set_rsa_keygen_bits()</code> (see the full listing for the actual length if you really need to--2056 bits is sufficient for most cases; use 4096 if you're paranoid) and then actually generate the keys with <code>EVP_PKEY_keygen()</code>.
+There's a lot of strange function calls in here. Most of this function deals with the OpenSSL API and how to generate keys and initialize EVP contexts. I'll give a high level overview here, but the best way to understand this process is to read up <a href="http://linux.die.net/man/3/evp_cipher_ctx_init">on documentation</a>. The first thing we do is allocate the proper amount of memory for the EVP contexts and then called the <code>EVP_CIPHER_CTX_init()</code> function which does some magic to initialize them. Then we use a few RSA functions to generate the RSA keys for the server. Again, the documentation for these functions will help you understand better than my explanation can, but you'll see a pattern emerge, initialize the context, pass it along with some options and an output argument to a function and you'll get what you want. It's the same way for RSA. We initialize the key context with <code>EVP_PKEY_CTX_new_id()</code> and <code>EVP_PKEY_keygen_init()</code>, set the key length to use with <code>EVP_PKEY_CTX_set_rsa_keygen_bits()</code> (see the full listing for the actual length if you really need to--2056 bits is sufficient for most cases; use 4096 if you're paranoid) and then actually generate the keys with <code>EVP_PKEY_keygen()</code>.
 
 The AES key is much simpler; it's just random data so we call <code>RAND_bytes()</code> to get the number of random bytes needed for the AES encrypted key and IV. There is also the option to use the <code>EVP_BytesToKey()</code> function which is a PBKDF. This function, as I called it, will generate a 256 bit key in CBC mode, with a salt and passphrase that are random data (the password being random data is just for demonstration purposes). The number of rounds (or count as the documentation calls it) is the strength of randomness to use. Higher numbers are better, but slower.
 
@@ -272,7 +272,7 @@ Again, RSA is very similar to AES. The major difference being that we're now usi
 
 As before, we first allocate memory for the encrypted message. A limitation of RSA is that the max length of the encrypted message is roughly equal to the length of the key it's being encrypted with. However, a key point of the EVP functions is that they don't acutally encrypt your data with RSA, but rather encrypt a symmetric key with RSA and then use the symmetric key to encrypt your data since there is no max length on symmetric key encryption. This is also what the <code>ek</code> argument is. It will returned the encrypted symmetric key that the data is actually encrypted with. To decrypt it, we'll need the symmetric key and the IV. This is a lot of data to keep track of, but that's part of the challenge of using encryption.
 
-From here we init the  context again, call the update function (only once since we only have one message) and then finalize it all while keeping track of the number of bytes that were encrypted.
+From here we init the  context again, call the update function (only once since we only have one message) and then finalize it all while keeping track of the number of bytes that were encrypted.
 
 <hr />
 

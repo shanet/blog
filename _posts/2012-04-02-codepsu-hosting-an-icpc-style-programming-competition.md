@@ -4,11 +4,11 @@ title: ! 'CodePSU: Hosting an ICPC-style Programming Competition'
 date: 2012-04-02
 ---
 
-Just over a month ago the other officers of the Penn State ACM and I were approached by the president of the newly-formed Penn State of Association of Women in Computing to co-host a programming competition which would come to be known as <a title="CodePSU" href="http://acm.psu.edu/codepsu">CodePSU</a>. We set the date of the event and had roughly one month to plan everything. Most of the logistical (location, food, times) and financial (sponsors, prizes) were not handled by me. Rather, I tasked myself with designing and implementing a code submission system that allowed teams to upload solutions to problems to the judges. The catch? It had to be fast. We would have three judges judging 60 people's code multiple times in just three hours. It also had to be secure. We couldn't allow teams to figure out what test cases we where judging the problems with or allow them to get access to other teams code. If that wasn't enough, we also had to support C, C++ and Java.
+Just over a month ago the other officers of the Penn State ACM and I were approached by the president of the newly-formed Penn State of Association of Women in Computing to co-host a programming competition which would come to be known as <a title="CodePSU" href="http://acm.psu.edu/codepsu">CodePSU</a>. We set the date of the event and had roughly one month to plan everything. Most of the logistical (location, food, times) and financial (sponsors, prizes) were not handled by me. Rather, I tasked myself with designing and implementing a code submission system that allowed teams to upload solutions to problems to the judges. The catch? It had to be fast. We would have three judges judging 60 people's code multiple times in just three hours. It also had to be secure. We couldn't allow teams to figure out what test cases we where judging the problems with or allow them to get access to other teams code. If that wasn't enough, we also had to support C, C++ and Java.
 
 <!--more-->
 
-My solution: A form on our website that would upload source code files to a PHP script on our server. The PHP would put a team's solution in a unique directory, create a Makefile, compile it, and alert the judges that a new submission has been received.
+My solution: A form on our website that would upload source code files to a PHP script on our server. The PHP would put a team's solution in a unique directory, create a Makefile, compile it, and alert the judges that a new submission has been received.
 
 <hr />
 
@@ -19,7 +19,7 @@ My solution: A form on our website that would upload source code files to a PHP 
 
 The UI was designed to be very simple with minimal points of failure. On the day of the competition, the Team and Problem drop down menus were filled with the names of all the teams and problems via a Javascript array. Additionally, our submission system supported an arbitrary number of source code files. If a team wanted to break a solution into more than one file, the Add More Files button would add a new file input field to the page to allow for multiple file uploads.
 
-To make feedback a little easier, our website is powered by Drupal. This allowed the PHP script to use the Drupal API's to show immediate feedback to the teams such as their solution failed to compile, or just a confirmation that their solution was received and they would receive a result soon.
+To make feedback a little easier, our website is powered by Drupal. This allowed the PHP script to use the Drupal API's to show immediate feedback to the teams such as their solution failed to compile, or just a confirmation that their solution was received and they would receive a result soon.
 
 Most of the Javascript that sets up this form is pretty boring, but lets look at the Add More Files button handler.
 
@@ -306,7 +306,7 @@ function compileUpload($uploadDir, $teamName, $problemNo, $revNo) {
 This would check the return value of make and provide immediate feedback to the submitter if their solution failed to compile.
 
 <strong>Judging Solutions</strong>
-The first  problem I had with judging was how to know when a new solution was submitted. To solve this I created a master submission log that would be updated by the upload script every time a new submission was received.
+The first problem I had with judging was how to know when a new solution was submitted. To solve this I created a master submission log that would be updated by the upload script every time a new submission was received.
 
 
 {% highlight php linenos %}

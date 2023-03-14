@@ -4,7 +4,7 @@ title: MITM Protection via the Socialist Millionaire Protocol (OTR-style)
 date: 2013-08-22
 ---
 
-<strong>Crypto disclaimer!  I am NOT a crypto expert. Don't take the information here as 100% correct; you should verify it yourself. </strong><a href="http://happybearsoftware.com/you-are-dangerously-bad-at-cryptography.html">You are dangerously bad at crypto.</a>
+<strong>Crypto disclaimer! I am NOT a crypto expert. Don't take the information here as 100% correct; you should verify it yourself. </strong><a href="http://happybearsoftware.com/you-are-dangerously-bad-at-cryptography.html">You are dangerously bad at crypto.</a>
 
 <hr />
 
@@ -14,7 +14,7 @@ Man-in-the-middle attacks are a serious problem when designing any cryptographic
 
 <strong>The solution</strong>
 
-There's no good protection from MITM, but there is a way to exchange secrets without worrying about a MITM without using a PKI and without checking fingerprints. <a href="https://en.wikipedia.org/wiki/Off-the-Record_Messaging">OTR (off-the-record) messaging</a> utilizes the <a href="https://en.wikipedia.org/wiki/Socialist_millionaire">Socialist Millionaire Protocol</a>. In a (very small) nutshell, SMP allows two parties to check if a secret they both hold are equal to one another without revealing the actual secret to one another (or anyone else). If the secrets are not equal, no other information is revealed except that the secrets are not equal. Because of this, a would-be MITM attacker cannot interfere with the SMP, except to make it fail, because the secret value is never exchanged by the two parties.
+There's no good protection from MITM, but there is a way to exchange secrets without worrying about a MITM without using a PKI and without checking fingerprints. <a href="https://en.wikipedia.org/wiki/Off-the-Record_Messaging">OTR (off-the-record) messaging</a> utilizes the <a href="https://en.wikipedia.org/wiki/Socialist_millionaire">Socialist Millionaire Protocol</a>. In a (very small) nutshell, SMP allows two parties to check if a secret they both hold are equal to one another without revealing the actual secret to one another (or anyone else). If the secrets are not equal, no other information is revealed except that the secrets are not equal. Because of this, a would-be MITM attacker cannot interfere with the SMP, except to make it fail, because the secret value is never exchanged by the two parties.
 
 <strong>How does it work?</strong>
 

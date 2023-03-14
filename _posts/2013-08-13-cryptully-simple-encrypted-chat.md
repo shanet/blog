@@ -32,7 +32,7 @@ What about data integrity? All messages also include an HMAC calculated by takin
 
 <h3>Why would I want to use this?</h3>
 
-If you want to have a secure communication with someone, but don't want to configure software or learn about cryptography. This project was first conceived in April 2013.  With the disclosures of government surveillance two months later in June 2013, the project took on more importance as a tool for people to communicate with one another quickly and easily.
+If you want to have a secure communication with someone, but don't want to configure software or learn about cryptography. This project was first conceived in April 2013. With the disclosures of government surveillance two months later in June 2013, the project took on more importance as a tool for people to communicate with one another quickly and easily.
 
 <strong>Is it really secure?</strong>
 

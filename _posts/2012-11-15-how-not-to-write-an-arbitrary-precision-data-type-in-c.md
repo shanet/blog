@@ -4,9 +4,9 @@ title: How NOT to write an arbitrary precision data type in C
 date: 2012-11-15
 ---
 
-This past weekend was <a href="https://www.hackerleague.org/hackathons/hackpsu">HackPSU</a>, a typical 24 hour hackathon at Penn State. Without any better idea, my friend, <a href="http://www.gageames.com/">Gage Ames</a> and I decided to break the mold of the typical hackathon projects of games, websites, and mobile apps, and doing something much more nerdy: creating our own arbitrary precision data type in C so we could calculate pi (or any other irrational number) to as many digits as our computers could handle.
+This past weekend was <a href="https://www.hackerleague.org/hackathons/hackpsu">HackPSU</a>, a typical 24 hour hackathon at Penn State. Without any better idea, my friend, <a href="http://www.gageames.com/">Gage Ames</a> and I decided to break the mold of the typical hackathon projects of games, websites, and mobile apps, and doing something much more nerdy: creating our own arbitrary precision data type in C so we could calculate pi (or any other irrational number) to as many digits as our computers could handle.
 
-About one year earlier I attempted the same project, but with even less success than this time around. My previous solution was to use very large arrays to store the digits of pi in. Obviously, allocating huge amounts of memory for this purpose was a bad idea. That, coupled with a general lack of experience with memory management in C++ led to a complete and utter failure. However, this time around, I tried to learn from these mistakes and took a different approach. After discussing it with Gage, we decided on using pure C rather than any other that fancy C++ stuff, and to use a linked list rather than an array to the store our data. Sounds good so far, but here's where we made our first fatal mistake. We originally would have liked to use a doubly-linked list as it would have made our adding algorithm simpler. At this stage, I was very concerned with using as little memory as possible though and using a doubly-linked list would have nearly doubled the memory needed to store a digit. As a small digression,  knowing that each digit in a node could not be greater than 9, we used a char to save 3 bytes over using a 4 byte integer for each digit. Then, we needed a pointer to the next digit in the list, which was 8 bytes (on our 64bit laptops). There's no getting around that, but a doubly-linked list would require another pointer to the previous digit, which was another 8 bytes. This brought the total memory needed for a digit to 17 bytes per digit for a doubly-linked list or 9 bytes per digit for a singly-linked list. After a little experimentation, we determined that our adding algorithm would work just fine with a singly-linked list if we represented the digits as the least significant digit at the head of the list. In short, a few hours later we realized that using a singly-linked list and representing the digits in what accounted to little endian was just too darn slow and tedious. But enough talk, let's look at this horribly flawed code.
+About one year earlier I attempted the same project, but with even less success than this time around. My previous solution was to use very large arrays to store the digits of pi in. Obviously, allocating huge amounts of memory for this purpose was a bad idea. That, coupled with a general lack of experience with memory management in C++ led to a complete and utter failure. However, this time around, I tried to learn from these mistakes and took a different approach. After discussing it with Gage, we decided on using pure C rather than any other that fancy C++ stuff, and to use a linked list rather than an array to the store our data. Sounds good so far, but here's where we made our first fatal mistake. We originally would have liked to use a doubly-linked list as it would have made our adding algorithm simpler. At this stage, I was very concerned with using as little memory as possible though and using a doubly-linked list would have nearly doubled the memory needed to store a digit. As a small digression,  knowing that each digit in a node could not be greater than 9, we used a char to save 3 bytes over using a 4 byte integer for each digit. Then, we needed a pointer to the next digit in the list, which was 8 bytes (on our 64bit laptops). There's no getting around that, but a doubly-linked list would require another pointer to the previous digit, which was another 8 bytes. This brought the total memory needed for a digit to 17 bytes per digit for a doubly-linked list or 9 bytes per digit for a singly-linked list. After a little experimentation, we determined that our adding algorithm would work just fine with a singly-linked list if we represented the digits as the least significant digit at the head of the list. In short, a few hours later we realized that using a singly-linked list and representing the digits in what accounted to little endian was just too darn slow and tedious. But enough talk, let's look at this horribly flawed code.
 
 <!--more-->
 
@@ -29,7 +29,7 @@ typedef struct _p_num p_num;
 {% endhighlight %}
 
 
-Simple. Next would be the process of initializing one of these guys, but due to our decision to represent our numbers in little endian, the init function is unnecessarily complicated, but still interesting. In short, to init a p_num, you call the <code>init()</code> function with the mantissa and decimal parts as strings which are then parsed and converted to lists appropriately.
+Simple. Next would be the process of initializing one of these guys, but due to our decision to represent our numbers in little endian, the init function is unnecessarily complicated, but still interesting. In short, to init a p_num, you call the <code>init()</code> function with the mantissa and decimal parts as strings which are then parsed and converted to lists appropriately.
 
 {% highlight c linenos %}
 int init(p_num **num, char *man, char *dec) {
@@ -74,7 +74,7 @@ int init(p_num **num, char *man, char *dec) {
 
 <hr />
 
-More interesting is the add function. Or should I say functions since we ended up with three functions to add two p_num's together. Our algorithm is very naive, in that it adds numbers in base 10 just like you learned in elementary school. From a high level, the <code>add()</code> function is called with the two p_num's to be added. This function calls the <code>add_digits()</code> function which adds a given digit list together. Inside <code>add_digits()</code>, <code>add_with_carry()</code> is called which actually adds two given digits and returns a possible carry from the addition.  A major memory compromise we made here (and with all other arithmetic functions we wrote) was that we assumed that the first argument to be added would be modified with the result of the addition. The reason for this being that we did not want to create a copy of a potentially huge number. For our purposes, this was fine, but would not bode well for a more generic task. The full source is below, but these two functions are the more interesting parts of the functions needed for the complete addition algorithm.
+More interesting is the add function. Or should I say functions since we ended up with three functions to add two p_num's together. Our algorithm is very naive, in that it adds numbers in base 10 just like you learned in elementary school. From a high level, the <code>add()</code> function is called with the two p_num's to be added. This function calls the <code>add_digits()</code> function which adds a given digit list together. Inside <code>add_digits()</code>, <code>add_with_carry()</code> is called which actually adds two given digits and returns a possible carry from the addition.  A major memory compromise we made here (and with all other arithmetic functions we wrote) was that we assumed that the first argument to be added would be modified with the result of the addition. The reason for this being that we did not want to create a copy of a potentially huge number. For our purposes, this was fine, but would not bode well for a more generic task. The full source is below, but these two functions are the more interesting parts of the functions needed for the complete addition algorithm.
 
 {% highlight c linenos %}
 int add_digits(p_num *left, p_num *right, int part, int carry) {
@@ -162,7 +162,7 @@ int mult(p_num *left, p_num *right) {
 
 Here's where things basically fell off a cliff: the exponentiation function.
 
-Similar to multiplication, we took the shortcut of representing exponentiation as repeated multiplications. However, this time we had a problem that we couldn't perform exponentiation with non-integer powers. After looking at the formula for approximating pi we were shooting for, we realized that we wouldn't need to have non-integer powers, so we didn't account for it. This is still a huge limitation in the exponentiation function though. The real problem with the exponentiation function, though, is that is it <em>slow</em><em>. </em>I mean really, really slow. All the shortcuts were bound to catch up with us eventually, right? A little further down is the actual execution times for all these functions. I'll save the surprise (and laughter) for then.
+Similar to multiplication, we took the shortcut of representing exponentiation as repeated multiplications. However, this time we had a problem that we couldn't perform exponentiation with non-integer powers. After looking at the formula for approximating pi we were shooting for, we realized that we wouldn't need to have non-integer powers, so we didn't account for it. This is still a huge limitation in the exponentiation function though. The real problem with the exponentiation function, though, is that is it <em>slow</em><em>. </em>I mean really, really slow. All the shortcuts were bound to catch up with us eventually, right? A little further down is the actual execution times for all these functions. I'll save the surprise (and laughter) for then.
 
 {% highlight c linenos %}
 int power(p_num *base, p_num *pow) {
@@ -246,9 +246,9 @@ sys     0m0.000s
 
 {% endhighlight %}
 
-For the skeptics,<a href="http://www.wolframalpha.com/input/?i=12345123451234512345123451234512345123451.12345123451234512345123451234512345123451234512+%2B+123451234512345123451234512345123451234512345.1234512345123451234512345123451232345"> here's Wolfram's computation</a> since this number is obviously too precise for a regular calculator.
+For the skeptics,<a href="http://www.wolframalpha.com/input/?i=12345123451234512345123451234512345123451.12345123451234512345123451234512345123451234512+%2B+123451234512345123451234512345123451234512345.1234512345123451234512345123451232345"> here's Wolfram's computation</a> since this number is obviously too precise for a regular calculator.
 
-Multiplication also isn't too terrible, but does choke on large numbers. I'll stick with a simple case here.
+Multiplication also isn't too terrible, but does choke on large numbers. I'll stick with a simple case here.
 
 
 {% highlight c linenos %}
@@ -318,13 +318,13 @@ sys     0m0.000s
 
 That's right, 14.5 seconds to calculate 2<sup>4</sup>. This obviously isn't scaling well. Sure, we could do some optimizations to make it faster, but it seems to me like a whole new approach is needed.
 
-The next day, I resorted to libgmp, the <a href="http://gmplib.org/">GNU multiple precision library</a>, and lo and behold, I had pi calculated accurately to 10,000 places in a few hours. With some changes  in the approximation formula, I now have it calculating to 1.5 million digits in under 2 minutes, but that's the topic of another post entirely.
+The next day, I resorted to libgmp, the <a href="http://gmplib.org/">GNU multiple precision library</a>, and lo and behold, I had pi calculated accurately to 10,000 places in a few hours. With some changes  in the approximation formula, I now have it calculating to 1.5 million digits in under 2 minutes, but that's the topic of another post entirely.
 
 In conclusion, lessons learned:
 
-* Don't try to write your own arbitrary precision data type and accompanying functions in fewer than 24 hours.
+* Don't try to write your own arbitrary precision data type and accompanying functions in fewer than 24 hours.
 * There's a fine line between trading computation time for memory. Moderation is key.
-* A singly-linked list is definitely the wrong implementation; a doubly-linked list probably isn't much better.
+* A singly-linked list is definitely the wrong implementation; a doubly-linked list probably isn't much better.
 
 As promised, the full source.
 

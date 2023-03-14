@@ -73,7 +73,7 @@ def __aesGetCipher(self, op):
 
 The structure of these functions is to first create a cipher for encryption or decryption which is handled by the <code>__aesGetCipher()</code> function. This creates a 256 AES CBC cipher with the AES key, IV, salt, and a SHA256 digest we created in the key generation function. After obtaining the cipher, the encrypt/decrypt functions call the <code>update()</code> function of the cipher to update it with the data to be encrypted/decrypted. Lastly, it calls the <code>final()</code> function which finishes the encryption/decryption.
 
-For convenience, I wrote a wrapper class around Python's socket class called encrypted socket that encrypts/decrypts data in its <code>send()</code> and <code>recv()</code> functions. The type of encryption can be changed from no encryption to RSA to AES at will with a <code>setEncryptionType()</code> function.
+For convenience, I wrote a wrapper class around Python's socket class called encrypted socket that encrypts/decrypts data in its <code>send()</code> and <code>recv()</code> functions. The type of encryption can be changed from no encryption to RSA to AES at will with a <code>setEncryptionType()</code> function.
 
 The handshake between the client and server involves exchanging public keys and then the server encrypting the AES key, IV, and salt with the server's public key and then sending them to the client. After the handshake, all communication is done over AES.
 

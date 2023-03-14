@@ -14,7 +14,7 @@ First, here's the finished product in action:
 
 <!--more-->
 
-The concept is pretty simple, the Arduino powers two IR transmitters at 38kHz. One at the bottom of the stairs and another at the top. Immediately across from the transmitters are two IR receivers  Again, one at the top and one at the bottom. When the receiver detects a beam break by someone walking between the transmitter and receiver, the receiver sends a signal to the Arduino which calls a function to make the LEDs display a pretty color.
+The concept is pretty simple, the Arduino powers two IR transmitters at 38kHz. One at the bottom of the stairs and another at the top. Immediately across from the transmitters are two IR receivers. Again, one at the top and one at the bottom. When the receiver detects a beam break by someone walking between the transmitter and receiver, the receiver sends a signal to the Arduino which calls a function to make the LEDs display a pretty color.
 
 The parts I used:
 

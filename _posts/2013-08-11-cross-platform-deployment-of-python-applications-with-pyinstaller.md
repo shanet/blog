@@ -149,7 +149,7 @@ It is completely beyond me why Microsoft feels it is necessary to make developer
 <hr />
 <h3>OS X</h3>
 
-Finally, PyInstaller will, by default,  create a UNIX-style binary on OS X rather than the .app that OS X users are familiar with. A few lines in the spec file tells PyInstaller to create a .app as well:
+Finally, PyInstaller will, by default, create a UNIX-style binary on OS X rather than the .app that OS X users are familiar with. A few lines in the spec file tells PyInstaller to create a .app as well:
 
 {% highlight python linenos %}
 if sys.platform == 'darwin':
@@ -175,4 +175,4 @@ What does it look like put all together on each platform?
 
 &nbsp;
 
-There's obviously a few visual discrepancies, but they are acceptable for me.  Users just need to download and run on Linux, Windows, or OS X. No installations necessary. For those that like to see a full, working example, the instructions for building Cryptully are at <a href="https://cryptully.readthedocs.io/en/latest/building.html">https://cryptully.readthedocs.io/en/latest/building.html</a>.
+There's obviously a few visual discrepancies, but they are acceptable for me. Users just need to download and run on Linux, Windows, or OS X. No installations necessary. For those that like to see a full, working example, the instructions for building Cryptully are at <a href="https://cryptully.readthedocs.io/en/latest/building.html">https://cryptully.readthedocs.io/en/latest/building.html</a>.

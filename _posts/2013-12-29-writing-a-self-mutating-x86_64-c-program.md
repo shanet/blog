@@ -10,7 +10,7 @@ Yes, yes it is. It's a good learning experience though. This is not something yo
 
 Self-mutating/self-modifying programs aren't useful for a whole lot. They make for difficult debugging, the program becomes hardware dependent, and the code is extremely tedious and confusing to read unless you are an expert assembly programmer. The only good use for self-mutating programs in the wild I know of is as a cloaking mechanism for malware. My goal is purely academic so I venture into nothing of the sort here.
 
-<strong>Warning: This post is heavy on x86_64 assembly of which I am no expert. A fair amount of research went into writing this and it's possible (almost expected) that mistakes were made. If you find one, please leave a comment or send an email so that it can be corrected.</strong>
+<strong>Warning: This post is heavy on x86_64 assembly of which I am no expert. A fair amount of research went into writing this and it's possible (almost expected) that mistakes were made. If you find one, send an email so that it may be corrected.</strong>
 
 The first step of writing a self-mutating program is being able to change the code at runtime. Programmers figured out long ago that this was a bad idea and since then protections have been added to prevent a program's code from being changed at runtime. We first need to understand where the program's instructions live when the program is being executed. When a program is to be executed, the loader will load the entire program into memory. The program then executes inside of a virtual address space that is managed by the kernel. This address space is broken up into different segments as illustrated below.
 
@@ -149,7 +149,7 @@ Now that we understand the human readable form of the instruction, let's dive in
 
 ![]({{ site.baseurl }}/assets/images/2013/12/Instruction-Format.png)
 
-This is where x86_64 gets really complicated. x86_64 instructions have a variable length so to the unfamiliar, decoding instructions by hand can be a confusing and time consuming process. To make it easier, there are various documentation sources. x86ref.net has great documentation once you learn how to read it <a href="http://ref.x86asm.net/coder64.html#x83">such as the reference for the <code>addl</code> instruction</a>. For  the brave, there is also the <a href="http://www.intel.com/content/www/us/en/architecture-and-technology/64-ia-32-architectures-software-developer-manual-325462.html">Intel 64 and IA-32 Architectures Developer's Manual: Combined Vols. 1, 2, and 3</a> (warning: 3,000 page PDF).
+This is where x86_64 gets really complicated. x86_64 instructions have a variable length so to the unfamiliar, decoding instructions by hand can be a confusing and time consuming process. To make it easier, there are various documentation sources. x86ref.net has great documentation once you learn how to read it <a href="http://ref.x86asm.net/coder64.html#x83">such as the reference for the <code>addl</code> instruction</a>. For the brave, there is also the <a href="http://www.intel.com/content/www/us/en/architecture-and-technology/64-ia-32-architectures-software-developer-manual-325462.html">Intel 64 and IA-32 Architectures Developer's Manual: Combined Vols. 1, 2, and 3</a> (warning: 3,000 page PDF).
 
 In our case, these bytes mean the following:
 

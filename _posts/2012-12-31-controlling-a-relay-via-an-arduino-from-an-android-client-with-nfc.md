@@ -80,7 +80,7 @@ switch(cmd) {
 
 {% endhighlight %}
 
-Omitting some of code that reads and parses the data sent to the server (it's boring), we first convert the pin to an int by just subtracting 48 since the data from the client is a string so a single character from that is a char and the max allowed pin is 9 so it's always guaranteed to be one decimal long.
+Omitting some of code that reads and parses the data sent to the server (it's boring), we first convert the pin to an int by just subtracting 48 since the data from the client is a string so a single character from that is a char and the max allowed pin is 9 so it's always guaranteed to be one decimal long.
 
 After this it's just a switch to determine what command to perform using the <code>digitalWrite()</code> function. If a toggle command, we first check the state of the pin and then set it to the opposite state. The reply to the client is just either <code>OK</code> or <code>ERR</code>.
 

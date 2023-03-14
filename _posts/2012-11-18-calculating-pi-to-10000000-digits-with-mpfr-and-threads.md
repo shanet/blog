@@ -6,13 +6,13 @@ date: 2012-11-18
 
 A few days ago I wrote a post about [how to not go about writing an arbitrary precision]({% post_url 2012-11-15-how-not-to-write-an-arbitrary-precision-data-type-in-c %}) data type in C to calculate pi. If you read the article, I talked about how a friend and I were trying to accomplish that task in 24 hours. Needless to say, it didn't work and I resorted to using a library that was already available. Namely, <a href="http://www.mpfr.org/">MPFR</a>. After a little research on Wikipedia about the best approximations to pi, and a couple of days of off and on work, I had a pretty good solution up and running.
 
-First, let's talk about the math behind this. There are a bunch of approximations to pi; some older, some newer, some faster, some slower. At first, I used <a href="http://en.wikipedia.org/wiki/Approximations_of_%CF%80#Other_classical_formulae">Newton's approximation</a> to calculate pi.
+First, let's talk about the math behind this. There are a bunch of approximations to pi; some older, some newer, some faster, some slower. At first, I used <a href="http://en.wikipedia.org/wiki/Approximations_of_%CF%80#Other_classical_formulae">Newton's approximation</a> to calculate pi.
 
 <img title="Newton's Pi Approximation" alt="" src="http://upload.wikimedia.org/math/6/5/c/65ce3fd47c9a040cc9674be77aa00f86.png" />
 
-This worked, but was slow (I didn't record exact execution times). As everyone knows, factorials are huge numbers and grow very rapidly. In this case, the numbers were just too big to efficiently accomplish the task at hand. Could have I done something like <a href="http://en.wikipedia.org/wiki/Stirling's_approximation">Sterling's approximation</a>? Sure, but there's better ways to calculate pi. No use in wasting time.
+This worked, but was slow (I didn't record exact execution times). As everyone knows, factorials are huge numbers and grow very rapidly. In this case, the numbers were just too big to efficiently accomplish the task at hand. Could have I done something like <a href="http://en.wikipedia.org/wiki/Stirling's_approximation">Sterling's approximation</a>? Sure, but there's better ways to calculate pi. No use in wasting time.
 
-Next up, I gave the cubic convergence version of <a href="http://en.wikipedia.org/wiki/Borwein%27s_algorithm#Cubic_convergence_.281991.29">Borwein's algorithm</a> mainly because there were no factorials in it. This worked pretty well actually. It calculated pi within a reasonable amount of time (more details below), but because it was a recurrance, I would not be able to multithread it.
+Next up, I gave the cubic convergence version of <a href="http://en.wikipedia.org/wiki/Borwein%27s_algorithm#Cubic_convergence_.281991.29">Borwein's algorithm</a> mainly because there were no factorials in it. This worked pretty well actually. It calculated pi within a reasonable amount of time (more details below), but because it was a recurrance, I would not be able to multithread it.
 
 Now with multithreading in mind, I turned my attention to the 1993 version of <a href="http://en.wikipedia.org/wiki/Borwein%27s_algorithm#Jonathan_Borwein_and_Peter_Borwein.27s_Version_.281993.29">Borwein's algorithm</a>, which was a summation.
 
@@ -147,11 +147,11 @@ mpfr_set_default_prec(precision);
 
 {% endhighlight %}
 
-From there every variable initialized after that would have that precision, <em>except</em> that is local to the current thread. This means that the precision needs set again each time a thread is created. That's why this function is called again in the <code>calc_term()</code> function.
+From there every variable initialized after that would have that precision, <em>except</em> that is local to the current thread. This means that the precision needs set again each time a thread is created. That's why this function is called again in the <code>calc_term()</code> function.
 
 Another tricky part was determining the level of precision I needed mpfr to use in order to get the number of digits of pi I wanted. For example, if I wanted pi accurate to 1 million digits, I needed to tell mpfr to use ~3.35 million digits of precision. It seems natural to me that the one would call this program with the number of accurate digits wanted so experimentally I determined to multiply the precision given on the command line by 3.35 to get pi accurate to that number.
 
-Finally, speaking of precision, how am I supposed to check our precise my approximation is? Well, some nice guys at MIT have a text file with the first 1 billion digits of pi. <a href="http://stuff.mit.edu/afs/sipb/contrib/pi/">http://stuff.mit.edu/afs/sipb/contrib/pi/</a> After all the calculations are finished, the final approximation is converted into  a (really long) string and is then compared against a given file.
+Finally, speaking of precision, how am I supposed to check our precise my approximation is? Well, some nice guys at MIT have a text file with the first 1 billion digits of pi. <a href="http://stuff.mit.edu/afs/sipb/contrib/pi/">http://stuff.mit.edu/afs/sipb/contrib/pi/</a> After all the calculations are finished, the final approximation is converted into  a (really long) string and is then compared against a given file.
 
 
 {% highlight c linenos %}
@@ -196,7 +196,7 @@ unsigned long check_digits(char *pi) {
 
 {% endhighlight %}
 
-Relatively simple. <code>fread()</code> is used here since the input file is all one line so the typical way of reading a file line by line with <code>fgets()</code> is a bad idea. In fact, given that the output string could be very, very large (10 million or more characters), it would probably be best to write the output to a temporary file and then compare the two files with <code>fread</code> and two temporary buffers. But then again, assuming each digit is 1 byte,  we could generate up to 1 billion digits and use 1gb of RAM to store all them, which is reasonable on a modern system. If I ever get to the point where I'm generating more than 1 billion digits, that should probably be changed.
+Relatively simple. <code>fread()</code> is used here since the input file is all one line so the typical way of reading a file line by line with <code>fgets()</code> is a bad idea. In fact, given that the output string could be very, very large (10 million or more characters), it would probably be best to write the output to a temporary file and then compare the two files with <code>fread</code> and two temporary buffers. But then again, assuming each digit is 1 byte,  we could generate up to 1 billion digits and use 1gb of RAM to store all them, which is reasonable on a modern system. If I ever get to the point where I'm generating more than 1 billion digits, that should probably be changed.
 
 The logic behind the recurrence method is very similar, just the math is different and it is not multithreaded. I'll skip most of the details because it's a slower method and not as interesting. The relevant part with the core of the recurrence relation is:
 
@@ -338,4 +338,4 @@ It's also eating up a bunch of RAM (17%). The highest I saw it go was 19% which 
 ![]({{ site.baseurl }}/assets/images/2012/11/102.png)
 
 
-So that's my foray into calculating very precise numbers. It's a project I've been wanting to work on for a while and certainly learned a lot from it. As always, the code is open source and available on GitHub at <a href="https://github.com/shanet/Irrational">https://github.com/shanet/Irrational</a> with instructions for compiling and running it in the readme.
+So that's my foray into calculating very precise numbers. It's a project I've been wanting to work on for a while and certainly learned a lot from it. As always, the code is open source and available on GitHub at <a href="https://github.com/shanet/Irrational">https://github.com/shanet/Irrational</a> with instructions for compiling and running it in the readme.

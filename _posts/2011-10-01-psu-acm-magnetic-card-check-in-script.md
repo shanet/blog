@@ -4,7 +4,7 @@ title: Penn State ACM Magnetic Card Check-in Script
 date: 2011-10-01
 ---
 
-The other officers and I of the PSU ACM have been talking about implementing a magnetic card based check-in system for our meetings and other events. When you check-in (swipe your card) you would receive a certain number of points. The member with the most points at the end of the semester would win a prize like most likely a half eaten bag of Skittles or something. I found the whole project interesting so I took it up and had the whole thing working in just under a day.
+The other officers and I of the PSU ACM have been talking about implementing a magnetic card based check-in system for our meetings and other events. When you check-in (swipe your card) you would receive a certain number of points. The member with the most points at the end of the semester would win a prize like most likely a half eaten bag of Skittles or something. I found the whole project interesting so I took it up and had the whole thing working in just under a day.
 
 Skip to the bottom for a link to the full source.
 
@@ -12,7 +12,7 @@ To formalize... the goal: Write a program that reads data from a magnetic card, 
 
 So how does it all work?
 
-First, and most importantly, I needed a card reader! After looking into cards readers a little bit I determined that the best option was to get one that emulated a keyboard (which is apparently most of them). This way, the program could just use a regular input statement to get the info off the card. At the end of the day, I ended up going with the <a href="http://www.buy.com/prod/magtek-magnetic-stripe-swipe-card-reader/202354417.html">Magtek 21040108</a>. It's a no-frills card reader; that is, it reads all three tracks and gets the job done.
+First, and most importantly, I needed a card reader! After looking into cards readers a little bit I determined that the best option was to get one that emulated a keyboard (which is apparently most of them). This way, the program could just use a regular input statement to get the info off the card. At the end of the day, I ended up going with the <a href="http://www.buy.com/prod/magtek-magnetic-stripe-swipe-card-reader/202354417.html">Magtek 21040108</a>. It's a no-frills card reader; that is, it reads all three tracks and gets the job done.
 
 With a card reader acquired it was time to turn my attention to the database. This part was easy, I set up a new database on our web server with the following structure:
 
@@ -24,9 +24,9 @@ lastCheckin timestamp on update
 
 {% endhighlight %}
 
-The <code>cardID</code> is the info directly from the cards. This is absolutely guaranteed to be unique so it is a natural choice for the primary key. We also want to keep track of the time of last check-in which will automatically update with the current time whenever a record is updated, but more on this later. With the database design complete, it was time to write some code.
+The <code>cardID</code> is the info directly from the cards. This is absolutely guaranteed to be unique so it is a natural choice for the primary key. We also want to keep track of the time of last check-in which will automatically update with the current time whenever a record is updated, but more on this later. With the database design complete, it was time to write some code.
 
-I decided to take this opportunity to become acquainted with Python. I had wanted to play with Python for a long time and this seemed like the perfect opportunity, and the perfect application for it.
+I decided to take this opportunity to become acquainted with Python. I had wanted to play with Python for a long time and this seemed like the perfect opportunity, and the perfect application for it.
 
 After writing a quick Hello World program to become familiar with the new little nuances of a new language, I went searching for a way to talk to MySQL through Python. Enter the <a href="http://mysql-python.sourceforge.net/MySQLdb.html">MySQLdb module</a>. Import that sucka', read the manual, and you're off and running.
 
@@ -79,7 +79,7 @@ print "n" + accessID + " added to database"
 
 This is an exert from the <code>insertCard</code> function. When adding a new card, the user must enter their access ID. This is much easier to see who has the most points than keeping track of card IDs. Again, we sanitize the input to prevent SQL injection, and then insert a new record in the database.
 
-How about actually awarding points to a user when checking in? Ironically, this is the most complicated processes of the whole program. First, we go ahead and get the card swipe, and then we get the last check-in time. The whole purpose of the last check-in timestamp is to prevent someone from swiping their card five times really fast and racking up illegitimate points (yes, it's a little over the top for a bag of Skittles, but we hope to give away more valuable prizes in the future). Thus, a user is only allowed to check-in once per hour. Unfortunately, this is made more difficult considering the database server is on mountain time and our local system is on eastern time. We need to do some timezone adjusting here. Let's take a look:
+How about actually awarding points to a user when checking in? Ironically, this is the most complicated processes of the whole program. First, we go ahead and get the card swipe, and then we get the last check-in time. The whole purpose of the last check-in timestamp is to prevent someone from swiping their card five times really fast and racking up illegitimate points (yes, it's a little over the top for a bag of Skittles, but we hope to give away more valuable prizes in the future). Thus, a user is only allowed to check-in once per hour. Unfortunately, this is made more difficult considering the database server is on mountain time and our local system is on eastern time. We need to do some timezone adjusting here. Let's take a look:
 
 {% highlight python linenos %}
 # Verify the check-in times
@@ -179,6 +179,6 @@ def sanitizeInput(input):
 
 I'm sure there are better and more proper ways to do this (escaping SQL reserved words for instance), but this method works just as well. Since none of those keywords will ever need to be in our database, simply reject any input with any of them in it.
 
-Overall, I learned a lot from writing this little guy (most importantly, a can read Python code with some proficiency now). The full script checks in at just over 300 lines. Not too shabby. It was a pretty fun weekend project that will be used on a weekly basis for our club. So what's next? I'm sure that the needs of this little check-in script will grow and change over the semesters. Maybe a GUI for it? More functions to edit and query the database built in? We'll see how it goes.
+Overall, I learned a lot from writing this little guy (most importantly, a can read Python code with some proficiency now). The full script checks in at just over 300 lines. Not too shabby. It was a pretty fun weekend project that will be used on a weekly basis for our club. So what's next? I'm sure that the needs of this little check-in script will grow and change over the semesters. Maybe a GUI for it? More functions to edit and query the database built in? We'll see how it goes.
 
 If you want to see the full source, everything is open source and available over on <a href="https://github.com/shanet/PSU-ACM-Checkin-Script">GitHub</a>.
