@@ -201,7 +201,7 @@ Even with such a small area developed, I would propose some additional considera
   * There is a reason that I use the term "ski area" in my writing instead of "ski resort." All of Washington's ski areas are currently day use locations (Crystal and Mission Ridge are beginning to deviate from this). When the lifts stop for the day everyone goes home. There are no hotels, condo complexes, restaurants, shopping, etc. There is nothing "resort"-like about Washington's ski areas. They are minimalist and simple and that's just the way we like them.
   * Massive Colorado-style resort developments that are glorified real estate sales should have no place in the Cascades. Which, since there is little private land in the Cascades, certainly not enough to build a large resort development, there's little risk of this happening anyway.
     ![](/assets/images/ski_area_vision/vail_co.jpg)
-    <sub>We don't need this in our mountains.</sub>
+    <sub>We don't need to build cities in our mountains to provide access to them.</sub>
 
 Furthermore, there is actually precedent for reclassifying wilderness for ski area development. In 1984 as part of the Washington State Wilderness Act some 800 acres of the Goat Rocks wilderness area were removed specifically to allow for White Pass to expand. This land became the Hogback/Paradise Basin expansion and effectively doubled the size of White Pass allowing for a much needed capacity increase. Representative Sid Morrison at the time wrote in regards to this provision in the bill:
 
@@ -401,11 +401,11 @@ So while nearly all of the high elevation terrain in the western side of the Cas
 With that in mind, let's look at some of its other characteristics:
 
 * Good road access exists to the Easton Glacier parking lot. Some of this road is already maintained in the winter for access to the sno-park. It would need to be widened and paved, however.
-* It's base elevation would live around 4,000ft and the summit is limited by the edge of the Easton Glacier around 6,000ft unless a way was found to build a lift higher.
+* Its base elevation would live around 4,000ft and the summit is limited by the edge of the Easton Glacier around 6,000ft unless a way was found to build a lift higher.
 * The base area would be a mere 7 miles from Upper Baker Dam allowing for easy electrical connections to power chairlifts.
 * Its location on the edge of the Cascades makes for a \~2 hour drive from downtown Seattle. Plus, most of that is I-5 and Rt 20 so (on weekends) traffic would be considerably less than roads such as Stevens Pass.
 * If necessary, Baker Lake provides for an ample reservoir for snowmaking. This water being less needed in the winter than in the summer.
-* It's proximity to the town of Concrete would spur economic development there. It also allows for ample private land relatively close to the ski area for development of housing.
+* Its proximity to the town of Concrete would spur economic development there. It also allows for ample private land relatively close to the ski area for development of housing.
 * If needed, Schriebers Meadow provides a great deal of fairly flat land for base area development and/or parking. It's close proximity to what would be the ski lifts would allow for a remote parking situation where a tram or gondola could transport skiers up to the mountain requiring less cutting of trees and grading involved in building parking lots higher up the mountain.
 * The lifts could also see use in the summer for those wishing to hike in the area, summit Mt. Baker, or ski tour on the glacier in the summer.
 

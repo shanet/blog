@@ -331,7 +331,7 @@ Surface temperature map generated from [https://data.giss.nasa.gov/gistemp/maps]
 
 ## <a name="studies"></a>What do the studies say?
 
-It's here that I feel it worth to digress for a bit and reference actual peer reviewed studies that have been published on the topic of snowpack declines in the Cascades. In my research for this blog post one study above all others keep coming up as references for other studies and publications. That is the 2008 Mote study, [*Has spring snowpack decline in the Washington Cascades?*](https://cig.uw.edu/publications/has-spring-snowpack-declined-in-the-washington-cascades/)<sup>[3]</sup>. Consider a few points from this paper:
+It's here that I feel it worth to digress for a bit and reference actual peer reviewed studies that have been published on the topic of snowpack declines in the Cascades. In my research for this blog post one study above all others kept coming up as references for other studies and publications. That is the 2008 Mote study, [*Has spring snowpack decline in the Washington Cascades?*](https://cig.uw.edu/publications/has-spring-snowpack-declined-in-the-washington-cascades/)<sup>[3]</sup>. Consider a few points from this paper:
 
 * The authors conclude that as of 2006 there was a 15-35% reduction in snow water equivalent (SWE) in the Cascades.
   * They note that the bulk of this loss was from low elevation and high elevations decline less or in some cases increased.
