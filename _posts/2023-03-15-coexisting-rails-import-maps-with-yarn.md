@@ -6,7 +6,7 @@ date: 2023-03-15
 
 I dislike Webpack. I even more strongly dislike Webpack when integrated with Rails. My prior experience with it has always been one of those tools that when it works silently in the background doing what you expect it's fine, but when it doesn't do what you expect, well, there goes the rest of your day debugging it and endlessly tinkering with obscure configuration files. Then again, JavaScript in general has never been my forte, but all the more reason for a desire to not have JavaScript tooling continually get in the way of focusing on my actual application.
 
-Regardless, when I started work on my recent project, [Pirep](https://pirep.io), circa two years ago I read about a new gem installed by default with Rails 7 applications: [importmap-rails](https://github.com/rails/importmap-rails). It described itself as such in it's README:
+Regardless, when I started work on my recent project, [Pirep](https://pirep.io), circa two years ago I read about a new gem installed by default with Rails 7 applications: [importmap-rails](https://github.com/rails/importmap-rails). It described itself as such in its README:
 
 > You can build modern JavaScript applications using JavaScript libraries made for ES modules (ESM) without the need for transpiling or bundling. This frees you from needing Webpack, Yarn, npm, or any other part of the JavaScript toolchain. All you need is the asset pipeline that's already included in Rails.
 
