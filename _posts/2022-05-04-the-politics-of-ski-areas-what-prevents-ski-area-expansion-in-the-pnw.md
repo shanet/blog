@@ -298,7 +298,7 @@ Both of the above case ruling summaries are taken from [*An Adequate EIS under N
 
 In the end, despite a loss at the Supreme Court level, the Methow Valley Citizens Council got the end result they were hoping for: by weaponizing the EIS process and tying down the developers in legal battles, eventually the project ran out of money. Even with a green light to proceed (other issues such as water rights still outstanding) the project still died.
 
-### Mt. Pilchuck
+### <a name="pilchuck"></a>Mt. Pilchuck
 
 The Mt. Pilchuck ski area, located outside of Granite Falls, operated from 1956 to 1977. Pilchuck is special in that its terrain is great for skiing and its 5,344ft summit is quite high elevation for its location on the far western side of the Cascades. In fact, it's only a \~45 minute drive from Everett, considerably closer than any other ski area.
 
