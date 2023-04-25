@@ -8,7 +8,7 @@ Last year I wrote extensively about [the politics of ski areas in Washington]({%
 
 ![](/assets/images/2023/04/pilchuck_aerial.jpg)
 
-First off, for readers who know the history of Pilchuck, this is not a post about re-opening the lift-served ski area that was once the Mt. Pilchuck ski area. The proposal being made here is more modest: specifically reestablishing winter access to the previous ski area parking lot and current summer trailhead. Yup, that's it. Doing that alone could have a material impact on expanding winter recreational access in the Snohomish county area through expanded high elevation snow access for ski touring, snowshowing, sledding, and general snow play areas for families.
+First off, for readers who know the history of Pilchuck, this is not a post about re-opening the lift-served ski area that was once the Mt. Pilchuck ski area. The proposal being made here is more modest: specifically reestablishing winter access to the previous ski area parking lot and current summer trailhead. Yup, that's it. Doing that alone could have a material impact on expanding winter recreational access in the Snohomish county area through expanded high elevation snow access for ski touring, snowshoeing, sledding, and general snow play areas for families.
 
 <!--more-->
 
