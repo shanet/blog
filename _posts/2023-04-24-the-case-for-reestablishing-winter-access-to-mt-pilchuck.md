@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The case for reestablishing winter access to Mt. Pilchuck
-date: 2023-04-01
+date: 2023-04-24
 ---
 
 Last year I wrote extensively about [the politics of ski areas in Washington]({% post_url 2022-05-04-the-politics-of-ski-areas-what-prevents-ski-area-expansion-in-the-pnw %}) and [a vision for the future of skiing in the PNW]({% post_url 2022-07-20-a-vision-for-the-future-of-skiing-in-the-pnw %}). One of the topics that came up in both of those posts was Mt. Pilchuck. Namely its history as a ski area and the potential it has for the future. This made me want to explore more on the possibility of reestablishing winter access to Mt. Pilchuck.
