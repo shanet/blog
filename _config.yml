@@ -11,3 +11,4 @@ permalink: /:year/:month/:title/
 excerpt_separator: <!--more-->
 paginate: 5
 plugins: [jekyll-paginate]
+exclude: [Makefile, README.md]
