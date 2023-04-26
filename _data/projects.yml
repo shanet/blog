@@ -1,10 +1,15 @@
+- name: Pirep
+  link: https://pirep.io
+  description: A collaborative database of all public, private, and unmapped airports in the US.
+  image: projects/pirep.png
+
 - name: Osprey
   link: https://github.com/shanet/Osprey
   description: Free and open source amatuer rocketry telemetry and tracking.
   image: projects/osprey.png
 
 - name: Cryptully
-  link: http://cryptully.com
+  link: https://github.com/shanet/Cryptully
   description: An encrypted chat program for those that don't know crypto. No software to install or accounts to register.
   image: projects/cryptully.png
 
@@ -48,16 +53,6 @@
   description: Set the volume of an Alsa channel from another computer or Android device.
   image: projects/alsa.png
 
-- name: Colorswirl
-  link: https://github.com/shanet/Adalight
-  description: An LED accent lighting project controllable from your computer.
-  image: projects/adalight.jpg
-
-- name: Google Music Playlist Sync
-  link: https://github.com/shanet/Google-Music-Playlist-Sync
-  description: A quick and dirty Python script to sync local XSPF and M3U playlists to Google Music.
-  image: projects/google-music.png
-
 - name: Irrational
   link: https://github.com/shanet/Irrational
   description: A simple arbitrary length Pi calculator. 10 million digits and counting.
@@ -82,11 +77,6 @@
   link: https://github.com/shanet/CodePSU
   description: A Drupal programming competition module for the Penn State ACM.
   image: projects/codepsu-wheel.png
-
-- name: Fake Name Generator
-  link: https://play.google.com/store/apps/details?id=com.S201.Fng
-  description: Android app that randomly generates identities.
-  image: projects/fng.png
 
 - name: SimpleShell
   link: https://github.com/shanet/SimpleShell
