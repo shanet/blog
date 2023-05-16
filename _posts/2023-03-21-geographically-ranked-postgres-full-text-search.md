@@ -70,7 +70,7 @@ Indexes:
 We'll populate it with a few records:
 
 {% highlight sql linenos %}
-searches_demo=# SELECT * FROM AIRPORTS;
+searches_demo=# SELECT * FROM airports;
  id | code |                    name                     
 ----+------+---------------------------------------------
   1 | SEA  | Seattle-Tacoma International
@@ -235,12 +235,12 @@ The key modification being the conditional statement where the `to_tsvector` cal
 {% highlight sql linenos %}
 searches_demo=# SELECT * FROM searches;
 
- id | searchable_type | searchable_id |                             term_vector                              |                    term                     
-----+-----------------+---------------+----------------------------------------------------------------------+---------------------------------------------
- 13 | Airport         |             5 | 'international':4A 'seattle':2A 'seattle-tacoma':1A 'tacoma':3A      | Seattle-Tacoma International
- 14 | Airport         |             6 | 'francisco':2B 'international':3B 'san':1B                           | San Francisco International
- 15 | Airport         |             7 | 'airport':5A 'anchorage':3A 'international':4A 'stevens':2A 'ted':1A | Ted Stevens Anchorage International Airport
- 16 | Airport         |             8 | 'airport':3B 'bellingham':1B 'international':2B                      | Bellingham International Airport
+ id | searchable_type | searchable_id |                             term_vector                         |                    term                     
+----+-----------------+---------------+-----------------------------------------------------------------+---------------------------------------------
+ 13 | Airport         |             5 | 'international':4 'seattle':2 'seattle-tacoma':1 'tacoma':3     | Seattle-Tacoma International
+ 14 | Airport         |             6 | 'francisco':2C 'international':3C 'san':1C                      | San Francisco International
+ 15 | Airport         |             7 | 'airport':5 'anchorage':3 'international':4 'stevens':2 'ted':1 | Ted Stevens Anchorage International Airport
+ 16 | Airport         |             8 | 'airport':3C 'bellingham':1C 'international':2C                 | Bellingham International Airport
 {% endhighlight %}
 
 Now we can perform weighted searches against these terms. As mentioned above, the letters themselves don't assume that `D` is always the most relevant. When doing a search query we need to apply the `ts_rank` function to assign numerical values to each letter. By default, Postgres will apply the following weights to the values `D` through `A` respectively: `{0.1, 0.2, 0.4, 1.0}`.
