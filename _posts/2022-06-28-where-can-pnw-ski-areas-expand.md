@@ -163,16 +163,16 @@ Most problematically though is that Baker is nearly landlocked by wilderness are
 
 Another issue that Baker has to contend with is that it is not connected to the power grid. As a result, all of its chairlifts, except for chair 7, are powered by diesel engines. To Baker's credit, this summer they are upgrading chairs 4, 5, and 6 to electric engines.[^11] These chairs are then powered by a generator which, while still burning gas, I'd assume is more efficient. At some point in the future, I'd hope that Baker will become connected to the power grid so this power source could be swapped out for a renewable source. Otherwise, I could see this becoming a liability for Baker under Washington's cap-and-trade emissions reduction program as part of the Washington Climate Commitment Act.[^12]
 
-Out of all of the mountains I researched for this blog post, Mt. Baker is the most difficult to get any info on. The usual suspects of EISs, master plans, records of decision from the forest service, etc. have turned up nothing. I can't even find a map of their actual permit boundary; short of a FOIA request I'm not sure I will ever find it either. So while I can make some suggestions based on my own opinions, when it comes to Baker I'm mostly flying blind with regards to what the owners may or may not have up their sleeves already and what was considered in the past. If you do have any information or documentation about Baker's development, future or historical, I would love to talk with you! See the header for my email address.
+Out of all of the mountains I researched for this blog post, Mt. Baker is the most difficult to get any info on. The usual suspects of EISs, master plans, records of decision from the forest service, etc. have turned up nothing. I was unable to even find a map of their permit boundary. However, one FOIA request later and I obtained such a map which allows me to shed some light on what may be possible.
 
-So, what could Baker do? Well, if wilderness areas are not adjusted, not much unfortunately aside from upgrading lifts to be higher capacity/detachable. Consider the map of the wilderness/roadless areas (in grey) that surround Baker's rough ski area boundary (since I don't have a map of their actual permit area):
+So, what could Baker do? Well, if wilderness areas are not adjusted, not much unfortunately aside from upgrading lifts to be higher capacity/detachable. Consider the map of the wilderness areas (in grey) that surround Baker's ski area permit boundary:
 
 ![](/assets/images/ski_area_study/mt_baker_boundary.jpg)
 
-As I touched on in my previous post, it's not clear how the 2001 roadless rule affects existing ski area expansions into roadless areas. Assuming that were allowed, Baker does have some limited options for expansions while staying outside of the wilderness areas:
+There are some possibilities here, but if you include roadless areas as well it becomes even more limited with Mt. Herman taken off the table completely as well as most of Hemispheres. That said, as I touched on in my previous post, it's not clear how the 2001 roadless rule affects existing ski area expansions into these areas. Assuming that were allowed, Baker does have some limited options for expansions while staying outside of the wilderness areas:
 
 * A chairlift up the eastern side of Mt. Herman
-  * Anything in the Bagley Lakes area would need to be combined with a way to get back up to the base area as well. This could be a rope tow or T-bar.
+  * Anything in the Bagley Lakes area would need to be combined with a way to get back up to the base area as well. This could be as minimal as a rope tow or T-bar possibly.
   * This area could be problematic for construction though since as the name implies, there's a handful of lakes here.
 * A chairlift towards Artist Point or the eastern side of Table Mountain
   * Anecdotally, I've had conversations with people who claimed these were in the plans for Baker at some point in the past but I've never found any documents supporting that.
@@ -181,7 +181,17 @@ As I touched on in my previous post, it's not clear how the 2001 roadless rule a
 * A chairlift down into Swift Creek
   * This would be going into lower elevation terrain which would be marginal skiing at times. Plus, it would be south facing.
 
-All of this comes at the cost of displacing terrain that is currently heavily used for backcountry skiing, and snowshoeing in the case of Artist Point. As someone that skis these areas regularly myself, this not a proposal I make lightly. Us ski tourers must recognize though that for the larger good of our sport, the ski areas must expand outward from where they are to increase their capacity. This isn't all bad though, for those of us with passes at Baker a chairlift towards Herman or Artist Point means quicker access to the terrain beyond those areas. For those without a pass, Baker could offer a backcountry specific ticket good for limited use only to get to the backcountry terrain similar to what Whistler does.[^13] Any conversion of currently easily accessible backcountry terrain should be replaced with similar terrain access elsewhere though. Again, more on this in my next post though.
+In 2012, the previous manager of Baker, Duncan Howat, briefly addressed expansion options in [an interview with Mt. Baker Experience magazine](https://www.mountbakerexperience.com/mountain-man/) where he stated mostly the same problems outlined above:
+
+> Given our master plan and the terrain around us, it’s pretty tightly locked up. There is some recreation land surrounding us, but not a lot. There’s a little bit on Mt. Herman but that creates some problems on its own. You could theoretically go up to the top of Hemispheres but I don’t think most people would want that because they like it as a hike. It’s more of a fine-tuning of what we have.
+
+He also addressed the possibility of new chairs within the existing ski area to address capacity issues:
+
+> You could put one at the top of the Chair 3 area and run all the way down to the sewage treatment plant. There’s a chair that could go where you get off at Chair 7 and would go all the way to the top of Chair 8. At one time, we laid out a chair at Austin called the Up and Up that went up over the backside.
+
+For what it's worth, these would be welcome additions. A chair from the top of 7 to the top of 8 would relieve the usually long line at 5 and one near Austin would make skiing that area much more convenient without the hike from the top of 1 to Austin as well as relieving the line at 1's midstation.
+
+But besides intra-ski-area chairs, any of this expansion comes at the cost of displacing terrain that is currently heavily used for backcountry skiing, and snowshoeing in the case of Artist Point. As someone that skis these areas regularly myself, this not a proposal I make lightly. Us ski tourers must recognize though that for the larger good of our sport, the ski areas must expand outward from where they are to increase their capacity so the pipeline of newer skiers can continue inside the ski areas as overall demand grows. This isn't all bad though, for those of us with passes at Baker a chairlift towards Herman or Artist Point means quicker access to the terrain beyond those areas. For those without a pass, Baker could offer a backcountry specific ticket good for limited use only to get to the backcountry terrain similar to what Whistler does.[^13] In principle, any conversion of currently easily accessible backcountry terrain should be replaced with similar terrain access elsewhere. Again, more on this in my next post though.
 
 ### <a name="alpental"></a>Alpental
 

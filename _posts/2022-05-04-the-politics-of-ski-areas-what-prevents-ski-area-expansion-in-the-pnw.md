@@ -65,8 +65,8 @@ Still though, there are some areas of high elevation terrain that remain. Nevert
 
 It's also worth mentioning here some of our existing ski areas, such as Mt. Baker, are completely boxed in by wilderness &amp; roadless areas. There is virtually no where for them to expand into even if they wanted to.
 
-![](/assets/images/ski_area_study/mt_baker_boundary.jpg)
-<sub>Above in blue is a rough diagram of the ski area boundary of Mt. Baker. Despite some effort, I have been unable to find a map of Mt. Baker's actual permit boundary. Please email me if you have one.</sub>
+![](/assets/images/ski_area_study/mt_baker_boundary_roadless.jpg)
+<sub>Baker's permit boundary is outlined in white. The wilderness areas are in grey and roadless areas in purple.</sub>
 
 Thus, the biggest obstacle is where would ski areas expand to? The expansion of existing ski areas is difficult let alone the development of a new ski area. But what's the story behind all of this and is there anything that could be done to expand skiing or are we forever stuck with what he currently have?
 
