@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Five of the most accessible Idaho backcountry airports
+description: The Idaho backcountry is an intimidating place, but these airports are the easiest for pilots with regular planes to fly into.
 date: 2023-04-28
 ---
 
