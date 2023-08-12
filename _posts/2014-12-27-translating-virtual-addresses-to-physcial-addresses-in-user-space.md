@@ -26,7 +26,6 @@ Using this approach, it's entirely possible to translate a virtual address to a 
 Full code listing is at the bottom.
 
 ### Creating our buffer
-<hr />
 
 Creating a buffer to find the address of takes one additional step beyond the usual <code>malloc()</code> call. The kernel does not gaurentee that an address in the virtual address space actually maps to a physical address in memory. It may be stored in the swap space, in a cache somewhere, or somewhere else entirely. To get around this possibility, we can use <code>mlock()</code> to force a page to be kept in the physcial memory of the system. Fortunately, this is very straightward; just pass <code>mlock()</code> the pointer to the buffer and the size of the buffer and it will handle the rest. Here's what that looks like:
 
@@ -58,8 +57,7 @@ void* create_buffer(void) {
 
 Notice that I'm copying data into the buffer after locking it. This is because that if the page that the buffer is on is shared with the parent process, the OS may employ a copy-on-write paging mechanism. To force the OS to give us our own page, we write data to the buffer after it has been locked.
 
-### <code>/proc/[pid]/pagemap</code>
-<hr />
+### /proc/[pid]/pagemap
 
 The pagemap provides user space access to how the kernel is managing the pages for a process. It is a binary file so extracting information from it is a little bit tricky.
 
@@ -74,7 +72,7 @@ offset = (unsigned long)addr / getpagesize() * PAGEMAP_LENGTH
 
 Given an address, we divide it by the page size and then multiply by 8. Why 8? There are 64 bits, or 8 bytes, of info for each page.
 
-Then we seek to that position in the file and read the first 7 bytes. Why 7? We're interested in bites 0-54. That's a total of 55 bits. So we read the first 7 bytes (56 bits) and clear bit 55. Bit 55 is the soft-dirty flag which we don't care about.
+Then we seek to that position in the file and read the first 7 bytes. Why 7? We're interested in bytes 0-54. That's a total of 55 bits. So we read the first 7 bytes (56 bits) and clear bit 55. Bit 55 is the soft-dirty flag which we don't care about.
 
 {% highlight c linenos %}
 unsigned long get_page_frame_number_of_address(void *addr) {
@@ -108,8 +106,7 @@ physcial_addr = (page_frame_number << PAGE_SHIFT) + distance_from_page_boundary_
 
 where <code>PAGE_SHIFT</code> is a kernel #define. For my x86_64 system, it was defined as 12, but this may vary for you. You should confirm this value by looking in the kernel source yourself.
 
-### Writing to <code>/dev/mem</code>
-<hr />
+### Writing to /dev/mem
 
 Now that we've determined the physical address, we can continue with finding that location in memory and modifying it.
 
@@ -172,7 +169,6 @@ printf("Buffer: %s\n", buffer);
 {% endhighlight %}
 
 ### Conclusion & Full Code Listing
-<hr />
 
 It's worth noting that this was just an experiment. It's is not intended to be behavior that should be relied upon. In fact, in my testing, I experiened the kernel shuffling around physical addresses between the time at which I calculated the offset to seek to and writing data to that offset. The bottom line is: stick to virtual memory; it works really well. And if you need to modify physical memory from user space, find another way.
 
@@ -313,7 +309,6 @@ void seek_memory(int fd, unsigned long offset) {
 {% endhighlight %}
 
 ### References
-<hr />
 
 [1] [https://www.kernel.org/doc/Documentation/vm/pagemap.txt](https://www.kernel.org/doc/Documentation/vm/pagemap.txt)<br />
 [2] [https://www.kernel.org/doc/gorman/html/understand/understand005.html](https://www.kernel.org/doc/gorman/html/understand/understand005.html)<br />

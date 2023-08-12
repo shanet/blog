@@ -66,6 +66,10 @@ code {
 
 // Don't apply the styles above to pre blocks too
 pre code {
+  background-color: inherit;
+  border: 0;
   color: inherit;
   font-size: inherit;
+  padding-left: 0;
+  padding-right: 0;
 }

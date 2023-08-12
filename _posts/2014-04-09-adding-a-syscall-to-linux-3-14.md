@@ -16,13 +16,11 @@ That said, let's dive in and see what files need modified. If you haven't alread
 $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
 {% endhighlight %}
 
-
 Specifically, I'm working off of commit <code>a64f0f8c23740dc78c5f9aaee3904d0d3df4bfb5</code> so it may be helpful to run:
 
 {% highlight bash linenos %}
 $ git checkout a64f0f8c23740dc78c5f9aaee3904d0d3df4bfb5
 {% endhighlight %}
-
 
 Linux is massive and I'm no magician so I needed a little help on where to start looking. A quick search revealed this guide: <a href="http://www.tldp.org/HOWTO/html_single/Implement-Sys-Call-Linux-2.6-i386/">http://www.tldp.org/HOWTO/html_single/Implement-Sys-Call-Linux-2.6-i386/</a> which turned out to be a very good resource. The only problem is that is slightly out of date being written for Linux 2.6 and for x86 architecture. Let's see if we if make this work on the current version of Linux 3.14 (at the time of this writing) and for x86_64.
 
@@ -74,7 +72,6 @@ The version I have has 315 syscalls. To add our new one, I'm going to make a sys
 Moving on, now that we have our syscall in the syscall table, we have to provide a function prototype for our syscall's entry function. This is done in the <code>include/linux/syscalls.h</code> file.
 
 The function prototype for our entry function will look like the following:
-
 
 {% highlight c linenos %}
 asmlinkage long sys_set_root(void);
