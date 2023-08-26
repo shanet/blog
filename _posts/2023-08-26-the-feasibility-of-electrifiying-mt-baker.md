@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Feasibility of Electrifying Mt. Baker
+title: The feasibility of electrifying Mt. Baker
 description: Mt. Baker ski area is entirely diesel powered. How feasible would it be to electrify Baker to eliminate its emissions?
 date: 2023-08-26
 ---
