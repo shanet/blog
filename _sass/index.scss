@@ -4,8 +4,9 @@
   padding: 10px 0;
 
   .post:not(:last-child) {
-    border-bottom: 1px solid $text-color;
-    margin-bottom: 10px;
+    border-bottom: 1px solid $subtle-text-color;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
   }
 }
 
@@ -16,7 +17,7 @@
 
   .post-date {
     font-size: 15px;
-    color: #818181;
+    color: $subtle-text-color;
   }
 
   .read-more {

@@ -16,12 +16,29 @@ $header-height: 56px;
   nav {
     float: right;
 
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+    }
+
     li {
-      display: inline-block;
+      margin-right: 5px;
+
+      .icon {
+        height: 100%;
+
+        svg {
+          display: block;
+          height: 100%;
+          width: 1.75rem;
+          fill: $header-text-color;
+        }
+      }
     }
 
     a {
-      color: #727272;
+      color: $header-text-color;
       display: block;
       margin-right: 5px;
 
