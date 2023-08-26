@@ -8,7 +8,7 @@ Recently I launched the initial version of [Pirep](https://pirep.io), a collabor
 
 While it's easy to get a map with satellite imagery, naturally one would also want the FAA VFR sectional charts as a layer on the map as well. This turned out to be fairly easy to get a proof of concept for, but much more tedious to get to a production-ready state.
 
-![](/assets/images/2023/03/map_tiles_continental_us.png)
+![](/assets/images/2023/03/map_tiles_continental_us.jpg)
 <!--more-->
 
 If you're looking for the final product, [skip to the bottom](#demo).
@@ -37,7 +37,7 @@ gdal2tiles.py --zoom "0-11" --processes=`grep -c "^processor" /proc/cpuinfo` --w
 
 In order to use `gdal2tiles.py` we first need to convert the GeoTIFF file into a VRT file which is where `gdal_translate` comes into play. From there, we can generate map tiles and display them with a web mapviewer. In this case, I opted for [MapLibre](https://maplibre.org/), but other maps should work as well.
 
-![](/assets/images/2023/03/map_tiles_single_chart.png)
+![](/assets/images/2023/03/map_tiles_single_chart.jpg)
 
 Looks pretty good, huh?
 
@@ -52,7 +52,7 @@ Instead, most web map viewers support the concept of multiple layers. So we coul
 1. Performance. Creating a map layer for each chart was my second attempt at solving this and while it worked decently from a visual perspective, my experience was the map viewer I was using, Mapbox, started running into significant performance issues when you put 40+ map tile layers on the page. This worked, okay-ish, but the initial page load time could be upwards of 10 seconds which was unacceptably slow for my purposes.
 1. The bigger issue, however, is the chart legends in the GeoTIFF files. If we ignore these they'll have tiles generated for them as well and then we end up with something that looks like this:
 
-![](/assets/images/2023/03/map_tiles_chart_overlap.png)
+![](/assets/images/2023/03/map_tiles_chart_overlap.jpg)
 
 That clearly looks awful, but these are layers after all, so why not layer them in a particular order such that the legends are overlapped by neighboring charts in the right order? Again, this kind of works (seeing the trend with this yet?), but the problem is that the sectional charts are not consistent with their legends and axes. You'd need to load the charts in a very particular order to get this to look right and that's also not accounting for the odd-shaped charts too which aren't perfect rectangles. Maybe you could get this to work, but combined with the performance issues meant that I had to look for another solution.
 
@@ -95,11 +95,11 @@ gdal2tiles.py \
 
 Here, we're now employing `gdalwarp` do some preprocessing on the chart before sending it to `gdal_translate`. We're also reprojecting the chart to `EPSG:3857` with the `-t_srs` option. This is necessary because without this when the tiles are generated they won't be projected on the globe correctly and result in an odd looking map like this:
 
-![](/assets/images/2023/03/map_tiles_no_reprojection.png)
+![](/assets/images/2023/03/map_tiles_no_reprojection.jpg)
 
 Back to the cropping, the star of this show is the `-cutline` and `-crop_to_cutline` options where we give `gdalwarp` our shapefile for the chart in order to get rid of the legend and axes. Everything that follows is the same as before and then we're left with the following:
 
-![](/assets/images/2023/03/map_tiles_chart_cropped.png)
+![](/assets/images/2023/03/map_tiles_chart_cropped.jpg)
 
 ## Combining Charts
 
@@ -144,11 +144,11 @@ gdal2tiles.py \
 
 And with that, we have a nicely tiled, continuous map for multiple sectional charts:
 
-![](/assets/images/2023/03/map_tiles_charts_multiple.png)
+![](/assets/images/2023/03/map_tiles_charts_multiple.jpg)
 
 It's not perfect; if you look closely at the boundary between two charts it's visible where the boundary line is. However, the same artifacts can be seen on other web-viewable sectional chart websites like [SkyVector](https://skyvector) so I'm fairly confident they're using the same type of process as is done here. And frankly, this is good enough for virtually all purposes with these charts.
 
-![](/assets/images/2023/03/map_tiles_chart_boundary.png)
+![](/assets/images/2023/03/map_tiles_chart_boundary.jpg)
 
 Maybe in the future the FAA will publish one GeoTIFF with everything already combined. That would certainly simplify this process considerably.
 
