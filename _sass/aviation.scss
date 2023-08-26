@@ -4,8 +4,10 @@
   text-align: right;
 
   &:not(:last-child) {
-    border-bottom: 3px solid $text-color;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
+    margin-bottom: 30px;
+  }
+
+  video {
+    width: 100%;
   }
 }

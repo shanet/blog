@@ -9,7 +9,7 @@ title: Aviation
 
 {% for video in site.data.aviation %}
   <div class="aviation-video">
-    <video width="853" height="480" controls {% if video.poster %} poster="/assets/images/video_posters/{{ video.poster }}" {% endif %}>
+    <video controls {% if forloop.index > 0 %}preload="none"{% endif %} {% if video.poster %}poster="/assets/images/video_posters/{{ video.poster }}"{% endif %}>
       <source src="/assets/videos/{{ video.filename }}" type="video/webm">
     </video>
 
