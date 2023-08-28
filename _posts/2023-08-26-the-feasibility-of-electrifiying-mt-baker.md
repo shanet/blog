@@ -93,6 +93,10 @@ In order to get an idea of that we can simply look at other ski areas in the reg
 
 Additionally, Crystal also has [a small, on-site power generation facility](https://www.eia.gov/electricity/data/browser/#/plant/3853) operated by Puget Sound Energy. At 2.5MW it's not huge and appears to also be diesel generators that only run infrequently in the winter. I'm not sure if this supplemental power or backup power to keep the lights on in the event of an outage. But the lines coming out of it and terminating at the base area are also 34kV. If 34kV is sufficient for Crystal then surely it would be sufficient for Baker as well.
 
+For reference, 34kV lines are fairly small as far as high-voltage lines go. These aren't the massive steel structures you may think of when hearing "high-voltage transmission lines" (like those that run through the backside of Stevens Pass). To the contrary, 34kV lines have wooden poles and look quite similar to the distribution lines in residential neighborhoods as shown in the diagram below. In terms of effect on the scenery along Route 542, these would be well hidden by the trees. After all, have you noticed the existing 55kV lines leading up to the Nooksack Hydro Plant? Probably not.
+
+![](/assets/images/2023/08/transmission_lines.jpg)
+
 It's worth mentioning here too that relying on overhead power lines through a forest, in the winter, is not exactly a great idea due to frequency of outages during storms. Baker would need some type of on-site backup system in place which would increase costs further, but we'll ignore that here, again, for the sake of simplicity (alternatively the existing diesel generators could be used and even electric lifts will have a backup diesel engine to evacuate riders in case of power outages or if the electric engine fails). Buried lines would be ideal, but they are far more expensive than overhead lines so for the sake of making this estimate remotely economically feasible only overhead lines are considered.
 
 Given how custom and variable each transmission line project is, it's difficult to find numbers on what these projects typically cost. The cost would vary greatly depending on location-specific factors. That said, I did find one source from the Public Service Commission of Wisconsin that claimed $285,000 for an overhead 69kV line.[^6] This was in 2011 so inflation adjusted that's $387,000/mile. It's also worth noting that Wisconsin is fairly flat, at least compared to the Cascades. So even though this figure is for a 69kV line when we're considering 34kV lines, I would believe the challenges the terrain around Baker provides more than makes up the price difference between a 34kV line and a 69kV one.
@@ -149,7 +153,3 @@ Overall, while it may be disheartening to continue to watch the black chairlist 
 [^7]: [Terrapass](https://terrapass.com/product/personal-carbon-offset-grouped/)
 [^8]: [Transmission Cost Estimation Guide,](https://cdn.misoenergy.org/20200211%20PSC%20Item%2005c%20Cost%20Estimation%20Guide%20for%20MTEP20%20DRAFT%20Redline425617.pdf) MISO Energy
 [^9]: [Washington Forest Ecosystem Carbon Inventory: 2002-2016,](https://www.dnr.wa.gov/publications/em_wa_carbon_inventory_final_111220.pdf) Washington Department of Natural Resources.
-
-https://hardydiesel.com/resources/diesel-generator-fuel-consumption-chart/
-https://www.istockphoto.com/photo/skiers-load-chairlift-at-mt-baker-ski-area-washington-state-gm597936458-102422553?phrase=mt+baker+ski+area
-https://www.istockphoto.com/photo/panoramic-view-of-chair-one-and-the-mt-baker-upper-lodge-with-a-sunset-on-mt-shuksan-gm664174444-125817163?phrase=mt+baker+ski+area
