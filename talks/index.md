@@ -1,7 +1,5 @@
 ---
-layout: page
-published: true
-status: publish
+layout: post
 title: Talks
 ---
 

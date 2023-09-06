@@ -31,11 +31,11 @@ layout: default
   {% endif %}
 
   {% capture start_page %}
-    {{ paginator.page | minus:2 }}
+    {{ paginator.page | minus: 2 }}
   {% endcapture %}
 
   {% capture end_page %}
-    {{ paginator.page | plus:2 }}
+    {{ paginator.page | plus: 2 }}
   {% endcapture %}
 
   {% for page in (start_page..end_page) %}

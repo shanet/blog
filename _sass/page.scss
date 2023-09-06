@@ -4,7 +4,7 @@
   margin-bottom: 30px;
 
   ul, ol {
-    margin-left: 1.35em;
+    margin-left: 2rem;
   }
 
   img, iframe {
@@ -12,6 +12,10 @@
     margin-left: auto;
     margin-right: auto;
     max-width: 100%;
+  }
+
+  .breadcrumbs {
+    margin-top: 0.5rem;
   }
 }
 
@@ -24,17 +28,15 @@
 }
 
 .page-header {
-  margin: 20px 0 10px;
+  margin: 10px 0;
 
   h1 {
     font-size: 36px;
-    line-height: 1;
   }
 
   .meta {
     color: $subtle-text-color;
     font-size: 15px;
-    margin-top: 5px;
   }
 }
 
@@ -66,10 +68,5 @@
     font-style: italic;
     margin: 20px 0;
     padding-left: 10px;
-  }
-
-  ul,
-  ol {
-    padding-left: 20px;
   }
 }

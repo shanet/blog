@@ -1,0 +1,119 @@
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+
+  .grid-item {
+    margin: 0;
+    flex-grow: 1;
+
+    @media screen and (min-width: 600px) {
+      &:last-child {
+        flex-grow: 0;
+      }
+    }
+  }
+}
+
+.albums {
+  margin-top: 1rem;
+
+  .album-container {
+    text-align: center;
+
+    img.thumbnail {
+      border-radius: 5px;
+      height: 12rem;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+}
+
+.album .photo {
+  img.thumbnail {
+    border-radius: 5px;
+    height: 9rem;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  a:target ~ .close,
+  a:target ~ .previous,
+  a:target ~ .next {
+    display: block;
+  }
+
+  a:target + .backdrop {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  .modal {
+    background-color: #1E1E1E;
+    box-shadow: 0 0 20px #000;
+    max-height: 90dvh;
+    max-height: 90vh;
+    max-width: 90vw;
+
+    img, video {
+      max-height: 80dvh;
+      max-height: calc(90vh - 3rem);
+      max-width: 90vw;
+    }
+
+    .caption {
+      color: #fff;
+      padding: 0.5rem;
+      text-align: center;
+    }
+  }
+
+  .close,
+  .previous,
+  .next {
+    display: none;
+    position: fixed;
+
+    svg {
+      fill: #fff;
+    }
+  }
+
+  .close {
+    height: 2rem;
+    padding: 1rem;
+    right: 0;
+    top: 0;
+    width: 2rem;
+  }
+
+  .previous,
+  .next {
+    height: 2rem;
+    padding: 2rem;
+    top: 50%;
+    transform: translate(0%, -50%);
+    width: 2rem;
+  }
+
+  .previous {
+    left: 1rem;
+  }
+
+  .next {
+    right: 1rem;
+  }
+}

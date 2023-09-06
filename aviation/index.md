@@ -1,11 +1,11 @@
 ---
-layout: page
+layout: post
 title: Aviation
 ---
 
 <blockquote>Science, freedom, beauty, adventure: what more could you ask of life? Aviation combined all the elements I loved.</blockquote>
 
-&ndash; Charles Lindbergh
+&ndash; Charles Lindbergh<br><br>
 
 {% for video in site.data.aviation %}
   <div class="aviation-video">

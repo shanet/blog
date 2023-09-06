@@ -1,0 +1,74 @@
+---
+layout: default
+---
+
+<div class="page">
+  <div class="breadcrumbs">
+    <a href="/albums">Albums</a> &gt; {{ page.title }}
+  </div>
+
+  <header class="page-header">
+    <h1>{{ page.title }}</h1>
+  </header>
+
+  <article class="page-content">
+    {% if page.description %}
+      <div>{{ page.description | markdown }}</div>
+    {% endif %}
+
+    <div class="album image-grid">
+      {% for photo in page.photos %}
+        <div class="photo grid-item">
+          <a id="photo{{ forloop.index }}" href="#photo{{ forloop.index }}">
+            <img class="thumbnail" src="/assets/images/albums/{{ page.album_directory }}/thumbnails/{{ photo.file }}">
+          </a>
+
+          <div class="backdrop" onclick="window.location.hash = '#'">
+            <div class="modal" onclick="event.stopPropagation()">
+              {% if photo.video %}
+                <video controls preload="none" poster="/assets/images/albums/{{ page.album_directory }}/{{ photo.file }}">
+                  <source src="/assets/images/albums/{{ page.album_directory }}/{{ photo.video }}" type="video/webm">
+                </video>
+              {% else %}
+                <img src="/assets/images/albums/{{ page.album_directory }}/{{ photo.file }}" loading="lazy">
+              {% endif %}
+
+              {% if photo.caption %}
+                <div class="caption">{{ photo.caption | markdown }}</div>
+              {% endif %}
+            </div>
+          </div>
+
+          <a class="close" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </a>
+
+          {% if forloop.index > 1 %}
+            <a class="previous" href="#photo{{ forloop.index | minus: 1 }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M512 256A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM271 135c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-87 87 87 87c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L167 273c-9.4-9.4-9.4-24.6 0-33.9L271 135z" />
+              </svg>
+            </a>
+          {% endif %}
+
+          {% if forloop.index < page.photos.size %}
+            <a class="next" href="#photo{{ forloop.index | plus: 1 }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM241 377c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l87-87-87-87c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L345 239c9.4 9.4 9.4 24.6 0 33.9L241 377z" />
+              </svg>
+            </a>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </article>
+</div>
+
+<script>
+  // Once the thumbnails are loaded start loading the full size images in the background by removing the lazy loading attribute
+  document.addEventListener('DOMContentLoaded', () => {
+    window.document.querySelectorAll('.album img[loading="lazy"]').forEach((image) => {image.removeAttribute('loading')});
+  }, {once: true});
+</script>

@@ -12,3 +12,16 @@ excerpt_separator: <!--more-->
 paginate: 5
 plugins: [jekyll-paginate]
 exclude: [Makefile, README.md]
+
+collections:
+  albums:
+    order:
+      - backpacking.md
+      - aviation_idaho.md
+      - skiing.md
+      - aviation_washington.md
+      - wildlife.md
+      - aviation_montana.md
+      - mt_baker.md
+      - sperry_chalet.md
+    output: true
