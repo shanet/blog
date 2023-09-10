@@ -6,7 +6,7 @@ description: Miscellanous backpacking/hiking photos from over the years.
 cover: 1.jpg
 photos:
   - file: 1.jpg
-    caption: Sahale Glacir Camp, July 2020
+    caption: Sahale Glacier Camp, July 2020
   - file: 2.jpg
     caption: Del Campo Peak, July 2023
   - file: 3.jpg
