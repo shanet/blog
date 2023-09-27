@@ -63,16 +63,6 @@
   description: Magnetic card event check-in system for Penn State ACM.
   image: projects/acm-logo.png
 
-- name: Atomic Orbital Visualizations
-  link: /chemistry
-  description: Webpages to help chemistry students understand atomic orbitals.
-  image: projects/chem.png
-
-- name: Chemistry Drupal Modules
-  link: /chemistry
-  description: Homework, syllabus, and e-textbook Drupal modules for online chemistry courses.
-  image: projects/drupal.png
-
 - name: CodePSU Drupal Module
   link: https://github.com/shanet/CodePSU
   description: A Drupal programming competition module for the Penn State ACM.

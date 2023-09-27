@@ -3,30 +3,36 @@ layout: album
 album_directory: aviation_washington
 title: Washington Aviation
 description: Various photos of flights in Washington over the years.
-cover: 3.jpg
+cover: seattle_1.jpg
 photos:
-  - file: 1.jpg
+  - file: sullivan_lake_1.jpg
     caption: Sullivan Lake, July 2022
-  - file: 2.jpg
+  - file: sullivan_lake_2.jpg
     caption: Sullivan Lake, July 2022
-  - file: 3.jpg
+
+  - file: seattle_1.jpg
     caption: Seattle, January 2021
-  - file: 4.jpg
+
+  - file: copalis_beach_1.jpg
     caption: Copalis Beach, August 2022
-  - file: 5.jpg
+  - file: copalis_beach_2.jpg
     caption: Copalis Beach, August 2022
-  - file: 6.jpg
+
+  - file: manzanita_1.jpg
     caption: Manzanita (Oregon), July 2019
-  - file: 7.jpg
+
+  - file: stehekin_1.jpg
     caption: Stehekin, July 2019
-  - file: 8.jpg
+  - file: stehekin_2.jpg
     caption: Stehekin, August 2019
-  - file: 9.jpg
+  - file: stehekin_3.jpg
     caption: Stehekin, August 2019
-  - file: 10.jpg
+
+  - file: seattle_2.jpg
     caption: Seattle, October 2017
-  - file: 11.jpg
+  - file: seattle_3.jpg
     caption: Seattle, October 2017
-  - file: 12.jpg
+
+  - file: electric_city_1.jpg
     caption: Electric City, July 2018
 ---

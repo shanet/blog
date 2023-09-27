@@ -3,26 +3,30 @@ layout: album
 album_directory: skiing
 title: Miscellanous Skiing
 description: Miscellanous skiing photos/trips over the years.
-cover: 4.jpg
+cover: revelstoke_1.jpg
 photos:
-  - file: 1.jpg
+  - file: rainier_1.jpg
     caption: Muir Snowfield (Mt. Rainier), December 2017
-  - file: 2.jpg
+
+  - file: skyline_lake_1.jpg
     caption: Skyline Lake overlooking Stevens Pass, November 2021
-  - file: 3.jpg
+
+  - file: alyeska_1.jpg
     caption: Alyeska, February 2022
-  - file: 4.jpg
+
+  - file: revelstoke_1.jpg
     caption: Heliskiing in Revelstoke, January 2022
-  - file: 5.jpg
+  - file: revelstoke_2.jpg
     caption: Heliskiing in Revelstoke, January 2022
-  - file: 6.jpg
+  - file: revelstoke_3.jpg
     caption: Revelstoke, January 2022
-  - file: 7.jpg
+  - file: revelstoke_4.jpg
     caption: Lake Louise, January 2022
-  - file: 8.jpg
+  - file: revelstoke_5.jpg
     caption: Heliskiing in Revelstoke, January 2022
-  - file: 9.jpg
+  - file: revelstoke_6.jpg
     caption: Revelstoke, January 2022
-  - file: 10.jpg
+
+  - file: baker_1.jpg
     caption: Hemispheres, Mt. Baker, January 2023
 ---

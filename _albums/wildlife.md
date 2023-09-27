@@ -3,22 +3,24 @@ layout: album
 album_directory: wildlife
 title: Miscellanous Wildlife
 description: Miscellanous photos of wildlife in the Cascades over the years.
-cover: 1.jpg
+cover: goat_1.jpg
 photos:
-  - file: 1.jpg
+  - file: goat_1.jpg
     caption: Birthday Tour, June 2018
-  - file: 2.jpg
+  - file: goat_2.jpg
     caption: Mountain goat family, Sahale Glacier Camp, July 2020
-  - file: 3.jpg
+  - file: goat_3.jpg
     caption: On the way to Sahale Glacier Camp, July 2020
-  - file: 4.jpg
+
+  - file: marmot_1.jpg
     caption: Green Mountain marmot, September 2023
-  - file: 5.jpg
+  - file: marmot_2.jpg
     caption: Green Mountain marmot, September 2023
-  - file: 6.jpg
+  - file: marmot_3.jpg
     caption: Green Mountain marmot, September 2023
-  - file: 7.jpg
+  - file: frog_1.jpg
     caption: Green Mountain frog, September 2023
-  - file: 8.jpg
+
+  - file: bear_1.jpg
     caption: Mt. Shuksan bear, September 2022
 ---
