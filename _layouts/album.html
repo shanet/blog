@@ -19,11 +19,11 @@ layout: default
     <div class="album image-grid">
       {% for photo in page.photos %}
         <div class="photo grid-item">
-          <a id="photo{{ forloop.index }}" href="#photo{{ forloop.index }}">
-            <img class="thumbnail" src="/assets/images/albums/{{ page.album_directory }}/thumbnails/{{ photo.file }}">
+          <a id="photo_{{ forloop.index }}" href="#photo_{{ forloop.index }}">
+            <img id="#thumbnail_{{ forloop.index }}" class="thumbnail" src="/assets/images/albums/{{ page.album_directory }}/thumbnails/{{ photo.file }}">
           </a>
 
-          <div class="backdrop" onclick="window.location.hash = '#'">
+          <div class="backdrop" onclick="window.location.hash = '#thumbnail_{{ forloop.index }}'">
             <div class="modal" onclick="event.stopPropagation()">
               {% if photo.video %}
                 <video controls preload="none" poster="/assets/images/albums/{{ page.album_directory }}/{{ photo.file }}">
@@ -46,7 +46,7 @@ layout: default
           </a>
 
           {% if forloop.index > 1 %}
-            <a class="previous" href="#photo{{ forloop.index | minus: 1 }}">
+            <a class="previous" href="#photo_{{ forloop.index | minus: 1 }}">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <path d="M512 256A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM271 135c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-87 87 87 87c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L167 273c-9.4-9.4-9.4-24.6 0-33.9L271 135z" />
               </svg>
@@ -54,7 +54,7 @@ layout: default
           {% endif %}
 
           {% if forloop.index < page.photos.size %}
-            <a class="next" href="#photo{{ forloop.index | plus: 1 }}">
+            <a class="next" href="#photo_{{ forloop.index | plus: 1 }}">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM241 377c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l87-87-87-87c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L345 239c9.4 9.4 9.4 24.6 0 33.9L241 377z" />
               </svg>
