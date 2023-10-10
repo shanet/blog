@@ -8,6 +8,11 @@ photos:
   - file: sahale_1.jpg
     caption: Sahale Glacier Camp, July 2020
 
+  - file: white_chuck_1.jpg
+    caption: Glaicer Peak from White Chuck Mountain, October 2023
+  - file: white_chuck_2.jpg
+    caption: White Chuck Mountain summit, October 2023
+
   - file: del_campo_1.jpg
     caption: Del Campo Peak, July 2023
   - file: del_campo_2.jpg
