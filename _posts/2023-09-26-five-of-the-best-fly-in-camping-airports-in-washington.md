@@ -5,7 +5,7 @@ description: Discover the best fly-in camping airports in Washington state. Expl
 date: 2023-09-26
 ---
 
-Airplane camping in Washington is a far cry from the meccas Idaho, Utah, or Alaska. Despite all of the forested and mountainous terrain in Washington there are no true backcountry airports in the state. Nevertheless, there are a healthy amount of fly-in camping options on the more beaten path for pilots to enjoy. The tradeoff for this accessibility being, unlike the aforementioned backcountry playgrounds like Idaho, the best airport campgrounds in Washington don't require planes capable of 500ft takeoff rolls and tundra tires.
+Airplane camping in Washington is a far cry from the meccas of Idaho, Utah, or Alaska. Despite all of the forested and mountainous terrain in Washington there are no true backcountry airports in the state. Nevertheless, there are a healthy amount of fly-in camping options on the more beaten path for pilots to enjoy. The tradeoff for this accessibility being, unlike the aforementioned backcountry playgrounds like Idaho, the best airport campgrounds in Washington don't require planes capable of 500ft takeoff rolls and tundra tires.
 
 ![](/assets/images/2023/09/washington_camping_cover.jpg)
 
