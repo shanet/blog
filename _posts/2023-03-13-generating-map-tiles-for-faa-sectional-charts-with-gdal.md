@@ -187,7 +187,7 @@ This archive contains a Bash script for generating map tiles, the shapefiles for
 1. Download and extract [the archive](/assets/demos/faa_sectional_charts_map_tiles.tar.gz).
 1. Download the Seattle, Klamath Falls, Great Falls, Salt Lake City sectional charts from the [FAA's digital products page](https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/vfr/). Save these in the same directory as the extracted archive. The map tiles generation script will extract these for you.
 1. Run `./generate_map_tiles.sh`
-1. Run `webviewer/run_server.sh` (this starts a small Python webserver)
+1. Run `cd webviewer && ./run_server.sh` (this starts a small Python webserver)
 1. Open `localhost:8000` in your browser
 
 ## Additional Resources
