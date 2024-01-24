@@ -14,6 +14,13 @@ photos:
   - file: alyeska_1.jpg
     caption: Alyeska, February 2022
 
+  - file: shuksan.jpg
+    caption: Mt. Shuksan at sunset from Heather Meadows, January 2024
+  - file: baker_2.jpg
+    caption: Chair 1 at Mt. Baker, January 2024
+  - file: larrabee.jpg
+    caption: Mt. Larrabee at sunset from Heather Meadows, January 2024
+
   - file: revelstoke_1.jpg
     caption: Heliskiing in Revelstoke, January 2022
   - file: revelstoke_2.jpg
@@ -29,4 +36,8 @@ photos:
 
   - file: baker_1.jpg
     caption: Hemispheres, Mt. Baker, January 2023
+  - file: baker_4.jpg
+    caption: Mt Baker from the Shuksan Arm, January 2024
+  - file: baker_3.jpg
+    caption: Sunset over Table Mountain and Mt. Baker, January 2024
 ---
