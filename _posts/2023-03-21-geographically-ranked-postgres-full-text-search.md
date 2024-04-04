@@ -298,18 +298,18 @@ CREATE TABLE searches (
   coordinates POINT
 );
 
-INSERT INTO airports (code, name, coordinates) VALUES ('SEA', 'Seattle-Tacoma International', point(47.44988888, -122.31177777));
-INSERT INTO airports (code, name, coordinates) VALUES ('SFO', 'San Francisco International', point(37.61880555, -122.37541666));
-INSERT INTO airports (code, name, coordinates) VALUES ('ANC', 'Ted Stevens Anchorage International Airport', point(61.17408472, -149.9981375));
-INSERT INTO airports (code, name, coordinates) VALUES ('BLI', 'Bellingham International Airport', point(48.79269444, -122.53752777));
+INSERT INTO airports (code, name, coordinates) VALUES ('SEA', 'Seattle-Tacoma International', point(-122.31177777, 47.44988888));
+INSERT INTO airports (code, name, coordinates) VALUES ('SFO', 'San Francisco International', point(-122.37541666, 37.61880555));
+INSERT INTO airports (code, name, coordinates) VALUES ('ANC', 'Ted Stevens Anchorage International Airport', point(-149.9981375, 61.17408472));
+INSERT INTO airports (code, name, coordinates) VALUES ('BLI', 'Bellingham International Airport', point(-122.53752777, 48.79269444));
 
 SELECT * FROM airports;
  id | code |                    name                     |         coordinates         
 ----+------+---------------------------------------------+-----------------------------
-  1 | SEA  | Seattle-Tacoma International                | (47.44988888,-122.31177777)
-  2 | SFO  | San Francisco International                 | (37.61880555,-122.37541666)
-  3 | ANC  | Ted Stevens Anchorage International Airport | (61.17408472,-149.9981375)
-  4 | BLI  | Bellingham International Airport            | (48.79269444,-122.53752777)
+  1 | SEA  | Seattle-Tacoma International                | (-122.31177777, 47.44988888)
+  2 | SFO  | San Francisco International                 | (-122.37541666, 37.61880555)
+  3 | ANC  | Ted Stevens Anchorage International Airport | (-149.9981375, 61.17408472)
+  4 | BLI  | Bellingham International Airport            | (-122.53752777, 48.79269444)
 
 INSERT INTO searches (
   searchable_id,
@@ -330,31 +330,31 @@ WHERE name IS NOT NULL AND name != '';
 SELECT * FROM searches;
  id | searchable_type | searchable_id |                           term_vector                           |                    term                     |         coordinates         
 ----+-----------------+---------------+-----------------------------------------------------------------+---------------------------------------------+-----------------------------
-  1 | Airport         |             1 | 'international':4 'seattle':2 'seattle-tacoma':1 'tacoma':3     | Seattle-Tacoma International                | (47.44988888,-122.31177777)
-  2 | Airport         |             2 | 'francisco':2 'international':3 'san':1                         | San Francisco International                 | (37.61880555,-122.37541666)
-  3 | Airport         |             3 | 'airport':5 'anchorage':3 'international':4 'stevens':2 'ted':1 | Ted Stevens Anchorage International Airport | (61.17408472,-149.9981375)
-  4 | Airport         |             4 | 'airport':3 'bellingham':1 'international':2                    | Bellingham International Airport            | (48.79269444,-122.53752777)
+  1 | Airport         |             1 | 'international':4 'seattle':2 'seattle-tacoma':1 'tacoma':3     | Seattle-Tacoma International                | (-122.31177777, 47.44988888)
+  2 | Airport         |             2 | 'francisco':2 'international':3 'san':1                         | San Francisco International                 | (-122.37541666, 37.61880555)
+  3 | Airport         |             3 | 'airport':5 'anchorage':3 'international':4 'stevens':2 'ted':1 | Ted Stevens Anchorage International Airport | (-149.9981375, 61.17408472)
+  4 | Airport         |             4 | 'airport':3 'bellingham':1 'international':2                    | Bellingham International Airport            | (-122.53752777, 48.79269444)
 {% endhighlight %}
 
 *Note that the `facility_use` column was dropped since we're not using it anymore.*
 
 The above should get our database set up. For the fun part, we can now write our search query. Essentially the method boils down to taking the computed rank and further weighting it by distance. This is done by multiplying the rank value by the distance between the user's given location and the airport's location.
 
-Because we're using `point`s the complex part of computing this distance becomes as simple as using the `<@>` operator. This will compute the distance between two points. It assumes that the Earth is a perfect sphere which of course isn't true, but should be accurate enough for most purposes.
+Because we're using `point`s the complex part of computing this distance becomes as simple as using the `<@>` operator. This will compute the distance between two points in statue miles. It assumes that the Earth is a perfect sphere which of course isn't true, but should be accurate enough for most purposes.
 
 Finally, putting this all together we end up with the following search query (which is looking for airports closest to Anchorage):
 
 {% highlight sql linenos %}
-searches_demo=# SELECT airports.*, ts_rank(term_vector, 'international') * (point(60.962834, -149.069051) <@> searches.coordinates) AS rank FROM airports
+searches_demo=# SELECT airports.*, ts_rank(term_vector, 'international') * (point(-149.069051, 60.962834) <@> searches.coordinates) AS rank FROM airports
 INNER JOIN searches ON searches.searchable_id = airports.id
 WHERE (term_vector @@ to_tsquery('simple', 'international')) ORDER BY rank ASC;
 
  id | code |                    name                     |         coordinates         |        rank        
 ----+------+---------------------------------------------+-----------------------------+--------------------
-  3 | ANC  | Ted Stevens Anchorage International Airport | (61.17408472,-149.9981375)  | 3.9767341404856635
-  4 | BLI  | Bellingham International Airport            | (48.79269444,-122.53752777) | 116.90464166997339
-  1 | SEA  | Seattle-Tacoma International                | (47.44988888,-122.31177777) | 118.99627871014933
-  2 | SFO  | San Francisco International                 | (37.61880555,-122.37541666) | 130.83810864901926
+  3 | ANC  | Ted Stevens Anchorage International Airport | (-149.9981375,61.17408472)  | 2.0859955802743917
+  4 | BLI  | Bellingham International Airport            | (-122.53752777,48.79269444) |  81.03005742401568
+  1 | SEA  | Seattle-Tacoma International                | (-122.31177777,47.44988888) |  85.76396945761945
+  2 | SFO  | San Francisco International                 | (-122.37541666,37.61880555) | 120.54008426527699
 {% endhighlight %}
 
 Just like that, we have the search results in order from closest to furthest away. Note that the rank column is proportional in magnitude to the distance from the given location in that the two Washington airports (Seattle and Bellingham) are close in value while San Francisco is still further away. With this, it may be useful to drop off search results entirely based on a rank value if far away results are deemed not relevant.
@@ -362,13 +362,13 @@ Just like that, we have the search results in order from closest to furthest awa
 And of course, this is still a search so if the search term is changed to something that does not match all of the airports, like `seattle`, then only the relevant search results are returned:
 
 {% highlight sql linenos %}
-searches_demo=# SELECT airports.*, ts_rank(term_vector, 'seattle') * (point(60.962834, -149.069051) <@> searches.coordinates) AS rank FROM airports
+searches_demo=# SELECT airports.*, ts_rank(term_vector, 'seattle') * (point(-149.069051, 60.962834) <@> searches.coordinates) AS rank FROM airports
 INNER JOIN searches ON searches.searchable_id = airports.id
 WHERE (term_vector @@ to_tsquery('simple', 'seattle')) ORDER BY rank ASC;
 
- id | code |             name             |         coordinates         |        rank        
-----+------+------------------------------+-----------------------------+--------------------
-  1 | SEA  | Seattle-Tacoma International | (47.44988888,-122.31177777) | 118.99627871014933
+ id | code |             name             |         coordinates         |       rank        
+----+------+------------------------------+-----------------------------+-------------------
+  1 | SEA  | Seattle-Tacoma International | (-122.31177777,47.44988888) | 85.76396945761945
 {% endhighlight %}
 
 Best of all, these queries are lightning fast. In Pirep, the searches table has ~40,000 rows in it since each airport is indexed by both its code and name. Ranking by distance with that table size is near instantaneous:
@@ -380,12 +380,12 @@ pirep_development=# SELECT count(*) FROM searches;
 -------
  41324
 
-pirep_development=# EXPLAIN ANALYZE SELECT airports.code, ts_rank(term_vector, 'intl:*') * (point(39.82834557323, -98.57944574225633) <@> searches.coordinates) AS rank FROM airports INNER JOIN searches ON searches.searchable_id = airports.id WHERE (term_vector @@ to_tsquery('simple', 'intl:*')) ORDER BY rank ASC;
+pirep_development=# EXPLAIN ANALYZE SELECT airports.code, ts_rank(term_vector, 'intl:*') * (point(-98.57944574225633, 39.82834557323) <@> searches.coordinates) AS rank FROM airports INNER JOIN searches ON searches.searchable_id = airports.id WHERE (term_vector @@ to_tsquery('simple', 'intl:*')) ORDER BY rank ASC;
 
                                                                          QUERY PLAN                                                                          
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
  Sort  (cost=1980.21..1980.94 rows=293 width=12) (actual time=6.216..6.233 rows=273 loops=1)
-   Sort Key: ((ts_rank(searches.term_vector, '''intl'':*'::tsquery) * ('(39.82834557323,-98.57944574225633)'::point <@> searches.coordinates)))
+   Sort Key: ((ts_rank(searches.term_vector, '''intl'':*'::tsquery) * ('(-98.57944574225633, 39.82834557323)'::point <@> searches.coordinates)))
    Sort Method: quicksort  Memory: 37kB
    ->  Hash Join  (cost=540.37..1968.20 rows=293 width=12) (actual time=0.463..6.138 rows=273 loops=1)
          Hash Cond: (airports.id = searches.searchable_id)
@@ -589,7 +589,7 @@ def self.query(query, models=nil, coordinates=nil, wildcard: false)
   #
   # Likewise, when doing the ranking we want to prioritize results for airport codes over airport nodes. The weights are set such that the
   # A and B weights will have higher ranking nearly always.
-  coordinates_weight = (coordinates ? "* (point(#{coordinates[:latitude]}, #{coordinates[:longitude]}) <@> #{table_name}.coordinates)" : '')
+  coordinates_weight = (coordinates ? "* (point(#{coordinates[:longitude]}, #{coordinates[:latitude]}) <@> #{table_name}.coordinates)" : '')
   rank_column = "ts_rank('{1, .9, .1, 0}', term_vector, '#{query}') #{coordinates_weight} AS rank"
 
   # If we're given multiple models to search return search records directly. If we're only given one particular model then we can return that model's records
