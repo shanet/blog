@@ -14,6 +14,7 @@ normalize_album_images:
 	find assets/images/albums \
 		-type d -name thumbnails -prune -o \
 		-type f -iname "*.jpg" \
+		-newermt "30 days ago" \
 		-execdir mkdir --parents thumbnails \; \
 		-exec convert {} -resize "2000x2000>" -strip {} \; \
 		-exec convert {} -resize "850x250>" -strip \

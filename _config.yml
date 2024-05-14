@@ -22,6 +22,7 @@ collections:
       - aviation_washington.md
       - wildlife.md
       - aviation_montana.md
+      - aurora_borealis.md
       - mt_baker.md
       - sperry_chalet.md
     output: true

@@ -21,6 +21,11 @@ photos:
   - file: larrabee.jpg
     caption: Mt. Larrabee at sunset from Heather Meadows, January 2024
 
+  - file: hidden_lake_1.jpg
+    caption: Hidden Lake, May 2024
+  - file: hidden_lake_2.jpg
+    caption: Hidden Lake, May 2024
+
   - file: revelstoke_1.jpg
     caption: Heliskiing in Revelstoke, January 2022
   - file: revelstoke_2.jpg
