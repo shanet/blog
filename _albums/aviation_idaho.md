@@ -8,6 +8,19 @@ photos:
   - file: johnson_creek_1.jpg
     caption: Johnson Creek, July 2022
 
+  - file: smiley_creek_1.jpg
+    caption: Smiley Creek, July 2024
+  - file: smiley_creek_2.jpg
+    caption: Smiley Creek, July 2024
+
+  - file: chamberlain_1.jpg
+    caption: Chamberlain, July 2024
+  - file: chamberlain_2.jpg
+    caption: Chamberlain, July 2024
+
+  - file: stanley.jpg
+    caption: Stanley, July 2024
+
   - file: indian_creek_1.jpg
     caption: Indian Creek, July 2022
   - file: indian_creek_2.jpg

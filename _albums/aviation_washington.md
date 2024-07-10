@@ -9,6 +9,8 @@ photos:
     caption: Sullivan Lake, July 2022
   - file: sullivan_lake_2.jpg
     caption: Sullivan Lake, July 2022
+  - file: sullivan_lake_3.jpg
+    caption: Sullivan Lake, July 2024
 
   - file: seattle_1.jpg
     caption: Seattle, January 2021
