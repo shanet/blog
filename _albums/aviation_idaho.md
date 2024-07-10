@@ -2,7 +2,7 @@
 layout: album
 album_directory: aviation_idaho
 title: Idaho Aviation
-description: Aviation photos from various Idaho trips 2018 - 2022.
+description: Aviation photos from various Idaho trips.
 cover: johnson_creek_1.jpg
 photos:
   - file: johnson_creek_1.jpg

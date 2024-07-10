@@ -44,8 +44,6 @@ photos:
     caption: Mt. Rainier from Sunrise area, August 2023
   - file: rainier_2.jpg
     caption: Mt. Rainier from Sunrise area, August 2023
-  - file: rainier_3.jpg
-    caption: Mt. Rainier from Sunrise area, August 2023
 
   - file: trappers_peak_1.jpg
     caption: Trappers Peak, August 2022
@@ -58,9 +56,9 @@ photos:
     caption: Green Mountain, September 2023
 
   - file: wallaby_peak_1.jpg
-    caption: Washington Pass from Wallaby Peak, July 2022
+    caption: Washington Pass from Wallaby Peak, July 2023
   - file: wallaby_peak_2.jpg
-    caption: Washington Pass from Wallaby Peak, July 2022
+    caption: Washington Pass from Wallaby Peak, July 2023
 
   - file: winchester_1.jpg
     caption: Sunrise from Winchester Mountain, September 2021
