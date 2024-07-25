@@ -1,7 +1,7 @@
 # Site settings
 title: shane tully
-email: shane@shanetully.com
-description: "Ramblings of a software engineer"
+email: sh&#97;&#x6e;&#x65;&#64;s&#104;&#x61;&#x6e;&#x65;tu&#108;&#x6c;&#x79;.c&#111;&#x6d;
+description: Ramblings of a software engineer
 baseurl: ""
 images_dir: "/assets/images/"
 
@@ -10,6 +10,7 @@ markdown: kramdown
 permalink: /:year/:month/:title/
 excerpt_separator: <!--more-->
 paginate: 5
+paginate_path: /blog/page:num
 plugins: [jekyll-paginate]
 exclude: [Makefile, README.md]
 

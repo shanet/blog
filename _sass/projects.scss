@@ -1,22 +1,38 @@
+@import "colors";
+
+.projects-section {
+  margin-bottom: 0 !important;
+
+  + p {
+    color: $subtle-text-color;
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 0;
+  }
+}
+
 .projects {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 900px) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
 }
 
 .project-container {
   border-radius: 5px;
   border: 3px solid #ccc;
   display: flex;
-  flex-grow: 1;
+  overflow: auto;
   padding: 5px;
 
   .project-info {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
     margin-left: 10px;
-    width: 260px;
   }
 
   .project-image {
@@ -29,7 +45,6 @@
   }
 
   .project-title {
-    color: #000;
     font-size: 16px;
     font-weight: bold;
   }

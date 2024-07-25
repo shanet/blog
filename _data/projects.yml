@@ -1,79 +1,117 @@
-- name: Pirep
-  link: https://pirep.io
-  description: A collaborative database of all public, private, and unmapped airports in the US.
-  image: projects/pirep.png
+flagship:
+  title: Flagships
+  description: Major projects that I put a considerable amount of time into.
+  projects:
+    - name: Pirep
+      link: https://pirep.io
+      description: A collaborative database of all public, private, and unmapped airports in the US.
+      image: projects/pirep.png
+      featured: true
 
-- name: Osprey
-  link: https://github.com/shanet/Osprey
-  description: Free and open source amatuer rocketry telemetry and tracking.
-  image: projects/osprey.png
+    - name: Osprey
+      link: https://github.com/shanet/Osprey
+      description: Free and open source amatuer rocketry telemetry and tracking.
+      image: projects/osprey.png
+      featured: true
 
-- name: Cryptully
-  link: https://github.com/shanet/Cryptully
-  description: An encrypted chat program for those that don't know crypto. No software to install or accounts to register.
-  image: projects/cryptully.png
+    - name: Cryptully
+      link: https://github.com/shanet/Cryptully
+      description: An encrypted chat program for those that don't know crypto. No software to install or accounts to register.
+      image: projects/cryptully.png
 
-- name: StairLights
-  link: https://github.com/shanet/StairLights
-  description: An Arduino-based interactive LED lighting project.
-  image: projects/stairlights.png
+toys:
+  title: Toys
+  description: Scripts, utilities, and other small projects.
+  projects:
+    - name: ClearAir
+      link: https://github.com/shanet/ClearAir
+      description: A minimalist, DIY PurpleAir clone for measuring air quality.
+      image: projects/clearair.png
 
-- name: GeckoView
-  link: https://wiki.mozilla.org/Mobile/GeckoView
-  description: An Android library project for embedding Mozilla's Gecko into third-party Android applications.
-  image: projects/firefox.png
+    - name: Relay Remote
+      link: https://github.com/shanet/RelayRemote
+      description: An Arduino 120V relay control server and Android client.
+      image: projects/relayremote.png
 
-- name: Contacts WebAPI
-  link: https://wiki.mozilla.org/WebAPI/ContactsAPI
-  description: Allows webpages to read/write Android contacts in Firefox for Android.
-  image: projects/fennec.png
+    - name: StairLights
+      link: https://github.com/shanet/StairLights
+      description: An Arduino-based interactive LED lighting project.
+      image: projects/stairlights.png
 
-- name: Relay Remote
-  link: https://github.com/shanet/RelayRemote
-  description: An Arduino relay control server and Android client.
-  image: projects/relayremote.png
+    - name: MPD Fresh
+      link: https://github.com/shanet/mpd-fresh
+      description: Scan your MPD library for new album releases.
+      image: projects/mpd_fresh.png
 
-- name: iCATA
-  link: https://github.com/shanet/iCATA
-  description: A realtime CATA bus locator iOS app.
-  image: projects/icata.png
+    - name: Irrational
+      link: https://github.com/shanet/Irrational
+      description: A simple arbitrary length Pi calculator. 10 million digits and counting.
+      image: projects/pi.png
 
-- name: Asimov &amp; libbiscuit
-  link: https://github.com/shanet/asimov
-  description: An autonomous robot built using an iRobot Create and Microsoft Kinect and C library for controlling the iRobot Create.
-  image: projects/asimov.jpg
+    - name: Disposable Apps
+      link: https://github.com/shanet/Disposable-Apps
+      description: Uninstall unwanted Android apps after a set time period.
+      image: projects/dapp.png
 
-- name: Disposable Apps
-  link: https://github.com/shanet/Disposable-Apps
-  description: Uninstall unwanted Android apps after a set time period.
-  image: projects/dapp.png
+    - name: Alsa Channel Control
+      link: https://github.com/shanet/Alsa-Channel-Control
+      description: Set the volume of an Alsa channel from another computer or Android device.
+      image: projects/alsa.png
 
-- name: Alsa Channel Control
-  link: https://github.com/shanet/Alsa-Channel-Control
-  description: Set the volume of an Alsa channel from another computer or Android device.
-  image: projects/alsa.png
+examples:
+  title: Examples
+  description: Example code for other programmers to reference.
+  projects:
+    - name: WebRTC-Example
+      link: https://github.com/shanet/WebRTC-Example
+      description: A dead simple WebRTC example.
+      image: projects/webrtc.png
 
-- name: Irrational
-  link: https://github.com/shanet/Irrational
-  description: A simple arbitrary length Pi calculator. 10 million digits and counting.
-  image: projects/pi.png
+    - name: Crypto example
+      link: https://github.com/shanet/Crypto-Example
+      description: A short, proof-of-concept RSA and AES encryption program with OpenSSL.
+      image: projects/crypto.png
 
-- name: Penn State ACM Check-in
-  link: https://github.com/shanet/PennState-ACM-Check-in
-  description: Magnetic card event check-in system for Penn State ACM.
-  image: projects/acm-logo.png
+intern:
+  title: Intern
+  description: The intern projects I worked on during my time at Mozilla.
+  projects:
+    - name: GeckoView
+      link: https://wiki.mozilla.org/Mobile/GeckoView
+      description: An Android library project for embedding Mozilla's Gecko into third-party Android applications.
+      image: projects/firefox.png
+      featured: true
 
-- name: CodePSU Drupal Module
-  link: https://github.com/shanet/CodePSU
-  description: A Drupal programming competition module for the Penn State ACM.
-  image: projects/codepsu-wheel.png
+    - name: Contacts WebAPI
+      link: https://wiki.mozilla.org/WebAPI/ContactsAPI
+      description: Allows webpages to read/write Android contacts in Firefox for Android.
+      image: projects/fennec.png
 
-- name: SimpleShell
-  link: https://github.com/shanet/SimpleShell
-  description: A simple, proof of concept *NIX shell.
-  image: projects/konsole.png
+school:
+  title: College Coursework
+  description: Old projects done as part of college classes or the local ACM chapter.
+  projects:
+    - name: iCATA
+      link: https://github.com/shanet/iCATA
+      description: A realtime CATA bus locator iOS app.
+      image: projects/icata.png
 
-- name: Crypto example
-  link: https://github.com/shanet/Crypto-Example
-  description: A short, proof-of-concept RSA and AES encryption program with OpenSSL.
-  image: projects/crypto.png
+    - name: SimpleShell
+      link: https://github.com/shanet/SimpleShell
+      description: A simple, proof of concept *NIX shell.
+      image: projects/konsole.png
+
+    - name: Asimov &amp; libbiscuit
+      link: https://github.com/shanet/asimov
+      description: An autonomous robot built using an iRobot Create and Microsoft Kinect and C library for controlling the iRobot Create.
+      image: projects/asimov.jpg
+
+    - name: Penn State ACM Check-in
+      link: https://github.com/shanet/PennState-ACM-Check-in
+      description: Magnetic card event check-in system for Penn State ACM.
+      image: projects/acm_logo.png
+
+    - name: CodePSU Drupal Module
+      link: https://github.com/shanet/CodePSU
+      description: A Drupal programming competition module for the Penn State ACM.
+      image: projects/codepsu_wheel.png

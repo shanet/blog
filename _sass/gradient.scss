@@ -1,0 +1,240 @@
+// Taken from https://www.mshr.app/mesh/1715243583652
+.gradient-background {
+  animation: gradient 10s linear infinite alternate;
+  background-blend-mode: normal, normal, normal, normal, normal;
+  background-color: hsla(271, 74%, 53%, 1);
+
+  background-image:
+    radial-gradient(circle at var(--gradient1-x) var(--gradient1-y), var(--gradient1-color) var(--gradient1-start), transparent var(--gradient1-end)),
+    radial-gradient(circle at var(--gradient2-x) var(--gradient2-y), var(--gradient2-color) var(--gradient2-start), transparent var(--gradient2-end)),
+    radial-gradient(circle at var(--gradient3-x) var(--gradient3-y), var(--gradient3-color) var(--gradient3-start), transparent var(--gradient3-end)),
+    radial-gradient(circle at var(--gradient4-x) var(--gradient4-y), var(--gradient4-color) var(--gradient4-start), transparent var(--gradient4-end)),
+    radial-gradient(circle at var(--gradient5-x) var(--gradient5-y), var(--gradient5-color) var(--gradient5-start), transparent var(--gradient5-end));
+}
+
+// Gradient colors ----------------------------------
+@property --gradient1-color {
+  inherits: false;
+  initial-value: hsla(263, 100%, 89%, 1);
+  syntax: '<color>';
+}
+
+@property --gradient2-color {
+  inherits: false;
+  initial-value: hsla(348, 86%, 75%, 1);
+  syntax: '<color>';
+}
+
+@property --gradient3-color {
+  inherits: false;
+  initial-value: hsla(202, 93%, 78%, 1);
+  syntax: '<color>';
+}
+
+@property --gradient4-color {
+  inherits: false;
+  initial-value: hsla(343, 75%, 97%, 1);
+  syntax: '<color>';
+}
+
+@property --gradient5-color {
+  inherits: false;
+  initial-value: hsla(226, 58%, 58%, 1);
+  syntax: '<color>';
+}
+
+
+// Gradient 1 ---------------------------------------
+@property --gradient1-x {
+  inherits: false;
+  initial-value: 68%;
+  syntax: '<percentage>';
+}
+
+@property --gradient1-y {
+  inherits: false;
+  initial-value: 54%;
+  syntax: '<percentage>';
+}
+
+@property --gradient1-start {
+  inherits: false;
+  initial-value: 8%;
+  syntax: '<percentage>';
+}
+
+@property --gradient1-end {
+  inherits: false;
+  initial-value: 56%;
+  syntax: '<percentage>';
+}
+
+
+// Gradient 2 ---------------------------------------
+@property --gradient2-x {
+  inherits: false;
+  initial-value: 27%;
+  syntax: '<percentage>';
+}
+
+@property --gradient2-y {
+  inherits: false;
+  initial-value: 37%;
+  syntax: '<percentage>';
+}
+
+@property --gradient2-start {
+  inherits: false;
+  initial-value: 4%;
+  syntax: '<percentage>';
+}
+
+@property --gradient2-end {
+  inherits: false;
+  initial-value: 55%;
+  syntax: '<percentage>';
+}
+
+
+// Gradient 3 ---------------------------------------
+@property --gradient3-x {
+  inherits: false;
+  initial-value: 87%;
+  syntax: '<percentage>';
+}
+
+@property --gradient3-y {
+  inherits: false;
+  initial-value: 68%;
+  syntax: '<percentage>';
+}
+
+@property --gradient3-start {
+  inherits: false;
+  initial-value: 11%;
+  syntax: '<percentage>';
+}
+
+@property --gradient3-end {
+  inherits: false;
+  initial-value: 52%;
+  syntax: '<percentage>';
+}
+
+
+// Gradient 4 ---------------------------------------
+@property --gradient4-x {
+  inherits: false;
+  initial-value: 92%;
+  syntax: '<percentage>';
+}
+
+@property --gradient4-y {
+  inherits: false;
+  initial-value: 59%;
+  syntax: '<percentage>';
+}
+
+@property --gradient4-start {
+  inherits: false;
+  initial-value: 17%;
+  syntax: '<percentage>';
+}
+
+@property --gradient4-end {
+  inherits: false;
+  initial-value: 63%;
+  syntax: '<percentage>';
+}
+
+
+// Gradient 5 ---------------------------------------
+@property --gradient5-x {
+  inherits: false;
+  initial-value: 21%;
+  syntax: '<percentage>';
+}
+
+@property --gradient5-y {
+  inherits: false;
+  initial-value: 83%;
+  syntax: '<percentage>';
+}
+
+@property --gradient5-start {
+  inherits: false;
+  initial-value: 7%;
+  syntax: '<percentage>';
+}
+
+@property --gradient5-end {
+  inherits: false;
+  initial-value: 84%;
+  syntax: '<percentage>';
+}
+
+@keyframes gradient {
+  0% {
+    --gradient1-color: hsla(263, 100%, 89%, 1);
+    --gradient1-end: 56%;
+    --gradient1-start: 8%;
+    --gradient1-x: 68%;
+    --gradient1-y: 54%;
+
+    --gradient2-color: hsla(348, 86%, 75%, 1);
+    --gradient2-end: 55%;
+    --gradient2-start: 4%;
+    --gradient2-x: 27%;
+    --gradient2-y: 37%;
+
+    --gradient3-color: hsla(202, 93%, 78%, 1);
+    --gradient3-end: 52%;
+    --gradient3-start: 11%;
+    --gradient3-x: 87%;
+    --gradient3-y: 68%;
+
+    --gradient4-color: hsla(343, 75%, 97%, 1);
+    --gradient4-end: 63%;
+    --gradient4-start: 17%;
+    --gradient4-x: 92%;
+    --gradient4-y: 59%;
+
+    --gradient5-color: hsla(226, 58%, 58%, 1);
+    --gradient5-end: 84%;
+    --gradient5-start: 7%;
+    --gradient5-x: 21%;
+    --gradient5-y: 83%;
+  }
+
+  100% {
+    --gradient1-color: hsla(184, 76%, 74%, 1);
+    --gradient1-end: 63%;
+    --gradient1-start: 4%;
+    --gradient1-x: 14%;
+    --gradient1-y: 59%;
+
+    --gradient2-color: hsla(352, 99%, 90%, 1);
+    --gradient2-end: 66%;
+    --gradient2-start: 8%;
+    --gradient2-x: 1%;
+    --gradient2-y: 0%;
+
+    --gradient3-color: hsla(223, 54%, 62%, 1);
+    --gradient3-end: 70%;
+    --gradient3-start: 13%;
+    --gradient3-x: 41%;
+    --gradient3-y: 78%;
+
+    --gradient4-color: hsla(346, 81%, 78%, 1);
+    --gradient4-end: 51%;
+    --gradient4-start: 14%;
+    --gradient4-x: 74%;
+    --gradient4-y: 50%;
+
+    --gradient5-color: hsla(305, 97%, 93%, 1);
+    --gradient5-end: 68%;
+    --gradient5-start: 1%;
+    --gradient5-x: 23%;
+    --gradient5-y: 56%;
+  }
+}

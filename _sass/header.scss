@@ -1,22 +1,36 @@
 @import "colors";
 
-$header-height: 56px;
+header.gradient-background {
+  height: 300px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
 
 .site-header {
-  border-bottom: 1px solid #e8e8e8;
-  line-height: $header-height;
-  min-height: $header-height;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+
+  .wrap {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    row-gap: 1rem;
+    flex-wrap: wrap;
+  }
 
   .title {
-    float: left;
-    font-size: 26px;
+    flex-grow: 1;
+    font-size: 1.6rem;
     letter-spacing: -1px;
+    padding-right: 1rem;
   }
 
   nav {
-    float: right;
-
     ul {
+      align-items: center;
       display: flex;
       flex-wrap: wrap;
       list-style: none;

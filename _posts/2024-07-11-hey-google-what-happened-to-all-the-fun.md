@@ -93,7 +93,7 @@ Unfortunately, now, unlike in 2010, all Android app updates now have to go throu
 
 ![](/assets/images/2024/07/is_it_tuesday_rejection.png)
 
-In other words, despite being on the Android store for 14 years and going through this approval process multiple times in recent years, Google suddenly decided that the app doesn't have enough functionality to be allowed on their store anymore. I submitted an appeal explaining that the seeming lack of functionality was the whole point, that it was a "just for fun" app, and that adding whatever extra functionality to make the Google's reviewers happy would defeat the purpose of the app. I wasn't expecting anything from this since these "appeal" processes are essentially just lip service. Unexpectedly, later that day I received an email saying that my appeal was denied.
+In other words, despite being on the Android store for 14 years and going through this approval process multiple times in recent years, Google suddenly decided that the app doesn't have enough functionality to be allowed on their store anymore. I submitted an appeal explaining that the seeming lack of functionality was the whole point, that it was a "just for fun" app, and that adding whatever extra functionality to make Google's reviewers happy would defeat the purpose of the app. I wasn't expecting anything from this since these "appeal" processes are essentially just lip service. Unexpectedly, later that day I received an email saying that my appeal was denied.
 
 ![](/assets/images/2024/07/is_it_tuesday_appeal_rejection.png)
 

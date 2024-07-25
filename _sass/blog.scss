@@ -1,0 +1,31 @@
+@import "colors";
+
+#blog-index {
+  .posts {
+    .post-link {
+      font-size: 1.5rem;
+    }
+
+    .post-date {
+      font-size: 0.9rem;
+      color: $subtle-text-color;
+    }
+
+    .post:not(:last-child) {
+      border-bottom: 1px solid $subtle-text-color;
+      margin-bottom: 1.25rem;
+      padding-bottom: 1.25rem;
+    }
+
+    .read-more {
+      font-size: 0.9rem;
+    }
+
+    img, iframe {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 100%;
+    }
+  }
+}
