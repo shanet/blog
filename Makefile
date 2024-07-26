@@ -14,7 +14,7 @@ normalize_album_images:
 	find assets/images/albums \
 		-type d -name thumbnails -prune -o \
 		-type f -iname "*.jpg" \
-		-newermt "30 days ago" \
+		-newermt "7 days ago" \
 		-execdir mkdir --parents thumbnails \; \
 		-exec magick {} -resize "2000x2000>" -strip {} \; \
 		-exec magick {} -resize "850x250>" -strip \
