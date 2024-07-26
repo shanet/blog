@@ -13,6 +13,13 @@ photos:
   - file: white_chuck_2.jpg
     caption: White Chuck Mountain summit, October 2023
 
+  - file: high_pass_1.jpg
+    caption: Mt. Baker from High Pass, July 2024
+  - file: high_pass_2.jpg
+    caption: Mt. Baker and Mt. Shuksan from High Pass, July 2024
+  - file: high_pass_3.jpg
+    caption: Sunrise over the North Cascades, July 2024
+
   - file: del_campo_1.jpg
     caption: Del Campo Peak, July 2023
   - file: del_campo_2.jpg
