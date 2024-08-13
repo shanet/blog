@@ -16,7 +16,7 @@ The airports listed here are (arguably) the best camping spots in Washington. Th
 First, a word of caution: Some of the airports listed here require mountain flying experience and close attention paid to density altitude on those hot summer days. Without mountain flying instruction you don't know what you don't know. Before attempting to land at any mountain airport it's critical that you know your performance numbers, the weather, your approach, your go-around procedure, and everything/anything else you need for operating in the mountains (which you got formal instruction for, right?). There is no guarantee that you can safely land/takeoff from the airports listed here, that is for you to do more research on and ultimately determine.
 
 <div class="post-navigation" markdown="1">
-  Navigation
+  Contents
 
   1. [09S - Sullivan Lake State](#sullivan_lake)
   2. [6S9 - Stehekin State](#stehekin)

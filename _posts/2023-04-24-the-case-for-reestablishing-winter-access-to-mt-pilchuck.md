@@ -13,7 +13,7 @@ First off, for readers who know the history of Pilchuck, this is not a post abou
 <!--more-->
 
 <div class="post-navigation" markdown="1">
-  Navigation
+  Contents
 
   * [Mt. Pilchuck History](#why)
   * [Current Access](#current_access)

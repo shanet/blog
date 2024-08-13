@@ -20,7 +20,7 @@ To answer these questions we need to go back to the development era of the 1960s
 <!--more-->
 
 <div class="post-navigation" markdown="1">
-  Navigation
+  Contents
 
   * [Mapping the Cascades](#mapping_the_cascades)
   * [How did we get here?](#how)

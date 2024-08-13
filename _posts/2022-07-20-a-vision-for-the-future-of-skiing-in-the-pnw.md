@@ -25,7 +25,7 @@ This final post attempts to answer the feasibility of doing so. Mainly, why is a
 <!--more-->
 
 <div class="post-navigation" markdown="1">
-  Navigation
+  Contents
 
   * [Why do we need a new ski area?](#why)
   * [Climate Change](#climate_change)

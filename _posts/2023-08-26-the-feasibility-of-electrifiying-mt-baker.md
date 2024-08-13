@@ -11,7 +11,7 @@ On those rare clear winter days, waiting in the morning lift line for Chair 1 to
 <!--more-->
 
 <div class="post-navigation" markdown="1">
-  Navigation
+  Contents
 
   * [Why is this necessary?](#why)
   * [How much CO<sub>2</sub> does Baker emit?](#emissions)

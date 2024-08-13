@@ -16,7 +16,7 @@ The airports listed here (in no particular order) are some of the more accessibl
 First though, a word of caution: Backcountry flying is dangerous and without mountain flying instruction you don't know what you don't know. Before attempting to land at any of these airports it's critical that you know your performance numbers, the weather, your approach, your go-around procedure, and everything/anything else you need for operating in the backcountry (which you got formal instruction for, right?). There is no guarantee that you can safely land/takeoff from the airports listed here, that is for you to do more research on and ultimately determine.
 
 <div class="post-navigation" markdown="1">
-  Navigation
+  Contents
 
   1. [1U1 - Moose Creek](#moose_creek)
   2. [3U2 - Johnson Creek](#johnson_creek)

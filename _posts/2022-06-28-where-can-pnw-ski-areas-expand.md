@@ -11,7 +11,7 @@ This third post explores what our existing ski areas can do to adapt to the over
 <!--more-->
 
 <div class="post-navigation" markdown="1">
-  Navigation
+  Contents
 
   * [Why do we need expanded skiing &amp; winter recreation capacity?](#why)
   * [Solutions for the future](#solutions)

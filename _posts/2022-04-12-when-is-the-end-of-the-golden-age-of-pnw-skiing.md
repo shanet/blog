@@ -20,7 +20,7 @@ However, there are some **BIG** caveats to that statement. Unfortunately, the fu
 <!--more-->
 
 <div class="post-navigation" markdown="1">
-  Navigation
+  Contents
 
   * [Data &amp; Methods](#methods)
   * [Peak Snowdepth](#peak_snowdepth)
