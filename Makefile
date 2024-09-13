@@ -1,10 +1,10 @@
-PHONY: build server deploy
+PHONY: build server deploy normalize_album_images
 
 build:
 	bundle exec jekyll build
 
 server:
-	bundle exec jekyll server
+	bundle exec jekyll server --unpublished --future
 
 deploy: build
 	rsync --recursive --delete --progress _site/ shane@shanetully.com:/srv/http/blog/
