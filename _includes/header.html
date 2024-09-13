@@ -2,7 +2,16 @@
 
 <header class="site-header">
   <div class="wrap">
-    <a class="title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+    <div class="title">
+      <a href="{{ site.baseurl }}/">
+        <div class="avatar-stack">
+          <img src="/assets/images/avatars/avatar_square_background.png">
+          <img src="/assets/images/avatars/avatar_square_foreground.png">
+        </div>
+
+        {{ site.title }}
+      </a>
+    </div>
 
     <nav>
       <ul>

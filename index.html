@@ -4,57 +4,39 @@ layout: empty
 
 <div id="index" class="gradient-background">
   <div class="avatar">
-    <img src="/assets/images/avatar.jpg">
-    <p>shane tully</p>
+    <div class="avatar-stack">
+      <img src="/assets/images/avatars/avatar_square_background.png">
+      <img src="/assets/images/avatars/avatar_square_foreground.png">
+    </div>
+
+    <p>{{ site.name }}</p>
     <p class="mail">✉️ {{ site.email }}</p>
     <p class="key"><a href="/assets/public_key.txt">🔒 8EEF E96D 3904 1184 4DCE 30A9 73E6 78E2 542C 0AF3</a></p>
   </div>
 
-  <div class="boxes">
-    <div class="navigation">
-      <ul>
-        <!-- <li><a href="/about">🏳️‍⚧️&nbsp;Who?</a></li> -->
-        <li><a href="/blog">📝&nbsp;Blog</a></li>
-        <li><a href="https://github.com/shanet">🐙&nbsp;GitHub</a></li>
-        <li><a href="/projects">🐛&nbsp;Projects</a></li>
-        <li><a href="/aviation">🛩️&nbsp;Aviation</a></li>
-        <li><a href="/albums">📷&nbsp;Photography</a></li>
-        <li><a href="/talks">🗣️&nbsp;Talks</a></li>
-        <li><a href="/feed.xml" class="icon">{% include rss_icon.html %}&nbsp;RSS</a></li>
-      </ul>
-    </div class="navigation">
+  <div class="navigation">
+    <ul>
+      <!-- <li><a href="/about">🏳️‍⚧️&nbsp;Who?</a></li> -->
+      <li><a href="/blog">📝&nbsp;Blog</a></li>
+      <li><a href="https://github.com/shanet">🐙&nbsp;GitHub</a></li>
+      <li><a href="/projects">🐛&nbsp;Projects</a></li>
+      <li><a href="/aviation">🛩️&nbsp;Aviation</a></li>
+      <li><a href="/albums">📷&nbsp;Photography</a></li>
+      <li><a href="/talks">🗣️&nbsp;Talks</a></li>
+      <li><a href="/feed.xml" class="icon">{% include rss_icon.html %}&nbsp;RSS</a></li>
+    </ul>
+  </div class="navigation">
 
-    <div class="recent-posts">
-      <h3>Recent Blog Posts</h3>
+  <div class="recent-posts">
+    <h3>Recent Blog Posts</h3>
 
-      <ul>
-        {% for post in site.posts limit:7 %}
-          <li><a class="post-link" href="{{ post.url }}">{{ post.title }}</a><br><span class="post-date">{{ post.date | date: "%Y %B %-d" }}</span></li>
-        {% endfor %}
-      </ul>
+    <ul>
+      {% for post in site.posts limit:7 %}
+        <li><a class="post-link" href="{{ post.url }}">{{ post.title }}</a><br><span class="post-date">{{ post.date | date: "%Y %B %-d" }}</span></li>
+      {% endfor %}
+    </ul>
 
-      <a href="/blog" class="more">All blog posts ➡️</a>
-    </div>
-
-    <div class="featured-projects">
-      <h3>Some Projects</h3>
-
-      <ul>
-        {% for group in site.data.projects %}
-          {% for project in group[1].projects %}
-            {% if project.featured %}
-              <li>
-                <div class="project-info">
-                  <a href="{{ project.link }}">{{ project.name }}</a> <span class="project-description">&ndash; {{ project.description }}</span>
-                </div>
-              </li>
-            {% endif %}
-          {% endfor %}
-        {% endfor %}
-      </ul>
-
-      <a href="/projects" class="more">All projects ➡️</a>
-    </div>
+    <a href="/blog" class="more">All blog posts ➡️</a>
   </div>
 
   <div class="badges">

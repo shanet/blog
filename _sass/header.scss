@@ -26,6 +26,17 @@ header.gradient-background {
     font-size: 1.6rem;
     letter-spacing: -1px;
     padding-right: 1rem;
+
+    a {
+      align-items: center;
+      display: flex;
+    }
+
+    .avatar-stack {
+      height: 3rem;
+      width: 3rem;
+      margin-right: 1rem;
+    }
   }
 
   nav {
