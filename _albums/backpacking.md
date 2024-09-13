@@ -8,6 +8,13 @@ photos:
   - file: sahale_1.jpg
     caption: Sahale Glacier Camp, July 2020
 
+  - file: alpine_lakes_1.jpg
+    caption: Copper Lake, Alpine Lakes Wilderness, August 2024
+  - file: alpine_lakes_2.jpg
+    caption: Copper Lake, Alpine Lakes Wilderness, August 2024
+  - file: alpine_lakes_3.jpg
+    caption: Angeline Lake, Alpine Lakes Wilderness, August 2024
+
   - file: white_chuck_1.jpg
     caption: Glaicer Peak from White Chuck Mountain, October 2023
   - file: white_chuck_2.jpg
@@ -26,6 +33,11 @@ photos:
     caption: Del Campo Peak, July 2023
   - file: del_campo_3.jpg
     caption: Del Campo Peak, July 2023
+
+  - file: tailgunner_1.jpg
+    caption: Wild Sky Wilderness, August 2024
+  - file: tailgunner_2.jpg
+    caption: Infinity Tarn, Wild Sky Wilderness, August 2024
 
   - file: excelsior_1.jpg
     caption: Mt. Baker from Excelsior Peak, September 2023
