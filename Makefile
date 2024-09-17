@@ -7,8 +7,8 @@ server:
 	bundle exec jekyll server --unpublished --future
 
 deploy: build
-	rsync --recursive --delete --progress _site/ shane@shanetully.com:/srv/http/blog/
-	ssh shane@shanetully.com "cd /srv/http/blog && chown -R shane:www-data . && chmod -R 775 . && ln -s ../psu_steam psu_steam"
+	rsync --recursive --delete --progress _site/ kira@ephemeral.cx:/srv/http/blog/
+	ssh kira@ephemeral.cx "cd /srv/http/blog && chown -R kira:www-data . && chmod -R 775 . && ln -s ../psu_steam psu_steam"
 
 normalize_album_images:
 	find assets/images/albums \
