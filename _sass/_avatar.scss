@@ -1,0 +1,24 @@
+.avatar-stack {
+  position: relative;
+
+  img {
+    border-radius: 50%;
+    position: absolute;
+    width: 100%;
+
+    &:first-child {
+      display: block;
+      animation: hue-rotate 20s infinite;
+    }
+  }
+}
+
+@keyframes hue-rotate {
+  0% {
+    filter: saturate(150%) hue-rotate(0deg);
+  }
+
+  100% {
+    filter: saturate(150%) hue-rotate(360deg);
+  }
+}
