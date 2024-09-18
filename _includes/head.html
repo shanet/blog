@@ -8,6 +8,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
+  {% if page.title && page.description %}
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:description" content="{{ page.description }}">
+    <meta property="og:type" content="website">
+    {% if page.image %}
+      <meta property="og:image" content="{{ page.image }}">
+    {% endif %}
+  {% endif %}
+
   {% assign timestamp = site.time | date: "%s" %}
   <link rel="stylesheet" href="{{ "/assets/styles/main.css?t=" | append: timestamp }}">
 

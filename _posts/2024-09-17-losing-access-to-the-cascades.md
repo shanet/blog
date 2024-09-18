@@ -2,6 +2,7 @@
 layout: post
 title: Losing Access To The Cascades
 description: How is the lack of funding of forest road maintenance affecting recreational access in our national forests?
+image: /assets/images/2024/09/canyon_creek_bridge.jpg
 date: 2024-09-17
 ---
 
