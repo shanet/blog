@@ -2,19 +2,18 @@
 layout: post
 title: Losing Access To The Cascades
 description: How is the lack of funding of forest road maintenance affecting recreational access in our national forests?
-date: 2024-09-15
-published: false
+date: 2024-09-17
 ---
 
-[TODO: put hero image here]
+![](/assets/images/2024/09/canyon_creek_bridge.jpg)
 
 Pictured above is the Canyon Creek bridge along the Green Mountain forest road. It and the road beyond was damaged in 2011 and has remained closed ever since. Each year its condition degrades further making any eventual repair/replacement even more expensive. Meanwhile, the bridge closure rendered the remaining 8.5 miles of Green Mountain road inaccessible to vehicle traffic. This transformed the already challenging Three Fingers Lookout trail from 4,200ft and 15mi to a highly committing 5,300ft and 26mi putting it out of reach for all but the most dedicated and skilled hikers. Despite being closed for 13 years, there is little hope for repair and reopening. With each passing year the continued degradation of the road most likely means the loss of access to this area of the Cascades forever.
+
+<!--more-->
 
 Even more unfortunately is that this is far from a unique story. The access to trails that thousands of recreational mountain-goers in the Cascades all rely on is slowly eroding due to lack of maintenance on our forest roads. Areas of the Cascades are either becoming considerably more difficult to visit or lost entirely as roads become washed out, closed, and simply never repaired. What's more, this further exacerbates the overcrowding problems as more people are funneled into the smaller number of trailheads that remain with sufficient access.
 
 Why is this though? It's not due to any malicious desire to purposefully restrict access but rather one core issue: lack of funding. Specifically, this article aims to explore the history of how our forest road network came to be, the current state of the network, its likely future, and potential mitigations to avoid its continued degradation.
-
-<!--more-->
 
 <div class="post-navigation" markdown="1">
   Contents
@@ -312,7 +311,9 @@ Alright, so after analyzing all of those sources of funding, what conclusions ca
 * In recent years, funding has been diverted to more pressing wildfire fighting needs.
 * Recent laws aimed at addressing these maintenance backlogs of federal recreational facilities have been directed primarily at the NPS rather than the USFS.
 
-Therefore, the unfortunate reality is that the current level of funding for our forest roads remains woefully inadequate. With this level of funding we can expect to see more roads falling further into disrepair, becoming inaccessible to most vehicles, and ultimately being closed &amp; lost forever regardless of what vehicle you may drive. How can we avoid this future?
+Therefore, the unfortunate reality is that the current level of funding for our forest roads remains woefully inadequate. With this level of funding we can expect to see more roads falling further into disrepair, becoming inaccessible to most vehicles, and ultimately being closed &amp; lost forever regardless of what vehicle you may drive.
+
+Let's now turn to how we can avoid this future.
 
 ## <a name="mitigations"></a>Potential Mitigations
 
@@ -394,8 +395,8 @@ As shown at the start of this article, the amount of logging done today is a fra
 * Timber receipts were directly responsible for the initial build-out of the forest road network. Increased logging would once again fund road maintenance.
 * Surprisingly enough, carbon sequestration rates are higher on private, managed forests than in public forests despite these private forests having higher levels of logging.[^29] Increased sustainable logging on public lands is not a forgone environmental catastrophe as many would make it out to be.
 * Modern sustainable logging techniques, not clear cutting entire areas, thins forests reducing their susceptibility to massively damaging wildfires.
-* Many areas that were harvested in decades past are ready for second or even third harvests. **This is not a proposal to start clearing never logged, old growth forests again.**
-  * After all, many of these roads were originally built for logging access. By definition, they lead to areas that were already logged. So logging them again is not cutting pristine forest land. And the areas beyond the roads are highly protected wilderness areas where logging is completely prohibited; that does not change.
+* Many areas that were harvested in decades past are ready for second or even third harvests. To be abundantly clear, **this is not a proposal to start clearing never logged, old growth forests again.**
+  * After all, many of these roads were originally built for logging access. By definition, they lead to areas that were already logged. So logging them again is not cutting pristine forest land. And the areas beyond the roads are generally highly protected wilderness areas where logging is completely prohibited; that does not change.
 
 In fact, this is already happening. In 2018, 3.1 billion board feet of timber was harvested. This is the highest level since 1999,[^6] but still far shy of the peak levels of ~12B board feet. We are learning how to log more sustainably than in decades past and that is an unequivocally *good thing.*
 
@@ -425,6 +426,8 @@ Imagine applying that same playbook to other areas in need of road, trail, and f
 
 ## <a name="conclusions"></a>Conclusions
 
+<img src="/assets/images/2024/09/canyon_creek_bridge_2.jpg" style="max-width: 45%; float: right; margin-left: 0.5rem">
+
 The harsh reality here is that this topic does not have a happy ending. The current maintenance funding of the forest road network is woefully and borderline hopelessly inadequate. The high level summary of this article being:
 
 * The forest road network was built during the heyday of the logging industry and funded primarily through timber receipts.
@@ -436,9 +439,11 @@ The harsh reality here is that this topic does not have a happy ending. The curr
 
 So, if you're wondering why that one road to the hike you want to do is seemingly taking forever to be repaired, this is why.
 
-At these present levels of funding we can expect access to trails that thousands of hikers, backpackers, mountaineers, climbers, ski tourers, and more regularly utilize to slowly become less accessible before becoming lost entirely. And with an ever growing Washington population this will have the side effect of forcing more recreationalists into a smaller collection of trailheads further exacerbating the overcrowding issues our mountains already experience.
+To bring this full circle, this article started with an example of the Canyon Creek bridge washout (pictured right). Despite the bridge itself being in good shape, 13 years of neglect has made it susceptible to collapse due to erosion under its north abutment. The current path we are on ends with either its removal or collapse and the permanent loss of the road beyond it and potentially the trail entirely if it is deemed too dangerous to ford the river without a bridge. I imagine a world where access to the road beyond the bridge is restored via a combination of, say, sustainable logging, perhaps a small commercial lodge further up the road, or any number of other creative means of funding. The possibilities are there.
 
-With that in mind, none of this should be seen as an insurmountable problem, however. It is one that can solved with a sufficient amount of political will for making the necessary reforms to provide funding. There are many avenues for providing sufficient or at least improved maintenance funding. We need only advocate for a figurative and literal road forward.
+At these present levels of funding we can expect access to trails that thousands of hikers, backpackers, mountaineers, climbers, ski tourers, and more regularly utilize to slowly become less accessible before becoming lost entirely. In many ways, our mountains were more expansive and accessible in decades past. Today we have fewer options than predecessors did and when outdoor recreation was less popular. With an ever growing Washington population, this loss of access will have the side effect of forcing more recreationalists into a smaller collection of trailheads further exacerbating the overcrowding issues our mountains already experience. At a time when we should be looking at increased dispersion to alleviate this concern the exact opposite is happening.
+
+With all of that in mind, none of this should be seen as an insurmountable problem, however. It is one that can solved with a sufficient amount of political will for making the necessary reforms to provide funding. There are many avenues for providing sufficient or at least improved maintenance funding. We need only advocate for a figurative and literal road forward.
 
 ## Sources
 
