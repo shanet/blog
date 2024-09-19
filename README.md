@@ -1,5 +1,4 @@
-shanetully.com
-==============
+ephemeral.cx
+============
 
-Jekyll source for shanetully.com
-
+Jekyll source for my personal blog. Use `bundle install && make server` to run it locally.
