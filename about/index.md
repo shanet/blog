@@ -21,7 +21,7 @@ As for me:
 <ul>
   <li>Software engineer for fun and profit</li>
   <li>Location: Pacific Northwest ⛰️</li>
-  <li>Other interests: Backcountry/in-bounds skiing, climbing, backpacking, <a href="aviation">aviation</a>, and <a href="/albums">photography</a></li>
+  <li>Other interests: Free software, backcountry/in-bounds skiing, climbing, backpacking, <a href="aviation">aviation</a>, and <a href="/albums">photography</a></li>
 </ul>
 
 #### Why {{ site.title }}?
