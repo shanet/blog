@@ -40,6 +40,11 @@ a {
   }
 }
 
+small {
+  color: $subtle-text-color;
+  font-size: 0.9rem;
+}
+
 .wrap {
   margin: 0 auto;
   max-width: 850px;
@@ -59,7 +64,7 @@ a {
 code {
   background-color: #f7f7f9;
   border: 1px solid #e1e1e8;
-  color: #cc2255;
+  color: $code-color;
   font-size: .8rem;
   padding: 0px 5px;
 }

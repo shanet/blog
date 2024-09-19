@@ -59,7 +59,7 @@
 
     a {
       color: $text-color;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
   }
 
@@ -71,6 +71,11 @@
       fill: $text-color;
       height: 100%;
       width: 1.75rem;
+    }
+
+    svg.stroke {
+      fill: none;
+      stroke: $text-color;
     }
   }
 
@@ -126,19 +131,11 @@
     }
   }
 
-  .badges {
+  .index-footer {
+    color: $subtle-text-color;
+    font-size: 0.9rem;
+    font-style: italic;
     padding-bottom: 1.75rem;
-
-    > div {
-      color: $subtle-text-color;
-      display: flex;
-      flex-wrap: wrap;
-      font-size: 0.9rem;
-      font-style: italic;
-      gap: 0.5rem;
-      justify-content: center;
-      padding-bottom: 0.25rem;
-    }
   }
 }
 

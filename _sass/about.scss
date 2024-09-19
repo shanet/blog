@@ -1,11 +1,56 @@
-.about-avatar-stack {
+@import "colors";
+
+.infobox {
   display: inline;
   float: right;
   margin: 0 0 0 0.5rem !important;
-  height: 300px;
-  width: 200px;
+
+  .avatar-stack {
+    height: 300px;
+    width: 200px;
+
+    img {
+      border-radius: 0.5rem !important;
+    }
+  }
+
+  > div:last-child {
+    display: flex;
+    margin-top: 0.5rem;
+    justify-content: space-between;
+
+    svg {
+     fill: none;
+      stroke: #000;
+      width: 2rem;
+    }
+  }
+}
+
+.public-key {
+  color: $code-color;
+  font-family: monospace;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  border: 3px solid #ccc;
+  padding: 1rem;
+  font-size: 0.7rem;
+}
+
+.where {
+  padding-top: 3rem;
+  text-align: center;
+
+  p {
+    color: $subtle-text-color;
+    font-size: 0.8rem;
+    font-style: italic;
+    letter-spacing: 0.05rem;
+    margin-top: 0.5rem;
+  }
 
   img {
-    border-radius: 0.5rem !important;
+    border-radius: 10px;
+    width: 70%;
   }
 }
