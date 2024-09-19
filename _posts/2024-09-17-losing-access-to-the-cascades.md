@@ -48,7 +48,7 @@ The end result of this construction being a total network size of approximately 
 
 It truly is a massive road network. So how, then, was it built?
 
-Prior to WWII, most of the US timber supply was generated from private forests. At that time National Forest land only supplied 2% of US timber. After WWII, this percentage grew as the Forest Service began to raise harvest limits in the 1950s. Harvest rates peaked in the early 1990s before beginning to decline.[^3] Today, logging levels are a fraction their peak and back to pre-1950s levels.
+Prior to WWII, most of the US timber supply was generated from private forests. At that time National Forest land only supplied 2% of US timber. After WWII, this percentage grew as the Forest Service began to raise harvest limits in the 1950s. Harvest rates peaked in the early 1990s before beginning to decline.[^3] Today, logging levels are a fraction of their peak and back to pre-1950s levels.
 
 ![](/assets/images/2024/09/forest_logging_levels.png)
 <sub>Logging over time [^3]</sub>
