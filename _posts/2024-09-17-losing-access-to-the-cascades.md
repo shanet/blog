@@ -30,7 +30,7 @@ Why is this though? It's not due to any malicious desire to purposefully restric
 
 ## Scope
 
-A short note on the scope of this article and the organization of the USFS: Unlike other government agencies that manage federal lands such as the National Park Service (NPS) and Bureau of Land Management (BLM) which are under the authority of the Department of the Interior, the Forest Service is under the United States Department of Agriculture (USDA). This is a somewhat unusual arraignment and it means that policies, budgets, and priorities may diverge between the USFS and NPS, among others.
+A short note on the scope of this article and the organization of the USFS: Unlike other government agencies that manage federal lands such as the National Park Service (NPS) and Bureau of Land Management (BLM) which are under the authority of the Department of the Interior, the Forest Service is under the United States Department of Agriculture (USDA). This is a somewhat unusual arrangement and it means that policies, budgets, and priorities may diverge between the USFS and NPS, among others.
 
 As such, this article focuses nearly exclusively on the USFS rather than the NPS. The latter is an entirely different topic with an entirely different set of needs, budgets, and maintenance backlogs which is outside the scope of the analysis performed here.
 
