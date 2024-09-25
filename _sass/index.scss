@@ -44,9 +44,11 @@
   }
 
   .navigation {
-    align-items: center;
-    display: flex;
     max-width: 800px;
+
+    @media (max-width: 800px) {
+      max-width: 500px;
+    }
 
     ul {
       column-gap: 1rem;
