@@ -16,8 +16,8 @@ normalize_album_images:
 		-type f -iname "*.jpg" \
 		-newermt "7 days ago" \
 		-execdir mkdir --parents thumbnails \; \
-		-exec magick {} -resize "2000x2000>" -strip {} \; \
-		-exec magick {} -resize "850x250>" -strip \
+		-exec magick {} -quality 75 -resize "2000x2000>" -strip {} \; \
+		-exec magick {} -quality 75 -resize "850x250>" -strip \
 			-set filename:directory "%[directory]" \
 			-set filename:basename "%[basename]" \
 			-set filename:extension "%[extension]" \
