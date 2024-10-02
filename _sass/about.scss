@@ -20,13 +20,7 @@
   > div:last-child {
     display: flex;
     margin-top: 0.5rem;
-    justify-content: space-between;
-
-    svg {
-     fill: none;
-      stroke: #000;
-      width: 2rem;
-    }
+    justify-content: center;
   }
 }
 

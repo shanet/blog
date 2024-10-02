@@ -11,7 +11,6 @@ title: About
 
   <div>
     <a href="https://github.com/shanet"><img src="/assets/images/badges/github.svg"></a>
-    <a href="https://webring.xxiivv.com" class="webring">{% include webring_icon.html %}</a>
   </div>
 </div>
 
