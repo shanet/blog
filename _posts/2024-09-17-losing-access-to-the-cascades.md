@@ -113,27 +113,29 @@ The difference between deferred and annual maintenance being:
 
 Below is the deferred maintenance for 2015 &amp; 2023 and annual maintenance need for 2015 (the most recent year for which I have data) for each forest in Region 6: [^7] [^8]
 
-|National Forest     |Road Miles|Annual Maintenance Need (2015)|Deferred Maintenance (2015)|Deferred Maintenance (2023)|
-|--------------------|----------|------------------------------|---------------------------|---------------------------|
-|Columbia River Gorge|99        |$121,557                      |$1,454,584                 |$454,671                   |
-|Colville            |4,309     |$4,306,765                    |$37,336,065                |$44,657,021                |
-|Deschutes           |8,109     |$7,526,877                    |$80,566,681                |$29,767,043                |
-|Fremont-Winema      |12,548    |$13,642,507                   |$133,971,908               |$68,925,716                |
-|Gifford Pinchot     |4,103     |$5,312,486                    |$53,330,891                |$27,182,755                |
-|Malheur             |9,628     |$6,153,833                    |$56,025,932                |$24,603,985                |
-|Mount Hood          |2,881     |$4,896,610                    |$51,813,990                |$25,269,040                |
-|Mt. Baker-Snoqualmie|2,453     |$9,660,568                    |$81,915,920                |$62,880,382                |
-|Ochoco              |3,253     |$3,313,734                    |$33,260,537                |$14,980,293                |
-|Okanogan-Wenatchee  |8,163     |$17,050,400                   |$158,111,026               |$84,572,497                |
-|Olympic             |2,026     |$4,467,995                    |$42,680,614                |$27,172,794                |
-|Rogue River-Siskiyou|5,288     |$11,581,995                   |$111,614,953               |$72,534,097                |
-|Siuslaw             |2,128     |$2,777,636                    |$26,115,387                |$16,091,493                |
-|Umatilla            |4,624     |$6,647,168                    |$65,211,612                |$32,083,051                |
-|Umpqua              |4,776     |$7,148,103                    |$73,669,140                |$36,795,738                |
-|Wallowa-Whitman     |9,150     |$6,808,709                    |$64,279,905                |$30,869,516                |
-|Willamette          |6,542     |$8,838,067                    |$90,942,456                |$47,717,136                |
-|**Total**           |**90,078**|**$120,255,010**              |**$1,162,301,600**         |**$646,557,228**           |
-{: .post-table}
+<div class="table-overflow" markdown="1">
+  |National Forest     |Road Miles|Annual Maintenance Need (2015)|Deferred Maintenance (2015)|Deferred Maintenance (2023)|
+  |--------------------|----------|------------------------------|---------------------------|---------------------------|
+  |Columbia River Gorge|99        |$121,557                      |$1,454,584                 |$454,671                   |
+  |Colville            |4,309     |$4,306,765                    |$37,336,065                |$44,657,021                |
+  |Deschutes           |8,109     |$7,526,877                    |$80,566,681                |$29,767,043                |
+  |Fremont-Winema      |12,548    |$13,642,507                   |$133,971,908               |$68,925,716                |
+  |Gifford Pinchot     |4,103     |$5,312,486                    |$53,330,891                |$27,182,755                |
+  |Malheur             |9,628     |$6,153,833                    |$56,025,932                |$24,603,985                |
+  |Mount Hood          |2,881     |$4,896,610                    |$51,813,990                |$25,269,040                |
+  |Mt. Baker-Snoqualmie|2,453     |$9,660,568                    |$81,915,920                |$62,880,382                |
+  |Ochoco              |3,253     |$3,313,734                    |$33,260,537                |$14,980,293                |
+  |Okanogan-Wenatchee  |8,163     |$17,050,400                   |$158,111,026               |$84,572,497                |
+  |Olympic             |2,026     |$4,467,995                    |$42,680,614                |$27,172,794                |
+  |Rogue River-Siskiyou|5,288     |$11,581,995                   |$111,614,953               |$72,534,097                |
+  |Siuslaw             |2,128     |$2,777,636                    |$26,115,387                |$16,091,493                |
+  |Umatilla            |4,624     |$6,647,168                    |$65,211,612                |$32,083,051                |
+  |Umpqua              |4,776     |$7,148,103                    |$73,669,140                |$36,795,738                |
+  |Wallowa-Whitman     |9,150     |$6,808,709                    |$64,279,905                |$30,869,516                |
+  |Willamette          |6,542     |$8,838,067                    |$90,942,456                |$47,717,136                |
+  |**Total**           |**90,078**|**$120,255,010**              |**$1,162,301,600**         |**$646,557,228**           |
+  {: .post-table}
+</div>
 
 <sub>*The caveat here is that the source of this data notes these 2015 numbers are to return the road network to a "like new" condition. For practical purposes we don't necessarily need "like new" conditions everywhere so an actual number may be somewhat smaller but regardless this makes for a decent ballpark upper-bound figure.*</sub>
 
@@ -277,14 +279,16 @@ Finally we arrive at the 2020 Great American Outdoors Act (GAOA). This act was t
 
 For example, since at the time of this writing it is 2024 we are already most of the way through the Legacy Restoration Fund's life. We can therefore see some of the projects that GAOA has accomplished already. Below is a list of GAOA-funded projects for the Mt. Baker-Snoqualmie forest specifically:
 
-|Forest|Project                                                                      |GAOA Non-transportation funding|GAOA transportation funding|
-|------|-----------------------------------------------------------------------------|-------------------------------|---------------------------|
-|MBS   |Mountain Loop Highway Corridor Enhancement                                   |$225k                          |                           |
-|MBS   |Pacific Crest Trail Access Roads, Bridges, and Trails Deferred Maintenance   |$1.3M                          |$200k                      |
-|MBS   |Bridge Repairs and Preservation                                              |                               |$600k                      |
-|MBS   |Heather Meadows Trails and Recreation Site Deferred Maintenance and Dam Rehab|$60k                           |                           |
-|MBS   |Mountain Loop Highway Road, Trail, and Bridges Deferred Maintenance          |$450k                          |$1M                        |
-{: .post-table}
+<div class="table-overflow" markdown="1">
+  |Forest|Project                                                                      |GAOA Non-transportation funding|GAOA transportation funding|
+  |------|-----------------------------------------------------------------------------|-------------------------------|---------------------------|
+  |MBS   |Mountain Loop Highway Corridor Enhancement                                   |$225k                          |                           |
+  |MBS   |Pacific Crest Trail Access Roads, Bridges, and Trails Deferred Maintenance   |$1.3M                          |$200k                      |
+  |MBS   |Bridge Repairs and Preservation                                              |                               |$600k                      |
+  |MBS   |Heather Meadows Trails and Recreation Site Deferred Maintenance and Dam Rehab|$60k                           |                           |
+  |MBS   |Mountain Loop Highway Road, Trail, and Bridges Deferred Maintenance          |$450k                          |$1M                        |
+  {: .post-table}
+</div>
 
 <sub>See Appendix D in [^18] for a full list of GAOA-funded projects in Region 6</sub>
 

@@ -26,3 +26,9 @@
     font-size: 13px;
   }
 }
+
+// Create a scrollbar just for the table rather than the whole page
+.table-overflow {
+  overflow-x: auto;
+  width: 100%;
+}
