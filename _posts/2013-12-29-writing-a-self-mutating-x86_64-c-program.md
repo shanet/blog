@@ -198,7 +198,7 @@ Let's look at the objdump method first. The disassembly of <code>foo()</code> up
   400547:	83 45 fc 01          	addl   $0x1,-0x4(%rbp)
 {% endhighlight %}
 
-The function starts at <code>400538</code> and the byte we're interested in is at <code>400550 (400547 + 3)</code> so that means the offset is <code>400550 - 400538 = 18</code>.
+The function starts at <code>400538</code> and the byte we're interested in is at <code>40055a (400547 + 3)</code> (remember, these are hex values!) so that means the offset is <code>40055a - 400538 = 12</code>. Because this is a hex value, when we're calculating offsets we need to either use hex values or convert it to base 10. The latter is easier so let's say that an offset of <code>0x12 = 18</code> is what we're looking for.
 
 We can confirm this by writing a short function to print the instructions of a given function. Here's the modified program from above:
 
