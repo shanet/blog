@@ -16,9 +16,12 @@ photos:
     caption: Angeline Lake, Alpine Lakes Wilderness, August 2024
 
   - file: white_chuck_1.jpg
-    caption: Glaicer Peak from White Chuck Mountain, October 2023
+    caption: Glacier Peak from White Chuck Mountain, October 2023
   - file: white_chuck_2.jpg
     caption: White Chuck Mountain summit, October 2023
+
+  - file: vesper.jpg
+    caption: Morning Star Peak from Lake Elan, October 2024
 
   - file: high_pass_1.jpg
     caption: Mt. Baker from High Pass, July 2024
