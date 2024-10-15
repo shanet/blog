@@ -453,7 +453,7 @@ Now that we know how to set up a syscall, let's explain each step of the shellco
     <tr>
       <td><code>\x48\xbb\x2f\x62\x69\x6e\x2f\x73\x68\x00</code></td>
       <td><code>mov $0x68732f6e69622f, %rbx</code></td>
-      <td>Set the value of the <code>%rbx</code> register to \"hs/nib/\". Intel processors are little endian so the string must be backwards. A quick way to do this with Python is <code>'/bin/sh'[::-1].encode('hex')</code>. It is convenient that "/bin/sh" is 64bits so it fits within a single register. Anything longer would require some trickery to concatenate longer strings together.</td>
+      <td>Set the value of the <code>%rbx</code> register to <code>hs/nib/</code>. Intel processors are little endian so the string must be backwards. A quick way to do this with Python is <code>'/bin/sh'[::-1].encode('hex')</code>. It is convenient that "/bin/sh" is 64bits so it fits within a single register. Anything longer would require some trickery to concatenate longer strings together.</td>
     </tr>
     <tr>
       <td><code>\x53</code></td>
@@ -463,7 +463,7 @@ Now that we know how to set up a syscall, let's explain each step of the shellco
     <tr>
       <td><code>\x48\x89\xe7</code></td>
       <td><code>mov %rsp, %rdi</code></td>
-      <td>As per the syscall documentation, the <code>%rdi</code> register should point to the memory location of the program to execute. The stack pointer (register <code></code>%rsp</code>) is currently pointing at this string so copy the stack pointer to <code>%rdi</code>.</td>
+      <td>As per the syscall documentation, the <code>%rdi</code> register should point to the memory location of the program to execute. The stack pointer (register <code>%rsp</code>) is currently pointing at this string so copy the stack pointer to <code>%rdi</code>.</td>
     </tr>
     <tr>
       <td><code>\x50</code></td>
