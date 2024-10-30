@@ -28,4 +28,9 @@
   {% if page.redirect %}
     <meta http-equiv="refresh" content="0; url={{ page.redirect }}">
   {% endif %}
+
+  <script>
+    // Hey there! This is just a fun little game for nerds: https://ipv4.games
+    fetch('https://ipv4.games/claim?name=ephemeral.cx', {signal: AbortSignal.timeout(3000)});
+  </script>
 </head>
