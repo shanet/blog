@@ -7,15 +7,20 @@ cover: revelstoke_1.jpg
 photos:
   - file: rainier_1.jpg
     caption: Muir Snowfield (Mt. Rainier), December 2017
-
   - file: skyline_lake_1.jpg
     caption: Skyline Lake overlooking Stevens Pass, November 2021
-
   - file: alyeska_1.jpg
     caption: Alyeska, February 2022
 
-  - file: shuksan.jpg
+  - file: baker_5.jpg
+    caption: Bagley Lakes, December 2024
+  - file: baker_6.jpg
+    caption: Table Mountain, December 2024
+
+  - file: shuksan_1.jpg
     caption: Mt. Shuksan at sunset from Heather Meadows, January 2024
+  - file: shuksan_2.jpg
+    caption: Mt. Shuksan from Table Mountain, December 2024
   - file: baker_2.jpg
     caption: Chair 1 at Mt. Baker, January 2024
   - file: larrabee.jpg
@@ -45,4 +50,8 @@ photos:
     caption: Mt Baker from the Shuksan Arm, January 2024
   - file: baker_3.jpg
     caption: Sunset over Table Mountain and Mt. Baker, January 2024
+  - file: baker_7.jpg
+    caption: Bagley Lakes, December 2024
+  - file: baker_8.jpg
+    caption: Bagley Lakes, December 2024
 ---
