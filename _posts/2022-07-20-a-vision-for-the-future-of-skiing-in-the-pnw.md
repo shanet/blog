@@ -580,7 +580,7 @@ Okay, so what are some potential locations to expand winter backcountry access t
 * The North Cascades Highway could be plowed further to the east from its western closure.
   * Earlier in this post I discussed the possibility of keeping the North Cascades Highway open to Cutthroat Pass. Backcountry access would not necessarily need to go that far to the east, but keeping more of it open could open significant ski touring terrain.
 * Mountain Loop Highway is somewhat low elevation but it has a good number of ski touring routes that are inaccessible in the winter due to the road closure. Keeping it open at least to Barlow Pass would open these up.
-* Lastly, reestablishing winter maintenance to Cayuse Pass would relive backcountry use at Crystal.
+* Lastly, reestablishing winter maintenance to Cayuse Pass would relieve backcountry use at Crystal.
   * Up until 1974 Cayuse Pass to White Pass was maintained during the winter by the state so this is definitely in the realm of possibility.[^23]
 
 #### Mt. Pilchuck
