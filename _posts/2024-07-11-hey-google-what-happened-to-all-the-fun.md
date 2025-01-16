@@ -7,7 +7,7 @@ date: 2024-07-11
 
 This is the story of how Google killed a 14 year old Android app overnight.
 
-2008 was a time when the web had mostly become ubiquitous but still before most people carried it all with them in their pocket on a smartphone. For me, a high school student at the time without a smartphone, my programming classes were the only times during the school day where I could access the internet in a school computer lab. These short periods during the day were often filled with implementing various sorting algorithms or other computer science fundamentals. But of course there was also a healthy amount of screwing around on the heavily filtered internet we were allowed access to.
+2008 was a time when the web had mostly become ubiquitous but still before most people carried it all with them in their pocket on a smartphone. For me, a high school student at the time without a smartphone, my programming classes were the only times during the school day where I could access the internet in a school computer lab. These short periods during the day were often filled writing programs of various computer science fundamentals for my classwork but, of course, there was also a healthy amount of screwing around on the heavily filtered internet we were allowed access to.
 
 It was in one of these computer labs that a fellow student directed me to a website with quite literal domain, [isittuesday.com](https://web.archive.org/web/20090628222845/http://isittuesday.com/). It was exactly what it sounded like, a large "Yes!" or "No." displayed on the page if it was Tuesday and, well, that's it. It was the sort of random website that you'd snicker at, send to your friends on AOL Instant Messenger for the next person to snicker at, and move on to the next thing that caught your brief interest.
 
@@ -85,7 +85,7 @@ As everything in the world does though, time moved on and the Android ecosystem 
 
 In recent years I would occasionally update it just to bump the target SDK version. Google started requiring developers to fill out disclosure forms for things like health data collection, user age verifications, etc. I even had to create a [privacy policy website](https://sites.google.com/view/isittuesday/home) just to state that the app did not collect any information. The hoops to jump through became numerous enough that I thought of no longer updating it and letting it fade into the ether. But each time I ended up rolling my eyes at whatever new requirement Google added and complying with it to keep the app alive. After all, it was fun and at this point I was motivated to keep the streak alive since it had been on the Play Store since nearly it's inception.
 
-Then on July 8th 2024 I received an email stating that I needed to update the target SDK version before the end of the August to keep the app published. While the code of the app hadn't changed since 2010, I had been updating it to work with the current Android build tools so bumping the the target SDK version and compiling a new APK binary was no big deal, I thought.
+Then on July 8th 2024 I received an email stating that I needed to update the target SDK version before the end of August to keep the app published. While the code of the app hadn't changed since 2010, I had been updating it to work with the current Android build tools so bumping the the target SDK version and compiling a new APK binary was no big deal, I thought.
 
 ![](/assets/images/2024/07/is_it_tuesday_sdk_alert.png)
 
