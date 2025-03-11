@@ -1,21 +1,21 @@
 ---
 ---
 
-@import "about";
-@import "album";
-@import "avatar";
-@import "aviation";
-@import "blog";
-@import "gradient";
-@import "header";
-@import "iframe";
-@import "index";
-@import "layout";
-@import "page";
-@import "paginator";
-@import "projects";
-@import "syntax";
-@import "table";
+@use "about";
+@use "album";
+@use "avatar";
+@use "aviation";
+@use "blog";
+@use "gradient";
+@use "header";
+@use "iframe";
+@use "index";
+@use "layout";
+@use "page";
+@use "paginator";
+@use "projects";
+@use "syntax";
+@use "table";
 
-@import "ski_area_study";
-@import "snowpack_analysis";
+@use "ski_area_study";
+@use "snowpack_analysis";
