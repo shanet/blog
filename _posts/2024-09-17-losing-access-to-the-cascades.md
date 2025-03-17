@@ -8,7 +8,7 @@ date: 2024-09-17
 
 ![](/assets/images/2024/09/canyon_creek_bridge.jpg)
 
-Pictured above is the Canyon Creek bridge along the Green Mountain forest road. It and the road beyond was damaged in 2011 and has remained closed ever since. Each year its condition degrades further making any eventual repair/replacement even more expensive. Meanwhile, the bridge closure rendered the remaining 8.5 miles of Green Mountain road inaccessible to vehicle traffic. This transformed the already challenging Three Fingers Lookout trail from 4,200ft and 15mi to a highly committing 5,300ft and 26mi putting it out of reach for all but the most dedicated and skilled hikers. Despite being closed for 13 years, there is little hope for repair and reopening. With each passing year the continued degradation of the road most likely means the loss of access to this area of the Cascades forever.
+Pictured above is the Canyon Creek bridge along the Green Mountain forest road. It and the road beyond were damaged in 2011 and has remained closed ever since. Each year its condition degrades further making any eventual repair/replacement even more expensive. Meanwhile, the bridge closure rendered the remaining 8.5 miles of Green Mountain road inaccessible to vehicle traffic. This transformed the already challenging Three Fingers Lookout trail from 4,200ft and 15mi to a highly committing 5,300ft and 26mi putting it out of reach for all but the most dedicated and skilled hikers. Despite being closed for 13 years, there is little hope for repair and reopening. With each passing year the continued degradation of the road most likely means the loss of access to this area of the Cascades forever.
 
 <!--more-->
 
