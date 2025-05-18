@@ -129,10 +129,13 @@
   }
 
   .index-footer {
-    color: $subtle-text-color;
     font-size: 0.9rem;
     font-style: italic;
     padding-bottom: 1.75rem;
+
+    a {
+      color: $subtle-text-color;
+    }
   }
 }
 
