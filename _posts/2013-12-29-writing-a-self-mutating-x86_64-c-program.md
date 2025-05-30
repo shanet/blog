@@ -166,7 +166,7 @@ In our case, these bytes mean the following:
     <tr>
       <td><code>83</code> is the opcode of the <code>addl</code> instruction. All instructions have an opcode that tells the CPU what instruction to perform.</td>
       <td><code>45</code> is the ModR/M byte. Per Intel's documentation, <code>0x45 = [RBP/EBP]+disp8</code>. This means that <code>0x45</code> denotes the <code>%rbp</code> register is the destination and the byte that follows (in this case, <code>0xfc</code>) is the displacement byte.</td>  
-      <td><code>fc</code> is the displacement byte. <code>0xfc = 0b11111100</code>. The displacement byte is sign-extended so this value is really just <code>0b100</code> or 4.</td>  
+      <td><code>fc</code> is the displacement byte. <code>0xfc = 0b11111100</code>. In this case it is in two's complement so the decimal value is -4.</td>  
       <td><code>01</code> is the immediate value that will be added to the given memory address. <strong>This is the byte we need to change in order to change the value that <code>i</code> is incremented by.</strong></td>  
     </tr>
   </tbody>
