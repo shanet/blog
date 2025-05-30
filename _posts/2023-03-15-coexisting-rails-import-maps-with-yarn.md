@@ -57,18 +57,18 @@ Since Mapbox-gl has a compiled JS file we only need to symlink it into `vendor/a
 
 {% highlight bash linenos %}
 $ ls -la vendor/assets/javascripts
-drwxr-xr-x shane shane 4.0 KB Sun Feb 26 23:25:57 2023 .
-drwxr-xr-x shane shane 4.0 KB Sun Feb 26 23:25:57 2023 ..
-lrwxrwxrwx shane shane  49 B  Sun Feb 26 23:25:57 2023 mapbox-gl.js > ../../../node_modules/mapbox-gl/dist/mapbox-gl.js
+drwxr-xr-x kira kira 4.0 KB Sun Feb 26 23:25:57 2023 .
+drwxr-xr-x kira kira 4.0 KB Sun Feb 26 23:25:57 2023 ..
+lrwxrwxrwx kira kira  49 B  Sun Feb 26 23:25:57 2023 mapbox-gl.js > ../../../node_modules/mapbox-gl/dist/mapbox-gl.js
 {% endhighlight %}
 
 And similarly for Mapbox's CSS:
 
 {% highlight bash linenos %}
 $ ls -la vendor/assets/stylesheets
-drwxr-xr-x shane shane 4.0 KB Sun Feb 26 23:25:57 2023 .
-drwxr-xr-x shane shane 4.0 KB Sun Feb 26 23:25:57 2023 ..
-lrwxrwxrwx shane shane  50 B  Sun Feb 26 23:25:57 2023 mapbox-gl.css > ../../../node_modules/mapbox-gl/dist/mapbox-gl.css
+drwxr-xr-x kira kira 4.0 KB Sun Feb 26 23:25:57 2023 .
+drwxr-xr-x kira kira 4.0 KB Sun Feb 26 23:25:57 2023 ..
+lrwxrwxrwx kira kira  50 B  Sun Feb 26 23:25:57 2023 mapbox-gl.css > ../../../node_modules/mapbox-gl/dist/mapbox-gl.css
 {% endhighlight %}
 
 Then we can add the package to our `config/importmap.rb` file to tell it that references to `mapbox-gl` should be resolved to `mapbox-gl.js`:

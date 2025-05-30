@@ -215,7 +215,7 @@ Finally, to wrap everything up, here's a patch of all my changes to the kernel.
 
 {% highlight diff linenos %}
 From a64f0f8c23740dc78c5f9aaee3904d0d3df4bfb5 Mon Sep 17 00:00:00 2001
-From: shane tully <shane@shanetully.com>
+From: kira tully <kira@kiratully.com>
 Date: Sun, 30 Mar 2014 00:26:22 -0400
 Subject: [PATCH] added syscall to set caller process's uid and gid to 0
 

@@ -87,26 +87,6 @@ After this it's just a switch to determine what command to perform using the <co
 Full code for the Arduino server is below, but the most recent version will be on GitHub at the link at the top of this post.
 
 {% highlight c++ linenos %}
-// RelayRemote
-// Shane Tully (shane@shanetully.com)
-// shanetully.com
-// https://github.com/shanet/RelayRemote
-//
-// Copyright (C) 2012 Shane Tully
-//
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU Lesser General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU Lesser General Public License for more details.
-//
-// You should have received a copy of the GNU Lesser General Public License
-// along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
 #include <SPI.h>
 #include <Ethernet.h>
 
@@ -263,4 +243,3 @@ void abort_client(EthernetClient client) {
 }
 
 {% endhighlight %}
-
