@@ -53,7 +53,7 @@ void foo(void) {
 
 <code>foo()</code> creates and initializes a local variable, <code>i</code>, to 0, then increments it by 1 and prints it to stdout. Let's see if we can change the value that <code>i</code> is incremented by.
 
-To accomplish this goal, we'll need to see not just the instructions that <code>foo()</code> compiles to, but the actual machine code that <code>foo()</code> is assembled to. Let's put <code>foo()</code> is a full program so it's easier to do this.
+To accomplish this goal we'll need to see not just the instructions that <code>foo()</code> compiles to, but the actual machine code that <code>foo()</code> is assembled to. Let's put <code>foo()</code> in a full program so it's easier to do this.
 
 {% highlight c linenos %}
 #include <stdio.h>
@@ -71,7 +71,7 @@ void foo(void) {
 }
 {% endhighlight %}
 
-Now that we have <code>foo()</code> in a full C program, we can go ahead and compile it. Let's go ahead and compile it with:
+Now that we have <code>foo()</code> in a full C program, we can compile it with:
 
 {% highlight bash linenos %}$ gcc -o foo foo.c{% endhighlight %}
 
@@ -79,7 +79,7 @@ This is where things start to get interesting. We need to disassemble the binary
 
 {% highlight bash linenos %}$ objdump -d foo > foo.dis{% endhighlight %}
 
-If you open the foo.dis file in a text editor, around line 128 (depending on the version of gcc used, <code>foo</code> may have slightly different instructions) you should see the disassembled <code>foo()</code> function. It looks like the following:
+If you open the <code>foo.dis</code> file in a text editor, around line 128 (<code>foo</code> may have slightly different instructions depending on the version of gcc used) you should see the disassembled <code>foo()</code> function. It looks like the following:
 
 {% highlight text linenos %}
 0000000000400538 <foo>
@@ -101,7 +101,7 @@ If you open the foo.dis file in a text editor, around line 128 (depending on the
   40056b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
 {% endhighlight %}
 
-If you have never worked with x86_64 code before, this might look a little foreign. Basically what's going on here is that we are pushing the stack down 4 bytes (the size of an integer on my system) to use as the storage location for the variable <code>i</code>. We then initialize these 4 bytes to 0 and then add 1 to this value. Everything after this (40054b) is moving values around to prepare for calling the printf() function.
+This might look a little foreign if you have never worked with x86_64 code before. Basically what's going on here is that we are pushing the stack down 4 bytes (the size of an integer on my system) to use as the storage location for the variable <code>i</code>. We then initialize these 4 bytes to 0 and then add 1 to this value. Everything after this (40054b) is moving values around to prepare for calling the printf() function.
 
 That said, if we want to change the value that i is incremented by, we need to change the following instruction:
 
@@ -369,7 +369,7 @@ Success! The first time we call <code>foo()</code> it prints 1 just as its sourc
 
 <hr />
 
-And there you have it, a self-mutating C program. However, this is pretty boring; all it does is change a number. Wouldn't it be more far more interesting if we could change <code>foo()</code> to do something else entirely? How about <code>exec()</code> a shell?
+However, this is pretty boring: all it does is change a number. Wouldn't it be more far more interesting if we could change <code>foo()</code> to do something else entirely? Maybe <code>exec()</code> a shell?
 
 How would we go about starting a shell when we call <code>foo()</code> though? The natural choice is to use the <code>execve</code> syscall, but that's a lot more involved than just changing a single byte.
 
@@ -421,13 +421,13 @@ In order to make a syscall on x86_64, we have to prepare for the syscall by movi
 
 It's important to note that <strong>the values of these registers should be pointers to the memory location of their respective values</strong>. This means that we'll have to push all the values to the stack and then copy the correct stack locations to the registers above. And you thought you would never say "wow, I miss the simplicity of pointers in C."
 
-A full list of syscalls can be found at <a href="http://blog.rchapman.org/post/36801038863/linux-system-call-table-for-x86-64">http://blog.rchapman.org/post/36801038863/linux-system-call-table-for-x86-64</a>.
+A full list of syscalls can be found at <a href="https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/">https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64</a>.
 
 If you're familiar with the C prototype for the <code>execve()</code> function (below for reference), you'll see that how similar the syscall setup is to calling the function from a C program.
 
 {% highlight c linenos %}int execve(const char *filename, char *const argv[], char *const envp[]);{% endhighlight %}
 
-For those familiar with x86, it's important to note that the syscall procedure is quite different between x86 and x86_64. The syscall instruction does not exist in the x86 instruction set. In x86 syscalls are made by triggering an interrupt. Furthermore, in Linux, the syscall number for <code>execve</code> is different between x86 and x86_64. (11 on x86; 59 on x86_64).
+For those familiar with x86, it's important to note that the syscall procedure is quite different between x86 and x86_64. The syscall instruction does not exist in the x86 instruction set. In x86 syscalls are made by triggering an interrupt. Furthermore, in Linux, the syscall number for <code>execve</code> is different between x86 and x86_64. (<code>11</code> on x86; <code>59</code> on x86_64).
 
 Now that we know how to set up a syscall, let's explain each step of the shellcode.
 
