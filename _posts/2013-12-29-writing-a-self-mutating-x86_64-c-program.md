@@ -109,41 +109,45 @@ That said, if we want to change the value that i is incremented by, we need to c
 
 Before going any further though, let's break this instruction down.
 
-<table class="post-table">
-  <thead>
-    <tr>
-      <th><code>400547</code></th>
-      <th><code>83 45 fc 01</code></th>
-      <th><code>addl $0x1,-0x4(%rbp)</code></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>The first column is the memory location of this instruction.</td>
-      <td>The second column is the machine code of the instruction. These are the bytes that the CPU will read and react to.</td>  
-      <td>The third column is the human readable (well, readable to humans with some prior knowledge), disassembled machine code from the second column.</td>  
-    </tr>
-  </tbody>
-</table>
+<div class="table-overflow">
+  <table class="post-table">
+    <thead>
+      <tr>
+        <th><code>400547</code></th>
+        <th><code>83 45 fc 01</code></th>
+        <th><code>addl $0x1,-0x4(%rbp)</code></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>The first column is the memory location of this instruction.</td>
+        <td>The second column is the machine code of the instruction. These are the bytes that the CPU will read and react to.</td>  
+        <td>The third column is the human readable (well, readable to humans with some prior knowledge), disassembled machine code from the second column.</td>  
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 Going further, we can break down the instruction to understand its operands:
 
-<table class="post-table">
-  <thead>
-    <tr>
-      <th><code>addl</code></th>
-      <th><code>$0x1</code></th>
-      <th><code>-0x4(%rbp)</code></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>addl</code> is the instruction. There are multiple add commands in the x86_64 instruction set. This one means add an 8bit value to a register or memory location.</td>
-      <td><code>$0x1</code> is an immediate value. Dollar signs denote immediate values and the <code>0x</code> prefix denotes a hexadecimal number follows. In this case, the number is just 1 since <code>0x1 = 1</code> in base 10.</td>  
-      <td><code>-0x4(%rbp)</code> is the memory address to add the value to. Here it is saying to add it to the current location of the base stack pointer offset by 4 bytes. This is where our <code>i</code> variable was put on the stack.</td>  
-    </tr>
-  </tbody>
-</table>
+<div class="table-overflow">
+  <table class="post-table">
+    <thead>
+      <tr>
+        <th><code>addl</code></th>
+        <th><code>$0x1</code></th>
+        <th><code>-0x4(%rbp)</code></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>addl</code> is the instruction. There are multiple add commands in the x86_64 instruction set. This one means add an 8bit value to a register or memory location.</td>
+        <td><code>$0x1</code> is an immediate value. Dollar signs denote immediate values and the <code>0x</code> prefix denotes a hexadecimal number follows. In this case, the number is just 1 since <code>0x1 = 1</code> in base 10.</td>  
+        <td><code>-0x4(%rbp)</code> is the memory address to add the value to. Here it is saying to add it to the current location of the base stack pointer offset by 4 bytes. This is where our <code>i</code> variable was put on the stack.</td>  
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 Now that we understand the human readable form of the instruction, let's dive into the machine instruction. All x86_64 instructions have the following format:
 
@@ -153,24 +157,26 @@ This is where x86_64 gets really complicated. x86_64 instructions have a variabl
 
 In our case, these bytes mean the following:
 
-<table class="post-table">
-  <thead>
-    <tr>
-      <th><code>83</code></th>
-      <th><code>45</code></th>
-      <th><code>fc</code></th>
-      <th><code>01</code></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>83</code> is the opcode of the <code>addl</code> instruction. All instructions have an opcode that tells the CPU what instruction to perform.</td>
-      <td><code>45</code> is the ModR/M byte. Per Intel's documentation, <code>0x45 = [RBP/EBP]+disp8</code>. This means that <code>0x45</code> denotes the <code>%rbp</code> register is the destination and the byte that follows (in this case, <code>0xfc</code>) is the displacement byte.</td>  
-      <td><code>fc</code> is the displacement byte. <code>0xfc = 0b11111100</code>. In this case it is in two's complement so the decimal value is -4.</td>  
-      <td><code>01</code> is the immediate value that will be added to the given memory address. <strong>This is the byte we need to change in order to change the value that <code>i</code> is incremented by.</strong></td>  
-    </tr>
-  </tbody>
-</table>
+<div class="table-overflow">
+  <table class="post-table">
+    <thead>
+      <tr>
+        <th><code>83</code></th>
+        <th><code>45</code></th>
+        <th><code>fc</code></th>
+        <th><code>01</code></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>83</code> is the opcode of the <code>addl</code> instruction. All instructions have an opcode that tells the CPU what instruction to perform.</td>
+        <td><code>45</code> is the ModR/M byte. Per Intel's documentation, <code>0x45 = [RBP/EBP]+disp8</code>. This means that <code>0x45</code> denotes the <code>%rbp</code> register is the destination and the byte that follows (in this case, <code>0xfc</code>) is the displacement byte.</td>  
+        <td><code>fc</code> is the displacement byte. <code>0xfc = 0b11111100</code>. In this case it is in two's complement so the decimal value is -4.</td>  
+        <td><code>01</code> is the immediate value that will be added to the given memory address. <strong>This is the byte we need to change in order to change the value that <code>i</code> is incremented by.</strong></td>  
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 How did I determine what the ModR/M byte meant? There is a <a href="http://ref.x86asm.net/coder64.html#modrm_byte_32_64">handy table in the documentation that explains what each ModR/M byte means</a>. This table is also available in the Intel manual linked to above as Table 2-2 in section 2-5 of volume 2A (or page 445 of the PDF).
 
@@ -398,26 +404,28 @@ Before going further, let's explain what the shellcode above is doing. First we 
 
 In order to make a syscall on x86_64, we have to prepare for the syscall by moving the correct values to the correct registers and then issuing with <code>syscall</code> instruction. These correct values and registers are unique to each OS. I'm focusing on Linux here so let's look at the documentation for the <code>execve</code> syscall:
 
-<table class="post-table">
-  <thead>
-    <tr>
-      <th><code>%rax</code></th>
-      <th>Syscall</th>
-      <th><code>%rdi</code></th>
-      <th><code>%rsi</code></th>
-      <th><code>%rdx</code></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>59</code></td>
-      <td><code>sys_execve</code></td>  
-      <td><code>const char *filename</code></td>  
-      <td><code>const char *const argv[]</code></td>  
-      <td><code>const char *const envp[]</code></td>  
-    </tr>
-  </tbody>
-</table>
+<div class="table-overflow">
+  <table class="post-table">
+    <thead>
+      <tr>
+        <th><code>%rax</code></th>
+        <th>Syscall</th>
+        <th><code>%rdi</code></th>
+        <th><code>%rsi</code></th>
+        <th><code>%rdx</code></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>59</code></td>
+        <td><code>sys_execve</code></td>  
+        <td><code>const char *filename</code></td>  
+        <td><code>const char *const argv[]</code></td>  
+        <td><code>const char *const envp[]</code></td>  
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 It's important to note that <strong>the values of these registers should be pointers to the memory location of their respective values</strong>. This means that we'll have to push all the values to the stack and then copy the correct stack locations to the registers above. And you thought you would never say "wow, I miss the simplicity of pointers in C."
 
@@ -431,67 +439,69 @@ For those familiar with x86, it's important to note that the syscall procedure i
 
 Now that we know how to set up a syscall, let's explain each step of the shellcode.
 
-<table class="post-table">
-  <thead>
-    <tr>
-      <th>Machine code</th>
-      <th>Instruction</th>
-      <th>Explanation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>\x48\x31\xd2</code></td>
-      <td><code>xor %rdx, %rdx</code></td>
-      <td>Zero the <code>%rdx</code> register</td>
-    </tr>
-    <tr>
-      <td><code>\x48\x31\xc0</code></td>
-      <td><code>xor %rax, %rax</code></td>
-      <td>Zero the <code>%rax</code> register. We use this for <code>NULL</code> values later so it must zero'd.</td>
-    </tr>
-    <tr>
-      <td><code>\x48\xbb\x2f\x62\x69\x6e\x2f\x73\x68\x00</code></td>
-      <td><code>mov $0x68732f6e69622f, %rbx</code></td>
-      <td>Set the value of the <code>%rbx</code> register to <code>hs/nib/</code>. Intel processors are little endian so the string must be backwards. A quick way to do this with Python is <code>'/bin/sh'[::-1].encode('hex')</code>. It is convenient that "/bin/sh" is 64bits so it fits within a single register. Anything longer would require some trickery to concatenate longer strings together.</td>
-    </tr>
-    <tr>
-      <td><code>\x53</code></td>
-      <td><code>push %rbx</code></td>
-      <td>Push the /bin/sh string (currently in register <code>%rbx</code>) to the stack. The push instruction will adjust the stack pointer for us.</td>
-    </tr>
-    <tr>
-      <td><code>\x48\x89\xe7</code></td>
-      <td><code>mov %rsp, %rdi</code></td>
-      <td>As per the syscall documentation, the <code>%rdi</code> register should point to the memory location of the program to execute. The stack pointer (register <code>%rsp</code>) is currently pointing at this string so copy the stack pointer to <code>%rdi</code>.</td>
-    </tr>
-    <tr>
-      <td><code>\x50</code></td>
-      <td><code>push %rax</code></td>
-      <td>The second argument to the <code>execve()</code> function is the argv array. This array should be NULL terminated. Intel processors are little endian so we have to push a NULL value to denote the end of the array onto the stack first. Remember that we zero'd <code>%rax</code> earlier so we only have to push this register to the stack to get our <code>NULL</code> value.</td>
-    </tr>
-    <tr>
-      <td><code>\x57</code></td>
-      <td><code>push %rdi</code></td>
-      <td>By convention, the first argument in the argv array is the name of the program. Remember that the argv array is really a pointer to an array of pointers to strings. In this case, the only value in the array is the name of the program. Also remember that the <code>%rdi</code> register now contains the memory location of the /bin/sh string on the stack. If we push this address to the stack, we now have an array of pointers to the strings that make up the argv array.</td>
-    </tr>
-    <tr>
-      <td><code>\x48\x89\xe6</code></td>
-      <td><code>mov %rsp, %rsi</code></td>
-      <td>As per the syscall documentation, the <code>%rsi</code> register should point to the memory location of the argv array. Since we just pushed the argv array to the stack, the stack pointer is pointing to the first element of argv. All we have to do is copy the stack pointer to the <code>%rsi</code> register.</td>
-    </tr>
-    <tr>
-      <td><code>\xb0\x3b</code></td>
-      <td><code>mov $0x3b, %al</code></td>
-      <td>The last step is to put the syscall number (<code>59 = 0x3b</code>) into register <code>%rax</code>. Here, <code>%al</code> refers to the first byte of the <code>%rax</code> register. This puts 59 in the first byte of the <code>%rax</code> register. All other bits in <code>%rax</code> are still zero'd from before.</td>
-    </tr>
-    <tr>
-      <td><code>\x0f\x05</code></td>
-      <td><code>syscall</code></td>
-      <td>Once we're ready to go, issue the syscall instruction and the kernel will take it from here. Cross your fingers!</td>
-    </tr>
-  </tbody>
-</table>
+<div class="table-overflow">
+  <table class="post-table">
+    <thead>
+      <tr>
+        <th>Machine code</th>
+        <th>Instruction</th>
+        <th>Explanation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>\x48\x31\xd2</code></td>
+        <td><code>xor %rdx, %rdx</code></td>
+        <td>Zero the <code>%rdx</code> register</td>
+      </tr>
+      <tr>
+        <td><code>\x48\x31\xc0</code></td>
+        <td><code>xor %rax, %rax</code></td>
+        <td>Zero the <code>%rax</code> register. We use this for <code>NULL</code> values later so it must zero'd.</td>
+      </tr>
+      <tr>
+        <td><code>\x48\xbb\x2f\x62\x69\x6e\x2f\x73\x68\x00</code></td>
+        <td><code>mov $0x68732f6e69622f, %rbx</code></td>
+        <td>Set the value of the <code>%rbx</code> register to <code>hs/nib/</code>. Intel processors are little endian so the string must be backwards. A quick way to do this with Python is <code>'/bin/sh'[::-1].encode('hex')</code>. It is convenient that "/bin/sh" is 64bits so it fits within a single register. Anything longer would require some trickery to concatenate longer strings together.</td>
+      </tr>
+      <tr>
+        <td><code>\x53</code></td>
+        <td><code>push %rbx</code></td>
+        <td>Push the /bin/sh string (currently in register <code>%rbx</code>) to the stack. The push instruction will adjust the stack pointer for us.</td>
+      </tr>
+      <tr>
+        <td><code>\x48\x89\xe7</code></td>
+        <td><code>mov %rsp, %rdi</code></td>
+        <td>As per the syscall documentation, the <code>%rdi</code> register should point to the memory location of the program to execute. The stack pointer (register <code>%rsp</code>) is currently pointing at this string so copy the stack pointer to <code>%rdi</code>.</td>
+      </tr>
+      <tr>
+        <td><code>\x50</code></td>
+        <td><code>push %rax</code></td>
+        <td>The second argument to the <code>execve()</code> function is the argv array. This array should be NULL terminated. Intel processors are little endian so we have to push a NULL value to denote the end of the array onto the stack first. Remember that we zero'd <code>%rax</code> earlier so we only have to push this register to the stack to get our <code>NULL</code> value.</td>
+      </tr>
+      <tr>
+        <td><code>\x57</code></td>
+        <td><code>push %rdi</code></td>
+        <td>By convention, the first argument in the argv array is the name of the program. Remember that the argv array is really a pointer to an array of pointers to strings. In this case, the only value in the array is the name of the program. Also remember that the <code>%rdi</code> register now contains the memory location of the /bin/sh string on the stack. If we push this address to the stack, we now have an array of pointers to the strings that make up the argv array.</td>
+      </tr>
+      <tr>
+        <td><code>\x48\x89\xe6</code></td>
+        <td><code>mov %rsp, %rsi</code></td>
+        <td>As per the syscall documentation, the <code>%rsi</code> register should point to the memory location of the argv array. Since we just pushed the argv array to the stack, the stack pointer is pointing to the first element of argv. All we have to do is copy the stack pointer to the <code>%rsi</code> register.</td>
+      </tr>
+      <tr>
+        <td><code>\xb0\x3b</code></td>
+        <td><code>mov $0x3b, %al</code></td>
+        <td>The last step is to put the syscall number (<code>59 = 0x3b</code>) into register <code>%rax</code>. Here, <code>%al</code> refers to the first byte of the <code>%rax</code> register. This puts 59 in the first byte of the <code>%rax</code> register. All other bits in <code>%rax</code> are still zero'd from before.</td>
+      </tr>
+      <tr>
+        <td><code>\x0f\x05</code></td>
+        <td><code>syscall</code></td>
+        <td>Once we're ready to go, issue the syscall instruction and the kernel will take it from here. Cross your fingers!</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 <hr />
 

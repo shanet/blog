@@ -35,24 +35,26 @@ First up is the syscall table. This is located at <code>arch/x86/syscalls/syscal
 
 Let's explain what each of these fields mean.
 
-<table class="post-table">
-  <thead>
-    <tr>
-      <th>number</th>
-      <th>abi</th>
-      <th>name</th>
-      <th>entry point</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>All syscalls are identified by a unique number. In order to call a syscall, we tell the kernel to call the syscall by its number rather than by its name.</td>
-      <td>The ABI, or application binary interface, to use. Either 64, x32, or common for both.</td>
-      <td>This is simply the name of the syscall.</td>
-      <td>The entry point is the name of the function to call in order to handle the syscall. The naming convention for this function is the name of the syscall prefixed with <code>sys_</code>. For example, the read syscall's entry point is <code>sys_read</code>.</td>
-    </tr>
-  </tbody>
-</table>
+<div class="table-overflow">
+  <table class="post-table">
+    <thead>
+      <tr>
+        <th>number</th>
+        <th>abi</th>
+        <th>name</th>
+        <th>entry point</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>All syscalls are identified by a unique number. In order to call a syscall, we tell the kernel to call the syscall by its number rather than by its name.</td>
+        <td>The ABI, or application binary interface, to use. Either 64, x32, or common for both.</td>
+        <td>This is simply the name of the syscall.</td>
+        <td>The entry point is the name of the function to call in order to handle the syscall. The naming convention for this function is the name of the syscall prefixed with <code>sys_</code>. For example, the read syscall's entry point is <code>sys_read</code>.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 The version I have has 315 syscalls. To add our new one, I'm going to make a syscall 316 that looks as such:
 
