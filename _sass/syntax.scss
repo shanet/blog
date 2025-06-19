@@ -1,24 +1,23 @@
 .highlight {
   background-color: #272822;
   color: #f8f8f2;
-  font-size: 11px;
+  font-size: 0.75rem;
   overflow-x: auto;
-  padding: 5px 5px;
-  table-layout: fixed;
+  padding: 0.3rem 0.3rem;
   width: 100%;
 }
 
 .highlight .gutter {
   border-right: 3px solid #525252;
   color: #ffffff;
-  padding: 0 10px;
+  padding: 0 0.6rem;
   text-align: center;
   vertical-align: top;
   width: 4%;
 }
 
 .highlight .code {
-  padding-left: 5px;
+  padding-left: 0.3rem;
 }
 
 .highlight .c { color: #8c876f } /* Comment */
