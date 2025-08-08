@@ -5,6 +5,13 @@ title: Miscellanous Backpacking
 description: Miscellanous backpacking/hiking photos from over the years.
 cover: sahale_1.jpg
 photos:
+  - file: park_butte_1.jpg
+    caption: Mt. Baker from Park Butte, July 2025
+  - file: park_butte_2.jpg
+    caption: Mt. Baker from Park Butte, July 2025
+  - file: park_butte_3.jpg
+    caption: Park Butte lookout, July 2025
+
   - file: sahale_1.jpg
     caption: Sahale Glacier Camp, July 2020
 
@@ -56,9 +63,9 @@ photos:
   - file: hidden_lake_2.jpg
     caption: Trail to Hidden Lake Peak, August 2022
   - file: hidden_lake_3.jpg
-    caption: Hidden Lake Peak, August 2022
+    caption: Trail to Hidden Lake Peak, August 2022
   - file: hidden_lake_4.jpg
-    caption: Hidden Lake Peak, August 2022
+    caption: The Triad from Hidden Lake Peak, August 2022
   - file: hidden_lake_5.jpg
     caption: Mt. Baker from Hidden Lake Peak, August 2022
 

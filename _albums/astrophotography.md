@@ -10,6 +10,13 @@ photos:
   - file: chamberlain_2.jpg
     caption: Chamberlain, July 2024
 
+  - file: baker_1.jpg
+    caption: Mt. Baker from Park Butte, July 2025
+  - file: baker_2.jpg
+    caption: Mt. Baker from Park Butte, July 2025
+  - file: baker_3.jpg
+    caption: Trees near Park Butte, July 2025
+
   - file: sullivan_lake_1.jpg
     caption: Sullivan Lake, July 2024
 
