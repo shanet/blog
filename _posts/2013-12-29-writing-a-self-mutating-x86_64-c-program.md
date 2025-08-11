@@ -101,9 +101,9 @@ If you open the <code>foo.dis</code> file in a text editor, around line 128 (<co
   40056b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
 {% endhighlight %}
 
-This might look a little foreign if you have never worked with x86_64 code before. Basically what's going on here is that we are pushing the stack down 4 bytes (the size of an integer on my system) to use as the storage location for the variable <code>i</code>. We then initialize these 4 bytes to 0 and then add 1 to this value. Everything after this (40054b) is moving values around to prepare for calling the printf() function.
+This might look a little foreign if you have never worked with x86_64 code before. Basically what's going on here is that we are pushing the stack down 4 bytes (the size of an integer on my system) to use as the storage location for the variable <code>i</code>. We then initialize these 4 bytes to 0 and then add 1 to this value. Everything after this (<code>40054b</code>) is moving values around to prepare for calling the <code>printf()</code> function.
 
-That said, if we want to change the value that i is incremented by, we need to change the following instruction:
+That said, if we want to change the value that <code>i</code> is incremented by, we need to change the following instruction:
 
 {% highlight text linenos %}400547:	83 45 fc 01          	addl   $0x1,-0x4(%rbp){% endhighlight %}
 
