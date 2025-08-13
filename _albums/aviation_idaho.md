@@ -8,6 +8,11 @@ photos:
   - file: johnson_creek_1.jpg
     caption: Johnson Creek, July 2022
 
+  - file: moose_creek_4.jpg
+    caption: Moose Creek, July 2025
+  - file: moose_creek_5.jpg
+    caption: Moose Creek, July 2025
+
   - file: smiley_creek_1.jpg
     caption: Smiley Creek, July 2024
   - file: smiley_creek_2.jpg
