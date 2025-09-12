@@ -21,6 +21,11 @@ photos:
   - file: frog_1.jpg
     caption: Green Mountain frog, September 2023
 
+  - file: silesia_1.jpg
+    caption: Mountain goat near Copper Ridge lookout, August 2025
+  - file: silesia_2.jpg
+    caption: Crow near Copper Ridge lookout, August 2025
+
   - file: bear_1.jpg
     caption: Mt. Shuksan bear, September 2022
 ---

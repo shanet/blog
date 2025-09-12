@@ -15,6 +15,11 @@ photos:
   - file: sahale_1.jpg
     caption: Sahale Glacier Camp, July 2020
 
+  - file: silesia_1.jpg
+    caption: Copper Ridge lookout, August 2025
+  - file: silesia_2.jpg
+    caption: Copper Ridge lookout, August 2025
+
   - file: alpine_lakes_1.jpg
     caption: Copper Lake, Alpine Lakes Wilderness, August 2024
   - file: alpine_lakes_2.jpg

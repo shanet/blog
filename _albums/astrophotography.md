@@ -17,6 +17,9 @@ photos:
   - file: baker_3.jpg
     caption: Trees near Park Butte, July 2025
 
+  - file: silesia_1.jpg
+    caption: North Cascades from Copper Ridge, August 2025
+
   - file: sullivan_lake_1.jpg
     caption: Sullivan Lake, July 2024
 
