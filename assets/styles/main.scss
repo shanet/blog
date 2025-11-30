@@ -19,3 +19,14 @@
 
 @use "ski_area_study";
 @use "snowpack_analysis";
+
+// Fix text size issue with Rouge codeblocks on safari mobile
+.rouge-table {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+
+  td, pre {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+}
