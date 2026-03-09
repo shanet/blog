@@ -18,9 +18,9 @@ title: About
 
 As for me:
 <ul>
-  <li>Queer software engineer for fun and profit 🏳️‍🌈</li>
+  <li><span class="queer-text">Queer software engineer for fun and profit</span> 🏳️‍⚧️</li>
   <li>Location: Pacific Northwest ⛰️</li>
-  <li>Other interests: Free software, backcountry/in-bounds skiing, climbing, backpacking, <a href="/aviation">aviation</a>, and <a href="/albums">photography</a></li>
+  <li>Other interests: Free software, backcountry skiing, climbing, backpacking, <a href="/aviation">aviation</a>, and <a href="/albums">photography</a></li>
 </ul>
 
 #### Why {{ site.title }}?

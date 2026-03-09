@@ -24,6 +24,12 @@
   }
 }
 
+.queer-text {
+  background: linear-gradient(90deg,rgba(228, 3, 3, 1) 0%, rgba(255, 140, 0, 1) 20%, rgba(171, 159, 0, 1) 40%, rgba(0, 128, 38, 1) 60%, rgba(0, 76, 255, 1) 80%, rgba(115, 41, 130, 1) 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .public-key {
   background-color: #f8f8f8;
   border-radius: 10px;
