@@ -18,7 +18,7 @@ title: About
 
 As for me:
 <ul>
-  <li>Software engineer for fun and profit</li>
+  <li>Queer software engineer for fun and profit 🏳️‍🌈</li>
   <li>Location: Pacific Northwest ⛰️</li>
   <li>Other interests: Free software, backcountry/in-bounds skiing, climbing, backpacking, <a href="/aviation">aviation</a>, and <a href="/albums">photography</a></li>
 </ul>
@@ -29,7 +29,7 @@ Because what is a website, <a href="https://www.bryanbraun.com/your-life/weeks.h
 
 #### This Site
 
-This website is generated with [Jekyll](https://jekyllrb.com/) because I ❤️ Ruby and because static websites are wonderful. The intention is to be as simple, fast, and minimalist as possible. That means no JavaScript, hand-crafted HTML, and no trackers/ads/other bs. The web used to be fun and free; {{ site.title }} is my small attempt at keeping that magic alive.
+This website is generated with [Jekyll](https://jekyllrb.com/) because I ❤️ Ruby. The intention is to be as minimalist, fast, and simple as possible. That means no JavaScript, hand-crafted HTML, and no AI/trackers/ads/other bs. The web used to be fun and free; {{ site.title }} is my small attempt at keeping that magic alive.
 
 <div class="clear"></div>
 
