@@ -129,6 +129,10 @@
   }
 
   .index-footer {
+    align-items: center;
+    color: $subtle-text-color;
+    display: flex;
+    flex-direction: column;
     font-size: 0.9rem;
     font-style: italic;
     padding-bottom: 1.75rem;
