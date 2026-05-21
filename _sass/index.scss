@@ -140,6 +140,10 @@
     a {
       color: $subtle-text-color;
     }
+
+    div:last-child a:hover {
+      cursor: default;
+    }
   }
 }
 
