@@ -1,4 +1,10 @@
-_site
+.claude
 .jekyll-cache
+.terraform
+*.tfstate
+*.tfstate.*.backup
+*.tfstate.backup
+.wrangler
 
 assets/videos/*
+_site

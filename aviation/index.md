@@ -10,7 +10,7 @@ title: Aviation
 {% for video in site.data.aviation %}
   <div class="aviation-video">
     <video controls {% if forloop.index > 0 %}preload="none"{% endif %} {% if video.poster %}poster="/assets/images/video_posters/{{ video.poster }}"{% endif %}>
-      <source src="/assets/videos/{{ video.filename }}" type="video/webm">
+      <source src="{{ site.files_url }}/assets/videos/{{ video.filename }}" type="video/webm">
     </video>
 
     <span>{{ video.description }}{% if video.date %}, {{ video.date }}{% endif %}</span>

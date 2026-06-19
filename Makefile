@@ -1,14 +1,16 @@
 PHONY: build server deploy normalize_album_images
 
-build:
-	bundle exec jekyll build
-
 server:
 	bundle exec jekyll server --unpublished --future
 
+build: normalize_album_images
+	bundle exec jekyll build --config _config.yml,_config_production.yml
+
 deploy: build
-	rsync --recursive --delete --progress _site/ kira@ephemeral.cx:/srv/http/blog/
-	ssh kira@ephemeral.cx "cd /srv/http/blog && chown -R kira:www-data . && chmod -R 775 . && ln -s ../psu_steam psu_steam"
+	AWS_PROFILE=cloudflare aws s3 sync _site/assets/videos s3://ephemeral-cx/assets/videos --endpoint-url https://2d6e53a7b34ca290aa4bd00eb995a0a0.r2.cloudflarestorage.com
+	rm -rf _site/assets/videos
+	ln -s ../../psu_steam _site/
+	wrangler pages deploy _site --project-name=ephemeral-cx --branch=production
 
 normalize_album_images:
 	find assets/images/albums \

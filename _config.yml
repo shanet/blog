@@ -5,6 +5,7 @@ email: "&#x6B;&#x69;&#x72;&#97;&#x40;&#x6B;&#x69;&#x72;&#x61;&#x74;&#117;&#108;&
 description: My little corner of the web for sharing wherever my interests take me.
 baseurl: ""
 images_dir: "/assets/images/"
+files_url: ""
 
 # Build settings
 markdown: kramdown
