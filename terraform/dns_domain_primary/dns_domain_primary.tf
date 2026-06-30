@@ -57,19 +57,19 @@ resource "cloudflare_dns_record" "discord" {
   zone_id = cloudflare_zone.this.id
 }
 
-resource "cloudflare_dns_record" "webb_a" {
-  content = "93.185.167.221"
-  name    = "webb"
+resource "cloudflare_dns_record" "cassini" {
+  content = "94.103.188.164"
+  name    = "cassini"
   ttl     = 3600 # seconds
   type    = "A"
   zone_id = cloudflare_zone.this.id
 }
 
-resource "cloudflare_dns_record" "webb_aaaa" {
-  content = "2a0f:5f40:0:5::316"
+resource "cloudflare_dns_record" "webb" {
+  content = "93.185.167.221"
   name    = "webb"
   ttl     = 3600 # seconds
-  type    = "AAAA"
+  type    = "A"
   zone_id = cloudflare_zone.this.id
 }
 
